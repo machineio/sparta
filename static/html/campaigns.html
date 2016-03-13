@@ -1,0 +1,842 @@
+<div class="container">
+    <div class="row equal">
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("newCampaign") %></h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-12 text-center" id="campaignIconInbound">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-random fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center hide" id="campaignIconOutbound">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-bullhorn fa-stack-1x fa-flip-horizontal"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">/</span>
+                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
+                                        </div>
+                                        <p><%= translate("greatCampaignNames") %>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="campaign_description"><%= translate("descriptionOptional") %></label>
+                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control">
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input id="campaign_type_inbound" name="campaign_type" type="radio" value="inbound" checked="checked" >
+                                        <%= translate("inbound") %>
+                                    </label>
+
+                                    <!--
+                                    <span class="mega-octicon octicon-repo"></span>
+                                    -->
+
+                                    <span class="note">
+                                        Anyone can see this campaign. You choose who can send messages.
+                                    </span>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input id="campaign_type_outbound" name="campaign_type" type="radio" value="outbound">
+                                        <%= translate("outbound") %>
+                                    </label>
+
+                                    <!--
+                                    <span class="mega-octicon octicon-lock"></span>
+                                    -->
+
+                                    <span class="note">
+                                        <%= translate("youChooseWhoUseCampaign") %>.
+                                    </span>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input id="campaign_script_true" value="true" type="checkbox">
+                                        <%= translate("script") %>
+                                    </label>
+                                    <!--
+                                    <span class="mega-octicon octicon-repo"></span>
+                                    -->
+
+                                    <span class="note">
+                                        This campaign use the following script.
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cloud-download fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="export-campaign-form" class="form-export" novalidate="novalidate">
+                                <p class="help-block"><%= translate("getCampaignList") %>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills">
+                <!--
+                <li><a href="#all-campaigns-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#active-campaigns-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#paused-campaigns-tab" data-toggle="tab"><%= translate("paused") %></a></li>
+                -->
+                <li><a href="#inbound-campaigns-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
+                <li><a href="#outbound-campaigns-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="all-campaigns-tab"></div>
+                <div class="tab-pane" id="active-campaigns-tab"></div>
+                <div class="tab-pane" id="paused-campaigns-tab"></div>
+                <div class="tab-pane fade active in" id="inbound-campaigns-tab"></div>
+                <div class="tab-pane" id="outbound-campaigns-tab"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- task Modal popup -->
+<div class="modal fade" id="inboundCampaignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><%= translate("newInboundCampaign") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p>Automated Call Distribution systems are used for distributing phone calls and other contact types to campaign agents and employees at your business.</p>
+
+                <div class="row">
+                    <form id="create-inbound-campaign-modal-form" class="form-profile" novalidate="novalidate">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("name") %></th>
+                                            <td id="inbound-name"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("timeout") %></th>
+                                            <td>
+                                                <input type="text" id="inbound-timeout" name="inbound_timeout" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("recordAudio") %></th>
+                                            <td>
+                                                <select name="inbound_recording" id="inbound-recording" class="form-control">
+                                                    <option value="yes" selected>yes</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("retry") %></th>
+                                            <td>
+                                                <input type="text" id="inbound-retry" name="inbound_retry" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("wrapuptime") %></th>
+                                            <td>
+                                                <input type="text" id="inbound-wrapuptime" name="inbound_wrapuptime" class="form-control">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("maxlen") %></th>
+
+                                            <td>
+                                                <input type="text" id="inbound-maxlen" name="inbound_maxlen" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("servicelevel") %></th>
+                                            <td>
+                                                <input type="text" id="inbound-servicelevel" name="inbound_servicelevel" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("strategy") %></th>
+                                            <td>
+                                                <select name="campaign_strategy" id="campaign-strategy" class="form-control">
+                                                    <option value="ringall" selected>ringall</option>
+                                                    <option value="rrmemory">rrmemory</option>
+                                                    <option value="leastrecent">leastrecent</option>
+                                                    <option value="fewestcalls">fewestcalls</option>
+                                                    <option value="random">random</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("joinempty") %></th>
+                                            <td>
+                                                <select name="inbound_joinempty" id="inbound-joinempty" class="form-control">
+                                                    <option value="yes" selected>yes</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("ringinuse") %></th>
+                                            <td>
+                                                <select name="inbound_ringinuse" id="inbound-ringinuse" class="form-control">
+                                                    <option value="yes" selected>yes</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="descriptionRow" class="hide">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Description:</h4>
+
+                            <p id="inbound-description"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="scriptWrapperInbound" class="hide">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Script:</h4>
+
+                            <textarea id="task-comment" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-6">
+                        <button id="close-inbound-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="create-inbound-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("create") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- task Modal popup -->
+<div class="modal fade" id="outboundCampaignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><%= translate("newOutboundCampaign") %></h4>
+            </div>
+            <div class="modal-body">
+                <p>The dialer learns from experience, and is continually tweaking settings to maximize yields.  You never need to fight with obscure settings.</p>
+
+                <div id="partOne">
+                    <div class="row equal">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="panel panel-default panel-full-width">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("answer") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span class="fa-stack fa-4x panel-icons">
+                                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                                <i class="fa fa-check fa-fw fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form enctype="multipart/form-data" action="/upload/" method="POST" id="answer-sound-form" class="form-answer-sound" novalidate="novalidate">
+
+                                                <div class="form-group">
+                                                    <label for="uploadFile"><%= translate("fileInput") %></label>
+                                                    <input type="file" name="uploadFile" id="uploadAnswerFile">
+                                                    <p class="help-block">Remember to mention the Transfer and Do Not Call options and digits in this message.</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="answer_description"><%= translate("descriptionOptional") %></label>
+                                                    <input type="text" id="answer_description" name="answer_description" class="form-control">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="answer_digit"><%= translate("descriptionDigit") %></label>
+                                                    <select class="form-control" id="answer_digit" name="answer_digit">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="answer_number"><%= translate("transfer") %></label>
+                                                    <input type="text" id="answer_number" name="answer_number" class="form-control" placeholder="Queue, Account or Phone number">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button id="upload-answer-btn" class="btn btn-success btn-block" type="submit"><%= translate("uploadAudio") %></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="panel panel-default panel-full-width">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("transfer") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span class="fa-stack fa-4x panel-icons">
+                                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                                <i class="fa fa-share fa-fw fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form enctype="multipart/form-data" action="/upload/" method="POST" id="transfer-sound-form" class="form-sound" novalidate="novalidate">
+                                                <div class="form-group input-group">
+                                                    <label for="uploadTransferFile"><%= translate("fileInput") %></label>
+                                                    <input type="file" id="uploadTransferFile" name="uploadTransferFile">
+                                                    <p class="help-block">Select a message that plays when the Transfer option is chosen.</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="transfer_description"><%= translate("descriptionOptional") %></label>
+                                                    <input type="text" id="transfer_description" name="transfer_description" class="form-control">
+                                                </div>
+
+                                                <!-- <div class="form-group">
+                                                    <label for="transfer_max"><%= translate("maxTransfers") %></label>
+                                                    <input type="text" id="max_transfers" name="max_transfers" class="form-control">
+                                                </div> -->
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button id="upload-transfer-button" class="btn btn-success btn-block" type="submit"><%= translate("uploadAudio") %></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="panel panel-default panel-full-width">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("answeringMachine") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span class="fa-stack fa-4x panel-icons">
+                                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                                <i class="fa fa-bell-slash fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form enctype="multipart/form-data" action="/upload/" method="POST" id="answer-machine-sound-form" class="form-sound" novalidate="novalidate">
+
+                                                <div class="form-group">
+                                                    <label for="uploadAnsweringMachineFile"><%= translate("fileInput") %></label>
+                                                    <input type="file" id="uploadAnsweringMachineFile" name="uploadAnsweringMachineFile">
+                                                    <p class="help-block">Select a message that plays when an answering machine picks up your call.</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="machine_description"><%= translate("descriptionOptional") %></label>
+                                                    <input type="text" id="machine_description" name="machine_description" class="form-control">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button id="upload-machine-button" class="btn btn-success btn-block" type="submit"><%= translate("uploadAudio") %></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div class="panel panel-default panel-full-width">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("doNotCall") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <span class="fa-stack fa-4x panel-icons">
+                                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                                <i class="fa fa-eraser fa-stack-1x"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form enctype="multipart/form-data" action="/upload/" method="POST" id="do_not_call-sound-form" class="form-sound" novalidate="novalidate">
+                                                <div class="form-group input-group">
+                                                    <label for="uploadDoNotCallFile"><%= translate("fileInput") %></label>
+                                                    <input type="file" id="uploadDoNotCallFile" name="uploadDoNotCallFile">
+                                                    <p class="help-block">Select a message that plays to acknowledge that the Do Not Call option has been chosen.</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="do_not_call_description"><%= translate("descriptionOptional") %></label>
+                                                    <input type="text" id="do_not_call_description" name="do_not_call_description" class="form-control">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="do_not_call_digit"><%= translate("descriptionDigit") %></label>
+                                                    <select class="form-control" id="do_not_call_digit" name="do_not_call_digit">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button id="upload-do-not-call-button" class="btn btn-success btn-block" type="submit"><%= translate("uploadAudio") %></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div id="partTwo" class="hide">
+                    <div class="row equal">
+                        <form id="create-outbound-campaign-modal-form" class="form-profile" novalidate="novalidate">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="panel panel-default panel-full-width">
+                                    <div class="panel-heading">
+                                        <!-- <h3 class="panel-title"><%= translate("transfer") %></h3> -->
+                                        <h3 class="panel-title">Max Simultaneus Calls</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>Enter the maximum number of calls that you want to dial at once.</p>
+                                        <input type="text" id="outbound-maxcalls" name="outbound_maxcalls" value="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="panel panel-default panel-full-width">
+                                    <div class="panel-heading">
+                                        <!-- <h3 class="panel-title"><%= translate("transfer") %></h3> -->
+                                        <h3 class="panel-title">Automatic Retry</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>If enabled, the system will retry contacts based on call result selected.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>
+                                                    <input id="retry_answer_machine" name="retry_answer_machine" value="true" type="checkbox">
+                                                    <%= translate("answerMachine") %>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>
+                                                    <input id="retry_busy" name="retry_busy" value="true" type="checkbox">
+                                                    <%= translate("busy") %>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>
+                                                    <input id="retry_no_answer" name="retry_no_answer" value="true" type="checkbox">
+                                                    <%= translate("noAnswer") %>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>Try each contact </p>
+                                                <select class="form-control" id="wait_minutes" name="transfer_digit">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>times and wait </p>
+                                                <select class="form-control" id="wait_minutes" name="transfer_digit">
+                                                    <option value="5">5</option>
+                                                    <option value="10">10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
+                                                    <option value="25">25</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                                    <option value="60" checked="checked">60</option>
+                                                </select>
+                                                <p> minutes between tries.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="panel panel-default panel-full-width">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Local time settings</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>The campaign will not dial outside of thse hours, based on the timezone assiciated with the contacts, area code and prefix.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="transfer_digit"><%= translate("from") %></label>
+                                                    <select class="form-control" id="transfer_digit" name="transfer_digit">
+                                                        <option value="8a">8:00 AM</option>
+                                                        <option value="9a" selected>9:00 AM</option>
+                                                        <option value="10a">10:00 AM</option>
+                                                        <option value="11a">11:00 AM</option>
+                                                        <option value="12a">12:00 AM</option>
+                                                        <option value="1p">1:00 PM</option>
+                                                        <option value="2p">2:00 PM</option>
+                                                        <option value="3p">3:00 PM</option>
+                                                        <option value="4p">4:00 PM</option>
+                                                        <option value="5p">5:00 PM</option>
+                                                        <option value="6p">6:00 PM</option>
+                                                        <option value="7p">7:00 PM</option>
+                                                        <option value="8p">8:00 PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="transfer_digit"><%= translate("to") %></label>
+                                                    <select class="form-control" id="transfer_digit" name="transfer_digit">
+                                                        <option value="1p">1:00 PM</option>
+                                                        <option value="2p">2:00 PM</option>
+                                                        <option value="3p">3:00 PM</option>
+                                                        <option value="4p">4:00 PM</option>
+                                                        <option value="5p selected">5:00 PM</option>
+                                                        <option value="6p">6:00 PM</option>
+                                                        <option value="7p">7:00 PM</option>
+                                                        <option value="8p">8:00 PM</option>
+                                                        <option value="9p">9:00 PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="scriptWrapperOutbound" class="hide">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="panel panel-default panel-full-width">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><%= translate("script") %></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <textarea id="task-comment" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <div class"row">
+                    <div class="col-md-6">
+                        <button id="close-outbound-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="create-outbound-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("create") %></button>
+                    </div>
+                </div> -->
+                <div id="nextButtonCombo">
+                    <div class"row">
+                        <div class="col-md-6">
+                            <button id="close-outbound-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                        </div>
+                        <div class="col-md-6">
+                            <button id="next-outbound-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("next") %></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="backButtonCombo" class="hide">
+                    <div class"row">
+                        <div class="col-md-4">
+                            <button id="close-outbound-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="back-outbound-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("back") %></button>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="create-outbound-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("create") %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- task Modal popup -->
+<div class="modal fade" id="campaignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel"><%= translate("campaignDetails") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p>Shows the setup of your inbound campaign for your workforce, contacts and customers.</p>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("uuid") %></th>
+                                        <td id="inbound-campaign-uuid"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("account") %></th>
+                                        <td id="inbound-campaign-account"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("name") %></th>
+                                        <td id="inbound-campaign-name"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("callerid") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-callerid" name="campaign_callerid" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("maxLen") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-max-len" name="campaign_maxlen" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("retry") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-retry" name="campaign_retry" class="form-control">
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("serviceLevel") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-service-level" name="campaign_service_level" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                       <th scope="row"><%= translate("strategy") %></th>
+                                        <td>
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <span id="inbound-campaign-strategy" data-label-placement=""></span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="campaign_strategy_ringall" name="campaign_strategy" value="ringall">
+                                                        <label for="campaign_strategy_ringall">ringall</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="campaign_strategy_rrmemory" name="campaign_strategy" value="rrmemory">
+                                                        <label for="campaign_strategy_rrmemory">rrmemory</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="campaign_strategy_leastrecent" name="campaign_strategy" value="leastrecent">
+                                                        <label for="campaign_strategy_leastrecent">leastrecent</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="campaign_strategy_fewestcalls" name="campaign_strategy" value="fewestcalls">
+                                                        <label for="campaign_strategy_fewestcalls">fewestcalls</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="campaign_strategy_random" name="campaign_strategy" value="random">
+                                                        <label for="campaign_strategy_random">random</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("timeOut") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-time-out" name="campaign_time_out" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("wrapuptime") %></th>
+                                        <td>
+                                            <input type="text" id="inbound-campaign-wrap-up-time" name="campaign_wrap_up_time" class="form-control">
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <th scope="row"><%= translate("status") %></th>
+                                        <td>
+                                            <div class="btn-group ">
+                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <span id="inbound-campaign-status" data-label-placement=""></span> 
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="radio" id="inbound_campaign_status_inactive" name="inbound_campaign_status" value="inactive">
+                                                        <label for="inbound_campaign_status_inactive">inactive</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="inbound_campaign_status_active" name="inbound_campaign_status" value="active">
+                                                        <label for="inbound_campaign_status_active">active</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Description:</h4>
+
+                        <p id="inbound-campaign-description"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>History:</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-6">
+                        <button id="close-inbound-campaign-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("cancel") %></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="update-inbound-campaign-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("update") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

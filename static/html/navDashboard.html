@@ -1,0 +1,88 @@
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <input type="text" id="searchInput" class="form-control" type="search" placeholder=" " onblur="this.value=''">
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-plus fa-fw"></i>
+            <%= translate("Create") %>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li id="nav-new-account" class="hide"><a href="#accounts"><i class="fa fa-user-plus fa-fw"></i> <%= translate("newAccount") %></a></li>
+            <li id="nav-new-campaign"><a href="#campaigns"><i class="fa fa-dot-circle-o fa-fw"></i> <%= translate("newCampaign") %></a></li>
+            <li id="nav-new-contact"><a href="#contacts"><i class="fa fa-book fa-fw"></i> <%= translate("newContact") %></a></li>
+            <li id="nav-new-cube" class="hide"><a href="#cubes"><i class="fa fa-cube fa-fw"></i> <%= translate("newCube") %></a></li>
+            <li id="nav-new-gateway" class="hide"><a href="#gateways"><i class="fa fa-train fa-fw"></i> <%= translate("newGateway") %></a></li>
+            <li id="nav-new-resource" class="hide"><a href="#resources"><i class="fa fa-diamond fa-flip-vertical fa-fw"></i> <%= translate("newResource") %></a></li>
+            <li id="nav-new-task"><a href="#tasks"><i class="fa fa-plug fa-fw"></i> <%= translate("newTask") %></a></li>
+            <li id="nav-new-member" class="hide"><a href="#members"><i class="fa fa-user-plus fa-fw"></i> <%= translate("newMember") %></a></li>
+            <li id="nav-new-team" class="hide"><a href="#teams"><i class="fa fa-paw fa-fw"></i> <%= translate("newTeam") %></a></li>
+            <li id="nav-new-org"><a href="#orgs"><i class="fa fa-users fa-fw"></i> <%= translate("newOrganization") %></a>
+            </li>
+        </ul>
+    </li>
+    <!-- <li id="nav-phone">
+        <a href="#phone" title="<%= translate("phone") %>">
+            <i class="fa fa-phone fa-fw"></i>
+            <%= translate("phone") %>
+        </a>
+    </li> -->
+    <li>
+        <a data-toggle="dropdown" class="dropdown-toggle">
+            <span data-label-placement=""><i class="fa fa-user fa-fw"></i> <%= account %></span>
+        </a>
+        <ul id="account-list-ul" class="dropdown-menu">
+            <li>
+                <input type="radio" id="current_account_0" name="current_account" value="0"><label for="current_account_0"><i class="fa fa-user fa-fw"></i><%= account %></label>
+            </li>
+            <li>
+                <a href="#messages" title="<%= translate("Messages") %>">
+                    <i class="fa fa-envelope fa-fw"></i>
+                    <%= translate("Messages") %>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#orgs"><i class="fa fa-plus fa-fw"></i> <%= translate("createOrganization") %></a>
+            </li>
+            <li>
+                <a href="#settings"><i class="fa fa-users fa-fw"></i> <%= translate("manageOrganizations") %></a>
+            </li>
+            
+            <li>
+                <a href="#calendars" title="<%= translate("Calendar event") %>">
+                    <i class="fa fa-calendar-plus-o fa-fw"></i>
+                    <%= translate("Calendar event") %>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="#monitors" title="<%= translate("Monitor") %>">
+                    <i class="fa fa-line-chart fa-fw"></i>
+                    <%= translate("Campaign monitor") %>
+                </a>
+            </li> -->
+            <li>
+                <a href="#reports" title="<%= translate("Reports") %>">
+                    <i class="fa fa-pie-chart fa-fw"></i>
+                    <%= translate("Reports") %>
+                </a>
+            </li>
+            <li>
+                <a href="#settings" title="<%= translate("Settings") %>">
+                    <i class="fa fa-cog fa-fw"></i>
+                    <%= translate("Settings") %>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <input type="radio" id="current_account_admin" name="current_account" value="admin"><label for="current_account_admin"><i class="fa fa-puzzle-piece fa-fw"></i> <%= translate("systemAdmin") %></label>
+            </li>
+        </ul>      
+    </li>
+    <li>
+        <a href="#logout" title="<%= translate("Exit") %>">
+            <i class="fa fa-sign-out fa-fw"></i> 
+            <%= translate("Exit") %>
+        </a>
+    </li>
+</ul>

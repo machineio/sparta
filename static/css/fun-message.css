@@ -1,0 +1,144 @@
+.funMessage-container {
+    width: 300px;
+    position: fixed;
+}
+
+.top-right { 
+    top: 10px; 
+    right: 15px; 
+}
+
+.bottom-right { 
+    bottom: 10px;
+    right: 15px;
+}
+
+.top-left {
+    top: 10px;
+    left: 15px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 15px;
+}
+
+.top-center {
+    top: 10px;
+    left: 50%;
+    margin-left: -150px; 
+}
+
+.bottom-center {
+    bottom: 10px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.funMessage {
+    background: #DDD;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F9F9F9), color-stop(1, #D5D5D5));
+    background: -moz-linear-gradient(top, #F9F9F9, #D5D5D5);
+    background: -o-linear-gradient(#F9F9F9, #D5D5D5);	
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#D5D5D5');
+
+    width: 300px;
+    font-size: 11px;
+    color: #333; 
+
+    padding: 0;
+    margin: 0 0 10px 0;
+    border: 1px solid #A8A8A8;
+    position: relative;
+
+    -webkit-box-shadow: 0 0 7px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 7px rgba(0,0,0,.3);
+    -o-box-shadow: 0 0 7px rgba(0,0,0,.3);
+    box-shadow: 0 0 7px rgba(0,0,0,.3);
+
+    -webkit-text-shadow: 0 0 1px #FFF;
+    -moz-text-shadow: 0 0 1px #FFF;
+    -o-text-shadow: 0 0 1px #FFF;
+    text-shadow: 0 0 1px #FFF;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.funMessage h4 {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: .5em;
+
+    -webkit-text-shadow: 0 0 1px #FFF;
+    -moz-text-shadow: 0 0 1px #FFF;
+    -o-text-shadow: 0 0 1px #FFF;
+    text-shadow: 0 0 1px #FFF;
+}
+
+.funMessage-content { padding: 10px 20px 10px 10px; }
+
+.funMessage-close {
+    background: url(../images/message_close.png) no-repeat 50% 50%;
+    width: 11px;
+    height: 10px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    opacity: .4;
+}
+
+.funMessage-close:hover {
+    opacity: 1;
+    cursor: pointer; 
+}
+
+.funMessage.success .funMessage-content {
+    background: url(../images/message_success.png) no-repeat 10px 13px; 
+}
+
+.funMessage.success .funMessage-content {
+    padding-left: 50px;
+}
+
+.funMessage.success h4 {
+    color: #5B7027;
+}
+
+.funMessage.error .funMessage-content { 
+    background: url(../images/message_error.png) no-repeat 10px 13px;
+}
+
+.funMessage.error .funMessage-content {
+    padding-left: 50px;
+}
+
+.funMessage.error h4 {
+    color: #AF4434;
+}
+
+.funMessage.info .funMessage-content {
+    background: url(../images/message_info.png) no-repeat 10px 13px;
+}
+
+.funMessage.info .funMessage-content {
+    padding-left: 50px;
+}
+    
+.funMessage.info h4 { color: #316AB7; }
+
+.funMessage.warning .funMessage-content {
+    background: url(../images/message_warning.png) no-repeat 10px 13px;
+}
+
+.funMessage.warning .funMessage-content {
+    padding-left: 50px;
+}
+
+.funMessage.warning h4 {
+    color: #B69201;
+}

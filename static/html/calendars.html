@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row equal">
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("newCalendar") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-calendar fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">/</span>
+                                            <input id="calendar_name" type="text" class="form-control" placeholder="Schedule for using Beanbags and Pillows">
+                                        </div>
+                                        <p><%= translate("greatCalendarNames") %>.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="create-calendar-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCalendar") %></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportCalendars") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cloud-download fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="export-calendar-form" class="form-export" novalidate="novalidate">
+                                <p class="help-block"><%= translate("getcalendarList") %>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="pull-right form-inline">
+                <div class="btn-group">
+                    <button class="btn btn-primary-text" data-calendar-nav="prev">Previous</button>
+                    <button class="btn btn-primary" data-calendar-nav="today">Today</button>
+                    <button class="btn btn-primary-text" data-calendar-nav="next">Next</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id='test-calendar'></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills">
+                <li><a href="#all-calendars-tab" data-toggle="tab"><%= translate("allCalendars") %></a></li>
+                <li><a href="#active-calendars-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#disable-calendars-tab" data-toggle="tab"><%= translate("disable") %></a></li>
+                <li><a href="#suspended-calendars-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="all-calendars-tab"></div>
+                <div class="tab-pane" id="active-calendars-tab"></div>
+                <div class="tab-pane" id="disable-calendars-tab"></div>
+                <div class="tab-pane" id="suspended-calendars-tab"></div>
+            </div>
+        </div>
+    </div>
+</div>

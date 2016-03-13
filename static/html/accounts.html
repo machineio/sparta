@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row equal">
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("newAccount") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-user-secret fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">/</span>
+                                            <input id="account_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
+                                        </div>
+                                        <p><%= translate("greatAccountNames") %>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="account_description"><%= translate("descriptionOptional") %></label>
+                                    <input type="text" id="account_description" name="account_description" class="form-control">
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
+                                        <%= translate("user") %>
+                                    </label>
+                                    <!-- <span class="mega-octicon octicon-repo"></span> -->
+
+                                    <span class="note">
+                                        Anyone can see this account. You choose who can send messages.
+                                    </span>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <label>
+                                        <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
+                                        <%= translate("organization") %>
+                                    </label>
+                                    <!-- <span class="mega-octicon octicon-lock"></span> -->
+                                    <span class="note">
+                                        <%= translate("youChooseWhoUseAccount") %>.
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="create-account-btn" class="btn btn-success btn-block" type="submit"><%= translate("createAccount") %></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportAccounts") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cloud-download fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="export-account-form" class="form-export" novalidate="novalidate">
+                                <p class="help-block"><%= translate("getAccountList") %>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills">
+                <li><a href="#all-accounts-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#active-accounts-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#users-accounts-tab" data-toggle="tab"><%= translate("users") %></a></li>
+                <li><a href="#organizations-accounts-tab" data-toggle="tab"><%= translate("organizations") %></a></li>
+                <li><a href="#disable-accounts-tab" data-toggle="tab"><%= translate("disable") %></a></li>
+                <li><a href="#suspended-accounts-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="all-accounts-tab"></div>
+                <div class="tab-pane" id="active-accounts-tab"></div>
+                <div class="tab-pane" id="users-accounts-tab"></div>
+                <div class="tab-pane" id="organizations-accounts-tab"></div>
+                <div class="tab-pane" id="disable-accounts-tab"></div>
+                <div class="tab-pane" id="suspended-accounts-tab"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,175 @@
+fun.views.members = Backbone.View.extend({
+
+    /*
+    * Bind the event functions to the different HTML elements
+    */
+    events: {
+        'click #new-member-btn': 'addMember',
+        'click .delete-member-popup': 'deleteMember',
+    },
+
+    /*
+    * Class constructor
+    */
+    initialize: function(options){
+        fun.containers.members = this.$el;
+        this.account = localStorage.getItem("username");
+        this.context = sessionStorage.getItem("context");
+    },
+
+    /*
+    * Render view
+    */
+    render: function(org){
+        'use strict';
+        var data,
+            context,
+            template;
+
+        console.log('render members view');
+
+        context = this.context;
+
+        if (org) {
+            this.members = org.get("members");
+        }
+
+        data = {
+            'org': context,
+            'name': false,
+            'description': false,
+            'email': 'example@example.com',
+            'location': 'Jupyter',
+            'uri': 'http://iofun.io'
+        };
+
+        template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.members)
+        )(data);
+
+        this.$el.html(template);
+        this.membersList = this.$('#members-list');
+        this.$el.removeClass("hide").addClass("show");
+        this.renderMemberRows();
+    },
+
+    /*
+    * Render member rows
+    */
+    renderMemberRows: function(){
+        'use strict';
+        
+        var i = 0,
+            length,
+            memberData,
+            itemData,
+            itemTemplate;
+
+        length = this.members.length;
+
+        if (length > 0){
+
+            // da fuq dude?
+            for ( i; i < length; ++i ) {
+
+                memberData = {
+                    'member': this.members[i]
+                };
+
+                itemData = _.extend(memberData, {i:i+1});
+
+                itemTemplate = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.memberRow)
+                )(itemData);
+
+                this.membersList.append(itemTemplate);
+            }
+        }
+    },
+
+    /*
+    * Add member
+    */
+    addMember: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+            account,
+            context,
+            membership,
+            addUsername,
+            membershipPayload,
+            rules,
+            validationRules,
+            validForm,
+            form;
+
+        console.log("new member event");
+        form = $('#add-member-form');
+
+        rules = {
+            rules: {
+                add_username: {
+                    minlength: 3,
+                    required: true
+                }
+            }
+        };
+
+        validationRules = $.extend(rules, fun.utils.validationRules);
+        form.validate(validationRules);
+        validForm = form.valid();
+        if(validForm){
+            this.addUsername = this.$('#add_username');
+            account = this.account;
+            context = this.context;
+            addUsername = this.addUsername.val();
+            console.log(account, context, addUsername);
+            
+            membershipPayload = {
+                username: addUsername,
+                role: 'member'
+            };
+
+            if (account != undefined & addUsername != undefined){
+                membershipPayload['account'] = account;
+            }
+
+            membership = new fun.models.PutMembership({org:this.context});
+            membership.save(membershipPayload, {put: true});
+
+            // Clear the stuff from input
+            view.$('#add_username').val('');
+
+
+        }
+    },
+
+    /*
+    * Delete member
+    */
+    deleteMember: function(event){
+        'use strict';
+        event.preventDefault();
+        var username,
+            uuid,
+            membership;
+
+        // get the name of the element targeted by this event
+        username = $(event.target).data('name');
+
+        uuid = $(event.target).data('uuid');
+
+        console.log('antes', username, uuid);
+
+        membership = new fun.models.Membership({
+            uuid: uuid,
+            username: username,
+            org: this.context
+        });
+
+        membership.destroy();
+
+        console.log('despues');
+    }
+});

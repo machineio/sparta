@@ -1,0 +1,535 @@
+
+/*------------------------------------------------------------------
+
+[Layout Stylesheet]
+
+    Project:        Seed
+    Version:        1.0
+
+
+[Table of contents]
+
+    1. Global
+    2. Navbar
+    3. Landing
+    4. Dashboard
+    4. Content
+    6. Extra
+    7. Footer
+    8. Subpage
+    9. Subheader
+    10. Side bar
+    11. Social
+    12. Circle
+    13. Round Image
+    14. Miscellaneous
+
+
+-------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------
+[1. Global]
+*/
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    font: 13px/1.7em 'Open Sans';
+    background-color: #FFF;
+}
+
+p {
+    margin-bottom: 1.7em;
+    font: 14px/1.7em 'Open Sans';
+}
+
+ul {
+    margin-bottom: 1.7em;
+}
+
+h1, h2, h3, 
+h4, h5, h6 {
+    margin-bottom: .85em;
+}
+
+h3, h4, h6 {
+    margin-bottom: 1.15em;
+}
+    
+input,
+button,
+select,
+textarea {
+    font-family: 'Open Sans';
+}
+
+
+
+/*------------------------------------------------------------------
+[2. Navbar / .navbar]
+*/
+
+.navbar {
+    margin-bottom: 0;
+
+    border: none;
+    border-bottom: 1px solid #666;
+}
+
+.navbar-fixed-top {
+    position: static;
+}
+
+.navbar-inner {
+    padding: 15px 0 12px;
+
+    background: #292929 url(../img/header-bg.jpg) repeat 0 0;
+    filter: none;
+
+    border-bottom: 1px solid #111;
+
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar .container {
+    position: relative;
+}
+
+.navbar-small-brand {
+    display: block;
+    width: 34px;
+    height: 34px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 2px;
+    margin-left: 10px;
+    overflow: hidden;
+
+    line-height: 600px;
+    color: #333;
+    background: url(../img/logo.png) no-repeat 0 0;
+}
+
+.navbar-brand {
+    display: block;
+    width: 130px;
+    height: 34px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 2px;
+    margin-left: 10px;
+    overflow: hidden;
+
+    line-height: 600px;
+    color: #333;
+    background: url(../img/logo.png) no-repeat 0 0;
+}
+
+.fun-brand {
+    display: block;
+    width: 130px;
+    height: 34px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 2px;
+    margin-left: 10px;
+    overflow: hidden;
+
+    line-height: 600px;
+    color: #333;
+    background: url(../img/miniLogo.png) no-repeat 0 0;
+}
+
+.navbar .navbar-brand {
+    position: relative;
+    top: 5px;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+.navbar .nav > li > a {
+    font-size: 14px;
+    font-weight: normal;
+    
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+.navbar .nav > li > a:hover {
+    color: #BBB;
+}
+
+.navbar .nav > li.active > a,
+.navbar .nav > li.active > a:hover {
+    background: transparent;
+    color: #81994D;
+}
+
+.jumbotron p.text-muted {
+    font-size: 14px;
+}
+
+.nav-tabs {
+    margin-bottom: 1.7em;
+}
+
+.dropdown-menu li label {
+    color: #777;
+    padding: 5px 15px 5px 25px;
+    line-height: 20px;
+}
+
+.dropdown-menu li label .fa{
+    font-size: 17px !important;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: inherit;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: inherit;
+}
+
+.navbar-toggle {
+    border: none !important;
+}
+
+/*------------------------------------------------------------------
+[3. Landing / #landing]
+*/
+
+#landing {
+    height: auto;
+
+    border: none;
+
+    overflow: hidden;
+}
+
+#landing .inner {
+    color: #FFF;
+
+    background: #98B740;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+
+#landing .container {
+    padding-top: 30px;
+}
+
+
+/*------------------------------------------------------------------
+[4.  Dashboard / #dashboard]
+*/
+
+
+#flotTip {
+    background-color: #222222 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 3px 3px 3px 3px !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset;
+    color: #FFFFFF !important;
+    font-size: 11px !important;
+    padding: 3px 6px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+}
+.chart-holder {
+    height: 325px;
+    width: 100%;
+}
+.clear {
+    clear: both;
+}
+
+
+/*------------------------------------------------------------------
+[5. Content / #content]
+*/
+
+#content {  
+    border: none;
+}
+
+#content .inner {
+    min-height: 400px;
+    padding-top: 0;
+    padding-bottom: 2em;
+
+
+    background: #fff;
+}
+
+#content .container {
+    padding-top: 3em;
+
+    border-top: 8px solid #81994D;
+}
+
+
+/*------------------------------------------------------------------
+[6. Extra / #extra]
+*/
+
+.marketing-header {
+    text-align: center;
+}
+
+/* Center align the text within the three columns below the marketing header */
+.marketing .col-md-6 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-md-6 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+#extra {    
+    border-top: 1px solid #000;
+}
+
+#extra .inner { 
+    color: #fff;
+    
+    background-color: #222;
+    
+    border-top: 1px solid #555;
+}
+
+.vcard-stat {
+    float: left;
+    width: 33.333%;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.vcard-username {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #666;
+    text-overflow: ellipsis;
+}
+
+.vcard-fullname {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    font-size: 26px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+}
+
+.vcard-names {
+    margin-top: 5px;
+    line-height: 1;
+}
+
+.vcard-details {
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid #eee;
+}
+
+.vcard-stats {
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.vcard-stat-count {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* repo list */
+
+.repolist {
+    padding-top: 10px;
+}
+
+.repolist > li {
+    position: relative;
+    min-height: 66px;
+    padding-left: 45px;
+    padding-bottom: 20px;
+    margin: 0 0 20px;
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+.repolist .repolist-icon {
+    float: left;
+    margin-left: -45px;
+    text-align: center;
+    width: 35px;
+    color: #bbb;
+}
+
+/* blankslate state */
+.blankslate {
+    position: relative;
+    padding: 64px;
+    margin-bottom: 1.7em;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+
+/*------------------------------------------------------------------
+[7. Footer / #footer]
+*/
+ 
+
+
+#footer {
+    border-top: 1px solid #000;
+    bottom: 0;
+}
+
+#footer .inner {
+    padding: 20px 0;
+
+    color: #fff;
+    
+    background-color: #111;
+
+    border-top: 1px solid #222;
+}
+
+#footer h3 { 
+    font-weight: 400;
+}
+
+.footer-links {
+    width: 49%;
+    display: inline-block;
+    margin: 0;
+
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 1.25em;
+}
+
+.footer-links a {
+    color: #777;
+}
+
+
+
+/*------------------------------------------------------------------
+[8. Subpge / #subpage]
+*/
+
+#subpage {
+    margin-top: 3em;
+    
+    margin-bottom: 2.5em;
+}
+
+
+
+/*------------------------------------------------------------------
+[9. Subheader / #subheader]
+*/
+
+#subheader {
+    color: #EEE;
+
+    background: #444;
+
+    border-bottom: 1px solid #222;
+}
+
+#subheader .inner {
+    padding: 20px 0;
+}
+
+#subheader h1
+, #subheader h2
+, #subheader h3
+, #subheader h4
+, #subheader h5
+, #subheader h6 {
+    margin-bottom: 0;
+
+    font-size: 27px;
+    font-weight: 400;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+
+
+
+/*------------------------------------------------------------------
+[10. Sidebar Container]
+*/
+
+.sidebar {
+    padding: 15px;
+
+    background: #EEE;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
+/*------------------------------------------------------------------
+[11. Social Icons]
+*/
+
+.social-icons-container {
+    width: 100%;
+    display: table;
+    padding: 0;
+    margin: 2.5em 0 0;
+
+    list-style: none;
+}
+
+.social-icons-container li {
+    width: 33%;
+    display: table-cell;
+
+    text-align: center;
+}
+
+.error {
+    background-color: #da547b;
+    background-image: none;
+    color: #FFFFFF;
+}
+
+.margin-signin {
+    margin-top: 86px;
+
+}

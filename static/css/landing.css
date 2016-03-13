@@ -1,0 +1,106 @@
+.navbar-toggle .fa {
+    color: #FFFFFF !important;
+}
+
+.landing-text h1 {
+    margin-bottom: .65em;
+
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+
+.landing-text p {
+    font-size: 13px;
+    line-height: 2em;
+}
+
+.landing-actions {
+    margin-top: 2em;
+}
+
+.landing-actions .btn {
+    padding: 12px 19px;
+    margin-right: .5em;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+@media (min-width: 1200px) {
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+    
+    .landing-text h1 {
+        margin-bottom: .65em;
+    
+        font-size: 36px;    
+        font-weight: 600;
+        line-height: 1.5em;
+    }
+        
+    .landing-text p {
+        font-size: 15px;
+    }
+    
+}
+
+
+@media (min-width: 767px) and (max-width: 979px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+    
+    .landing-text h1 {  
+        font-size: 18px;    
+        font-weight: 600;
+        line-height: 1.5em;
+    }
+    
+    .landing-text p {
+        font-size: 11px;
+        line-height: 2em;
+    }
+    
+    .landing-actions .btn {
+        padding: 9px 9px;
+        margin-right: .25em;
+        
+        font-size: 13px;
+    }
+    
+    .landing-actions {
+        margin-top: 1.5em;
+    }   
+    
+
+}
+
+
+@media (max-width: 767px) {
+
+    html, body {
+      width: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    .navbar-brand {
+        margin-top: 7% !important;
+        margin-left: 5% !important;
+    }
+
+    .landing-actions {
+        margin: 3.5em 0;
+        
+        text-align: center;
+    }
+    
+    .landing-actions .btn {
+        padding: 9px 13px;
+    }
+
+}

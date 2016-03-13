@@ -1,0 +1,2326 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#agentLayout" role="tab" data-toggle="tab">
+            <icon class="fa fa-user"></icon> Customer Info
+        </a>
+    </li>
+    <li class="contactSpouseInfoTab" class="hide">
+        <a href="#contactSpouseInfo" role="tab" data-toggle="tab">
+            <i class="fa fa-envelope"></i> Contact Spouse Info
+        </a>
+    </li>
+    <li class="childrenInfoTab" class="hide">
+        <a href="#childrenInfo" role="tab" data-toggle="tab">
+            <i class="fa fa-envelope"></i> Children Info
+        </a>
+    </li>
+    <li id="healthInsuranceTab" class="hide">
+        <a href="#healthInsurance" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Health Insurance
+        </a>
+    </li>
+    <li id="homeOwnersInsuranceTab" class="hide">
+        <a href="#homeOwnersInsurance" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Homeowner's Insurance
+        </a>
+    </li>
+    <li id="automobileInsuranceTab" class="hide">
+        <a href="#automobileInsurance" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Automobile Insurance
+        </a>
+    </li>
+    <li id="lifeInsuranceTab" class="hide">
+        <a href="#lifeInsurance" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Life Insurance
+        </a>
+    </li>
+    <li id="ancilliaryInsuranceTab" class="hide">
+        <a href="#ancilliaryInsurance" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Ancillary Insurance
+        </a>
+    </li>
+    <li id="paymentInfoTab" class="hide">
+        <a href="#paymentInfo" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Payment Information
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="agentLayout">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("firstName") %></th>
+                                <td>
+                                    <input type="text" id="contact-first-name" name="agent_first_name" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("lastName") %></th>
+                                <td>
+                                    <input type="text" id="contact-last-name" name="agent_last_name" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("phone") %></th>
+                                <td>
+                                    <input type="text" id="contact-phone-number" name="agent_phone" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("cellPhone") %></th>
+                                <td>
+                                    <input type="text" id="contact-cellphone" name="agent_cellphone" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("email") %></th>
+                                <td>
+                                    <input type="text" id="contact-email" name="contact_email" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("otherPhone") %></th>
+                                <td>
+                                    <input type="text" id="contact-other-phone" name="agent_other_phone" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("dateOfBirth") %></th>
+                                <td>
+                                    <input type="text" id="contact-date-of-birth" name="contact-date-of-birth" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("gender") %></th>
+                                <td>
+                                    <input type="text" id="contact-gender" name="contact-gender" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("maritalStatus") %></th>
+                                <td>
+                                    <select id="contact-marital-status" class="form-control">
+                                        <option value="none" selected="selected"></option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("numberOfChildren") %></th>
+                                <td>
+                                    <select id="contact-number-of-children" class="form-control">
+                                        <option value="0" selected="selected">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("socialSecurityNumber") %></th>
+                                <td>
+                                    <input type="text" id="contact-social-security-number" name="agent_social_security_number" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("propertyAddress") %></th>
+                                <td>
+                                    <input type="text" id="contact-property-address" name="agent_property_address" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("state") %></th>
+                                <td>
+                                    <input type="text" id="contact-state" name="agent_state" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("city") %></th>
+                                <td>
+                                    <input type="text" id="contact-city" name="agent_city" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("zipCode") %></th>
+                                <td>
+                                    <input type="text" id="contact-zip-code" name="agent_zip_code" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("mailingAddressDifferent") %></th>
+                                <td>
+                                    <select id="mailing-address-different" class="form-control">
+                                        <option value="false" selected="selected">NO</option>
+                                        <option value="true">YES</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="mailingAddressDifferentDiv" class="hide">
+                                <th scope="row"><%= translate("mailingAddress") %></th>
+                                <td>
+                                    <input type="text" id="contact-mailing-address" name="agent_mailing_address" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("county") %></th>
+                                <td>
+                                    <input type="text" id="contact-county" name="agent_country" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("marketplaceEmail") %></th>
+                                <td>
+                                    <input type="text" id="contact-marketplace-email" name="agent_marketplace_email" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("languagePreference") %></th>
+                                <td>
+                                    <input type="text" id="contact-language-preference" name="agent_language_preference" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><%= translate("writingAgent") %></th>
+                                    <td>
+                                        <input type="text" id="contact-contact-writing-agent" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("leadSource") %></th>
+                                    <td>
+                                        <input type="text" id="contact-lead-source" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("partner") %></th>
+                                    <td>
+                                        <input type="text" id="contact-partner" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("lastModifiedBy") %></th>
+                                    <td>
+                                        <input type="text" id="contact-last-modified-by" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("healthInsurance") %></th>
+                                    <td>
+                                        <select id="contact-health-insurance-checkbox" class="form-control">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("homeInsurance") %></th>
+                                    <td>
+                                        <select id="contact-home-insurance-checkbox" class="form-control">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("autoInsurance") %></th>
+                                    <td>
+                                        <select id="contact-auto-insurance-checkbox" class="form-control">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("lifeInsurance") %></th>
+                                    <td>
+                                        <select id="contact-life-insurance-checkbox" class="form-control">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("ancilliaryInsurance") %></th>
+                                    <td>
+                                        <select id="contact-ancilliary-insurance-checkbox" class="form-control">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("otherPolicySold") %></th>
+                                    <td>
+                                        <input type="text" id="contact-contact-other-policy-sold" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("dentalLeadStatus") %></th>
+                                    <td>
+                                        <input type="text" id="contact-contact-dental-lead-status" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("federalDoNotCall") %></th>
+                                    <td>
+                                        <input type="text" id="contact-contact-federal-do-not-call" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("doYouOwnYourHome") %></th>
+                                    <td>
+                                        <input type="text" id="contact-do-you-own-your-home" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("renewAsIsEmailReceived") %></th>
+                                    <td>
+                                        <input type="text" id="contact-renew-as-is-email-received" class="form-control">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="contactSpouseInfo">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseFirstName") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-first-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseLastName") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-last-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseGender") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-gender" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseDob") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-dob" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("doYouHaveSocialSecurityNumber") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-do-you-have-a-social-security-number" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseSocial") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-social" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseIncomeSource") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-income-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseYearlyIncome") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-yearly-income" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseEmployersName") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-employers-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseEmployersPhoneNumber") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-employers-phone-number" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="childrenInfo">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <div id="childrenInfoGroup-1" class="hide">
+                                <tr>
+                                     <th scope="row"><%= translate("child1Name") %></th>
+                                     <td>
+                                          <input type="text" id="child-1-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child1Dob") %></th>
+                                     <td>
+                                          <input type="text" id="child-1-dob" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child1Gender") %></th>
+                                     <td>
+                                          <input type="text" id="child-1-gender" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child1Social") %></th>
+                                     <td>
+                                          <input type="text" id="child-1-social" class="form-control">
+                                     </td>
+                                </tr>
+                            </div>
+                            <div id="childrenInfoGroup-2" class="hide">
+                                <tr>
+                                     <th scope="row"><%= translate("child2Name") %></th>
+                                     <td>
+                                          <input type="text" id="child-2-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child2Dob") %></th>
+                                     <td>
+                                          <input type="text" id="child-2-dob" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child2Gender") %></th>
+                                     <td>
+                                          <input type="text" id="child-2-gender" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child2Social") %></th>
+                                     <td>
+                                          <input type="text" id="child-2-social" class="form-control">
+                                     </td>
+                                </tr>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <div id="childrenInfoGroup-3" class="hide">
+                                <tr>
+                                     <th scope="row"><%= translate("child3Name") %></th>
+                                     <td>
+                                          <input type="text" id="child-3-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child3Dob") %></th>
+                                     <td>
+                                          <input type="text" id="child-3-dob" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child3Gender") %></th>
+                                     <td>
+                                          <input type="text" id="child-3-gender" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child3Social") %></th>
+                                     <td>
+                                          <input type="text" id="child-3-social" class="form-control">
+                                     </td>
+                                </tr>
+                            </div>
+                            <div id="childrenInfoGroup-4" class="hide">
+                                <tr>
+                                     <th scope="row"><%= translate("child4Name") %></th>
+                                     <td>
+                                          <input type="text" id="child-4-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child4Dob") %></th>
+                                     <td>
+                                          <input type="text" id="child-4-dob" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child4Gender") %></th>
+                                     <td>
+                                          <input type="text" id="child-4-gender" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("child4Social") %></th>
+                                     <td>
+                                          <input type="text" id="child-4-social" class="form-control">
+                                     </td>
+                                </tr>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="healthInsurance">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                <td>
+                                    <input type="text" id="contact-contact-auto-priority-code" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("leadType") %></th>
+                                <td>
+                                    <select id="contact-lead-type" class="form-control">
+                                        <option value="none" selected="selected"></option>
+                                        <option value="healthinsurance">Health Insurance</option>
+                                        <option value="homeownersInsurance">Homeowners Insurance</option>
+                                        <option value="autoInsurance">Auto Insurance</option>
+                                        <option value="lifeInsurance">Life Insurance</option>
+                                        <option value="ancilliary">Ancilliary</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("priorityCode") %></th>
+                                 <td>
+                                      <input type="text" id="health-priority-code" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("leadSource") %></th>
+                                 <td>
+                                      <input type="text" id="health-lead-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("partner") %></th>
+                                 <td>
+                                      <input type="text" id="health-partner" name="contact_country" class="form-control">
+                                 </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><%= translate("healthLeadStatus") %></th>
+                                <td>
+                                    <select id="health-lead-status" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="presold">Presold</option>
+                                        <option value="enrolled">Enrolled</option>
+                                        <option value="bound">Bound</option>
+                                        <option value="active">Active</option>
+                                        <option value="submitted">Submitted</option>
+                                        <option value="sold">Sold</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("healthWritingAgent") %></th>
+                                 <td>
+                                      <input type="text" id="health-writing-agent" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("usCitizenOrLegalPermanentResident") %></th>
+                                 <td>
+                                      <input type="text" id="health-us-citizen-or-legal-permanent-resident " name="contact_country" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("writingAgent") %></th>
+                                 <td>
+                                      <input type="text" id="health-writing-agent" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("scrubber") %></th>
+                                 <td>
+                                      <input type="text" id="health-scrubber" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>2016 Processed Information</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("renewalSource2016") %></th>
+                                <td>
+                                    <input type="text" id="contact-renewal-source-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("renewalAgent2016") %></th>
+                                <td>
+                                    <input type="text" id="contact-renewal-contact-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("presoldProcessor2016") %></th>
+                                <td>
+                                    <input type="text" id="contact-presold-processor-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("applicationNumber2016") %></th>
+                                <td>
+                                    <input type="text" id="health-application-#-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("effectiveDate2016") %></th>
+                                <td>
+                                    <input type="text" id="health-effective-date-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("marketplacePolicy2016") %></th>
+                                <td>
+                                    <input type="text" id="health-marketplace-policy-2016" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("totalIncomeUsedOnApplication") %></th>
+                                <td>
+                                    <input type="text" id="health-total-income-used-on-application" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("finalGrossPremium2016") %></th>
+                                <td>
+                                    <input type="text" id="health-final-gross-premium-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("finalSubsidy2016") %></th>
+                                <td>
+                                    <input type="text" id="health-final-subsidy-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("heatlhPlan2016") %></th>
+                                <td>
+                                    <input type="text" id="heatlh-plan-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("finalPremiumAfterSubsidy2016") %></th>
+                                <td>
+                                    <input type="text" id="health-final-premium-after-subsidy-2016" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("verificationDocumentsNeeded2016") %></th>
+                                <td>
+                                    <input type="text" id="health-verification-documents-needed-2016" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>2016 Plan Selection</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("adultsApplyingForCoverage2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-adults-applying-for-coverage-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("totalHouseholdSize2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-total-household-size-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("cloudGrossPremium2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-cloud-gross-premium-2016" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("childrenApplyingForCoverage2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-children-applying-for-coverage-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("cloudSubsidy2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-cloud-subsidy-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("cloudPremiumAfterSubsidy2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-cloud-premium-after-subsidy-2016" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>2015 Contact Info</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("leadHasAMarketplaceAccount") %></th>
+                                 <td>
+                                      <input type="text" id="health-lead-has-a-marketplace-account" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentCoverage") %></th>
+                                 <td>
+                                      <input type="text" id="health-current-coverage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("marketplaceAppID2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-marketplace-app-id-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentPremium") %></th>
+                                 <td>
+                                      <input type="text" id="health-current-premium" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("subsidyAmount") %></th>
+                                 <td>
+                                      <input type="text" id="health-subsidy-amount" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentNetPremium") %></th>
+                                 <td>
+                                      <input type="text" id="health-current-net-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("effectiveDate2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-effective-date-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("homeLeadStatus") %></th>
+                                 <td>
+                                      <input type="text" id="health-contact-home-lead-status" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>2015 Plan Selection</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("applicationId2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-application-id-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("healthPremium2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-premium-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("healthCarrier2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-carrier-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("subsidy2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-subsidy-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("adultsOnPlan2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-adult-on-plan-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("childrenOnPlan2015") %></th>
+                                 <td>
+                                      <input type="text" id="health-children-on-plan-2015" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("incomeVerificationNeeded") %></th>
+                                 <td>
+                                      <input type="text" id="health-income-verification-needed" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("citizenshipDocumentsNeeded") %></th>
+                                 <td>
+                                      <input type="text" id="health-citizenship-documents-needed" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("username") %></th>
+                                 <td>
+                                      <input type="text" id="health-username" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("password") %></th>
+                                 <td>
+                                      <input type="text" id="health-password" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("healthPolicy") %></th>
+                                 <td>
+                                      <input type="text" id="health-policy" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("agentCode") %></th>
+                                 <td>
+                                      <input type="text" id="health-contact-code" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("wantsToRenewSamePlanFor2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-wants-to-renew-same-plan-for-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedRenewalGrossPremium2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-quoted-renewal-gross-premium-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedRenewalSubsidy2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-quoted-renewal-subsidy-2016" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedRenewalNetPremium2016") %></th>
+                                 <td>
+                                      <input type="text" id="health-quoted-renewal-net-premium-2016" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Current Job Income Info</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("totalIndividualIncome") %></th>
+                                 <td>
+                                      <input type="text" id="health-total-individual-income" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("totalHouseholdIncome") %></th>
+                                 <td>
+                                      <input type="text" id="health-total-household-income" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("primaryApplicantsIncomeSource") %></th>
+                                 <td>
+                                      <input type="text" id="health-primary-applicants-income-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("primaryApplicantsEmployersName") %></th>
+                                 <td>
+                                      <input type="text" id="health-primary-applicants-employers-name" name="primary_applicants_employers_name" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("applicantEmployersPhoneNumber") %></th>
+                                 <td>
+                                      <input type="text" id="health-applicant-employers-phone-number" name="applicant_employers_phone_number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("maritalStatus") %></th>
+                                 <td>
+                                      <input type="text" id="health-marital-status" name="marital_status" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("numberOfDependentChildrenInHouse") %></th>
+                                 <td>
+                                      <input type="text" id="health-number-of-dependent-children-in-house" name="number_of_dependent_children_in_house" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="homeOwnersInsurance">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("priorityCode") %></th>
+                                 <td>
+                                      <input type="text" id="home-priority-code" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("leadSource") %></th>
+                                 <td>
+                                      <input type="text" id="home-lead-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("partner") %></th>
+                                 <td>
+                                      <input type="text" id="home-partner" name="contact_country" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("homeInsurancePolicyNumber") %></th>
+                                 <td>
+                                      <input type="text" id="home-insurance-policy-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("writingAgent") %></th>
+                                 <td>
+                                      <input type="text" id="home-writing-agent" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("scrubber") %></th>
+                                 <td>
+                                      <input type="text" id="home-scrubber" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("homeLeadStatus") %></th>
+                                <td>
+                                    <select id="home-lead-status" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="presold">Presold</option>
+                                        <option value="enrolled">Enrolled</option>
+                                        <option value="bound">Bound</option>
+                                        <option value="active">Active</option>
+                                        <option value="submitted">Submitted</option>
+                                        <option value="sold">Sold</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("newPurchase") %></th>
+                                <td>
+                                    <input type="text" id="home-new-purchase" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("homeExpDateClosingDate") %></th>
+                                <td>
+                                    <input type="text" id="home-exp-date-closing-date" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("occupancyStatus") %></th>
+                                <td>
+                                    <input type="text" id="home-occupancy-status" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("typeOfDwelling") %></th>
+                                 <td>
+                                      <input type="text" id="home-type-of-dwelling" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentHomeCarrier") %></th>
+                                 <td>
+                                      <input type="text" id="home-current-home-carrier" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentHomePremium") %></th>
+                                 <td>
+                                      <input type="text" id="home-current-home-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentDwellingCoverage") %></th>
+                                 <td>
+                                      <input type="text" id="home-current-dwelling-coverage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("yearBuilt") %></th>
+                                 <td>
+                                      <input type="text" id="home-year-built" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("squareFtUnderAir") %></th>
+                                 <td>
+                                      <input type="text" id="home-square-ft-under-air" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("garage") %></th>
+                                 <td>
+                                      <input type="text" id="home-garage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("constructionType") %></th>
+                                 <td>
+                                      <input type="text" id="home-construction-type" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("stories") %></th>
+                                 <td>
+                                      <input type="text" id="home-stories" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("numberOfStoriesInTheBuilding") %></th>
+                                 <td>
+                                      <input type="text" id="home-number-of-stories-in-the-building" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("whatFloorIsCondoOn") %></th>
+                                 <td>
+                                      <input type="text" id="home-what-floor-number-is-condo-on" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quoteUpdateRequest,") %></th>
+                                 <td>
+                                      <input type="text" id="home-quote-update-request" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("homePolicyEffectiveDate") %></th>
+                                 <td>
+                                      <input type="text" id="home-policy-effective-date" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("fourPointIfApplicable") %></th>
+                                 <td>
+                                      <input type="text" id="home-four-point-if-applicable" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedHomeCompany") %></th>
+                                 <td>
+                                      <input type="text" id="home-quoted-home-company" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("windMit") %></th>
+                                 <td>
+                                      <input type="text" id="home-wind-mit" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("ageRoof") %></th>
+                                 <td>
+                                      <input type="text" id="home-age-roof" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("roofMaterial") %></th>
+                                 <td>
+                                      <input type="text" id="home-roof-material" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bathrooms") %></th>
+                                 <td>
+                                      <input type="text" id="home-bathrooms" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("dog") %></th>
+                                 <td>
+                                      <input type="text" id="home-dog" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("pool") %></th>
+                                 <td>
+                                      <input type="text" id="home-pool" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("fenceOrScreenEnclosure") %></th>
+                                 <td>
+                                      <input type="text" id="home-fence-or-screen-enclosure" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bankrupcyOrForeclosureInThePastFiveYears") %></th>
+                                 <td>
+                                      <input type="text" id="home-bankrupcy-or-Foreclosure-in-the-past-five-years" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("centrallyMonitoredAlarm") %></th>
+                                 <td>
+                                      <input type="text" id="home-centrally-monitored-alarm" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("gatedCommunity") %></th>
+                                 <td>
+                                      <input type="text" id="home-gated-community" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("howManyClaimsInTheLastFiveYears") %></th>
+                                 <td>
+                                      <input type="text" id="home-how-many-claims-in-the-last-five-Years" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("realtorMortgageBroker") %></th>
+                                 <td>
+                                      <input type="text" id="home-realtor-mortgage-broker" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("amountOfPersonalProperty") %></th>
+                                 <td>
+                                      <input type="text" id="home-amount-of-personal-property" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedHomePremium") %></th>
+                                 <td>
+                                      <input type="text" id="home-quoted-home-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedHomeNumber") %></th>
+                                 <td>
+                                      <input type="text" id="home-quoted-home-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("HomePaymentOption") %></th>
+                                 <td>
+                                      <input type="text" id="home-payment-option" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("mortgageClauseNew") %></th>
+                                 <td>
+                                      <input type="text" id="home-mortgage-clause-new" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("loanNumber") %></th>
+                                 <td>
+                                      <input type="text" id="home-loan-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("homeInsuranceCarrier") %></th>
+                                 <td>
+                                      <input type="text" id="home-insurance-carrier" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("homeInsurancePremium") %></th>
+                                 <td>
+                                      <input type="text" id="home-insurance-premium" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="automobileInsurance">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("priorityCode") %></th>
+                                 <td>
+                                      <input type="text" id="auto-priority-code" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("leadSource") %></th>
+                                 <td>
+                                      <input type="text" id="auto-lead-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("partner") %></th>
+                                 <td>
+                                      <input type="text" id="auto-partner" name="contact_country" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoInsurancePolicy") %></th>
+                                 <td>
+                                      <input type="text" id="auto-insurance-policy-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("autoLeadStatus") %></th>
+                                <td>
+                                    <select id="auto-lead-status" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="presold">Presold</option>
+                                        <option value="enrolled">Enrolled</option>
+                                        <option value="bound">Bound</option>
+                                        <option value="active">Active</option>
+                                        <option value="submitted">Submitted</option>
+                                        <option value="sold">Sold</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("writingAgent") %></th>
+                                 <td>
+                                      <input type="text" id="auto-writing-agent" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("scrubber") %></th>
+                                 <td>
+                                      <input type="text" id="auto-scrubber" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("currentAutoCarrier") %></th>
+                                <td>
+                                    <input type="text" id="auto-current-auto-carrier" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("expirationDate") %></th>
+                                <td>
+                                    <input type="text" id="auto-expiration-date" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("currentAutoPremium") %></th>
+                                <td>
+                                    <input type="text" id="auto-current-auto-premium" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("currentResidenceType") %></th>
+                                 <td>
+                                      <input type="text" id="auto-current-residence-type" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("driverOneLicense") %></th>
+                                 <td>
+                                      <input type="text" id="auto-driver-one-license-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleOneVin") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-one-vin" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleOneYear") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-one-year" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleOneMake") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-one-make" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleOneModel") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-one-model" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("driverTwoLicense") %></th>
+                                 <td>
+                                      <input type="text" id="auto-driver-two-license-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoVin") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-two-vin" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoYear") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-two-year" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoMake") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-two-make" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoModel") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-two-model" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bodilyInjuryLiability") %></th>
+                                 <td>
+                                      <input type="text" id="auto-bodily-injury-liability" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("propertyDamage") %></th>
+                                 <td>
+                                      <input type="text" id="auto-property-damage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("uninsuredMotoristLiability") %></th>
+                                 <td>
+                                      <input type="text" id="auto-uninsured-motorist-liability" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("medicalPayments") %></th>
+                                 <td>
+                                      <input type="text" id="auto-medical-payments" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("bodilyInjuryLiability") %></th>
+                                 <td>
+                                      <input type="text" id="auto-bodily-injury-liability" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("propertyDamage") %></th>
+                                 <td>
+                                      <input type="text" id="auto-property-damage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("uninsuredMotoristLiability") %></th>
+                                 <td>
+                                      <input type="text" id="auto-uninsured-motorist-liability" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("medicalPayments") %></th>
+                                 <td>
+                                      <input type="text" id="auto-medical-payments" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("vehicleOneCompDed") %></th>
+                                <td>
+                                    <input type="text" id="auto-vehicle-one-comp-ded" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("vehicleOneCollisionDed") %></th>
+                                <td>
+                                    <input type="text" id="auto-vehicle-1-collision-ded" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("autoOneTowing") %></th>
+                                <td>
+                                    <input type="text" id="auto-1-towing" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoOneRentalCar") %></th>
+                                 <td>
+                                      <input type="text" id="auto-1-rental-car" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoCompDed") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-2-comp-ded" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("vehicleTwoCollisionDed") %></th>
+                                 <td>
+                                      <input type="text" id="auto-vehicle-2-collision-ded" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoTwoTowing") %></th>
+                                 <td>
+                                      <input type="text" id="auto-2-towing" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoTwoRentalCar") %></th>
+                                 <td>
+                                      <input type="text" id="auto-2-rental-car" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoQuoteUpdateRequest") %></th>
+                                 <td>
+                                      <input type="text" id="auto-quote-update-request" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoPolicyEffectiveDate") %></th>
+                                 <td>
+                                      <input type="text" id="auto-policy-effective-date" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("paymentOption") %></th>
+                                 <td>
+                                      <input type="text" id="auto-payment-option" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoPaymentInfo") %></th>
+                                 <td>
+                                      <input type="text" id="auto-payment-info" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedAutoCompany") %></th>
+                                 <td>
+                                      <input type="text" id="auto-quoted-auto-company" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedAutoPremium") %></th>
+                                 <td>
+                                      <input type="text" id="auto-quoted-auto-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("quotedAutoNumber") %></th>
+                                 <td>
+                                      <input type="text" id="auto-quoted-auto-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoInsuranceCarrier") %></th>
+                                 <td>
+                                      <input type="text" id="auto-insurance-carrier" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("autoInsurancePremium") %></th>
+                                 <td>
+                                      <input type="text" id="auto-insurance-premium" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="lifeInsurance">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("priorityCode") %></th>
+                                 <td>
+                                      <input type="text" id="life-priority-code" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("leadSource") %></th>
+                                 <td>
+                                      <input type="text" id="life-lead-source" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("partner") %></th>
+                                 <td>
+                                      <input type="text" id="life-partner" name="contact_country" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeInsurancePolicyNumber") %></th>
+                                 <td>
+                                      <input type="text" id="life-lead-status" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("lifeLeadStatus") %></th>
+                                <td>
+                                    <select id="life-lead-status" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="presold">Presold</option>
+                                        <option value="enrolled">Enrolled</option>
+                                        <option value="bound">Bound</option>
+                                        <option value="active">Active</option>
+                                        <option value="submitted">Submitted</option>
+                                        <option value="sold">Sold</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("writingAgent") %></th>
+                                 <td>
+                                      <input type="text" id="life-writing-agent" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("scrubber") %></th>
+                                 <td>
+                                      <input type="text" id="life-scrubber" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("age") %></th>
+                                 <td>
+                                      <input type="text" id="life-age" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("height") %></th>
+                                <td>
+                                    <input type="text" id="life-height" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("weight") %></th>
+                                <td>
+                                    <input type="text" id="life-weight" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("lifeInsuranceType") %></th>
+                                <td>
+                                    <input type="text" id="life-insurance-type" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("termLifePolicyLenght") %></th>
+                                 <td>
+                                      <input type="text" id="life-term-life-policy-lenght" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("desiredAmountOfCoverage") %></th>
+                                 <td>
+                                      <input type="text" id="life-desired-amount-of-coverage" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("smoke") %></th>
+                                 <td>
+                                      <input type="text" id="life-smoke" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("majorHealthIssuesInRelatives") %></th>
+                                 <td>
+                                      <input type="text" id="life-major-health-issues-in-relatives" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("convictedOfDrunkDriving") %></th>
+                                 <td>
+                                      <input type="text" id="life-convicted-of-drunk-driving" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeQuoteStatus") %></th>
+                                 <td>
+                                      <input type="text" id="life-quote-status" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("dateParamedExamOrdered") %></th>
+                                 <td>
+                                      <input type="text" id="life-date-paramed-exam-ordered" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeMonthlyPremium") %></th>
+                                 <td>
+                                      <input type="text" id="life-monthly-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("paramedCompany") %></th>
+                                 <td>
+                                      <input type="text" id="life-paramed-company" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeApplicationId") %></th>
+                                 <td>
+                                      <input type="text" id="life-application-id-#" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeApplicationStatus") %></th>
+                                 <td>
+                                      <input type="text" id="life-application-status" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeApplicationChanges") %></th>
+                                 <td>
+                                      <input type="text" id="life-application-changes" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeAfterChangesNewPremium") %></th>
+                                 <td>
+                                      <input type="text" id="life-after-changes-new-premium" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("lifeApplicationDeclinedReason") %></th>
+                                 <td>
+                                      <input type="text" id="life-application-declined-reason" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ancilliaryInsurance">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("priorityCode") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-priority-code">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("leadSource") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-lead-source">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("partner") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-partner">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("ancillaryInsurancePolicyNumber") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-insurance-policy-number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("writingAgent") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-writing-agent">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("scrubber") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-scrubber">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("floodLeadStatus") %></th>
+                                <td>
+                                    <select id="ancilliary-lead-status" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="presold">Presold</option>
+                                        <option value="enrolled">Enrroled</option>
+                                        <option value="bound">Bound</option>
+                                        <option value="active">Active</option>
+                                        <option value="submitted">Submitted</option>
+                                        <option value="sold">Sold</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("accident") %></th>
+                                <td>
+                                    <select id="ancilliary-accident" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="applicationSubmitted">Application Submitted</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("criticalIllness") %></th>
+                                <td>
+                                    <select id="ancilliary-critical-illness" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="applicationSubmitted">Application Submitted</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("hospitalConfinemet") %></th>
+                                <td>
+                                    <select id="ancilliary-hospital-confinement" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="applicationSubmitted">Application Submitted</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("dentalCare") %></th>
+                                <td>
+                                    <select id="ancilliary-dental-care" class="form-control">
+                                        <option value="false" selected="selected"></option>
+                                        <option value="applicationSubmitted">Application Submitted</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("ancillaryTotal") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ancilliary-ancillary-total">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Diagnosed or currently have</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("abnormalCancerScreeningTest") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="abnormal-cancer-screening-test">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("cystsGrowthsEtcNotSeenFor") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="cysts-growths-etc-not-seen-for">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("carotidArteryStenosisEtc") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="carotid-artery-stenosis-etc">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("hivPositiveAidsRelatedComplexAids") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="hiv-positive-aids-related-complex-aids">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("multipleSclerosisMemoryLossEtc") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="multiple-sclerosis-memory-loss-etc">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("abnormalTestsRequiringFollowUp") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="abnormal-tests-requiring-follow-up">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("anyNonRoutineConsultationScheduled") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="any-non-routine-consultation-scheduled">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("oneOrMoreImmRelativesWithIssues") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="1-or-more-imm-relatives-with-issues">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("twoOrMoreImmRelativesWithIssues") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="2-or-more-imm-relatives-with-issues">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("beningTumorHypertensionEtc") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="bening_tumor-hypertension-etc">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("presciptionMedicationInLastThreeYears") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="prescription-medication-in-last-three-years">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Diagnosed, been treated form or taken medication for...</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("disorderDiseaseHeartKidneyLungs") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="disorder-disease-heart-kidney-lungs">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("diseaseQuadLouGehrigsOtherMotor") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="disease-quad-lou-gehrigs-other-motor">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("alcoholOrSubstanceAbuseFiveYears") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="alcohol-or-substance-abuse-five-years">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("heartAttackStrokeTransientIschemis") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="heart-attack-stroke-transient-ischemic">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("diabetesTypeOneOrTwoBloodPressAm") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="diabetes-type-one-or-two-blood-press-am">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Other Information</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("nursingHomeHospitalizedEtc") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="nursing-home-hospitalized-etc">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("hospitalizedInTheLastTwelveMonths") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="hospitalized-in-the-last-twelve-months">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("diagnosedOrTreatedForMedicalIssues") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="diagnosed_or_treated_for_medical_issues">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("pregnant") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="pregnant">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("everHadAProblemPregnancy") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="ever_had_a_problem_pregnancy">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("hypertension") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="hypertension">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Accident Elite</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("accidentEliteRequest") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="accident-elite-request_eff_date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("accidentElitePremium") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="accident-elite-premium">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("accidentEliteNotes") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="accident-elite-notes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Critical Care</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("criticalCareRequestEffDate") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="critical-care-request-eff-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("criticalCarePremium") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="critial-care-premium">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("criticalCareNotes") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="critical-care-notes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Hospital Confinement</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("requestEffDate") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="request-eff-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("hospitalConfinementPremium") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="hospital-confinement-premium">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("hospitalConfinementNotes") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="hospital-confinement-notes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Dental Care</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("requestEffDate") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="dental-request-eff-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("dentalCarePremium") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="dental-care-premium">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("dentalCareNotes") %></th>
+                                <td>
+                                    <input type="text" class="form-control" id="dental-care-notes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="paymentInfo">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("binderPaymentOption") %></th>
+                                 <td>
+                                      <input type="text" id="payment-binder-payment-option" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("paymentChargeRequest") %></th>
+                                 <td>
+                                      <input type="text" id="payment-payment-charge-request" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("creditCardType") %></th>
+                                 <td>
+                                      <input type="text" id="payment-ccredit-card-type" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("nameOnCc") %></th>
+                                 <td>
+                                      <input type="text" id="payment-name-on-cc" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("creditCardNumber") %></th>
+                                 <td>
+                                      <input type="text" id="payment-credit-card-number" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("ccExpirationDate") %></th>
+                                 <td>
+                                      <input type="text" id="payment-cc-expiration-date" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("ccCvv") %></th>
+                                 <td>
+                                      <input type="text" id="payment-cc-cvv" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bankAccountType") %></th>
+                                 <td>
+                                      <input type="text" id="payment-bank-account-type" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bankName") %></th>
+                                 <td>
+                                      <input type="text" id="payment-bank-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bankRoutingNumber") %></th>
+                                 <td>
+                                      <input type="text" id="payment-bank-routuing-number" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("bankAccountNumber") %></th>
+                                 <td>
+                                      <input type="text" id="payment-bank-account-number" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

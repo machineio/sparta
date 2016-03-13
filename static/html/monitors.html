@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row equal">
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("newMonitor") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-line-chart fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="profile-form" class="form-profile" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">/</span>
+                                            <input id="monitor_name" type="text" class="form-control" placeholder="Schedule for using Beanbags and Pillows">
+                                        </div>
+                                        <p><%= translate("greatMonitorNames") %>.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="create-monitor-btn" class="btn btn-success btn-block" type="submit"><%= translate("createMonitor") %></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportMonitors") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cloud-download fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="export-monitor-form" class="form-export" novalidate="novalidate">
+                                <p class="help-block"><%= translate("getMonitorList") %>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills">
+                <li><a href="#all-monitors-tab" data-toggle="tab"><%= translate("allMonitors") %></a></li>
+                <li><a href="#active-monitors-tab" data-toggle="tab"><%= translate("active") %></a></li>
+                <li><a href="#disable-monitors-tab" data-toggle="tab"><%= translate("disable") %></a></li>
+                <li><a href="#suspended-monitors-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="all-monitors-tab"></div>
+                <div class="tab-pane" id="active-monitors-tab"></div>
+                <div class="tab-pane" id="disable-monitors-tab"></div>
+                <div class="tab-pane" id="suspended-monitors-tab"></div>
+            </div>
+        </div>
+    </div>
+</div>

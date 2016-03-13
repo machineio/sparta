@@ -1,0 +1,109 @@
+<div class="container">
+        
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("newRecording") %></h3>
+                </div>
+                <div class="panel-body">
+
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-microphone fa-stack-1x"></i>
+                    </span>
+
+                    <form id="profile-form" class="form-profile" novalidate="novalidate">
+
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">/</span>
+                                    <input id="resource_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
+                                </div>
+
+                                <p>
+                                    <%= translate("greatRecordingNames") %>.
+                                </p>
+
+                            </div>
+                        </div>                                       
+
+                        <div class="form-group">
+                            <label for="recording_description"><%= translate("descriptionOptional") %></label>
+                            <input type="text" id="recordign_description" name="recording_description" class="form-control">
+                        </div>
+
+                        <div class="form-checkbox">
+                            <label>
+                                <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
+                                <%= translate("inbound") %>
+                            </label>
+                            <span class="mega-octicon octicon-repo"></span>
+
+                            <span class="note">
+                                Anyone can see this recording. You choose who can send messages.
+                            </span>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <label>
+                                <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
+                                <%= translate("outbound") %>
+                            </label>
+                            <span class="mega-octicon octicon-lock"></span>
+                            <span class="note">
+                                <%= translate("youChooseWhoUseRecording") %>.
+                            </span>
+                        </div>
+
+                        <button id="create-recording-btn" class="btn btn-success btn-block" type="submit"><%= translate("createRecording") %></button>
+                    </form>
+                      
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportRecordings") %></h3>
+                </div>
+                <div class="panel-body">
+
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-cloud-download fa-stack-1x"></i>
+                    </span>
+
+                    <form id="export-recording-form" class="form-export" novalidate="novalidate">
+  
+
+                        <p class="help-block"><%= translate("getRecordingList") %>.</p>
+
+                        <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                    </form>
+                          
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills">
+                <li><a href="#all-recordings-tab" data-toggle="tab"><%= translate("all") %></a></li>
+                <li><a href="#inbound-recordings-tab" data-toggle="tab"><%= translate("inbound") %></a></li>
+                <li><a href="#outbound-recordings-tab" data-toggle="tab"><%= translate("outbound") %></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="all-recordings-tab"></div>
+                <div class="tab-pane" id="inbound-recordings-tab"></div>
+                <div class="tab-pane" id="outbound-recordings-tab"></div>
+            </div>  
+        </div>
+    </div>
+</div>

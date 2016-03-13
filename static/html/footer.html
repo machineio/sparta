@@ -1,0 +1,151 @@
+<div id="footer">
+    <div class="inner">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <ul class="list-inline pull-right">
+                        <!--<li><a href="#status"><%= translate("status") %></a></li>
+                        <li><a href="#developers"><%= translate("api") %></a></li>-->
+                        <li><a href="#help"><%= translate("help") %></a></li>
+                    </ul>
+
+                    <ul class="list-inline">
+                        <li id="wtfMae">&copy; 2016 <span><%= translate("ioFun") %></span>, Inc.</li>
+                        <!-- <li><a href="https://medium.com/fun-technology" target="_blank"><%= translate("blog") %></a></li>
+                        <li><a href="https://github.com/iofun" target="_blank"><%= translate("developers") %></a></li> -->
+                        <!--<li><a href="#terms"><%= translate("terms") %></a></li>
+                        <li><a href="#privacy"><%= translate("privacy") %></a></li>
+                        <li><a href="#security"><%= translate("security") %></a></li>-->
+                        <!--
+                        <li><a href="#support"><%= translate("contact") %></a></li>
+                        <li><a href="#companies"><%= translate("companies") %></a></li>
+                        -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- task Modal popup -->
+<div class="modal fade" id="callingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--<h4 class="modal-title" id="myModalLabel"><%= translate("pvtScriptModalTitle") %></h4>-->
+                <h4 class="modal-title" id="myModalLabel"><%= translate("incomingCall") %></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <button id="update-task-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("save") %></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <button id="incoming-skip-btn" class="btn btn-lg btn-success btn-block" type="submit"><%= translate("skip") %></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="show" id="formRegularView">
+                    <div class="row">
+                        <div id="campaign-scriptHere" class="col-md-4">
+                            <h4>Script</h4>
+                        </div>
+                        <div id="pills" class="col-md-8">
+                            <div id="hot-contact-modal-tabs" class="hide"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Comment:</h4>
+
+                            <textarea id="task-comment"
+                                rows="5"
+                                cols="66"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Disposition</h4>
+
+                            <div class="btn-group ">
+                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                    <i class="fa fa-phone fa-fw"></i>
+                                    <span data-label-placement="" id="in_call_status">Wrong Number</span>
+                                </button>
+                                <ul class="dropdown-menu">
+
+                                    <li>
+                                        <input type="radio" id="call_status_wrong_number" name="call_status" value="1">
+                                        <label for="call_status_wrong_number">Wrong Number</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_contacted" name="call_status" value="2">
+                                        <label for="call_status_contacted">Contacted</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_appointment" name="call_status" value="3">
+                                        <label for="call_status_appointment">Set Appointment</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_notinterested" name="call_status" value="4">
+                                        <label for="call_status_notinterested">Dead not interested</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_medicare" name="call_status" value="5">
+                                        <label for="call_status_medicare">Dead medicare</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_transferred" name="call_status" value="6">
+                                        <label for="call_status_transferred">Transferred</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="call_status_bcbs" name="call_status" value="7">
+                                        <label for="call_status_bcbs">Transferred BCBS</label>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Transfer</h4>
+
+
+                            <div class="input-group">
+                                <span class="input-group-addon">#</span>
+                                <input id="cube_name" type="text" class="form-control" placeholder="Queue, Account or Phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-4">
+                        <button id="update-task-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("save") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="incoming-form-btn" class="btn btn-lg btn-success btn-block" type="submit"><%= translate("form") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="close-task-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("next") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

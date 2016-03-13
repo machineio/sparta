@@ -1,0 +1,459 @@
+<div class="container">
+
+    <div class="row">
+        
+        <div class="col-md-4">
+
+            <div class="panel-group" id="accordion">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <%= account %>
+                            </a>
+                        </h4>
+                    </div>
+                    
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#tabs3-pane1" data-toggle="tab"><%= translate("profile") %></a></li>
+                                <li class=""><a href="#tabs3-pane2" data-toggle="tab"><%= translate("accountSettings") %></a></li>
+                                <li class=""><a href="#tabs3-pane3" data-toggle="tab"><%= translate("emails") %></a></li>
+                                <li><a href="#tabs3-pane4" data-toggle="tab"><%= translate("organizations") %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                io fun
+                            </a>
+                        </h4>
+                    </div>
+                    
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#orgs-pane1" data-toggle="tab"><%= translate("organizationProfile") %></a></li>
+                                <li><a href="#orgs-pane2" data-toggle="tab"><%= translate("billing") %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+
+
+            <div class="tab-content">
+                <div id="tabs3-pane1" class="tab-pane active">
+                    
+                    <!-- user profile -->
+                    
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("profileInformation") %></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <form id="profile-form" class="form-profile" novalidate="novalidate">
+
+                                        <div class="form-group">
+                                            <label for="user_first_name"><%= translate("firstName") %></label>
+                                            <input type="text" id="user_first_name" name="user_first_name" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="user_last_name"><%= translate("lastName") %></label>
+                                            <input type="text" id="user_last_name" name="user_last_name" class="form-control">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="user_email"><%= translate("emailAddress") %></label>
+                                            <input type="text" id="user_email" name="user_email" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="user_url"><%= translate("url") %></label>
+                                            <input type="text" class="form-control" id="user_usr" name="user_url"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="user_company"><%= translate("company") %></label>
+                                            <input type="text" class="form-control" id="user_company" name="user_company"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="user_location"><%= translate("location") %></label>
+                                            <input type="text" class="form-control" id="user_location" name="user_location"/>
+                                        </div>
+
+                                        <!-- 
+                                        <div class="form-group">
+                                            <label for="user_timezone"><%= translate("timezone") %></label>
+                                            <input type="text" class="form-control" id="user_timezone" name="user_timezone"/>
+                                        </div>
+                                        -->
+
+                                        <button id="user-update-btn" class="btn btn-success btn-block" type="submit"><%= translate("updateProfile") %></button>
+                                    </form>
+                      
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <!-- end of user profile -->
+                </div>
+
+                <div id="tabs3-pane2" class="tab-pane">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("changePassword") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form id="change-password-form" class="form-profile" novalidate="novalidate">
+
+                                        <div class="form-group">
+                                            <label for="old_password"><%= translate("oldPassword") %></label>
+                                            <input type="password" id="old_password" name="old_password" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="new_password"><%= translate("newPassword") %></label>
+                                            <input type="password" id="new_password" name="new_password" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="confirm_new_password"><%= translate("confirmNewPassword") %></label>
+                                            <input type="password" class="form-control" id="confirm_new_password" name="confirm_new_password"/>
+                                        </div>
+
+                                        <button id="update-password-btn" class="btn btn-default btn-block" type="submit"><%= translate("updatePassword") %></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("deleteAccount") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><%= translate("accountCurrentlyOwner") %>:</p>
+
+                                    <p><%= translate("mustTransferOwnershipOrDeleteOrgs") %>.</p>
+
+                                    <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal"><%= translate("deleteAccount") %></button>
+                                    <!--
+                                    <button id="user-delete-btn" class="btn btn-danger btn-block"><%= translate("deleteAccount") %></button>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!--
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("systemAdmin") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><%= translate("accountCurrentlyAdmin") %>:</p>
+
+                                    <p><%= translate("mustTransferSystems") %>.</p>
+
+                                    <button id="user-admin-btn" class="btn btn-danger btn-block"><%= translate("systemAdmin") %></button>
+                      
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    -->
+
+
+                </div>
+
+                <div id="tabs3-pane3" class="tab-pane">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("email") %></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><%= translate("primaryEmailForAccountNotification") %>.</p>
+
+                                    <p id="not-verified-any"><%= translate("notVerifiedAnyEmail") %>.</p>
+
+                                    <ul id="settings-emails-ul" class="list-group">
+                                        <li class="list-group-item">
+                                                                                        
+                                            <ul class="list-inline pull-right">
+                                                <li>
+                                                    <a class="btn btn-default" href="#"><%= translate("sendVerificationEmail") %></a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-trash fa-lg"></i>
+                                                </li>
+                                            </ul>
+
+                                            <p>email@email.com <span class="label label-success"><%= translate("primary") %></span> <span class="label label-default"><%= translate("unverified") %></span></p>
+
+                                        </li>
+                                    </ul>                      
+                                </div>
+                            </div>
+                       
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("addEmailAddress") %></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <form id="add-email-form" class="form-profile" novalidate="novalidate">
+
+                                        <div class="form-group">
+                                            <label for="new_email"><%= translate("newEmail") %></label>
+                                            <input type="email" class="form-control" id="new_email" name="new_email"/>
+                                        </div>
+
+                                        <button id="add-email-btn" class="btn btn-default btn-block" type="submit"><%= translate("addEmail") %></button>
+                                    </form>
+                      
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div id="tabs3-pane4" class="tab-pane">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("organizations") %></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="btn btn-default pull-right" href="#orgs"><%= translate("newOrganization") %></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul id="settings-orgs-ul" class="list-group"></ul>    
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                
+                </div>
+
+                <!-- organization tabs-->
+
+                <div id="orgs-pane1" class="tab-pane">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("organizations") %></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="btn btn-default pull-right" href="#"><%= translate("newOrganization") %></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+
+                                                    <a class="btn btn-default pull-right" id="juanadarco" data-toggle="modal" data-target="#leaveOrgModal"><%= translate("leave") %></a>
+                                                    <a href="#">name</a>
+
+                                                </li>
+
+
+
+                                                <li class="list-group-item">
+                                                                                                
+                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
+
+                                                    <a href="#">name</a>
+
+                                                </li>
+                                                <li class="list-group-item">
+
+                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
+
+                                                    <a href="#">name</a>
+
+                                                </li>
+                                            </ul>    
+                                        </div>                                    
+                                    </div>
+                                                    
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                
+                </div>
+
+
+                <div id="orgs-pane2" class="tab-pane">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><%= translate("organizations") %></h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="btn btn-default pull-right" href="#"><%= translate("newOrganization") %></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+
+                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
+
+                                                    <a href="#">name</a>
+
+                                                </li>
+                                                <li class="list-group-item">
+                                                                                                
+                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
+
+                                                    <a href="#">name</a>
+
+                                                </li>
+                                                <li class="list-group-item">
+
+                                                    <a class="btn btn-default pull-right" href="#"><%= translate("leave") %></a>
+
+                                                    <a href="#">name</a>
+
+                                                </li>
+                                            </ul>    
+                                        </div>                                    
+                                    </div>
+                                                    
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                
+                </div>
+
+
+            
+            </div>
+        </div>
+
+    </div> <!-- general row -->
+</div> <!-- container -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="leaveOrgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><%= translate("leaveOrganization") %></h4>
+            </div>
+            <div class="modal-body">
+
+                <p><%= translate("areYouSureWantToLeave") %>?</p>
+
+                <p><%= translate("youWillLoseAccessToAll") %>.</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><%= translate("cancel") %></button>
+                <button type="button" id='ok-leave-btn' class="btn btn-primary"><%= translate("ok") %></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure you want to do this?</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>We will immediately delete all of your resources, along with all of your campaigns, tasks, contacts, and recordings.</p>
+
+                <p>You will no longer be billed, and your username will be available to anyone.</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button id="user-delete-btn" class="btn btn-danger btn-block">Yes, delete my account</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

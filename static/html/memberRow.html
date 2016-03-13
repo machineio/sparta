@@ -1,0 +1,32 @@
+<li class="list-group-item">
+    <div class="row">
+        <div class="col-md-6"><%= member %></div><div class="col-md-2">n teams</div><div class="col-md-2"><div id="break-dropdown" class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                <span data-label-placement=""><%= translate("admin") %></span>
+                <span class="caret"></span>
+            </button>
+            <ul id="break-list-ul" class="dropdown-menu">
+                <li>
+                    <input type="radio" id="<%= member %>_break_0" name="<%= member %>_break" value="0" checked="">
+                    <label for="<%= member %>_break_0"><%= translate("admin") %></label>
+                </li>
+                <li>
+                    <input type="radio" id="<%= member %>_break_1" name="<%= member %>_break" value="1">
+                    <label for="<%= member %>_break_1"><%= translate("manager") %></label>
+                </li>
+                <li>
+                    <input type="radio" id="<%= member %>_break_1" name="<%= member %>_break" value="1">
+                    <label for="<%= member %>_break_1"><%= translate("agent") %></label>
+                </li>
+                <li>
+                    <input type="radio" id="<%= member %>_break_1" name="<%= member %>_break" value="1">
+                    <label for="<%= member %>_break_1"><%= translate("telemarketer") %></label>
+                </li>
+                <li>
+                    <input type="radio" id="<%= member %>_break_1" name="<%= member %>_break" value="1">
+                    <label for="<%= member %>_break_1"><%= translate("customerService") %></label>
+                </li>
+            </ul>
+        </div></div><div class="col-md-2"><i data-name="<%= member %>" data-uuid="123123" class="fa fa-trash-o fa-lg delete-member-popup"></i></div>
+    </div>
+</li>
