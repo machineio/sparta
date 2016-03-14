@@ -127,25 +127,33 @@
 
                 <div class="pull-right">
 
-                    <td id="take-a-break">
-                        <div id="break-dropdown" class="btn-group">
+                    <td id="take-a-wut">
+                        <div id="system-dropdown" class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                <i class="fa fa-coffee fa-fw"></i>
-                                <span data-label-placement=""><%= translate("takeAbreak") %></span>
+                                <i class="fa fa-cogs fa-fw"></i>
+                                <span data-label-placement=""><%= translate("admin") %></span>
                                 <span class="caret"></span>
                             </button>
                             <ul id="break-list-ul" class="dropdown-menu">
                                 <li>
-                                    <input type="radio" id="current_break_0" name="current_break" value="0">
-                                    <label for="current_break_0"><%= translate("takeAbreak") %></label>
+                                    <input type="radio" id="current_break_0" name="current_break" value="0" checked="">
+                                    <label for="profile_admin_0"><a href="#members"><%= translate("Manage Employees") %></a></label>
                                 </li>
                                 <li>
-                                    <input type="radio" id="current_break_1" name="current_break" value="1">
-                                    <label for="current_break_1">Lunch</label>
+                                    <input type="radio" id="current_break_1" name="current_break" value="1" checked="">
+                                    <label for="profile_admin_1"><%= translate("Lead Import") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="current_break_2" name="current_break" value="2" checked="">
+                                    <label for="profile_admin_2"><%= translate("Manage Layout") %></label>
                                 </li>
                                 <li>
                                     <input type="radio" id="current_break_3" name="current_break" value="3" checked="">
-                                    <label for="current_break_3">Active</label>
+                                    <label for="profile_admin_3"><%= translate("Data Backup") %></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="current_break_4" name="current_break" value="4" checked="">
+                                    <label for="profile_admin_4"><%= translate("Restore Backup") %></label>
                                 </li>
                             </ul>
                         </div>
