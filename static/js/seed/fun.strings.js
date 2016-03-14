@@ -14,6 +14,7 @@ fun.strings = {
     telephone: "Telephone",
     findContact: "Find contact",
     dba: "DBA",
+    noUli: "No Uli!!!",
     findContact: "Find Lead",
     timeout: "Time out",
     conquistadorCoffeeCampaign: "Conquistador Coffee Campaign",
