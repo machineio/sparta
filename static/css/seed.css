@@ -133,7 +133,7 @@ textarea {
 
 .fun-brand {
     display: block;
-    width: 130px;
+    width: 145px;
     height: 34px;
     padding-top: 0;
     padding-bottom: 0;
@@ -143,7 +143,7 @@ textarea {
 
     line-height: 600px;
     color: #333;
-    background: url(../img/miniLogo.png) no-repeat 0 0;
+ 
 }
 
 .navbar .navbar-brand {
