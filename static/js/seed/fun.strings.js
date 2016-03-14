@@ -1,8 +1,10 @@
 /**
  * Default internationalization object
  */
+
+
 fun.strings = {
-    ioFun: "Fiorella Insurance Agency",
+    ioFun: "Spartan Approach",
     login: "Login",
     active: "Active",
     disable: "Disable",
