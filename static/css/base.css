@@ -277,16 +277,16 @@ a:hover, a:focus {
 }
 
 #footer {
-    background-color: #4e4e4e;
+    background-color: #000000;
 }
 
 #footer .inner {
-    background-color: #4e4e4e;
+    background-color: #000000;
     border: none !important;
 }
 
 .navbar {
-  background-color: #4e4e4e !important;
+  background-color: #939597 !important;
   border-bottom: none !important;
 }
 
