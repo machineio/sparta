@@ -670,7 +670,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     showMailingAddressDifferent: function(event){
-        var value = $('#mailing-address-different').val();
+        var value = $('#contact-info-mailing-address-different').val();
         if(value===true||value==='true'){
             $('#mailingAddressDifferentDiv').removeClass('hide');
             $('#mailingAddressDifferentDiv').addClass('show');
@@ -687,7 +687,7 @@ fun.views.footer = Backbone.View.extend({
 
     changeMaritalStatus: function(event){
 
-        if($('#marital-status').val()==='none'||$('#marital-status').val()==='single'){
+        if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='single'){
             $('#contactSpouseInfoTab').removeClass('show');
             $('#contactSpouseInfoTab').addClass('hide');
         } else {
@@ -697,7 +697,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     healthInsuranceTab: function(event){
-        if(($('#contact-health-insurance-checkbox').val()==="true")||($('#contact-health-insurance-checkbox').val()===true)){
+        if(($('#contact-info-health-insurance-checkbox').val()==="true")||($('#contact-info-health-insurance-checkbox').val()===true)){
             $('#healthInsuranceTab').removeClass('hide');
             $('#healthInsuranceTab').addClass('show');
         } else {
@@ -707,7 +707,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     homeInsuranceTab: function(event){
-        if(($('#contact-home-insurance-checkbox').val()==="true")||($('#contact-home-insurance-checkbox').val()===true)){
+        if(($('#contact-info-home-insurance-checkbox').val()==="true")||($('#contact-info-home-insurance-checkbox').val()===true)){
             $('#homeOwnersInsuranceTab').removeClass('hide');
             $('#homeOwnersInsuranceTab').addClass('show');
         } else {
@@ -717,7 +717,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     autoInsuranceTab: function(event){
-        if(($('#contact-auto-insurance-checkbox').val()==="true")||($('#contact-auto-insurance-checkbox').val()===true)){
+        if(($('#contact-info-auto-insurance-checkbox').val()==="true")||($('#contact-info-auto-insurance-checkbox').val()===true)){
             $('#automobileInsuranceTab').removeClass('hide');
             $('#automobileInsuranceTab').addClass('show');
         } else {
@@ -727,7 +727,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     lifeInsuranceTab: function(event){
-        if(($('#contact-life-insurance-checkbox').val()==="true")||($('#contact-life-insurance-checkbox').val()===true)){
+        if(($('#contact-info-life-insurance-checkbox').val()==="true")||($('#contact-info-life-insurance-checkbox').val()===true)){
             $('#lifeInsuranceTab').removeClass('hide');
             $('#lifeInsuranceTab').addClass('show');
         } else {
@@ -737,7 +737,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     ancilliaryInsuranceTab: function(event){
-        if(($('#contact-ancilliary-insurance-checkbox').val()==="true")||($('#contact-ancilliary-insurance-checkbox').val()===true)){
+        if(($('#contact-info-ancilliary-insurance-checkbox').val()==="true")||($('#contact-info-ancilliary-insurance-checkbox').val()===true)){
             $('#ancilliaryInsuranceTab').removeClass('hide');
             $('#ancilliaryInsuranceTab').addClass('show');
         } else {
