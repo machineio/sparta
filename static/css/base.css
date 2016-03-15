@@ -905,3 +905,7 @@ input.error:-ms-input-placeholder {
     color: #fff; 
     background-color: #921d22 !important; 
 }
+
+.newtask-button-margin{
+    margin-bottom: 20px;
+}
