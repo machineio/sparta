@@ -652,7 +652,7 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.hideAll();
             fun.instances.navbar.render();
-            fun.instances.subheader.render(login);
+            // fun.instances.subheader.render(login);
             fun.instances.login.render();
         }
 
