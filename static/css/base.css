@@ -918,3 +918,21 @@ input.error:-ms-input-placeholder {
     color: #9A9A9A;
     font-size: 11px;
 }
+
+.update-button-taskmodal {
+    background-color: #636363;
+}
+
+.cancel-button-taskmodal {
+    background-color: #921d22;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+    background-color: #921d22;
+    background-position: 0 -15px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #636363;
+    background-position: 0 -15px;
+}
