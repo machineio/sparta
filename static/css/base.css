@@ -1,3 +1,12 @@
+.spartan-login-wrapper-form {
+  margin-top: 5vh;
+}
+
+.spartan-login-logo {
+  margin-top: 10vh;
+  height: 50vh;
+}
+
 #login-btn {
   background-color: #921d22 !important;
 }
