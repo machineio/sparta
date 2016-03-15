@@ -18,6 +18,8 @@ fun.strings = {
     telephone: "Telephone",
     findContact: "Find contact",
     dba: "DBA",
+    privateWord: "Private",
+    publicWord: "Public",
     disconnect: "Disconnect",
     systemReports: "System Reports",
     connect: "Connect",
