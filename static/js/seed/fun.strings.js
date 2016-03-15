@@ -16,6 +16,7 @@ fun.strings = {
     telephone: "Telephone",
     findContact: "Find contact",
     dba: "DBA",
+    disconnect: "Disconnect",
     overdue: "Overdue",
     findContact: "Find Lead",
     timeout: "Time out",
