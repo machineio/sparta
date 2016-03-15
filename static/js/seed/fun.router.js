@@ -1227,16 +1227,28 @@ fun.Router = Backbone.Router.extend({
                 account = account.substring(1);
             }
         }
-        
+
         resources = {
             user: new fun.models.User({'account':account}),
+            campaigns: new fun.models.Campaigns(),
+            tasks: new fun.models.Tasks(),
+            contacts: new fun.models.Contacts(),
         };
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
-                // set profile info
+                console.log('get resources success!');
                 fun.instances.settings.setProfileInformation(
                     resources.user
+                );
+                fun.instances.profile.renderCampaignList(
+                    resources.campaigns
+                );
+                fun.instances.profile.renderTaskList(
+                    resources.tasks
+                );
+                fun.instances.profile.renderContactList(
+                    resources.contacts
                 );
             }
         };
