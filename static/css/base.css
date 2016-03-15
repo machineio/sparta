@@ -895,3 +895,13 @@ input.error:-ms-input-placeholder {
     flex:1 1 auto;
     flex-wrap: wrap;
 }
+
+#color-codemachine-active {
+    color: #fff; 
+    background-color: #921d22 !important; 
+  }
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff; 
+    background-color: #921d22 !important; 
+}
