@@ -22,6 +22,7 @@ fun.strings = {
     conquistadorCoffeeCampaign: "Conquistador Coffee Campaign",
     recordAudio: "Record Audio",
     doNotDisturb: "Do Not Disturb",
+    addVoicemail: "Add Voicemail",
     address: "Address",
     recentlyViewed: "Recently viewed",
     zipcode: "ZIP Code",
