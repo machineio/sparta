@@ -40,9 +40,8 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_true" name="repository[public]" tabindex="5" type="radio" value="true">
-                                <%= translate("inbound") %>
+                                <%= translate("public") %>
                             </label>
-                            <span class="mega-octicon octicon-repo"></span>
 
                             <span class="note">
                                 Anyone can see this recording. You choose who can send messages.
@@ -52,9 +51,9 @@
                         <div class="form-checkbox">
                             <label>
                                 <input checked="checked" class="js-privacy-toggle" id="repository_public_false" name="repository[public]" tabindex="5" type="radio" value="false">
-                                <%= translate("outbound") %>
+                                <%= translate("private") %>
                             </label>
-                            <span class="mega-octicon octicon-lock"></span>
+                           
                             <span class="note">
                                 <%= translate("youChooseWhoUseRecording") %>.
                             </span>
