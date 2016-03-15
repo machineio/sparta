@@ -175,7 +175,7 @@ ul.pagination li > a {
 }
 
 .btn-success:hover, .btn-success:focus {
-  background-color: #921d22;
+  background-color: #B1252C;
   border: none;
   background-position: 0;
 }
@@ -928,11 +928,11 @@ input.error:-ms-input-placeholder {
 }
 
 .btn-danger:hover, .btn-danger:focus {
-    background-color: #921d22;
+    background-color: #B1252C;
     background-position: 0 -15px;
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    background-color: #636363;
+    background-color: #848484;
     background-position: 0 -15px;
 }
