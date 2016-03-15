@@ -1230,7 +1230,7 @@ fun.Router = Backbone.Router.extend({
 
         resources = {
             user: new fun.models.User({'account':account}),
-            campaigns: new fun.models.Campaigns(),
+            /*campaigns: new fun.models.Campaigns(),*/
             campaignsInbound: new fun.models.InboundCampaigns(),
             campaignsOutbound: new fun.models.CampaignsOutbound(),
             tasks: new fun.models.Tasks(),
