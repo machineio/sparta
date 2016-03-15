@@ -10,10 +10,10 @@
 
                 </a>
 
-                <h1 class="vcard-names">
-                    <span class="vcard-fullname" itemprop="name">name lastname</span>
-                    <span class="vcard-username" itemprop="additionalName">username</span>
-                </h1>
+                <h3>
+                    <span id="profile-name">name lastname</span>
+                </h3>
+                <h4><span id="profile-username">tamarindo</span></h4>
 
                 <ul class="vcard-details list-unstyled">
                     <li>
@@ -76,27 +76,6 @@
 
 
         <div class="col-md-9">
-            <!-- <div class="row equal">
-                <div class="col-md-6">
-                    <div class="panel panel-default panel-full-width">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><%= translate("news") %></h3>
-                        </div>
-                        <div class="panel-body">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default panel-full-width">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><%= translate("messages") %></h3>
-                        </div>
-                        <div class="panel-body">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
 
             <div class="row">
                 <div class="col-md-12">
@@ -184,42 +163,17 @@
                                         <h3 class="panel-title"><%= translate("topAgents") %></h3>
                                     </div>
                                     
-                                    <!-- List group -->
+
                                     <!-- List group -->
                                     <ul class="list-group">
-                                        <li class="list-group-item">
+                                        <!-- <li class="list-group-item">
                                             <i class="fa fa-bullhorn fa-fw pull-left"></i>
                                               
                                             <p class="description">
                                                cebus created campaign cebus/godzilla_out  5 hours ago
                                             </p>
 
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -272,45 +226,20 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title"><%= translate("topAgents") %></h3>
+                                        <h3 class="panel-title"><%= translate("systemReports") %></h3>
                                     </div>
                                     
                                     <!-- List group -->
-                                    <!-- List group -->
+
                                     <ul class="list-group">
-                                        <li class="list-group-item">
+                                        <!-- <li class="list-group-item">
                                             <i class="fa fa-bullhorn fa-fw pull-left"></i>
                                               
                                             <p class="description">
                                                cebus created campaign cebus/godzilla_out  5 hours ago
                                             </p>
 
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        
+                                        </li>  -->                                       
                                     </ul>
                                 </div>
                             </div>
@@ -396,11 +325,11 @@
 
                                 <ul class="nav nav-pills">
                                     <!-- <li class="active"><a href="#tabs4-pane1" data-toggle="tab"><%= translate("all") %></a></li>
-                                    <li class=""><a href="#tabs4-pane2" data-toggle="tab"><%= translate("active") %></a></li>
-                                    <li class=""><a href="#tabs4-pane3" data-toggle="tab"><%= translate("paused") %></a></li> -->
+                                    <li class=""><a href="#tabs4-pane2" data-toggle="tab"><%= translate("active") %></a></li> -->
+                                    <li class=""><a href="#tabs4-pane3" data-toggle="tab"><%= translate("paused") %></a></li>
                                     <li class=""><a href="#tabs4-pane4" data-toggle="tab"><%= translate("inbound") %></a></li>
                                     <li class=""><a href="#tabs4-pane5" data-toggle="tab"><%= translate("outbound") %></a></li>
-                                    <li class=""><a href="#tabs4-pane3" data-toggle="tab"><%= translate("monitor") %></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -465,54 +394,9 @@
                                             <i class="fa fa-bullhorn fa-flip-horizontal fa-2x pull-left"></i>
                                             <ul class="list-inline pull-right">
                                                 <li>
-                                                    
-                                                    <td id="change-campaign-voicemail">
-                                                        <div id="status-dropdown" class="btn-group">
-                                                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                                <span data-label-placement=""><%= translate("newVoicemail") %></span>
-                                                                <span class="caret"></span>
-                                                            </button>
-                                                            <ul id="status-list-ul" class="dropdown-menu">
-                                                                <li>
-                                                                    <input type="radio" id="current_voicemail_0" name="current_voicemail" value="0" checked="">
-                                                                    <label for="current_voicemail_0"><%= translate("newVoicemail") %></label>
-                                                                </li>
-                                                                <li>
-                                                                    <input type="radio" id="current_voicemail_1" name="current_voicemail" value="1">
-                                                                    <label for="current_voicemail_1">Connected</label>
-                                                                </li>
-                                                                <li>
-                                                                    <input type="radio" id="current_voicemail_2" name="current_voicemail" value="2">
-                                                                    <label for="current_voicemail_2">Paused</label>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </li>
-                                                <li>
-                                                    <td id="change-campaign-status">
-                                                        <div id="status-dropdown" class="btn-group">
-                                                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                                <span data-label-placement=""><%= translate("Disconnect") %></span>
-                                                                <span class="caret"></span>
-                                                            </button>
-                                                            <ul id="status-list-ul" class="dropdown-menu">
-                                                                <li>
-                                                                    <input type="radio" id="current_status_0" name="current_status" value="0" checked="">
-                                                                    <label for="current_status_0"><%= translate("Disconnect") %></label>
-                                                                </li>
-                                                                <li>
-                                                                    <input type="radio" id="current_status_1" name="current_status" value="1">
-                                                                    <label for="current_status_1">Connected</label>
-                                                                </li>
-                                                                <li>
-                                                                    <input type="radio" id="current_status_2" name="current_status" value="2">
-                                                                    <label for="current_status_2">Paused</label>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-                                                    </td>
+                                                    <button class="btn btn-default">
+                                                        <%= translate("addVoicemail") %>
+                                                    </button>
                                                 </li>
                                                 <li>
                                                     <i class="fa fa-star fa-fw"></i> 0
@@ -573,23 +457,23 @@
                                             <ul class="list-inline pull-right">
                                                 <li>
                                                     <td id="change-campaign-status">
-                                                        <div id="status-dropdown" class="btn-group">
+                                                        <div id="campaign-uuid-status-dropdown" class="btn-group">
                                                             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                                <span data-label-placement=""><%= translate("Disconnect") %></span>
+                                                                <span data-label-placement=""><%= translate("disconnect") %></span>
                                                                 <span class="caret"></span>
                                                             </button>
                                                             <ul id="status-list-ul" class="dropdown-menu">
                                                                 <li>
                                                                     <input type="radio" id="current_status_0" name="current_status" value="0" checked="">
-                                                                    <label for="current_status_0"><%= translate("Disconnect") %></label>
+                                                                    <label for="current_status_0"><%= translate("disconnect") %></label>
                                                                 </li>
                                                                 <li>
                                                                     <input type="radio" id="current_status_1" name="current_status" value="1">
-                                                                    <label for="current_status_1">Connected</label>
+                                                                    <label for="current_status_1"><%= translate("connect") %></label>
                                                                 </li>
                                                                 <li>
                                                                     <input type="radio" id="current_status_2" name="current_status" value="2">
-                                                                    <label for="current_status_2">Paused</label>
+                                                                    <label for="current_status_2"><%= translate("pause") %>Paused</label>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -847,42 +731,16 @@
                                         <h3 class="panel-title"><%= translate("recentlyViewed") %></h3>
                                     </div>
                                     
-                                    <!-- List group -->
-                                    <!-- List group -->
+
                                     <ul class="list-group">
-                                        <li class="list-group-item">
+                                        <!-- <li class="list-group-item">
                                             <i class="fa fa-bullhorn fa-fw pull-left"></i>
                                               
                                             <p class="description">
                                                cebus created campaign cebus/godzilla_out  5 hours ago
                                             </p>
 
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li>
-                                        
+                                        </li> -->                                        
                                     </ul>
                                 </div>
                             </div>
@@ -1108,7 +966,7 @@
                     </div>
                     <div id="profile-tasks-tab" class="tab-pane active">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
 
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="<%= translate("findAtask") %>">
@@ -1119,17 +977,15 @@
                                 </div><!-- /input-group -->
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <ul class="nav nav-pills">
                                     <li class="active"><a href="#tabs4-pane1" data-toggle="tab"><%= translate("all") %></a></li>
                                     <li class=""><a href="#tabs4-pane2" data-toggle="tab"><%= translate("now") %></a></li>
-                                    <!-- <li class=""><a href="#tabs4-pane3" data-toggle="tab"><%= translate("later") %></a></li>
-                                    <li class=""><a href="#tabs4-pane4" data-toggle="tab"><%= translate("ready") %></a></li>
-                                    <li class=""><a href="#tabs4-pane5" data-toggle="tab"><%= translate("done") %></a></li> -->
+                                    <li class=""><a href="#tabs4-pane3" data-toggle="tab"><%= translate("overdue") %></a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <div class="pull-right">
                                     <a href="#tasks" class="btn btn-success pull-right newTaskButton">
                                         <i class="fa fa-plug fa-fw"></i>

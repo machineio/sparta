@@ -251,7 +251,7 @@ fun.Router = Backbone.Router.extend({
 
     monitors: function(){
         'use strict';
-        var monitor = translate('campaignMonitor');
+        var monitor = translate('systemMonitor');
         fun.utils.hideAll();
         fun.instances.navbar.render();
         fun.instances.subheader.render(monitor);
@@ -627,7 +627,7 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.redirect(fun.conf.hash.login);
         }
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     signup: function(){
@@ -652,7 +652,7 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.hideAll();
             fun.instances.navbar.render();
-            fun.instances.subheader.render(login);
+            // fun.instances.subheader.render(login);
             fun.instances.login.render();
         }
 

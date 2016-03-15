@@ -14,14 +14,20 @@
 
 <div class="container">
         <div class="col-md-6">
-            <img src="/static/img/welcome-01.svg" class="img-responsive">
+            <img src="/static/img/welcome-01.svg" class="img-responsive spartan-login-logo">
         </div>
 
     <div class="row margin-signin">
-        <div class="col-md-6">
+        <div class="col-md-6 spartan-login-wrapper-form">
             <form class="form-signin">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
+                        <h3>Sign In</h3>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <input type="text" class="form-control" id="username" placeholder='<%= translate("yourAccount") %>'>
@@ -30,7 +36,7 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
                             <input type="password" class="form-control" id="password" placeholder="<%= translate("Password") %>">
@@ -39,7 +45,7 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <button id="login-btn" class="btn btn-lg btn-signin-sparta btn-block" type="submit"><%= translate("signIn") %></button>
                     </div>
                 </div>

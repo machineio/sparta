@@ -4,23 +4,24 @@
     <li>
         <div id="break-dropdown" class="btn-group">
             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                <i class="fa fa-coffee fa-fw"></i>
-                <span data-label-placement=""><%= translate("takeAbreak") %></span>
+                
+                <span data-label-placement=""><i class="fa fa-heartbeat fa-fw"></i> <%= translate("active") %></span>
                 <span class="caret"></span>
             </button>
             <ul id="break-list-ul" class="dropdown-menu">
                 <li>
+                    <input type="radio" id="current_break_3" name="current_break" value="3" checked="">
+                    <label for="current_break_3"><i class="fa fa-heartbeat fa-fw"></i> <%= translate("active") %></label>
+                </li>
+                <li>
                     <input type="radio" id="current_break_0" name="current_break" value="0">
-                    <label for="current_break_0"><%= translate("takeAbreak") %></label>
+                    <label for="current_break_0"><i class="fa fa-coffee fa-fw"></i> <%= translate("takeAbreak") %></label>
                 </li>
                 <li>
                     <input type="radio" id="current_break_1" name="current_break" value="1">
-                    <label for="current_break_1">Lunch</label>
+                    <label for="current_break_1"><i class="fa fa-cutlery fa-fw"></i> <%= translate("lunch") %></label>
                 </li>
-                <li>
-                    <input type="radio" id="current_break_3" name="current_break" value="3" checked="">
-                    <label for="current_break_3">Active</label>
-                </li>
+                
             </ul>
         </div>
     </li>    
