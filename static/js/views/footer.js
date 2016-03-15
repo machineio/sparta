@@ -57,575 +57,447 @@ fun.views.footer = Backbone.View.extend({
         $('#callingModal').modal('show');
         this.renderContactModalForm();
         var view = this,
-            name,
-            contact,
-            contactUuid,
-            contactAccount,
-            contactFirstName,
-            contactLastName,
-            contactLocation,
-            contactTimezone,
-            contactZip,
-            contactPhone,
-            contactTags,
-            contactEmail,
-            contactAddress,
-            contactCountry,
-            contactChecked,
-            contactDnd,
-            contactCity,
-            contactState,
-            contactStatus,
-            contactDescription,
-            contactHistory,
-            contactComment,
-            autoPriorityCode,
-            leadType,
-            writingAgent,
-            leadSource,
-            partner,
-            renewalSource2016,
-            renewalAgent2016,
-            presoldProcessor2016,
-            scrubber,
-            lastModifiedBy,
-            healthWritingAgent,
-            healthLeadStatus,
-            homeLeadStatus,
-            autoLeadStatus,
-            floodLeadStatus,
-            otherPolicySold,
-            dentalLeadStatus,
-            federalDoNotCall,
-            doYouOwnYourHome,
-            renewAsIsEmailReceived,
-            languagePreference,
-            firstName,
-            lastName,
-            phone,
-            cellPhone,
-            clientEmail,
-            otherPhone,
-            dateOfBirth,
-            gender,
-            socialSecurityNumber,
-            usCitizenOrLegalPermanentResident,
-            mailingAddress,
-            state,
-            city,
-            zipCode,
-            mailingAddressDifferent,
-            county,
-            marketplaceEmail,
-            propertyAddress,
-            propertyCity,
-            propertyState,
-            propertyZipCode,
-            totalIndividualIncome,
-            totalHouseholdIncome,
-            primaryApplicantsIncomeSources_income_source,
-            primaryApplicantsEmployersName,
-            applicantEmployersPhoneNumber,
-            maritalStatus,
-            numberOfDependentChildrenInHouse,
-            spouseFirstName,
-            spouseLastName,
-            spouseGender,
-            spouseDOB,
-            doYouHaveASocialSecurityNumber,
-            spouseSocial,
-            spouseYearlyIncome,
-            spouseIncomeSource,
-            spouseEmployersName,
-            spouseEmployersPhoneNumber,
-            child1Name,
-            child1Dob,
-            child1Gender,
-            child1Social,
-            child2Name,
-            child2Dob,
-            child2Gender,
-            child2Social,
-            child3Name,
-            child3Dob,
-            child3Gender,
-            child3Social,
-            child4Name,
-            child4Dob,
-            child4Gender,
-            child4Social,
-            leadHasAMarketplaceAccount,
-            currentCoverage,
-            marketplaceAppID2015,
-            currentPremium,
-            subsidyAmount,
-            currentNetPremium,
-            effectiveDate2015,
-            applicationId2015,
-            healthPremium2015,
-            healthCarrier2015,
-            subsidy2015,
-            adultsOnPlan2015,
-            childrenOnPlan2015,
-            incomeVerificationNeeded,
-            citizenshipDocumentsNeeded,
-            username,
-            password,
-            healthPolicy,
-            agentCode,
-            wantsToRenewSamePlanFor2016,
-            quotedRenewalGrossPremium2016,
-            quotedRenewalSubsidy2016,
-            quotedRenewalNetPremium2016,
-            adultsApplyingForCoverage2016,
-            totalHouseholdSize2016,
-            cloudGrossPremium2016,
-            childrenApplyingForCoverage2016,
-            cloudSubsidy2016,
-            cloudPremiumAfterSubsidy2016,
-            binderPaymentOption2016,
-            PaymentChargeRequestDate,
-            creditCardType2016,
-            nameOnCc2016,
-            creditCardNumber2016,
-            ccExpirationDate2016,
-            ccCvv2016,
-            bankAccountType2016,
-            bankName2016,
-            bankRoutingNumber2016,
-            bankAccountNumber2016,
-            applicationNumber2016,
-            effectiveDate2016,
-            marketplacePolicy2016,
-            totalIncomeUsedOnApplication,
-            finalGrossPremium2016,
-            finalSubsidy2016,
-            heatlhPlan2016,
-            finalPremiumAfterSubsidy2016,
-            verificationDocumentsNeeded2016,
-            newPurchase,
-            homeExpDateClosingDate,
-            occupancyStatus,
-            typeOfDwelling,
-            currentHomeCarrier,
-            currentHomePremium,
-            currentDwellingCoverage,
-            yearBuilt,
-            squareFtUnderAir,
-            garage,
-            constructionType,
-            stories,
-            ageRoof,
-            roofMaterial,
-            bathrooms,
-            dog,
-            pool,
-            fenceOrScreenEnclosure,
-            bankrupcyOrForeclosureInThePastFiveYears,
-            centrallyMonitoredAlarm,
-            gatedCommunity,
-            howManyClaimsInTheLastFiveYears,
-            realtorMortgageBroker,
-            amountOfPersonalProperty,
-            numberOfStoriesInTheBuilding,
-            whatFloorIsCondoOn,
-            quoteUpdateRequest,
-            homePolicyEffectiveDate,
-            fourPointIfApplicable,
-            quotedHomeCompany,
-            windMit,
-            quotedHomePremium,
-            quotedHomeNumber,
-            homePaymentOption,
-            mortgageClauseNew,
-            loanNumber,
-            homeInsuranceCarrier,
-            homeInsurancePremium,
-            homeInsurancePolicyNumber,
-            currentAutoCarrier,
-            expirationDate,
-            currentAutoPremium,
-            currentResidenceType,
-            driverOneLicense,
-            vehicleOneVin,
-            vehicleOneYear,
-            vehicleOneMake,
-            vehicleOneModel,
-            driverTwoLicense,
-            vehicleTwoVin,
-            vehicleTwoYear,
-            vehicleTwoMake,
-            vehicleTwoModel,
-            bodilyInjuryLiability,
-            propertyDamage,
-            uninsuredMotoristLiability,
-            medicalPayments,
-            vehicleOneCompDed,
-            vehicleOneCollisionDed,
-            autoOneTowing,
-            autoOneRentalCar,
-            vehicleTwoCompDed,
-            vehicleTwoCollisionDed,
-            autoTwoTowing,
-            autoTwoRentalCar,
-            autoQuoteUpdateRequest,
-            autoPolicyEffectiveDate,
-            paymentOption,
-            autoPaymentInfo,
-            quotedAutoCompany,
-            quotedAutoPremium,
-            quotedAutoNumber,
-            autoInsuranceCarrier,
-            autoInsurancePremium,
-            autoInsurancePolicy,
-            lifeLeadStatus,
-            healthScrubber,
-            homeWritingAgent,
-            homeScrubber,
-            autoWritingAgent,
-            autoScrubber,
-            lifeWritingAgent,
-            lifeScrubber,
-            binderPaymentOption,
-            paymentChargeRequest,
-            creditCardType,
-            nameOnCc,
-            creditCardNumber,
-            ccExpirationDate,
-            bankAccountType,
-            bankName,
-            bankRoutingNumber,
-            bankAccountNumber,
-            ancilliaryAccident,
-            ancilliaryCriticalIllness,
-            ancilliaryHospitalConfinemet,
-            ancilliaryDentalCare,
-            ancilliaryAncillaryTotal,
-            abnormalCancerScreeningTest,
-            cystsGrowthsEtcNotSeenFor,
-            carotidArteryStenosisEtc,
-            hivPositiveAidsRelatedComplexAids,
-            multipleSclerosisMemoryLossEtc ,
-            abnormalTestsRequiringFollowUp ,
-            anyNonRoutineConsultationScheduled,
-            oneOrMoreImmRelativesWithIssues,
-            twoOrMoreImmRelativesWithIssues ,
-            beningTumorHypertensionEtc,
-            presciptionMedicationInLastThreeYears,
-            disorderDiseaseHeartKidneyLungs,
-            diseaseQuadLouGehrigsOtherMotor,
-            alcoholOrSubstanceAbuseFiveYears,
-            heartAttackStrokeTransientIschemis,
-            diabetesTypeOneOrTwoBloodPressAm,
-            nursingHomeHospitalizedEtc,
-            hospitalizedInTheLastTwelveMonths,
-            diagnosedOrTreatedForMedicalIssues,
-            pregnant,
-            everHadAProblemPregnancy,
-            hypertension,
-            accidentEliteRequest,
-            accidentElitePremium,
-            accidentEliteNotes,
-            criticalCareRequestEffDate,
-            criticalCarePremium,
-            criticalCareNotes,
-            requestEffDate,
-            hospitalConfinementPremium,
-            hospitalConfinementNotes,
-            dentalRequestEffDate,
-            dentalCarePremium,
-            dentalCareNotes;
+            contact_uuid,
+            contact_account,
+            contact_description,
+            contact_history,
+            contact_comment,
+            contact_info_first_name,
+            contact_info_last_name,
+            contact_info_phone_number,
+            contact_info_cellphone,
+            contact_info_email,
+            contact_info_other_phone,
+            contact_info_date_of_birth,
+            contact_info_gender,
+            contact_info_marital_status,
+            contact_info_number_of_children,
+            contact_info_social_security_number,
+            contact_info_property_address,
+            contact_info_state,
+            contact_info_city,
+            contact_info_zip_code,
+            contact_info_county,
+            contact_info_mailing_address_different,
+            contact_info_mailingAddressDifferentDiv,
+            contact_mailing_address,
+            contact_info_mailing_city,
+            contact_info_mailing_state,
+            contact_info_mailing_zipcode,
+            contact_info_marketplace_email,
+            contact_info_language_preference,
+            contact_info_writing_agent,
+            contact_info_lead_source,
+            contact_info_partner,
+            contact_info_last_modified_by,
+            contact_info_health_insurance_checkbox,
+            contact_info_home_insurance_checkbox,
+            contact_info_auto_insurance_checkbox,
+            contact_info_life_insurance_checkbox,
+            contact_info_ancilliary_insurance_checkbox,
+            contact_info_other_policy_sold,
+            contact_info_federal_do_not_call,
+            contact_info_federal_do_not_call,
+            contact_info_renew_as_is_email_received,
+            health_us_citizen_or_legal_permanent_resident,
+            spouse_first_name,
+            spouse_last_name,
+            spouse_gender,
+            spouse_dob,
+            spouse_do_you_have_a_social_security_number,
+            spouse_social,
+            spouse_income_source,
+            spouse_yearly_income,
+            spouse_employers_name,
+            spouse_employers_phone_number,
+            child_1_name,
+            child_1_dob,
+            child_1_gender,
+            child_1_social,
+            child_2_name,
+            child_2_dob,
+            child_2_gender,
+            child_2_social,
+            child_3_name,
+            child_3_dob,
+            child_3_gender,
+            child_3_social,
+            child_4_name,
+            child_4_dob,
+            child_4_gender,
+            child_4_social,
+            health_auto_priority_code,
+            health_lead_type,
+            health_priority_code,
+            health_lead_source,
+            health_partner,
+            health_lead_status,
+            health_writing_agent,
+            health_writing_agent,
+            health_scrubber,
+            health_total_individual_income,
+            health_total_household_income,
+            health_primary_applicants_income_source,
+            health_primary_applicants_employers_name,
+            health_applicant_employers_phone_number,
+            health_marital_status,
+            health_number_of_dependent_children_in_house,
+            health_renewal_source_2016,
+            health_renewal_agent_2016,
+            health_presold_processor_2016,
+            health_application_number_2016_info,
+            health_effective_date_2016,
+            health_presold_processor_2016,
+            health_total_income_used_on_application,
+            health_final_gross_premium_2016,
+            health_final_subsidy_2016,
+            heatlh_plan_2016,
+            health_final_premium_after_subsidy_2016,
+            health_verification_documents_needed_2016,
+            health_verification_documents_due_date_2016,
+            health_application_number_2016_selection,
+            health_adults_applying_for_coverage_2016,
+            health_total_household_size_2016,
+            health_cloud_gross_premium_2016,
+            health_children_applying_for_coverage_2016,
+            health_cloud_subsidy_2016,
+            health_cloud_premium_after_subsidy_2016,
+            health_lead_has_a_marketplace_account,
+            health_current_coverage,
+            health_marketplace_app_id_2015,
+            health_current_premium,
+            health_subsidy_amount,
+            health_current_net_premium,
+            health_effective_date_2015,
+            health_application_id_2015,
+            health_premium_2015,
+            health_carrier_2015,
+            health_subsidy_2015,
+            health_adult_on_plan_2015,
+            health_children_on_plan_2015,
+            health_income_verification_needed_2015,
+            health_citizenship_documents_needed_2015,
+            health_policy,
+            health_contact_code_2015,
+            health_wants_to_renew_same_plan_for_2016,
+            health_quoted_renewal_gross_premium_2016,
+            health_quoted_renewal_subsidy_2016,
+            health_quoted_renewal_net_premium_2016,
+            health_username,
+            health_password,
+            home_priority_code,
+            home_auto_priority_code,
+            home_lead_source,
+            home_partner,
+            home_insurance_policy_number,
+            home_writing_agent,
+            home_scrubber,
+            home_lead_status,
+            home_new_purchase,
+            home_exp_date_closing_date,
+            home_occupancy_status,
+            home_type_of_dwelling,
+            home_current_home_carrier,
+            home_current_home_premium,
+            home_current_dwelling_coverage,
+            home_year_built,
+            home_square_ft_under_air,
+            home_garage,
+            home_construction_type,
+            home_stories,
+            home_number_of_stories_in_the_building,
+            home_what_floor_number_is_condo_on,
+            home_quote_update_request,
+            home_policy_effective_date,
+            home_four_point_if_applicable,
+            home_quoted_home_company,
+            home_wind_mit,
+            home_age_roof,
+            home_roof_material,
+            home_bathrooms,
+            home_dog,
+            home_pool,
+            home_fence_or_screen_enclosure,
+            home_bankrupcy_or_Foreclosure_in_the_past_five_years,
+            home_centrally_monitored_alarm,
+            home_gated_community,
+            home_how_many_claims_in_the_last_five_Years,
+            home_realtor_mortgage_broker,
+            home_amount_of_personal_property,
+            home_quoted_home_premium,
+            home_quoted_home_number,
+            home_payment_option,
+            home_mortgage_clause_new,
+            home_loan_number,
+            home_insurance_carrier,
+            home_insurance_premium,
+            auto_auto_priority_code,
+            auto_priority_code,
+            auto_lead_source,
+            auto_partner,
+            auto_insurance_policy_number,
+            auto_lead_status,
+            auto_writing_agent,
+            auto_scrubber,
+            auto_current_auto_carrier,
+            auto_expiration_date,
+            auto_current_auto_premium,
+            auto_current_residence_type,
+            auto_driver_one_license_number,
+            auto_vehicle_one_vin,
+            auto_vehicle_one_year,
+            auto_vehicle_one_make,
+            auto_vehicle_one_model,
+            auto_driver_two_license_number,
+            auto_vehicle_two_vin,
+            auto_vehicle_two_year,
+            auto_vehicle_two_make,
+            auto_vehicle_two_model,
+            auto_bodily_injury_liability,
+            auto_property_damage,
+            auto_uninsured_motorist_liability,
+            auto_medical_payments,
+            auto_vehicle_one_comp_ded,
+            auto_vehicle_1_collision_ded,
+            auto_1_towing,
+            auto_1_rental_car,
+            auto_vehicle_2_comp_ded,
+            auto_vehicle_2_collision_ded,
+            auto_2_towing,
+            auto_2_rental_car,
+            auto_quote_update_request,
+            auto_policy_effective_date,
+            auto_payment_option,
+            auto_payment_info,
+            auto_quoted_auto_company,
+            auto_quoted_auto_premium,
+            auto_quoted_auto_number,
+            auto_insurance_carrier,
+            auto_insurance_premium,
+            auto_insurance_premium,
+            auto_document_needed,
+            life_auto_priority_code,
+            life_priority_code,
+            life_lead_source,
+            life_partner,
+            life_insurance_policy_number,
+            life_lead_status,
+            life_writing_agent,
+            life_scrubber,
+            life_age,
+            life_height,
+            life_weight,
+            life_insurance_type,
+            life_term_life_policy_lenght,
+            life_desired_amount_of_coverage,
+            life_smoke,
+            life_major_health_issues_in_relatives,
+            life_convicted_of_drunk_driving,
+            life_quote_status,
+            life_date_paramed_exam_ordered,
+            life_monthly_premium,
+            life_paramed_company,
+            life_application_id_#,
+            life_application_status,
+            life_application_changes,
+            life_after_changes_new_premium,
+            life_application_declined_reason,
+            ancilliary_auto_priority_code,
+            ancilliary_priority_code,
+            ancilliary_lead_source,
+            ancilliary_partner,
+            ancilliary_insurance_policy_number,
+            ancilliary_writing_agent,
+            ancilliary_scrubber,
+            ancilliary_lead_status,
+            ancilliary_accident,
+            ancilliary_critical_illness,
+            ancilliary_hospital_confinement,
+            ancilliary_dental_care,
+            ancilliary_dental_lead_status,
+            ancilliary_ancillary_total,
+            ancilliary_abnormal_cancer_screening_test,
+            ancilliary_cysts_growths_etc_not_seen_for,
+            ancilliary_carotid_artery_stenosis_etc,
+            ancilliary_hiv_positive_aids_related_complex_aids,
+            ancilliary_multiple_sclerosis_memory_loss_etc,
+            ancilliary_abnormal_tests_requiring_follow_up,
+            ancilliary_any_non_routine_consultation_scheduled,
+            ancilliary_one_or_more_imm_relatives_with_issues,
+            ancilliary_two_or_more_imm_relatives_with_issues,
+            ancilliary_bening_tumor_hypertension_etc,
+            ancilliary_prescription_medication_in_last_three_years,
+            ancilliary_disorder_disease_heart_kidney_lungs,
+            ancilliary_disease_quad_lou_gehrigs_other_motor,
+            ancilliary_alcohol_or_substance_abuse_five_years,
+            ancilliary_heart_attack_stroke_transient_ischemic,
+            ancilliary_diabetes_type_one_or_two_blood_press_am,
+            ancilliary_nursing_home_hospitalized_etc,
+            ancilliary_hospitalized_in_the_last_twelve_months,
+            ancilliary_diagnosed_or_treated_for_medical_issues,
+            ancilliary_pregnant,
+            ancilliary_ever_had_a_problem_pregnancy,
+            ancilliary_hypertension,
+            ancilliary_accident_elite_request_eff_date,
+            ancilliary_accident_elite_premium,
+            ancilliary_accident_elite_notes,
+            ancilliary_critical_care_request_eff_date,
+            ancilliary_critial_care_premium,
+            ancilliary_critical_care_notes,
+            ancilliary_request_eff_date,
+            ancilliary_hospital_confinement_premium,
+            ancilliary_hospital_confinement_notes,
+            ancilliary_dental_request_eff_date,
+            ancilliary_dental_care_premium,
+            ancilliary_dental_care_notes,
+            payment_binder_payment_option,
+            payment_payment_charge_request,
+            payment_ccredit_card_type,
+            payment_name_on_cc,
+            payment_credit_card_number,
+            payment_cc_expiration_date,
+            payment_cc_cvv,
+            payment_bank_account_type,
+            payment_bank_name,
+            payment_bank_routuing_number,
+            payment_bank_account_number;
 
-        contactUuid = this.$('#contact-uuid');
-        contactAccount = this.$('#contact-account');
-        contactFirstName = this.$('#contact-first-name');
-        contactLastName = this.$('#contact-last-name');
-        contactLocation = this.$('#contact-location');
-        contactTimezone = this.$('#contact-timezone');
-        contactZip = this.$('#contact-zipcode');
-        contactPhone = this.$('#contact-phone-number');
-        contactTags = this.$('#contact-tags');
-        contactEmail = this.$('#contact-email');
-        contactAddress = this.$('#contact-address');
-        contactCountry = this.$('#contact-country');
-        contactChecked = this.$('#contact-checked');
-        contactDnd = this.$('#contact-dnd');
-        contactCity = this.$('#contact-city');
-        contactState = this.$('#contact-state');
-        contactStatus = this.$('#task_status');
-        contactDescription = this.$('#contact-description');
-        contactHistory = this.$('#contact-history');
-        contactComment = this.$('#contact-comment');
-        autoPriorityCode = this.$('#auto-priority-code');
-        leadType = this.$('#lead-type');
-        writingAgent = this.$('#writting-agent');
-        leadSource = this.$('#lead-source');
-        partner = this.$('#partner');
-        renewalSource2016 = this.$('#renewal-source-2016');
-        renewalAgent2016 = this.$('#renewal-agent-2016');
-        presoldProcessor2016 = this.$('#presold-processor-2016');
-        scrubber = this.$('#scrubber');
-        lastModifiedBy = this.$('#last-modified-by');
-        healthWritingAgent = this.$('#healt-writting-agent');
-        healthLeadStatus = this.$('#healt-lead-status');
-        homeLeadStatus = this.$('#home-lead-status');
-        autoLeadStatus = this.$('#auto-lead-status');
-        floodLeadStatus = this.$('#flood-lead-status');
-        otherPolicySold = this.$('#other-policy-sold');
-        dentalLeadStatus = this.$('#dental-lead-status');
-        federalDoNotCall = this.$('#federal-do-not-call');
-        totalIndividualIncome = this.$('#total-individual-income');
-        totalHouseholdIncome = this.$('#total-household-income');
-        primaryApplicantsIncomeSources_income_source = this.$('#primary-applicants-income-source');
-        primaryApplicantsEmployersName = this.$('#primary-applicants-employers-name');
-        applicantEmployersPhoneNumber = this.$('#applicant-employers-phone-number');
-        maritalStatus = this.$('#marital-status');
-        numberOfDependentChildrenInHouse = this.$('#number-of-dependent-children-in-house');
-        spouseFirstName = this.$('#spouse-first-name');
-        spouseLastName = this.$('#spouse-last-name');
-        spouseGender = this.$('#spouse-gender');
-        spouseDOB = this.$('#spouse-dob');
-        doYouHaveASocialSecurityNumber = this.$('#do-you-have-a-social-security-number');
-        spouseSocial = this.$('#spouse-social');
-        spouseYearlyIncome = this.$('#spouse-income-source');
-        spouseIncomeSource = this.$('#spouse-yearly-income');
-        spouseEmployersName = this.$('#spouse-employers-name');
-        spouseEmployersPhoneNumber = this.$('#spouse-employers-phone-number');
-        child1Name = this.$('#child-1-name');
-        child1Dob = this.$('#child-1-dob');
-        child1Gender = this.$('#child-1-gender');
-        child1Social = this.$('#child-1-social');
-        child2Name = this.$('#child-2-name');
-        child2Dob = this.$('#child-2-dob');
-        child2Gender = this.$('#child-2-gender');
-        child2Social = this.$('#child-2-social');
-        child3Name = this.$('#child-3-name');
-        child3Dob = this.$('#child-3-dob');
-        child3Gender = this.$('#child-3-gender');
-        child3Social = this.$('#child-3-social');
-        child4Name = this.$('#child-4-name');
-        child4Dob = this.$('#child-4-dob');
-        child4Gender = this.$('#child-4-gender');
-        child4Social = this.$('#child-4-social');
-        leadHasAMarketplaceAccount = this.$('#lead-has-a-marketplace-account');
-        currentCoverage = this.$('#current-coverage');
-        marketplaceAppID2015 = this.$('#marketplace-app-id-2015');
-        currentPremium = this.$('#current-premium');
-        subsidyAmount = this.$('#subsidy-amount');
-        currentNetPremium = this.$('#current-net-premium');
-        effectiveDate2015 = this.$('#effective-date-2015');
-        applicationId2015 = this.$('#application-id-2015');
-        healthPremium2015 = this.$('#health-premium-2015');
-        healthCarrier2015 = this.$('#health-carrier-2015');
-        subsidy2015 = this.$('#subsidy-2015');
-        adultsOnPlan2015 = this.$('#adult-on-plan-2015');
-        childrenOnPlan2015 = this.$('#children-on-plan');
-        incomeVerificationNeeded = this.$('#income-verification-needed');
-        citizenshipDocumentsNeeded = this.$('#citizenship-documents-needed');
-        username = this.$('#username');
-        password = this.$('#password');
-        healthPolicy = this.$('#health-policy');
-        agentCode = this.$('#agent-code');
-        wantsToRenewSamePlanFor2016 = this.$('#wants-to-renew-same-plan-for-2016');
-        quotedRenewalGrossPremium2016 = this.$('#quoted-renewal-gross-premium-2016');
-        quotedRenewalSubsidy2016 = this.$('#quoted-renewal-subsidy-2016');
-        quotedRenewalNetPremium2016 = this.$('#quoted-renewal-net-premium-2016');
-        adultsApplyingForCoverage2016 = this.$('#adults-applying-for-coverage-2016');
-        totalHouseholdSize2016 = this.$('#total-household-size-2016');
-        cloudGrossPremium2016 = this.$('#cloud-gross-premium-2016');
-        childrenApplyingForCoverage2016 = this.$('#children-applying-for-coverage-2016');
-        cloudSubsidy2016 = this.$('#cloud-subsidy-2016');
-        cloudPremiumAfterSubsidy2016 = this.$('#cloud-premium-after-subsidy-2016');
-        binderPaymentOption2016 = this.$('#binder-payment-option-2016');
-        PaymentChargeRequestDate = this.$('#payment-charge-request-date');
-        creditCardType2016 = this.$('#credit-card-type-2016');
-        nameOnCc2016 = this.$('#name-on-cc-2016');
-        creditCardNumber2016 = this.$('#credit-card-number-2016');
-        ccExpirationDate2016 = this.$('#cc-expiration-date-2016');
-        ccCvv2016 = this.$('#cc-cvv-2016');
-        bankAccountType2016 = this.$('#bank-account-type-2016');
-        bankName2016 = this.$('#bank-name-2016');
-        bankRoutingNumber2016 = this.$('#bank-routing-number-2016');
-        bankAccountNumber2016 = this.$('#bank-account-number');
-        doYouOwnYourHome = this.$('#do-you-own-your-home');
-        renewAsIsEmailReceived = this.$('#renew-as-is-email-received');
-        languagePreference = this.$('#language-preference');
-        firstName = this.$('#first-name');
-        lastName = this.$('#last-name');
-        phone = this.$('#phone');
-        cellPhone = this.$('#cell-phone');
-        clientEmail = this.$('#client-email');
-        otherPhone = this.$('#other-phone');
-        dateOfBirth = this.$('#date-of-birth');
-        gender = this.$('#gender');
-        socialSecurityNumber = this.$('#social-security-number');
-        usCitizenOrLegalPermanentResident = this.$('#us-citizen-or-legal-permanent-resident');
-        mailingAddress = this.$('#mailing-address');
-        state = this.$('#state');
-        city = this.$('#city');
-        zipCode = this.$('#zip-code');
-        mailingAddressDifferent = this.$('#mailing-address-different');
-        county = this.$('#county');
-        marketplaceEmail = this.$('#marketplace-email');
-        propertyAddress = this.$('#property-address');
-        propertyCity = this.$('#property-city');
-        propertyState = this.$('#property-state');
-        propertyZipCode = this.$('#property-zip-code');
-        applicationNumber2016 = this.$('application-#-2016');
-        effectiveDate2016 = this.$('effective-date-2016');
-        marketplacePolicy2016 = this.$('marketplace-policy-2016');
-        totalIncomeUsedOnApplication = this.$('total-income-used-on-application');
-        finalGrossPremium2016 = this.$('final-gross-premium-2016');
-        finalSubsidy2016 = this.$('final-subsidy-2016');
-        heatlhPlan2016 = this.$('heatlh-plan-2016');
-        finalPremiumAfterSubsidy2016 = this.$('final-premium-after-subsidy-2016');
-        verificationDocumentsNeeded2016 = this.$('verification-documents-needed-2016');
+        contact_info_first_name = this.$("#contact-info-first-name");
+        contact_info_last_name = this.$("#contact-info-last-name");
+        contact_info_phone_number = this.$("#contact-info-phone-number");
+        contact_info_cellphone = this.$("#contact-info-cellphone");
+        contact_info_email = this.$("#contact-info-email");
+        contact_info_other_phone = this.$("#contact-info-other-phone");
+        contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
+        contact_info_gender = this.$("#contact-info-gender");
+        contact_info_marital_status = this.$("#contact-info-marital-status");
+        contact_info_number_of_children = this.$("#contact-info-number-of-children");
+        contact_info_social_security_number = this.$("#contact-info-social-security-number");
+        contact_info_property_address = this.$("#contact-info-property-address");
+        contact_info_state = this.$("#contact-info-state");
+        contact_info_city = this.$("#contact-info-city");
+        contact_info_zip_code = this.$("#contact-info-zip-code");
+        contact_info_county = this.$("#contact-info-county");
+        contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
 
-        newPurchase = this.$('#new-purchase');
-        homeExpDateClosingDate = this.$('#home-exp-date-closing-date');
-        occupancyStatus = this.$('#occupancy-status');
-        typeOfDwelling = this.$('#type-of-dwelling');
-        currentHomeCarrier = this.$('#current-home-carrier');
-        currentHomePremium = this.$('#current-home-premium');
-        currentDwellingCoverage = this.$('#current-dwelling-coverage');
-        yearBuilt = this.$('#year-built');
-        squareFtUnderAir = this.$('#square-ft-under-air');
-        garage = this.$('#garage');
-        constructionType = this.$('#construction-type');
-        stories = this.$('#stories');
-        ageRoof = this.$('#age-roof');
-        roofMaterial = this.$('#roof-material');
-        bathrooms = this.$('#bathrooms');
-        dog = this.$('#dog');
-        pool = this.$('#pool');
-        fenceOrScreenEnclosure = this.$('#fence-or-screen-enclosure');
-        bankrupcyOrForeclosureInThePastFiveYears = this.$('#bankrupcy-or-Foreclosure-in-the-past-five-years');
-        centrallyMonitoredAlarm = this.$('#centrally-monitored-alarm');
-        gatedCommunity = this.$('#gated-community');
-        howManyClaimsInTheLastFiveYears = this.$('#how-many-claims-in-the-last-five-Years');
-        realtorMortgageBroker = this.$('#realtor-mortgage-broker');
-        amountOfPersonalProperty = this.$('#amount-of-personal-property');
-        numberOfStoriesInTheBuilding = this.$('#number-of-stories-in-the-building');
-        whatFloorIsCondoOn = this.$('#what-floor-number-is-condo-on');
-        quoteUpdateRequest = this.$('#quote-update-request');
-        homePolicyEffectiveDate = this.$('#home-policy-effective-date');
-        fourPointIfApplicable = this.$('#four-point-if-applicable');
-        quotedHomeCompany = this.$('#quoted-home-company');
-        windMit = this.$('#wind-mit');
-        quotedHomePremium = this.$('#quoted-home-premium');
-        quotedHomeNumber = this.$('#quoted-home-number');
-        homePaymentOption = this.$('#home-payment-option');
-        mortgageClauseNew = this.$('#mortgage-clause-new');
-        loanNumber = this.$('#loan-number');
-        homeInsuranceCarrier = this.$('#home-insurance-carrier');
-        homeInsurancePremium = this.$('#home-insurance-premium');
-        homeInsurancePolicyNumber = this.$('#home-insurance-policy-number');
+        contact_mailing_address = this.$("#contact-mailing-address");
+        contact_info_mailing_city = this.$("#contact-info-mailing-city");
+        contact_info_mailing_state = this.$("#contact-info-mailing-state");
+        contact_info_mailing_zipcode = this.$("#contact-info-mailing-zipcode");
+        contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
+        contact_info_language_preference = this.$("#contact-info-language-preference");
+        contact_info_writing_agent = this.$("#contact-info-writing-agent");
+        contact_info_lead_source = this.$("#contact-info-lead-source");
+        contact_info_partner = this.$("#contact-info-partner");
+        contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
+        contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
+        contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
+        contact_info_auto_insurance_checkbox = this.$("#contact-info-auto-insurance-checkbox");
+        contact_info_life_insurance_checkbox = this.$("#contact-info-life-insurance-checkbox");
+        contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
+        contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
+        contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
 
-        currentAutoCarrier = this.$('current-auto-carrier');
-        expirationDate = this.$('expiration-date');
-        currentAutoPremium = this.$('current-auto-premium');
-        currentResidenceType = this.$('current-residence-type');
-        driverOneLicense = this.$('driver-one-license-number');
-        vehicleOneVin = this.$('vehicle-one-vin');
-        vehicleOneYear = this.$('vehicle-one-year');
-        vehicleOneMake = this.$('vehicle-one-make');
-        vehicleOneModel = this.$('vehicle-one-model');
-        driverTwoLicense = this.$('driver-two-license-number');
-        vehicleTwoVin = this.$('vehicle-two-vin');
-        vehicleTwoYear = this.$('vehicle-two-year');
-        vehicleTwoMake = this.$('vehicle-two-make');
-        vehicleTwoModel = this.$('vehicle-two-model');
-        bodilyInjuryLiability = this.$('bodily-injury-liability');
-        propertyDamage = this.$('property-damage');
-        uninsuredMotoristLiability = this.$('uninsured-motorist-liability');
-        medicalPayments = this.$('medical-payments');
-        vehicleOneCompDed = this.$('vehicle-one-comp-ded');
-        vehicleOneCollisionDed = this.$('vehicle-one-collision-ded');
-        autoOneTowing = this.$('auto-one-towing');
-        autoOneRentalCar = this.$('auto-one-rental-car');
-        vehicleTwoCompDed = this.$('vehicle-two-comp-ded');
-        vehicleTwoCollisionDed = this.$('vehicle-two-collision-ded');
-        autoTwoTowing = this.$('auto-two-towing');
-        autoTwoRentalCar = this.$('auto-two-rental-car');
-        autoQuoteUpdateRequest = this.$('quote-update-request');
-        autoPolicyEffectiveDate = this.$('auto-policy-effective-date');
-        paymentOption = this.$('payment-option');
-        autoPaymentInfo = this.$('auto-payment-info');
-        quotedAutoCompany = this.$('quoted-auto-company');
-        quotedAutoPremium = this.$('quoted-auto-premium');
-        quotedAutoNumber = this.$('quoted-auto-number');
-        autoInsuranceCarrier = this.$('auto-insurance-carrier');
-        autoInsurancePremium = this.$('auto-insurance-pemium');
-        autoInsurancePolicy = this.$('auto-insurance-policy-number');
+        contact_info_renew_as_is_email_received = this.$("#contact-info-renew-as-is-email-received");
 
-        lifeLeadStatus = this.$('life-lead-status');
+        health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
+        spouse_first_name = this.$("#spouse-first-name");
+        spouse_last_name = this.$("#spouse-last-name");
+        spouse_gender = this.$("#spouse-gender");
+        spouse_dob = this.$("#spouse-dob");
+        spouse_do_you_have_a_social_security_number = this.$("#spouse-do-you-have-a-social-security-number");
+        spouse_social = this.$("#spouse-social");
+        spouse_income_source = this.$("#spouse-income-source");
+        spouse_yearly_income = this.$("#spouse-yearly-income");
+        spouse_employers_name = this.$("#spouse-employers-name");
+        spouse_employers_phone_number = this.$("#spouse-employers-phone-number");
+        child_1_name = this.$("#child-1-name");
+        child_1_dob = this.$("#child-1-dob");
+        child_1_gender = this.$("#child-1-gender");
+        child_1_social = this.$("#child-1-social");
+        child_2_name = this.$("#child-2-name");
+        child_2_dob = this.$("#child-2-dob");
+        child_2_gender = this.$("#child-2-gender");
+        child_2_social = this.$("#child-2-social");
+        child_3_name = this.$("#child-3-name");
+        child_3_dob = this.$("#child-3-dob");
+        child_3_gender = this.$("#child-3-gender");
 
-        healthWritingAgent = this.$('#health-writing-agent');
-        healthScrubber = this.$('#health-scrubber');
-        homeWritingAgent = this.$('#home-writing-agent');
-        homeScrubber = this.$('#home-scrubber');
-        autoWritingAgent = this.$('#auto-writing-agent');
-        autoScrubber = this.$('#auto-scrubber');
-        lifeWritingAgent = this.$('#life-writing-agent');
-        lifeScrubber = this.$('#life-scrubber');
+        child_3_social = this.$("#child-3-social");
+        child_4_name = this.$("#child-4-name");
+        child_4_dob = this.$("#child-4-dob");
+        child_4_gender = this.$("#child-4-gender");
+        child_4_social = this.$("#child-4-social");
+        health_auto_priority_code = this.$("#health-auto-priority-code");
+        health_lead_type = this.$("#health-lead-type");
+        health_priority_code = this.$("#health-priority-code");
+        health_lead_source = this.$("#health-lead-source");
+        health_partner = this.$("#health-partner");
+        health_lead_status = this.$("#health-lead-status");
+        health_writing_agent = this.$("#health-writing-agent");
+        health_scrubber = this.$("#health-scrubber");
+        health_total_individual_income = this.$("#health-total-individual-income");
+        health_total_household_income = this.$("#health-total-household-income");
+        health_primary_applicants_income_source = this.$("#health-primary-applicants-income-source");
+        health_primary_applicants_employers_name = this.$("#health-primary-applicants-employers-name");
+        health_applicant_employers_phone_number = this.$("#health-applicant-employers-phone-number");
+        health_marital_status = this.$("#health-marital-status");
+        health_number_of_dependent_children_in_house = this.$("#health-number-of-dependent-children-in-house");
+        health_renewal_source_2016 = this.$("#health-renewal-source-2016");
+        health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
+        health_presold_processor_2016 = this.$("#health-presold-processor-2016");
+        health_application_number_2016_info = this.$("#health-application-number-2016-info");
+        health_effective_date_2016 = this.$("#health-effective-date-2016");
+        health_presold_processor_2016 = this.$("#health-presold-processor-2016");
+        health_total_income_used_on_application = this.$("#health-total-income-used-on-application");
+        health_final_gross_premium_2016 = this.$("#health-final-gross-premium-2016");
+        health_final_subsidy_2016 = this.$("#health-final-subsidy-2016");
+        heatlh_plan_2016 = this.$("#heatlh-plan-2016");
+        health_final_premium_after_subsidy_2016 = this.$("#health-final-premium-after-subsidy-2016")
+        health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
+        health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
+        health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
+        health_adults_applying_for_coverage_2016 = this.$("#health-adults-applying-for-coverage-2016");
+        health_total_household_size_2016 = this.$("#health-total-household-size-2016");
+        health_cloud_gross_premium_2016 = this.$("#health-cloud-gross-premium-2016");
+        health_children_applying_for_coverage_2016 = this.$("#health-children-applying-for-coverage-2016");
+        health_cloud_subsidy_2016 = this.$("#health-cloud-subsidy-2016");
+        health_cloud_premium_after_subsidy_2016 = this.$("#health-cloud-premium-after-subsidy-2016");
+        health_lead_has_a_marketplace_account = this.$("#health-lead-has-a-marketplace-account");
+        health_current_coverage = this.$("#health-current-coverage");
+        health_marketplace_app_id_2015 = this.$("#health-marketplace-app-id-2015");
+        health_current_premium = this.$("#health-current-premium");
+        health_subsidy_amount = this.$("#health-subsidy-amount");
+        health_current_net_premium = this.$("#health-current-net-premium");
+        health_effective_date_2015 = this.$("#health-effective-date-2015");
+        health_application_id_2015 = this.$("#health-application-id-2015");
+        health_premium_2015 = this.$("#health-premium-2015");
+        health_carrier_2015 = this.$("#health-carrier-2015");
+        health_subsidy_2015 = this.$("#health-subsidy-2015");
+        health_adult_on_plan_2015 = this.$("#health-adult-on-plan-2015");
+        health_children_on_plan_2015 = this.$("#health-children-on-plan-2015");
+        health_income_verification_needed_2015 = this.$("#health-income-verification-needed-2015");
+        health_citizenship_documents_needed_2015 = this.$("#health-citizenship-documents-needed-2015");
+        health_policy = this.$("#health-policy");
+        health_contact_code_2015 = this.$("#health-contact-code-2015");
+        health_wants_to_renew_same_plan_for_2016 = this.$("#health-wants-to-renew-same-plan-for-2016");
+        health_quoted_renewal_gross_premium_2016 = this.$("#health-quoted-renewal-gross-premium-2016");
+        health_quoted_renewal_subsidy_2016 = this.$("#health-quoted-renewal-subsidy-2016");
+        health_quoted_renewal_net_premium_2016 = this.$("#health-quoted-renewal-net-premium-2016");
+        health_username = this.$("#health-username");
+        health_password = this.$("#health-password");
 
-        binderPaymentOption = this.$('#payment-binder-payment-option');
-        paymentChargeRequest = this.$('#payment-payment-charge-request');
-        creditCardType = this.$('#payment-ccredit-card-type');
-        nameOnCc = this.$('#payment-name-on-cc');
-        creditCardNumber = this.$('#payment-credit-card-number');
-        ccExpirationDate = this.$('#payment-cc-expiration-date');
-        bankAccountType = this.$('#payment-bank-account-type');
-        bankName = this.$('#payment-bank-name');
-        bankRoutingNumber = this.$('#payment-bank-routuing-number');
-        bankAccountNumber = this.$('#payment-bank-account-number');
-
-        ancilliaryAccident = this.$('#ancilliary-accident');
-        ancilliaryCriticalIllness = this.$('#ancilliary-critical-illness');
-        ancilliaryHospitalConfinemet = this.$('#ancilliary-hospital-confinement');
-        ancilliaryDentalCare = this.$('#ancilliary-dental-care');
-        ancilliaryAncillaryTotal = this.$('#ancilliary-ancillary-total');
-
-        abnormalCancerScreeningTest = this.$('#abnormal-cancer-screening-test');
-        cystsGrowthsEtcNotSeenFor = this.$('#cysts-growths-etc-not-seen-for');
-        carotidArteryStenosisEtc = this.$('#carotid-artery-stenosis-etc');
-        hivPositiveAidsRelatedComplexAids = this.$('#hiv-positive-aids-related-complex-aids');
-        multipleSclerosisMemoryLossEtc  = this.$('#multiple-sclerosis-memory-loss-etc');
-        abnormalTestsRequiringFollowUp  = this.$('#abnormal-tests-requiring-follow-up');
-        anyNonRoutineConsultationScheduled = this.$('#any-non-routine-consultation-scheduled');
-        oneOrMoreImmRelativesWithIssues = this.$('#1-or-more-imm-relatives-with-issues');
-        twoOrMoreImmRelativesWithIssues  = this.$('#2-or-more-imm-relatives-with-issues');
-        beningTumorHypertensionEtc = this.$('#bening_tumor-hypertension-etc');
-        presciptionMedicationInLastThreeYears = this.$('#prescription-medication-in-last-three-years');
-
-        disorderDiseaseHeartKidneyLungs = this.$('disorder-disease-heart-kidney-lungs');
-        diseaseQuadLouGehrigsOtherMotor = this.$('#disease-quad-lou-gehrigs-other-motor');
-        alcoholOrSubstanceAbuseFiveYears = this.$('#alcohol-or-substance-abuse-five-years');
-        heartAttackStrokeTransientIschemis = this.$('#heart-attack-stroke-transient-ischemic');
-        diabetesTypeOneOrTwoBloodPressAm = this.$('#diabetes-type-one-or-two-blood-press-am');
-
-        nursingHomeHospitalizedEtc = this.$('nursing-home-hospitalized-etc');
-        hospitalizedInTheLastTwelveMonths = this.$('#hospitalized-in-the-last-twelve-months');
-        diagnosedOrTreatedForMedicalIssues = this.$('#diagnosed_or_treated_for_medical_issues');
-        pregnant = this.$('#pregnant');
-        everHadAProblemPregnancy = this.$('#ever_had_a_problem_pregnancy');
-        hypertension = this.$('#hypertension');
-
-        accidentEliteRequest = this.$('accident-elite-request_eff_date');
-        accidentElitePremium = this.$('#accident-elite-premium');
-        accidentEliteNotes = this.$('#accident-elite-notes');
-
-        criticalCareRequestEffDate = this.$('critical-care-request-eff-date');
-        criticalCarePremium = this.$('#critial-care-premium');
-        criticalCareNotes = this.$('#critical-care-notes');
-
-        requestEffDate = this.$('request-eff-date');
-        hospitalConfinementPremium = this.$('#hospital-confinement-premium');
-        hospitalConfinementNotes = this.$('#hospital-confinement-notes');
-
-        dentalRequestEffDate = this.$('dental-request-eff-date');
-        dentalCarePremium = this.$('#dental-care-premium');
-        dentalCareNotes = this.$('#dental-care-notes');
+        payment_binder_payment_option = this.$("#payment-binder-payment-option");
+        payment_payment_charge_request = this.$("#payment-payment-charge-request");
+        payment_ccredit_card_type = this.$("#payment-ccredit-card-type");
+        payment_name_on_cc = this.$("#payment-name-on-cc");
+        payment_credit_card_number = this.$("#payment-credit-card-number");
+        payment_cc_expiration_date = this.$("#payment-cc-expiration-date");
+        payment_cc_cvv = this.$("#payment-cc-cvv");
+        payment_bank_account_type = this.$("#payment-bank-account-type");
+        payment_bank_name = this.$("#payment-bank-name");
+        payment_bank_routuing_number = this.$("#payment-bank-routuing-number");
+        payment_bank_account_number = this.$("#payment-bank-account-number");
 
         console.log('gut gut?');
 
@@ -642,26 +514,26 @@ fun.views.footer = Backbone.View.extend({
                 console.log('RESPONSE!!!');
                 console.log(response);
 
-                contactUuid.html(response.get('uuid'));
-                contactAccount.html(response.get('account'));
-                contactFirstName.val(response.get('first_name'));
-                contactLastName.val(response.get('last_name'));
-                contactLocation.val(response.get('location') || '');
-                contactTimezone.val(response.get('time_zone') || '');
-                contactZip.val(response.get('zip') || '');
-                contactPhone.val(response.get('phone_number'));
-                contactTags.html(response.get('tags') || '');
-                contactEmail.val(response.get('email') || '');
-                contactAddress.val(response.get('address') || '');
-                contactCountry.val(response.get('country') || '');
-                contactChecked.val(response.get('checked') || '');
-                contactDnd.val(response.get('do_not_disturb') || '');
-                contactCity.val(response.get('city') || '');
-                contactState.val(response.get('state') || '');
-                contactStatus.val(response.get('status') || '');
-                contactDescription.html(response.get('description') || '');
-                contactHistory.html(response.get('history') || '');
-                contactComment.val(response.get('comment') || '');
+                contact_uuid.html(response.get('uuid'));
+                contact_account.html(response.get('account'));
+                contact_info_first_name.val(response.get('first_name'));
+                contact_info_last_name.val(response.get('last_name'));
+                contact_info_location.val(response.get('location') || '');
+                contact_info_timezone.val(response.get('time_zone') || '');
+                contact_info_zip.val(response.get('zip') || '');
+                contact_info_phone.val(response.get('phone_number'));
+                contact_info_tags.html(response.get('tags') || '');
+                contact_info_email.val(response.get('email') || '');
+                contact_info_address.val(response.get('address') || '');
+                contact_info_country.val(response.get('country') || '');
+                contact_info_checked.val(response.get('checked') || '');
+                contact_info_dnd.val(response.get('do_not_disturb') || '');
+                contact_info_city.val(response.get('city') || '');
+                contact_info_state.val(response.get('state') || '');
+                contact_info_status.val(response.get('status') || '');
+                contact_info_description.html(response.get('description') || '');
+                contact_info_history.html(response.get('history') || '');
+                contact_info_comment.val(response.get('comment') || '');
 
                 $('#contactModal').modal({
                     'show': true
