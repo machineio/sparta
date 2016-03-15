@@ -251,7 +251,7 @@ fun.Router = Backbone.Router.extend({
 
     monitors: function(){
         'use strict';
-        var monitor = translate('campaignMonitor');
+        var monitor = translate('systemMonitor');
         fun.utils.hideAll();
         fun.instances.navbar.render();
         fun.instances.subheader.render(monitor);

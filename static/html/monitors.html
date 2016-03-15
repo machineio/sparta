@@ -22,9 +22,9 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon">/</span>
-                                            <input id="monitor_name" type="text" class="form-control" placeholder="Schedule for using Beanbags and Pillows">
+                                            <input id="resource_name" type="text" class="form-control" placeholder="Schedule for using Pillows and Beanbags">
                                         </div>
-                                        <p><%= translate("greatMonitorNames") %>.</p>
+                                        <p><%= translate("greatResourceNames") %>.</p>
                                     </div>
                                 </div>
                             </form>
@@ -55,7 +55,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <form id="export-monitor-form" class="form-export" novalidate="novalidate">
-                                <p class="help-block"><%= translate("getMonitorList") %>.</p>
+                                <p class="help-block"><%= translate("getResourceList") %>.</p>
                             </form>
                         </div>
                     </div>
@@ -70,16 +70,14 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-pills">
-                <li><a href="#all-monitors-tab" data-toggle="tab"><%= translate("allMonitors") %></a></li>
+                <li><a href="#all-monitors-tab" data-toggle="tab"><%= translate("all") %></a></li>
                 <li><a href="#active-monitors-tab" data-toggle="tab"><%= translate("active") %></a></li>
                 <li><a href="#disable-monitors-tab" data-toggle="tab"><%= translate("disable") %></a></li>
-                <li><a href="#suspended-monitors-tab" data-toggle="tab"><%= translate("suspended") %></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="all-monitors-tab"></div>
                 <div class="tab-pane" id="active-monitors-tab"></div>
                 <div class="tab-pane" id="disable-monitors-tab"></div>
-                <div class="tab-pane" id="suspended-monitors-tab"></div>
             </div>
         </div>
     </div>
