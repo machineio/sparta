@@ -940,3 +940,8 @@ input.error:-ms-input-placeholder {
 .margin-calendar-profilecm {
     margin-bottom: 80px;
 }
+
+.dropdown-codemachine-profile {
+      right: 0;
+      left: auto;
+}
