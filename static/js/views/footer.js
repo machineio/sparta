@@ -297,7 +297,7 @@ fun.views.footer = Backbone.View.extend({
             life_date_paramed_exam_ordered,
             life_monthly_premium,
             life_paramed_company,
-            life_application_id_#,
+            life_application_id_number,
             life_application_status,
             life_application_changes,
             life_after_changes_new_premium,
