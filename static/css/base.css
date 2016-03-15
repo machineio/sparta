@@ -950,3 +950,8 @@ input.error:-ms-input-placeholder {
     color: #fff;
     background-color: #921d22;
     border-color: #921d22;
+}
+
+h1 {
+  color: #4e4e4e;
+}
