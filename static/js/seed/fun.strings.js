@@ -19,6 +19,7 @@ fun.strings = {
     disconnect: "Disconnect",
     systemReports: "System Reports",
     connect: "Connect",
+    deleted: "Deleted",
     pause: "Pause",
     overdue: "Overdue",
     findContact: "Find Lead",
