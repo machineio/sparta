@@ -12,6 +12,7 @@ fun.strings = {
     taskMonitor: "Task Monitor",
     developers: "Developers",
     campaignMonitor: "Campaign monitor",
+    systemMonitor: "System monitor",
     getYourImportFileReady: "Get your import file ready",
     companyName: "Company Name",
     telephone: "Telephone",
