@@ -909,3 +909,12 @@ input.error:-ms-input-placeholder {
 .newtask-button-margin{
     margin-bottom: 20px;
 }
+
+.footer-fontsize-codemachine {
+    font-size: 11px;
+}
+
+.footer-help-codemachine {
+    color: #9A9A9A;
+    font-size: 11px;
+}
