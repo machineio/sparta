@@ -945,3 +945,8 @@ input.error:-ms-input-placeholder {
       right: 0;
       left: auto;
 }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #921d22;
+    border-color: #921d22;
