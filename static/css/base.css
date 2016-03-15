@@ -175,13 +175,13 @@ ul.pagination li > a {
 }
 
 .btn-success:hover, .btn-success:focus {
-  background-color: #abc261;
+  background-color: #921d22;
   border: none;
   background-position: 0;
 }
 
 .btn-success {
-  background-color: #98b73e;
+  background-color: #921d22;
 }
 
 #footer {
@@ -276,7 +276,7 @@ ul.pagination li > a {
 }
 
 a {
-    color: #858181;
+    color: #4e4e4e;
 }
 
 a:hover, a:focus {
