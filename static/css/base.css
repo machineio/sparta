@@ -895,3 +895,8 @@ input.error:-ms-input-placeholder {
     flex:1 1 auto;
     flex-wrap: wrap;
 }
+
+#color-codemachine-active {
+    color: #fff; 
+    background-color: #2a9ec5 !important; 
+  }
