@@ -9,7 +9,6 @@ fun.views.contacts = Backbone.View.extend({
         'click #get-dir-btn': 'getDirectory',
         'click #add-contact-btn': 'addContact',
         'click .contact-popup': 'contactDetails',
-        'click .healthInsuranceTab': 'maeTons',
         'click #close-contact-btn': 'closeContactDetails',
         'click #update-contact-btn': 'updateContactDetails',
         'change #mailing-address-different': 'showMailingAddressDifferent',
@@ -26,10 +25,6 @@ fun.views.contacts = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.contacts = this.$el;
-
-        fun.omnibus.on("add:contact", function(){
-            this.updateResourceInfo();
-        }, this);
     },
 
     /*
@@ -60,6 +55,40 @@ fun.views.contacts = Backbone.View.extend({
         $('#contact-callback').datetimepicker();
     },
 
+
+    updateContacts: function(){
+        'use strict';
+        var account = this.account, resource, resources, vonCount = 0, onSuccess;
+
+        resources = {
+            contacts: new fun.models.Contacts(),
+            directories: new fun.models.Directories()
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.contacts.renderContactLists(
+                    resources.contacts
+                );
+
+                fun.instances.contacts.renderDirectoryLists(
+                    resources.directories
+                );
+            }
+        };
+
+        for (resource in resources){
+            resources[resource].fetch({
+                success: onSuccess,
+                error: function() {
+                    console.log('fuck error!');
+                }
+            });
+        }
+    },
+
     /*
     * Render contact lists
     */
@@ -67,7 +96,6 @@ fun.views.contacts = Backbone.View.extend({
         'use strict';
         var template,
             allContacts;
-        console.log('render contact lists');
         if (contacts) {
             this.contacts = contacts;
         }
@@ -82,11 +110,6 @@ fun.views.contacts = Backbone.View.extend({
         this.tbody = this.$('#contacts-list > tbody');
         this.$el.removeClass("hide").addClass("show");
         this.renderContactRows();
-    },
-
-    maeTons: function(){
-        'use strict';
-        console.log('mae tons?');
     },
 
     /*
@@ -145,7 +168,6 @@ fun.views.contacts = Backbone.View.extend({
         'use strict';
         var template,
             directoryList;
-        console.log('render directory lists');
         if (directories) {
             this.directories = directories;
         }
@@ -289,6 +311,7 @@ fun.views.contacts = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         var view = this,
+            account = localStorage.getItem("username"),
             firstName,
             lastName,
             newNumber,
@@ -300,8 +323,6 @@ fun.views.contacts = Backbone.View.extend({
             validationRules,
             validForm,
             form;
-
-        console.log('new contact event');
 
         form = $('#add-contact-form');
 
@@ -341,6 +362,7 @@ fun.views.contacts = Backbone.View.extend({
             numberType = this.newPhoneNumber.intlTelInput("getNumberType");
 
             contact = new fun.models.Contact({
+                account: account,
                 first_name: firstName,
                 last_name: lastName,
                 email: email,
@@ -349,6 +371,11 @@ fun.views.contacts = Backbone.View.extend({
             });
 
             contact.save();
+
+
+            view.listenTo(contact, 'change', view.updateContacts);
+
+
             // Clear the stuff from the inputs (=
             view.$('#contact_first_name').val('');
             view.$('#contact_last_name').val('');
@@ -598,7 +625,6 @@ fun.views.contacts = Backbone.View.extend({
             autoInsurancePremium,
             autoInsurancePolicy;
 
-        console.log('que pasa?');
 
         contactUuid = this.$('#contact-uuid');
         contactAccount = this.$('#contact-account');
@@ -828,13 +854,9 @@ fun.views.contacts = Backbone.View.extend({
 
         contact = new fun.models.Contact({'uuid':name});
 
-        console.log(contact.toJSON());
 
         contact.fetch({
             success: function(response){
-
-                console.log(response.get('uuid'));
-
                 contactUuid.html(response.get('uuid'));
                 contactAccount.html(response.get('account'));
                 contactFirstName.val(response.get('first_name'));
@@ -855,11 +877,9 @@ fun.views.contacts = Backbone.View.extend({
                 contactDescription.html(response.get('description') || '');
                 contactHistory.html(response.get('history') || '');
                 contactComment.val(response.get('comment') || '');
-
                 contactGender.val(response.get('gender') || '');
 
-                contactAutoPriorityCode.val(response.get('auto_priority_code') || 'None')
-                
+                contactAutoPriorityCode.val(response.get('auto_priority_code') || 'None');
 
                 $('#contactModal').modal({
                     'show': true
@@ -978,54 +998,6 @@ fun.views.contacts = Backbone.View.extend({
                 $('#lifeInsuranceTab').addClass('hide');
                 $('#lifeInsuranceTab').removeClass('show');
                 break;
-        }
-    },
-
-    /*
-    * Update resource information
-    */
-    updateResourceInfo: function(){
-        'use strict';
-        var resource,
-            resources,
-            onSuccess,
-            vonCount;
-
-        console.log('executing update resource information');
-
-        resources = {
-            contacts: new fun.models.Contacts(),
-            directories: new fun.models.Directories()
-        };
-
-        onSuccess = function(){
-            console.log('donde se queda?');
-            if(++vonCount === _.keys(resources).length){
-                console.log('da get update resources success!');
-
-                // fun.instances.contacts.renderContactLists(
-                //     resources.contacts
-                // );
-
-                // fun.instances.contacts.renderDirectoryLists(
-                //     resources.directories
-                // );
-            }
-        };
-
-        if(fun.utils.loggedIn()){
-
-            for (resource in resources){
-                resources[resource].fetch({
-                    success: onSuccess,
-                    error: function() {
-                        console.log('what the fuck error!');
-                    }
-                });
-            }
-            console.log('crashea?');
-        } else {
-            fun.utils.redirect(fun.conf.hash.login);
         }
     },
 

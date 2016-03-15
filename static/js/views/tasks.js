@@ -36,6 +36,48 @@ fun.views.tasks = Backbone.View.extend({
     },
 
 
+    updateTasks: function(){
+        var account = this.account, resource, resources, vonCount = 0, onSuccess;
+
+        resources = {
+            user: new fun.models.User({'account':account}),
+            tasks: new fun.models.Tasks(),
+            now: new fun.models.TasksNow(),
+            later: new fun.models.TasksLater(),
+            done: new fun.models.TasksDone(),
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                fun.instances.tasks.renderTasksList(
+                    resources.tasks
+                );
+                fun.instances.settings.setProfileInformation(
+                    resources.user
+                );
+                fun.instances.tasks.renderNowTasksList(
+                    resources.now
+                );
+                fun.instances.tasks.renderLaterTasksList(
+                    resources.later
+                );
+                fun.instances.tasks.renderDoneTasksList(
+                    resources.done
+                );
+            }
+        };
+
+        for (resource in resources){
+            resources[resource].fetch({
+                success: onSuccess,
+                error: function() {
+                    console.log('fuck error!');
+                }
+            });
+        }
+    },
+
+
 
 
      /*
@@ -45,7 +87,6 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         var template,
             allTasks;
-        console.log('render tasks list');
         if (tasks) {
             this.tasks = tasks;
         }
@@ -55,7 +96,6 @@ fun.views.tasks = Backbone.View.extend({
         );
 
         allTasks = this.$('#all-tasks-tab');
-
         allTasks.html(template);
 
         this.tbody = this.$('#tasks-list > tbody');
@@ -111,7 +151,6 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         var template,
             nowTasks;
-        console.log('render now tasks list');
         if (tasks) {
             this.tasks = tasks;
         }
@@ -121,7 +160,6 @@ fun.views.tasks = Backbone.View.extend({
         );
 
         nowTasks = this.$('#now-tasks-tab');
-
         nowTasks.html(template);
 
         this.tbody = this.$('#now-tasks-list > tbody');
@@ -177,7 +215,6 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         var template,
             laterTasks;
-        console.log('render now tasks list');
         if (tasks) {
             this.tasks = tasks;
         }
@@ -187,7 +224,6 @@ fun.views.tasks = Backbone.View.extend({
         );
 
         laterTasks = this.$('#later-tasks-tab');
-
         laterTasks.html(template);
 
         this.tbody = this.$('#later-tasks-list > tbody');
@@ -243,7 +279,6 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         var template,
             doneTasks;
-        console.log('render done tasks list');
         if (tasks) {
             this.tasks = tasks;
         }
@@ -253,7 +288,6 @@ fun.views.tasks = Backbone.View.extend({
         );
 
         doneTasks = this.$('#done-tasks-tab');
-
         doneTasks.html(template);
 
         this.tbody = this.$('#done-tasks-list > tbody');
@@ -310,7 +344,7 @@ fun.views.tasks = Backbone.View.extend({
         event.preventDefault();
         // view cache
         var view = this,
-            account,
+            account = this.account,
             task,
             taskName,
             taskDescription,
@@ -348,23 +382,19 @@ fun.views.tasks = Backbone.View.extend({
             this.taskDescription = this.$('#task_description');
             this.taskLabel = 'Service Requests';
 
-            account = this.account;
             taskName = this.taskName.val();
             taskDescription = this.taskDescription.val();
             taskLabel = this.taskLabel;
-            console.log(account, taskName, taskDescription, taskLabel);
 
             taskPayload = {
                 title: taskName,
                 description: taskDescription,
                 label: taskLabel
             };
+            
             profile = JSON.parse(localStorage.getItem("profile"));
             user = new fun.models.User(profile);
             user.fetch();
-
-            console.log(user.get('uuid'));
-            console.log(user.get('first_name'));
 
             if (typeof(user.get('first_name')) === 'undefined'){
                 first_name = 'Mauricio';
@@ -395,6 +425,11 @@ fun.views.tasks = Backbone.View.extend({
 
             task = new fun.models.Task(taskPayload);
             task.save();
+
+
+
+            view.listenTo(task, 'change', view.updateTasks);
+
 
             // Clear the stuff from the inputs ;)
             view.$('#task_name').val('');
@@ -528,6 +563,8 @@ fun.views.tasks = Backbone.View.extend({
                    status,
                    comment,
                    taskUuid,
+                   nuStatus,
+                   newRandomStuff,
                    callbacks;
 
         this.status = $('input[name="task_status"]:checked');
@@ -538,7 +575,7 @@ fun.views.tasks = Backbone.View.extend({
         console.log('update task');
 
         taskUuid = this.uuid.text();
-        var nuStatus = this.NuStatus.val();
+        nuStatus = this.NuStatus.val();
         status = this.status.val();
         comment = this.comment.val();
 
@@ -550,7 +587,7 @@ fun.views.tasks = Backbone.View.extend({
 
         console.log(status, nuStatus);
 
-        var newRandomStuff = {
+        newRandomStuff = {
             'status': status,
             'comments': {
                 comments: [{

@@ -110,6 +110,38 @@ fun.views.campaigns = Backbone.View.extend({
         this.$el.removeClass("hide").addClass("show");
     },
 
+
+    updateCampaigns: function(){
+        'use strict';
+        var resource, resources, vonCount = 0, onSuccess;
+
+        resources = {
+            inbound: new fun.models.CampaignsInbound(),
+            outbound: new fun.models.CampaignsOutbound()
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                fun.instances.campaigns.renderInboundCampaignsList(
+                   resources.inbound
+                );
+                fun.instances.campaigns.renderOutboundCampaignsList(
+                   resources.outbound
+                );
+            }
+        };
+
+        for (resource in resources){
+            resources[resource].fetch({
+                success: onSuccess,
+                error: function() {
+                    console.log('fuck error!');
+                }
+            });
+        }
+    },
+
+
     /*
     * Render campaigns list
     */
@@ -117,7 +149,6 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         var template,
             allCampaigns;
-        console.log('render campaigns list');
         if (campaigns) {
             this.campaigns = campaigns;
         }
@@ -147,8 +178,6 @@ fun.views.campaigns = Backbone.View.extend({
             template;
         // campaigns length
         length = this.campaigns.length;
-
-        console.log('campaigns length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
@@ -186,7 +215,6 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         var template,
             activeCampaigns;
-        console.log('render active campaigns list');
         if (campaigns) {
             this.activeCampaigns = campaigns;
         }
@@ -215,8 +243,6 @@ fun.views.campaigns = Backbone.View.extend({
             template;
         // campaigns length
         length = this.activeCampaigns.length;
-
-        console.log('active campaigns length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
@@ -254,7 +280,7 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         var template,
             pausedCampaigns;
-        console.log('render paused campaigns list');
+
         if (campaigns) {
             this.pausedCampaigns = campaigns;
         }
@@ -283,8 +309,6 @@ fun.views.campaigns = Backbone.View.extend({
             template;
         // campaigns length
         length = this.pausedCampaigns.length;
-
-        console.log('paused campaigns length: ',length);
 
         if (length > 0){
             rows = this.tbody.html('');
@@ -322,7 +346,7 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         var template,
             inboundCampaigns;
-        console.log('render inbound campaigns list');
+
         if (campaigns) {
             this.inboundCampaigns = campaigns;
         }
@@ -389,7 +413,7 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         var template,
             outboundCampaigns;
-        console.log('render outbound campaigns list');
+
         if (campaigns) {
             this.outboundCampaigns = campaigns;
         }
@@ -571,7 +595,8 @@ fun.views.campaigns = Backbone.View.extend({
         'use strict';
         event.preventDefault();
 
-        var rules,
+        var view = this,
+            rules,
             validationRules,
             validForm,
             form;
@@ -643,10 +668,10 @@ fun.views.campaigns = Backbone.View.extend({
             campaignPayload['strategy'] = strategy;
             campaignPayload['join_empty'] = joinEmpty;
 
-            console.log(campaignPayload);
-
             var campaign = new fun.models.InboundCampaign(campaignPayload);
             campaign.save();
+
+            view.listenTo(campaign, 'change', view.updateCampaigns);
 
             // there is a better way to do this.
             $('#inboundCampaignModal').modal('hide');
@@ -1133,9 +1158,6 @@ fun.views.campaigns = Backbone.View.extend({
 
         campaign.fetch({
             success: function(response){
-
-                console.log(JSON.stringify(response));
-
                 campaignUuid.html(response.get('uuid'));
                 campaignAcccount.html(response.get('account'));
                 campaignActive.html(response.get('active'));
@@ -1189,8 +1211,6 @@ fun.views.campaigns = Backbone.View.extend({
         this.uuid = this.$('#inbound-campaign-uuid');
         this.account = this.$('#inbound-campaign-account');*/
 
-        console.log('update inbound campaign details');
-
         /*status = this.status.text();       
         campaignUuid = this.uuid.text();*/
 
@@ -1208,11 +1228,10 @@ fun.views.campaigns = Backbone.View.extend({
             'strategy': campaignStrategy.text()
         };
 
-        console.log('mae que putas!');
-
-        console.log(updateCampaignData);
-
         update.save(updateCampaignData, {patch: true});
+
+        view.listenTo(update, 'change', view.updateCampaigns);
+
         $('#campaignModal').modal('hide');
 
     },
