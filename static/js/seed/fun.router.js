@@ -627,7 +627,7 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.redirect(fun.conf.hash.login);
         }
-        //fun.instances.footer.render();
+        fun.instances.footer.render();
     },
 
     signup: function(){
