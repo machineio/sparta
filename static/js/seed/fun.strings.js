@@ -6,6 +6,7 @@
 fun.strings = {
     ioFun: "Spartan Approach",
     login: "Login",
+    lunch: "Lunch",
     active: "Active",
     disable: "Disable",
     taskMonitor: "Task Monitor",
