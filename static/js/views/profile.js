@@ -116,6 +116,10 @@ fun.views.profile = Backbone.View.extend({
         console.log('render this campaigns outbound list');
     },
 
+    renderTaskList: function(tasks){
+        console.log('render profile tasks list');
+    },
+
     oneDay: function(event){
         console.log('one day event');
     },
