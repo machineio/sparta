@@ -255,6 +255,7 @@ fun.Router = Backbone.Router.extend({
         fun.utils.hideAll();
         fun.instances.navbar.render();
         fun.instances.subheader.render(monitor);
+        fun.instances.subheader.renderHeadNavProfile();
         fun.instances.monitors.render();
         fun.instances.footer.render();
     },
@@ -1119,6 +1120,7 @@ fun.Router = Backbone.Router.extend({
             fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(recordings);
             fun.instances.subheader.renderHeadNav();
+            fun.instances.subheader.renderHeadNavProfile();
 
             fun.instances.recordings.render();
 
