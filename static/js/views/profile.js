@@ -120,6 +120,10 @@ fun.views.profile = Backbone.View.extend({
         console.log('render profile tasks list');
     },
 
+    renderContactList: function(contacts){
+        console.log('render profile contacts list');
+    },
+
     oneDay: function(event){
         console.log('one day event');
     },
