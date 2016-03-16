@@ -5,6 +5,10 @@
 
 fun.strings = {
     ioFun: "Spartan Approach",
+    dial: "Dial",
+    skip: "Skip",
+    leaveVM: "Leave VM",
+    setCallback: "Set callback",
     login: "Login",
     lunch: "Lunch",
     active: "Active",
