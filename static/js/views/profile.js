@@ -109,6 +109,7 @@ fun.views.profile = Backbone.View.extend({
 
 
     renderCampaignInboundList: function(campaigns){
+        console.log(campaigns.length);
         console.log('render this campaign inbound list');
     },
 
