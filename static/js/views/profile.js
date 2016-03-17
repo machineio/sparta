@@ -130,7 +130,6 @@ fun.views.profile = Backbone.View.extend({
         if (length > 0){
             rows = this.listgroup.html('');
             _.each(this.campaigns.toJSON(), function(value){
-                console.log(value);
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.campaignItem)
                 )(value);
