@@ -122,7 +122,7 @@ fun.views.profile = Backbone.View.extend({
         }
 
 
-        this.listgroup = this.$('#tabs4-pane-inbound > listgroup');
+        this.listgroup = this.$('#profile-inbound-list');
 
         // campaigns length
         length = this.campaigns.length;
@@ -130,8 +130,9 @@ fun.views.profile = Backbone.View.extend({
         if (length > 0){
             rows = this.listgroup.html('');
             _.each(this.campaigns.toJSON(), function(value){
+                console.log(value);
                 template = _.template(
-                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                    fun.utils.getTemplate(fun.conf.templates.campaignItem)
                 )(value);
                 rows.append(template);
             });
