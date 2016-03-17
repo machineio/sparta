@@ -965,7 +965,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     changeNumberChildren: function(event){
-
+        console.log('KIDS!!',$('#agent-number-of-children').val(),typeof $('#agent-number-of-children').val());
         switch($('#agent-number-of-children').val()){
 
             case '0':
