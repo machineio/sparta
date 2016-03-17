@@ -110,26 +110,35 @@ fun.views.profile = Backbone.View.extend({
 
     renderCampaignInboundList: function(campaigns){
         'use strict';
+        var length,
+            rows,
+            template;
         console.log(campaigns.length);
         console.log('render this campaign inbound list');
 
-        /*var template,
-            inboundCampaigns;
+        
         if (campaigns) {
             this.campaigns = campaigns;
         }
 
-        template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.inboundCampaigns)
-        );
-
-        inboundCampaigns = this.$('#inbound-campaigns-tab');
-
-        inboundCampaigns.html(template);*/
 
         this.listgroup = this.$('#tabs4-pane-inbound > listgroup');
 
-        console.log(this.listgroup);
+        // campaigns length
+        length = this.campaigns.length;
+
+        if (length > 0){
+            rows = this.listgroup.html('');
+            _.each(this.campaigns.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignRow)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no inbound campaign list');
+            /*this.noCampaigns();*/
+        }
 
         /*this.$el.removeClass("hide").addClass("show");*/
 
