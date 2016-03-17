@@ -60,7 +60,7 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon">/</span>
-                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control-cm-cm" placeholder="Schedule for using Pillows and Beanbags">
+                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control-cm" placeholder="Schedule for using Pillows and Beanbags">
                                         </div>
                                         <p><%= translate("greatCampaignNames") %>.</p>
                                     </div>
@@ -68,7 +68,7 @@
 
                                 <div class="form-group">
                                     <label for="campaign_description"><%= translate("descriptionOptional") %></label>
-                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control-cm-cm">
+                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control-cm">
                                 </div>
 
                                 <div class="form-checkbox">
@@ -172,13 +172,13 @@
                                         <tr>
                                             <th scope="row"><%= translate("timeout") %></th>
                                             <td>
-                                                <input type="text" id="inbound-timeout" name="inbound_timeout" class="form-control-cm-cm">
+                                                <input type="text" id="inbound-timeout" name="inbound_timeout" class="form-control-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("recordAudio") %></th>
                                             <td>
-                                                <select name="inbound_recording" id="inbound-recording" class="form-control-cm-cm">
+                                                <select name="inbound_recording" id="inbound-recording" class="form-control-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -187,13 +187,13 @@
                                         <tr>
                                             <th scope="row"><%= translate("retry") %></th>
                                             <td>
-                                                <input type="text" id="inbound-retry" name="inbound_retry" class="form-control-cm-cm">
+                                                <input type="text" id="inbound-retry" name="inbound_retry" class="form-control-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("wrapuptime") %></th>
                                             <td>
-                                                <input type="text" id="inbound-wrapuptime" name="inbound_wrapuptime" class="form-control-cm-cm">
+                                                <input type="text" id="inbound-wrapuptime" name="inbound_wrapuptime" class="form-control-cm">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -212,19 +212,19 @@
                                             <th scope="row"><%= translate("maxlen") %></th>
 
                                             <td>
-                                                <input type="text" id="inbound-maxlen" name="inbound_maxlen" class="form-control-cm-cm">
+                                                <input type="text" id="inbound-maxlen" name="inbound_maxlen" class="form-control-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("servicelevel") %></th>
                                             <td>
-                                                <input type="text" id="inbound-servicelevel" name="inbound_servicelevel" class="form-control-cm-cm">
+                                                <input type="text" id="inbound-servicelevel" name="inbound_servicelevel" class="form-control-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("strategy") %></th>
                                             <td>
-                                                <select name="campaign_strategy" id="campaign-strategy" class="form-control-cm-cm">
+                                                <select name="campaign_strategy" id="campaign-strategy" class="form-control-cm">
                                                     <option value="ringall" selected>ringall</option>
                                                     <option value="rrmemory">rrmemory</option>
                                                     <option value="leastrecent">leastrecent</option>
@@ -236,7 +236,7 @@
                                         <tr>
                                             <th scope="row"><%= translate("joinempty") %></th>
                                             <td>
-                                                <select name="inbound_joinempty" id="inbound-joinempty" class="form-control-cm-cm">
+                                                <select name="inbound_joinempty" id="inbound-joinempty" class="form-control-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -245,7 +245,7 @@
                                         <tr>
                                             <th scope="row"><%= translate("ringinuse") %></th>
                                             <td>
-                                                <select name="inbound_ringinuse" id="inbound-ringinuse" class="form-control-cm-cm">
+                                                <select name="inbound_ringinuse" id="inbound-ringinuse" class="form-control-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -333,12 +333,12 @@
 
                                                 <div class="form-group">
                                                     <label for="answer_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="answer_description" name="answer_description" class="form-control-cm-cm">
+                                                    <input type="text" id="answer_description" name="answer_description" class="form-control-cm">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="answer_digit"><%= translate("descriptionDigit") %></label>
-                                                    <select class="form-control-cm-cm" id="answer_digit" name="answer_digit">
+                                                    <select class="form-control-cm" id="answer_digit" name="answer_digit">
                                                         <option value="1" selected>1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -353,7 +353,7 @@
 
                                                 <div class="form-group">
                                                     <label for="answer_number"><%= translate("transfer") %></label>
-                                                    <input type="text" id="answer_number" name="answer_number" class="form-control-cm-cm" placeholder="Queue, Account or Phone number">
+                                                    <input type="text" id="answer_number" name="answer_number" class="form-control-cm" placeholder="Queue, Account or Phone number">
                                                 </div>
                                             </form>
                                         </div>
@@ -390,7 +390,7 @@
 
                                                 <div class="form-group">
                                                     <label for="transfer_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="transfer_description" name="transfer_description" class="form-control-cm-cm">
+                                                    <input type="text" id="transfer_description" name="transfer_description" class="form-control-cm">
                                                 </div>
 
                                                 <!-- <div class="form-group">
@@ -433,7 +433,7 @@
 
                                                 <div class="form-group">
                                                     <label for="machine_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="machine_description" name="machine_description" class="form-control-cm-cm">
+                                                    <input type="text" id="machine_description" name="machine_description" class="form-control-cm">
                                                 </div>
                                             </form>
                                         </div>
