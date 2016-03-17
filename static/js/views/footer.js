@@ -846,15 +846,10 @@ fun.views.footer = Backbone.View.extend({
             $('#mailingAddressDifferentDiv').removeClass('show');
             $('#mailingAddressDifferentDiv').addClass('hide');
         }
-        // if(event.target.checked===true){
-            
-        // } else {
-            
-        // }
     },
 
     changeMaritalStatus: function(event){
-        console.log('MARRIED STATUS',$('#contact-info-marital-status').val()==='none');
+        console.log('MARRIED STATUS',$('#contact-info-marital-status').val());
         if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='single'){
             $('#contactSpouseInfoTab').removeClass('show');
             $('#contactSpouseInfoTab').addClass('hide');
