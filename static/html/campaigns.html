@@ -60,7 +60,7 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon">/</span>
-                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control-cm" placeholder="Schedule for using Pillows and Beanbags">
+                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control-cm-cm" placeholder="Schedule for using Pillows and Beanbags">
                                         </div>
                                         <p><%= translate("greatCampaignNames") %>.</p>
                                     </div>
@@ -68,7 +68,7 @@
 
                                 <div class="form-group">
                                     <label for="campaign_description"><%= translate("descriptionOptional") %></label>
-                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control-cm">
+                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control-cm-cm">
                                 </div>
 
                                 <div class="form-checkbox">
@@ -172,13 +172,13 @@
                                         <tr>
                                             <th scope="row"><%= translate("timeout") %></th>
                                             <td>
-                                                <input type="text" id="inbound-timeout" name="inbound_timeout" class="form-control-cm">
+                                                <input type="text" id="inbound-timeout" name="inbound_timeout" class="form-control-cm-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("recordAudio") %></th>
                                             <td>
-                                                <select name="inbound_recording" id="inbound-recording" class="form-control-cm">
+                                                <select name="inbound_recording" id="inbound-recording" class="form-control-cm-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -187,13 +187,13 @@
                                         <tr>
                                             <th scope="row"><%= translate("retry") %></th>
                                             <td>
-                                                <input type="text" id="inbound-retry" name="inbound_retry" class="form-control-cm">
+                                                <input type="text" id="inbound-retry" name="inbound_retry" class="form-control-cm-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("wrapuptime") %></th>
                                             <td>
-                                                <input type="text" id="inbound-wrapuptime" name="inbound_wrapuptime" class="form-control-cm">
+                                                <input type="text" id="inbound-wrapuptime" name="inbound_wrapuptime" class="form-control-cm-cm">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -212,19 +212,19 @@
                                             <th scope="row"><%= translate("maxlen") %></th>
 
                                             <td>
-                                                <input type="text" id="inbound-maxlen" name="inbound_maxlen" class="form-control-cm">
+                                                <input type="text" id="inbound-maxlen" name="inbound_maxlen" class="form-control-cm-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("servicelevel") %></th>
                                             <td>
-                                                <input type="text" id="inbound-servicelevel" name="inbound_servicelevel" class="form-control-cm">
+                                                <input type="text" id="inbound-servicelevel" name="inbound_servicelevel" class="form-control-cm-cm">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row"><%= translate("strategy") %></th>
                                             <td>
-                                                <select name="campaign_strategy" id="campaign-strategy" class="form-control-cm">
+                                                <select name="campaign_strategy" id="campaign-strategy" class="form-control-cm-cm">
                                                     <option value="ringall" selected>ringall</option>
                                                     <option value="rrmemory">rrmemory</option>
                                                     <option value="leastrecent">leastrecent</option>
@@ -236,7 +236,7 @@
                                         <tr>
                                             <th scope="row"><%= translate("joinempty") %></th>
                                             <td>
-                                                <select name="inbound_joinempty" id="inbound-joinempty" class="form-control-cm">
+                                                <select name="inbound_joinempty" id="inbound-joinempty" class="form-control-cm-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -245,7 +245,7 @@
                                         <tr>
                                             <th scope="row"><%= translate("ringinuse") %></th>
                                             <td>
-                                                <select name="inbound_ringinuse" id="inbound-ringinuse" class="form-control-cm">
+                                                <select name="inbound_ringinuse" id="inbound-ringinuse" class="form-control-cm-cm">
                                                     <option value="yes" selected>yes</option>
                                                     <option value="no">no</option>
                                                 </select>
@@ -333,12 +333,12 @@
 
                                                 <div class="form-group">
                                                     <label for="answer_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="answer_description" name="answer_description" class="form-control">
+                                                    <input type="text" id="answer_description" name="answer_description" class="form-control-cm-cm">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="answer_digit"><%= translate("descriptionDigit") %></label>
-                                                    <select class="form-control" id="answer_digit" name="answer_digit">
+                                                    <select class="form-control-cm-cm" id="answer_digit" name="answer_digit">
                                                         <option value="1" selected>1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -353,7 +353,7 @@
 
                                                 <div class="form-group">
                                                     <label for="answer_number"><%= translate("transfer") %></label>
-                                                    <input type="text" id="answer_number" name="answer_number" class="form-control" placeholder="Queue, Account or Phone number">
+                                                    <input type="text" id="answer_number" name="answer_number" class="form-control-cm-cm" placeholder="Queue, Account or Phone number">
                                                 </div>
                                             </form>
                                         </div>
@@ -390,12 +390,12 @@
 
                                                 <div class="form-group">
                                                     <label for="transfer_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="transfer_description" name="transfer_description" class="form-control">
+                                                    <input type="text" id="transfer_description" name="transfer_description" class="form-control-cm-cm">
                                                 </div>
 
                                                 <!-- <div class="form-group">
                                                     <label for="transfer_max"><%= translate("maxTransfers") %></label>
-                                                    <input type="text" id="max_transfers" name="max_transfers" class="form-control">
+                                                    <input type="text" id="max_transfers" name="max_transfers" class="form-control-cm">
                                                 </div> -->
                                             </form>
                                         </div>
@@ -433,7 +433,7 @@
 
                                                 <div class="form-group">
                                                     <label for="machine_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="machine_description" name="machine_description" class="form-control">
+                                                    <input type="text" id="machine_description" name="machine_description" class="form-control-cm-cm">
                                                 </div>
                                             </form>
                                         </div>
@@ -470,12 +470,12 @@
 
                                                 <div class="form-group">
                                                     <label for="do_not_call_description"><%= translate("descriptionOptional") %></label>
-                                                    <input type="text" id="do_not_call_description" name="do_not_call_description" class="form-control">
+                                                    <input type="text" id="do_not_call_description" name="do_not_call_description" class="form-control-cm">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="do_not_call_digit"><%= translate("descriptionDigit") %></label>
-                                                    <select class="form-control" id="do_not_call_digit" name="do_not_call_digit">
+                                                    <select class="form-control-cm" id="do_not_call_digit" name="do_not_call_digit">
                                                         <option value="1" selected>1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -545,7 +545,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p>Try each contact </p>
-                                                <select class="form-control" id="wait_minutes" name="transfer_digit">
+                                                <select class="form-control-cm" id="wait_minutes" name="transfer_digit">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -557,7 +557,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p>times and wait </p>
-                                                <select class="form-control" id="wait_minutes" name="transfer_digit">
+                                                <select class="form-control-cm" id="wait_minutes" name="transfer_digit">
                                                     <option value="5">5</option>
                                                     <option value="10">10</option>
                                                     <option value="15">15</option>
@@ -584,7 +584,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="transfer_digit"><%= translate("from") %></label>
-                                                    <select class="form-control" id="transfer_digit" name="transfer_digit">
+                                                    <select class="form-control-cm" id="transfer_digit" name="transfer_digit">
                                                         <option value="8a">8:00 AM</option>
                                                         <option value="9a" selected>9:00 AM</option>
                                                         <option value="10a">10:00 AM</option>
@@ -604,7 +604,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="transfer_digit"><%= translate("to") %></label>
-                                                    <select class="form-control" id="transfer_digit" name="transfer_digit">
+                                                    <select class="form-control-cm" id="transfer_digit" name="transfer_digit">
                                                         <option value="1p">1:00 PM</option>
                                                         <option value="2p">2:00 PM</option>
                                                         <option value="3p">3:00 PM</option>
@@ -714,26 +714,26 @@
                                     <tr>
                                         <th scope="row"><%= translate("callerid") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-callerid" name="campaign_callerid" class="form-control">
+                                            <input type="text" id="inbound-campaign-callerid" name="campaign_callerid" class="form-control-cm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><%= translate("maxLen") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-max-len" name="campaign_maxlen" class="form-control">
+                                            <input type="text" id="inbound-campaign-max-len" name="campaign_maxlen" class="form-control-cm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><%= translate("retry") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-retry" name="campaign_retry" class="form-control">
+                                            <input type="text" id="inbound-campaign-retry" name="campaign_retry" class="form-control-cm">
                                         </td>
                                         
                                     </tr>
                                     <tr>
                                         <th scope="row"><%= translate("serviceLevel") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-service-level" name="campaign_service_level" class="form-control">
+                                            <input type="text" id="inbound-campaign-service-level" name="campaign_service_level" class="form-control-cm">
                                         </td>
                                     </tr>
                                     <tr>
@@ -772,13 +772,13 @@
                                     <tr>
                                         <th scope="row"><%= translate("timeOut") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-time-out" name="campaign_time_out" class="form-control">
+                                            <input type="text" id="inbound-campaign-time-out" name="campaign_time_out" class="form-control-cm">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><%= translate("wrapuptime") %></th>
                                         <td>
-                                            <input type="text" id="inbound-campaign-wrap-up-time" name="campaign_wrap_up_time" class="form-control">
+                                            <input type="text" id="inbound-campaign-wrap-up-time" name="campaign_wrap_up_time" class="form-control-cm">
                                         </td>
                                     </tr>
                                 
