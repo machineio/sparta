@@ -636,7 +636,7 @@ body {
 /* Wrapper for page content to push down footer */
 label.error {
     background-color: transparent !important;
-    color: #da547b;
+    color: #B1252C;
 }
 
 input.error::-webkit-input-placeholder {
