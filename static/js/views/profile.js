@@ -113,14 +113,11 @@ fun.views.profile = Backbone.View.extend({
         var length,
             rows,
             template;
-        console.log(campaigns.length);
         console.log('render this campaign inbound list');
-
         
         if (campaigns) {
             this.campaigns = campaigns;
         }
-
 
         this.listgroup = this.$('#profile-inbound-list');
 
