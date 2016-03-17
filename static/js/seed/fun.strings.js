@@ -2,7 +2,6 @@
  * Default internationalization object
  */
 
-
 fun.strings = {
     ioFun: "Spartan Approach",
     dial: "Dial",
