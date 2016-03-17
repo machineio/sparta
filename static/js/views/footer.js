@@ -840,16 +840,15 @@ fun.views.footer = Backbone.View.extend({
     showMailingAddressDifferent: function(event){
         var value = $('#contact-info-mailing-address-different').val();
         if(value===true||value==='true'){
-            $('#mailingAddressDifferentDiv').removeClass('hide');
-            $('#mailingAddressDifferentDiv').addClass('show');
+            $('#contact-info-mailingAddressDifferentDiv').removeClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv').addClass('show');
         } else {
-            $('#mailingAddressDifferentDiv').removeClass('show');
-            $('#mailingAddressDifferentDiv').addClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv').removeClass('show');
+            $('#contact-info-mailingAddressDifferentDiv').addClass('hide');
         }
     },
 
     changeMaritalStatus: function(event){
-        console.log('MARRIED STATUS',$('#contact-info-marital-status').val());
         if($('#contact-info-marital-status').val()==='married'){
             $('#contactSpouseInfoTab').removeClass('hide');
             $('#contactSpouseInfoTab').addClass('show');
