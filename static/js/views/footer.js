@@ -561,7 +561,7 @@ fun.views.footer = Backbone.View.extend({
         auto_uninsured_motorist_liability = this.$("#auto-uninsured-motorist-liability");
         auto_medical_payments = this.$("#auto-medical-payments");
         auto_vehicle_one_comp_ded = this.$("#auto-vehicle-one-comp-ded");
-        Auto_vehicle_1_collision_ded = this.$("#auto-vehicle-1-collision-ded");
+        auto_vehicle_1_collision_ded = this.$("#auto-vehicle-1-collision-ded");
         auto_1_towing= this.$("#auto-1-towing");
         auto_1_rental_car = this.$("#auto-1-rental-car");
         auto_vehicle_2_comp_ded = this.$("#auto-vehicle-2-comp-ded");
@@ -850,12 +850,12 @@ fun.views.footer = Backbone.View.extend({
 
     changeMaritalStatus: function(event){
         console.log('MARRIED STATUS',$('#contact-info-marital-status').val());
-        if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='single'){
-            $('#contactSpouseInfoTab').removeClass('show');
-            $('#contactSpouseInfoTab').addClass('hide');
-        } else {
+        if($('#contact-info-marital-status').val()==='married'){
             $('#contactSpouseInfoTab').removeClass('hide');
             $('#contactSpouseInfoTab').addClass('show');
+        } else {
+            $('#contactSpouseInfoTab').removeClass('show');
+            $('#contactSpouseInfoTab').addClass('hide');
         }
     },
 
@@ -965,6 +965,7 @@ fun.views.footer = Backbone.View.extend({
     },
 
     changeNumberChildren: function(event){
+
         switch($('#agent-number-of-children').val()){
 
             case '0':
