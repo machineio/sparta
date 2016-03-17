@@ -146,6 +146,8 @@ fun.views.profile = Backbone.View.extend({
         var length,
             rows,
             template;
+        console.log(campaigns.length);
+        console.log('tons que como es');
         // Yes the lol is with this.campaigns but lets see just what happen 
         if (campaigns) {
             this.campaigns = campaigns;
