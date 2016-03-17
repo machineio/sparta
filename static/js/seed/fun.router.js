@@ -195,14 +195,12 @@ fun.Router = Backbone.Router.extend({
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
         console.log(this.account, this.context);
-        
         // cognitive, i don't know car engine by account and context.
         if (this.account === this.context){
             console.log('account same as context');
         } else {
             console.log('missing or different context');
         }
-        
         // Are you inside the dungeon or out of the dungeon?
         if(fun.utils.loggedIn()){
             fun.utils.redirect(fun.conf.hash.profile);
