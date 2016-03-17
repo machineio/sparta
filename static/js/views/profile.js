@@ -166,7 +166,7 @@ fun.views.profile = Backbone.View.extend({
                 rows.append(template);
             });
         } else {
-            console.log('no inbound campaign list');
+            console.log('no outbound campaign list');
             /*this.noCampaigns();*/
         }
 
