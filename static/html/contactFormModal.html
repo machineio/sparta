@@ -180,13 +180,13 @@
                                     <input type="text" id="contact-mailing-address" name="agent_mailing_address" class="form-control">
                                 </td>
                             </tr>
-                            <tr>
+                            <tr id="contact-info-mailingAddressDifferentDiv" class="hide">
                                 <th scope="row"><%= translate("mailingCity") %></th>
                                 <td>
                                     <input type="text" id="contact-info-mailing-city" class="form-control">
                                 </td>
                             </tr>
-                            <tr>
+                            <tr id="contact-info-mailingAddressDifferentDiv" class="hide">
                                 <th scope="row"><%= translate("mailingState") %></th>
                                 <td>
                                     <select name="" id="contact-info-mailing-state" class="form-control">
@@ -194,8 +194,8 @@
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row"><%= translate("mailingCity") %></th>
+                            <tr id="contact-info-mailingAddressDifferentDiv" class="hide">
+                                <th scope="row"><%= translate("mailingZipCode") %></th>
                                 <td>
                                     <input type="text" id="contact-info-mailing-zipcode" class="form-control">
                                 </td>
@@ -506,122 +506,130 @@
     </div> -->
     <div class="tab-pane fade" id="childrenInfo">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 hide" id="childrenInfoGroup-1">
                 <div class="panel panel-default">
                     <table class="table">
                         <tbody>
-                            <div id="childrenInfoGroup-1" class="hide">
-                                <tr>
-                                     <th scope="row"><%= translate("child1Name") %></th>
-                                     <td>
-                                          <input type="text" id="child-1-name" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child1Dob") %></th>
-                                     <td>
-                                          <input type="text" id="child-1-dob" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child1Gender") %></th>
-                                     <td>
-                                          <input type="text" id="child-1-gender" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child1Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-1-social" class="form-control">
-                                     </td>
-                                </tr>
-                            </div>
-                            <div id="childrenInfoGroup-2" class="hide">
-                                <tr>
-                                     <th scope="row"><%= translate("child2Name") %></th>
-                                     <td>
-                                          <input type="text" id="child-2-name" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child2Dob") %></th>
-                                     <td>
-                                          <input type="text" id="child-2-dob" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child2Gender") %></th>
-                                     <td>
-                                          <input type="text" id="child-2-gender" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child2Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-2-social" class="form-control">
-                                     </td>
-                                </tr>
-                            </div>
+                            <tr>
+                                 <th scope="row"><%= translate("child1Name") %></th>
+                                 <td>
+                                      <input type="text" id="child-1-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child1Dob") %></th>
+                                 <td>
+                                      <input type="text" id="child-1-dob" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child1Gender") %></th>
+                                 <td>
+                                      <input type="text" id="child-1-gender" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child1Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-1-social" class="form-control">
+                                 </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 hide" id="childrenInfoGroup-2">
                 <div class="panel panel-default">
                     <table class="table">
                         <tbody>
-                            <div id="childrenInfoGroup-3" class="hide">
-                                <tr>
-                                     <th scope="row"><%= translate("child3Name") %></th>
-                                     <td>
-                                          <input type="text" id="child-3-name" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child3Dob") %></th>
-                                     <td>
-                                          <input type="text" id="child-3-dob" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child3Gender") %></th>
-                                     <td>
-                                          <input type="text" id="child-3-gender" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child3Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-3-social" class="form-control">
-                                     </td>
-                                </tr>
-                            </div>
-                            <div id="childrenInfoGroup-4" class="hide">
-                                <tr>
-                                     <th scope="row"><%= translate("child4Name") %></th>
-                                     <td>
-                                          <input type="text" id="child-4-name" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child4Dob") %></th>
-                                     <td>
-                                          <input type="text" id="child-4-dob" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child4Gender") %></th>
-                                     <td>
-                                          <input type="text" id="child-4-gender" class="form-control">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child4Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-4-social" class="form-control">
-                                     </td>
-                                </tr>
-                            </div>
+                            <tr>
+                                 <th scope="row"><%= translate("child2Name") %></th>
+                                 <td>
+                                      <input type="text" id="child-2-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child2Dob") %></th>
+                                 <td>
+                                      <input type="text" id="child-2-dob" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child2Gender") %></th>
+                                 <td>
+                                      <input type="text" id="child-2-gender" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child2Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-2-social" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6 hide" id="childrenInfoGroup-3">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("child3Name") %></th>
+                                 <td>
+                                      <input type="text" id="child-3-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child3Dob") %></th>
+                                 <td>
+                                      <input type="text" id="child-3-dob" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child3Gender") %></th>
+                                 <td>
+                                      <input type="text" id="child-3-gender" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child3Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-3-social" class="form-control">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6 hide" id="childrenInfoGroup-4">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("child4Name") %></th>
+                                 <td>
+                                      <input type="text" id="child-4-name" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child4Dob") %></th>
+                                 <td>
+                                      <input type="text" id="child-4-dob" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child4Gender") %></th>
+                                 <td>
+                                      <input type="text" id="child-4-gender" class="form-control">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child4Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-4-social" class="form-control">
+                                 </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
