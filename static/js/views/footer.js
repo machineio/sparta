@@ -964,8 +964,8 @@ fun.views.footer = Backbone.View.extend({
     },
 
     changeNumberChildren: function(event){
-        console.log('KIDS!!',$('#agent-number-of-children').val(),typeof $('#agent-number-of-children').val());
-        switch($('#agent-number-of-children').val()){
+        console.log('KIDS!!',$('#contact-info-number-of-children').val(),typeof $('#contact-info-number-of-children').val());
+        switch($('#contact-info-number-of-children').val()){
 
             case '0':
                 $('#childrenInfoTab').removeClass('show');
