@@ -108,7 +108,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
 
-    renderCampaignInboundList: function(campaigns){
+    renderInboundCampaignList: function(campaigns){
         'use strict';
         var length,
             rows,
@@ -141,7 +141,7 @@ fun.views.profile = Backbone.View.extend({
         
     },
 
-    renderCampaignOutboundList: function(campaigns){
+    renderOutboundCampaignList: function(campaigns){
         'use strict';
         var length,
             rows,
@@ -150,9 +150,8 @@ fun.views.profile = Backbone.View.extend({
         console.log('tons que como es');
         // Yes the lol is with this.campaigns but lets see just what happen 
         if (campaigns) {
-            this.campaigns = campaigns;
+            this.outboundCampaigns = campaigns;
         }
-        console.log('render campaigns outbound list aqui mae aqui');
         // again with this.shit? what is wrong with you!
         this.listgroup = this.$('#profile-outbound-list');
 
