@@ -789,6 +789,16 @@ fun.Router = Backbone.Router.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
+                // set navbar account dropdown
+                fun.instances.navbar.renderAccountDropdown(
+                    models.user
+                );
+
+                // set profile info
+                fun.instances.settings.setProfileInformation(
+                    models.user
+                );
+
                 //fun.instances.campaigns.renderCampaignsList(
                 //    resources.campaigns
                 //);
@@ -800,11 +810,11 @@ fun.Router = Backbone.Router.extend({
                 //fun.instances.campaigns.renderPausedCampaignsList(
                 //    resources.paused
                 //);
-                fun.instances.campaigns.renderInboundCampaignsList(
+                fun.instances.campaigns.renderInboundCampaignList(
                    resources.inbound
                 );
 
-                fun.instances.campaigns.renderOutboundCampaignsList(
+                fun.instances.campaigns.renderOutboundCampaignList(
                    resources.outbound
                 );
 

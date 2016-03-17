@@ -108,7 +108,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
 
-    renderCampaignInboundList: function(campaigns){
+    renderInboundCampaignList: function(campaigns){
         'use strict';
         var length,
             rows,
@@ -141,7 +141,7 @@ fun.views.profile = Backbone.View.extend({
         
     },
 
-    renderCampaignOutboundList: function(campaigns){
+    renderOutboundCampaignList: function(campaigns){
         'use strict';
         var length,
             rows,
