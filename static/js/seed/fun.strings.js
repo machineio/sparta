@@ -9,6 +9,7 @@ fun.strings = {
     skip: "Skip",
     leaveVM: "Leave VM",
     setCallback: "Set callback",
+    exportWAV: "Export WAV",
     login: "Login",
     lunch: "Lunch",
     active: "Active",
