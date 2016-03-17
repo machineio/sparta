@@ -990,3 +990,7 @@ h1 {
     border: 1px solid #ccc;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+.update-button-search-cm {
+    background-color: #DADADA;
+}
