@@ -1030,7 +1030,7 @@ fun.strings = {
     quoteUpdateRequest: "Quote Update Request",
     autoInsurancePolicyNumber: "Auto Insurance Policy Number",
     autoDocumentsNeeded: "Auto Documents Needed",
-    mailingZipCode: "Mailing Zip Code"
+    mailingZipCode: "Mailing Zip Code",
 
     systemMonitor: "System Monitor",
     goodBye: "Good bye",
