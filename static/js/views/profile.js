@@ -109,7 +109,37 @@ fun.views.profile = Backbone.View.extend({
 
 
     renderCampaignInboundList: function(campaigns){
+        'use strict';
+        var length,
+            rows,
+            template;
         console.log('render this campaign inbound list');
+        
+        if (campaigns) {
+            this.campaigns = campaigns;
+        }
+
+        this.listgroup = this.$('#profile-inbound-list');
+
+        // campaigns length
+        length = this.campaigns.length;
+
+        if (length > 0){
+            rows = this.listgroup.html('');
+            _.each(this.campaigns.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no inbound campaign list');
+            /*this.noCampaigns();*/
+        }
+
+        /*this.$el.removeClass("hide").addClass("show");*/
+
+        
     },
 
     renderCampaignOutboundList: function(campaigns){
