@@ -113,7 +113,6 @@ fun.views.profile = Backbone.View.extend({
         var length,
             rows,
             template;
-        console.log('render this campaign inbound list');
         
         if (campaigns) {
             this.campaigns = campaigns;
@@ -143,7 +142,17 @@ fun.views.profile = Backbone.View.extend({
     },
 
     renderCampaignOutboundList: function(campaigns){
-        console.log('render this campaigns outbound list');
+        'use strict';
+        var length,
+            rows,
+            template;
+
+        // Hello there, yes the lol is with this.campaigns but lets see just what happen 
+        if (campaigns) {
+            this.campaigns = campaigns;
+        }
+        console.log('render campaigns outbound list aqui mae aqui');
+
     },
 
     renderTaskList: function(tasks){
