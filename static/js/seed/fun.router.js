@@ -800,7 +800,6 @@ fun.Router = Backbone.Router.extend({
                 //fun.instances.campaigns.renderPausedCampaignsList(
                 //    resources.paused
                 //);
-
                 fun.instances.campaigns.renderInboundCampaignsList(
                    resources.inbound
                 );
