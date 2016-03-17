@@ -293,6 +293,8 @@ fun.conf.templates = {
     outboundCampaigns: fun.utils.format('%s/outboundCampaigns.html', fun.conf.html),
     campaignRow: fun.utils.format('%s/campaignRow.html', fun.conf.html),
     campaignItem: fun.utils.format('%s/campaignItem.html', fun.conf.html),
+    inboundCampaignItem: fun.utils.format('%s/inboundCampaignItem.html', fun.conf.html),
+    outboundCampaignItem: fun.utils.format('%s/outboundCampaignItem.html', fun.conf.html),
     campaignsActiveTab: fun.utils.format('%s/campaignsActiveTab.html', fun.conf.html),
     campaignsPausedTab: fun.utils.format('%s/campaignsPausedTab.html', fun.conf.html),
     campaignsInboundTab: fun.utils.format('%s/campaignsInboundTab.html', fun.conf.html),

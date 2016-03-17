@@ -146,12 +146,29 @@ fun.views.profile = Backbone.View.extend({
         var length,
             rows,
             template;
-
-        // Hello there, yes the lol is with this.campaigns but lets see just what happen 
+        // Yes the lol is with this.campaigns but lets see just what happen 
         if (campaigns) {
             this.campaigns = campaigns;
         }
         console.log('render campaigns outbound list aqui mae aqui');
+        // again with this.shit? what is wrong with you!
+        this.listgroup = this.$('#profile-outbound-list');
+
+        // campaigns length
+        length = this.campaigns.length;
+
+        if (length > 0) {
+            rows = this.listgroup.html('');
+            _.each(this.campaigns.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.outboundCampaignItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no inbound campaign list');
+            /*this.noCampaigns();*/
+        }
 
     },
 
