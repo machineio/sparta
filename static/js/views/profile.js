@@ -109,12 +109,67 @@ fun.views.profile = Backbone.View.extend({
 
 
     renderCampaignInboundList: function(campaigns){
-        console.log(campaigns.length);
-        console.log('render this campaign inbound list');
+        'use strict';
+        var length,
+            rows,
+            template;
+        
+        if (campaigns) {
+            this.campaigns = campaigns;
+        }
+
+        this.listgroup = this.$('#profile-inbound-list');
+
+        // campaigns length
+        length = this.campaigns.length;
+
+        if (length > 0){
+            rows = this.listgroup.html('');
+            _.each(this.campaigns.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.campaignItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no inbound campaign list');
+            /*this.noCampaigns();*/
+        }
+
+        /*this.$el.removeClass("hide").addClass("show");*/
+
+        
     },
 
     renderCampaignOutboundList: function(campaigns){
-        console.log('render this campaigns outbound list');
+        'use strict';
+        var length,
+            rows,
+            template;
+        // Yes the lol is with this.campaigns but lets see just what happen 
+        if (campaigns) {
+            this.campaigns = campaigns;
+        }
+        console.log('render campaigns outbound list aqui mae aqui');
+        // again with this.shit? what is wrong with you!
+        this.listgroup = this.$('#profile-outbound-list');
+
+        // campaigns length
+        length = this.campaigns.length;
+
+        if (length > 0) {
+            rows = this.listgroup.html('');
+            _.each(this.campaigns.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.outboundCampaignItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no inbound campaign list');
+            /*this.noCampaigns();*/
+        }
+
     },
 
     renderTaskList: function(tasks){

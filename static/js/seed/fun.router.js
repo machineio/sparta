@@ -190,8 +190,8 @@ fun.Router = Backbone.Router.extend({
 
     home: function(){
         'use strict';
+        // Welcome home, get account and context
         console.log('getting account and context');
-        // get account and context
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
         console.log(this.account, this.context);
@@ -201,7 +201,7 @@ fun.Router = Backbone.Router.extend({
         } else {
             console.log('missing or different context');
         }
-        // see if user is inside the dungeon or out of the dungeon.
+        // Are you inside the dungeon or out of the dungeon?
         if(fun.utils.loggedIn()){
             fun.utils.redirect(fun.conf.hash.profile);
         } else {
@@ -800,7 +800,6 @@ fun.Router = Backbone.Router.extend({
                 //fun.instances.campaigns.renderPausedCampaignsList(
                 //    resources.paused
                 //);
-
                 fun.instances.campaigns.renderInboundCampaignsList(
                    resources.inbound
                 );

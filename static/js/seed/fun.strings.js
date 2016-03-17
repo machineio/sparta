@@ -2,13 +2,13 @@
  * Default internationalization object
  */
 
-
 fun.strings = {
     ioFun: "Spartan Approach",
     dial: "Dial",
     skip: "Skip",
     leaveVM: "Leave VM",
     setCallback: "Set callback",
+    exportWAV: "Export WAV",
     login: "Login",
     lunch: "Lunch",
     active: "Active",
@@ -1030,6 +1030,7 @@ fun.strings = {
     quoteUpdateRequest: "Quote Update Request",
     autoInsurancePolicyNumber: "Auto Insurance Policy Number",
     autoDocumentsNeeded: "Auto Documents Needed",
+    mailingZipCode: "Mailing Zip Code",
 
     systemMonitor: "System Monitor",
     goodBye: "Good bye",

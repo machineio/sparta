@@ -214,12 +214,13 @@ fun.conf.urls = {
  HTML templates
 */
 fun.conf.templates = {
+    landing: fun.utils.format('%s/landing.html', fun.conf.html),
     workshop: fun.utils.format('%s/workshop.html', fun.conf.html),
     workspace: fun.utils.format('%s/workspace.html', fun.conf.html),
     navbar: fun.utils.format('%s/navbar.html', fun.conf.html),
     navLanding: fun.utils.format('%s/navLanding.html', fun.conf.html),
     navDashboard: fun.utils.format('%s/navDashboard.html', fun.conf.html),
-    navAdmin: fun.utils.format('%s/navAdmin.html', fun.conf.html), // ultimate junk!
+    navAdmin: fun.utils.format('%s/navAdmin.html', fun.conf.html),
     subheader: fun.utils.format('%s/subheader.html', fun.conf.html),
     headNav: fun.utils.format('%s/headNav.html', fun.conf.html),
     headNavCampaigns: fun.utils.format('%s/headNavCampaigns.html', fun.conf.html),
@@ -227,7 +228,6 @@ fun.conf.templates = {
     headNavReports: fun.utils.format('%s/headNavReports.html', fun.conf.html),
     headNavProfile: fun.utils.format('%s/headNavProfile.html', fun.conf.html),
     headNavHelp: fun.utils.format('%s/headNavHelp.html', fun.conf.html),
-    landing: fun.utils.format('%s/landing.html', fun.conf.html),
     features: fun.utils.format('%s/features.html', fun.conf.html),
     calendars: fun.utils.format('%s/calendars.html', fun.conf.html),
     monitors: fun.utils.format('%s/monitors.html', fun.conf.html),
@@ -289,7 +289,12 @@ fun.conf.templates = {
     orgs: fun.utils.format('%s/orgs.html', fun.conf.html),
     campaigns: fun.utils.format('%s/campaigns.html', fun.conf.html),
     allCampaigns: fun.utils.format('%s/allCampaigns.html', fun.conf.html),
+    inboundCampaigns: fun.utils.format('%s/inboundCampaigns.html', fun.conf.html),
+    outboundCampaigns: fun.utils.format('%s/outboundCampaigns.html', fun.conf.html),
     campaignRow: fun.utils.format('%s/campaignRow.html', fun.conf.html),
+    campaignItem: fun.utils.format('%s/campaignItem.html', fun.conf.html),
+    inboundCampaignItem: fun.utils.format('%s/inboundCampaignItem.html', fun.conf.html),
+    outboundCampaignItem: fun.utils.format('%s/outboundCampaignItem.html', fun.conf.html),
     campaignsActiveTab: fun.utils.format('%s/campaignsActiveTab.html', fun.conf.html),
     campaignsPausedTab: fun.utils.format('%s/campaignsPausedTab.html', fun.conf.html),
     campaignsInboundTab: fun.utils.format('%s/campaignsInboundTab.html', fun.conf.html),
@@ -297,7 +302,6 @@ fun.conf.templates = {
     cubes: fun.utils.format('%s/cubes.html', fun.conf.html),
     allCubes: fun.utils.format('%s/allCubes.html', fun.conf.html),
     cubeRow: fun.utils.format('%s/cubeRow.html', fun.conf.html),
-    // accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
     campaignListItem: fun.utils.format('%s/campaignListItem.html', fun.conf.html),
     cubeListItem: fun.utils.format('%s/cubeListItem.html', fun.conf.html),
     recordRow: fun.utils.format('%s/recordRow.html', fun.conf.html),

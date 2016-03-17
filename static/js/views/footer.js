@@ -57,6 +57,7 @@ fun.views.footer = Backbone.View.extend({
         $('#callingModal').modal('show');
         this.renderContactModalForm();
         var view = this,
+            contact,
             contact_uuid,
             contact_account,
             contact_description,
@@ -487,6 +488,173 @@ fun.views.footer = Backbone.View.extend({
         health_username = this.$("#health-username");
         health_password = this.$("#health-password");
 
+        home_priority_code = this.$("#home-priority-code");
+        home_auto_priority_code = this.$("#home-auto-priority-code");
+        home_lead_source = this.$("#home-lead-source");
+        home_partner = this.$("*#home-partner");
+        home_insurance_policy_number = this.$("#home-insurance-policy-number");
+        home_writing_agent = this.$("#home-writing-agent");
+        home_scrubber = this.$("#home-scrubber");
+        home_lead_status = this.$("#home-lead-status");
+        home_new_purchase = this.$("#home-new-purchase");
+        home_exp_date_closing_date = this.$("#home-exp-date-closing-date");
+        home_occupancy_status = this.$("#home-occupancy-status");
+        home_type_of_dwelling = this.$("#home-type-of-dwelling");
+        home_current_home_carrier = this.$("#home-current-home-carrier");
+        home_current_home_premium = this.$("#home-current-home-premium");
+        home_current_dwelling_coverage = this.$("#home-current-dwelling-coverage");
+        home_year_built = this.$("#home-year-built");
+        home_square_ft_under_air = this.$("#home-square-ft-under-air");
+        home_garage = this.$("#home-garage");
+        home_construction_type = this.$("#home-construction-type");
+        home_stories = this.$("#home-stories");
+        home_number_of_stories_in_the_building = this.$("#home-number-of-stories-in-the-building");
+        home_what_floor_number_is_condo_on = this.$("#home-what-floor-number-is-condo-on");
+        home_quote_update_request = this.$("#home-quote-update-request");
+        home_policy_effective_date = this.$("#home-policy-effective-date");
+        home_four_point_if_applicable = this.$("#home-four-point-if-applicable");
+        home_quoted_home_company = this.$("#home-quoted-home-company");
+        home_wind_mit = this.$("#home-wind-mit");
+        home_age_roof = this.$("#home-age-roof");
+        home_roof_material = this.$("#home-roof-material");
+        home_bathrooms = this.$("#home-bathrooms");
+        home_dog = this.$("#home-dog");
+        home_pool = this.$("#home-pool");
+        home_fence_or_screen_enclosure  = this.$("#home-fence-or-screen-enclosure");
+        home_bankrupcy_or_Foreclosure_in_the_past_five_years = this.$("#home-bankrupcy-or-Foreclosure-in-the-past-five-years");
+        home_centrally_monitored_alarm = this.$("#home-centrally-monitored-alarm");
+        home_gated_community = this.$("#home-gated-community");
+        home_how_many_claims_in_the_last_five_Years = this.$("#home-how-many-claims-in-the-last-five-Years");
+        home_realtor_mortgage_broker = this.$("#home-realtor-mortgage-broker");
+        home_amount_of_personal_property = this.$("#home-amount-of-personal-property");
+        home_quoted_home_premium = this.$("#home-quoted-home-premium");
+        home_quoted_home_number = this.$("#home-quoted-home-number");
+        home_payment_option = this.$("#home-payment-option");
+        home_mortgage_clause_new = this.$("#home-mortgage-clause-new");
+        home_loan_number = this.$("#home-loan-number");
+        home_insurance_carrier = this.$("#home-insurance-carrier");
+        home_insurance_premium = this.$("#home-insurance-premium");
+        auto_auto_priority_code = this.$("#auto-auto-priority-code");
+        auto_priority_code = this.$("#auto-priority-code");
+        auto_lead_source = this.$("#auto-lead-source");
+        auto_partner = this.$("#auto-partner");
+        auto_insurance_policy_number = this.$("#auto-insurance-policy-number");
+        auto_lead_status = this.$("#auto-lead-status");
+        auto_writing_agent = this.$("#auto-writing-agent");
+        auto_scrubber = this.$("#auto-scrubber");
+        auto_current_auto_carrier = this.$("#auto-current-auto-carrier");
+        auto_expiration_date = this.$("#auto-expiration-date");
+        auto_current_auto_premium = this.$("#auto-current-auto-premium");
+        auto_current_residence_type = this.$("#auto-current-residence-type");
+        auto_driver_one_license_number = this.$("#auto-driver-one-license-number");
+        auto_vehicle_one_vin= this.$("#auto-vehicle-one-vin");
+        auto_vehicle_one_year = this.$("#auto-vehicle-one-year");
+        auto_vehicle_one_make = this.$("#auto-vehicle-one-make");
+        auto_vehicle_one_model = this.$("#auto-vehicle-one-model");
+        auto_driver_two_license_number = this.$("#auto-driver-two-license-number");
+        auto_vehicle_two_vin = this.$("#auto-vehicle-two-vin");
+        auto_vehicle_two_year = this.$("#auto-vehicle-two-year");
+        auto_vehicle_two_make = this.$("#auto-vehicle-two-make");
+        auto_vehicle_two_model = this.$("#auto-vehicle-two-model");
+        auto_bodily_injury_liability = this.$("#auto-bodily-injury-liability");
+        auto_property_damage= this.$("#auto-property-damage");
+        auto_uninsured_motorist_liability = this.$("#auto-uninsured-motorist-liability");
+        auto_medical_payments = this.$("#auto-medical-payments");
+        auto_vehicle_one_comp_ded = this.$("#auto-vehicle-one-comp-ded");
+        auto_vehicle_1_collision_ded = this.$("#auto-vehicle-1-collision-ded");
+        auto_1_towing= this.$("#auto-1-towing");
+        auto_1_rental_car = this.$("#auto-1-rental-car");
+        auto_vehicle_2_comp_ded = this.$("#auto-vehicle-2-comp-ded");
+        auto_vehicle_2_collision_ded = this.$("#auto-vehicle-2-collision-ded");
+        auto_2_towing = this.$("#auto-2-towing");
+        auto_2_rental_car = this.$("#auto-2-rental-car");
+        auto_quote_update_request = this.$("#auto-quote-update-request");
+        auto_policy_effective_date = this.$("#auto-policy-effective-date");
+        auto_payment_option = this.$("#auto-payment-option");
+        auto_payment_info = this.$("#auto-payment-info");
+        auto_quoted_auto_company = this.$("#auto-quoted-auto-company");
+        auto_quoted_auto_premium = this.$("#auto-quoted-auto-premium");
+        auto_quoted_auto_number = this.$("#auto-quoted-auto-number");
+        auto_insurance_carrier = this.$("#auto-insurance-carrier");
+        auto_insurance_premium = this.$("#auto-insurance-premium");
+        auto_insurance_premium = this.$("#auto-insurance-premium");
+        auto_document_needed = this.$("#auto-document-needed");
+        life_auto_priority_code = this.$("#life-auto-priority-code");
+        life_priority_code = this.$("#life-priority-code");
+        life_lead_source = this.$("#life-lead-source");
+        life_partner = this.$("#life-partner");
+        life_insurance_policy_number = this.$("#life-insurance-policy-number");
+        life_lead_status = this.$("#life-lead-status");
+        life_writing_agent = this.$("#life-writing-agent");
+        life_scrubber = this.$("#life-scrubber");
+        life_age = this.$("#life-age");
+        life_height = this.$("#life-height");
+        life_weight = this.$("#life-weight");
+        life_insurance_type = this.$("#life-insurance-type");
+        life_term_life_policy_lenght = this.$("#life-term-life-policy-lenght");
+        life_desired_amount_of_coverage = this.$("#life-desired-amount-of-coverage");
+        life_smoke = this.$("#life-smoke");
+        life_major_health_issues_in_relatives = this.$("#life-major-health-issues-in-relatives");
+        life_convicted_of_drunk_driving = this.$("#life-convicted-of-drunk-driving");
+        life_quote_status = this.$("#life-quote-status");
+        life_date_paramed_exam_ordered = this.$("#life-date-paramed-exam-ordered");
+        life_monthly_premium = this.$("#life-monthly-premium");
+        life_paramed_company = this.$("#life-paramed-company");
+        life_application_id_number = this.$("#life-application-id-number");
+        life_application_status = this.$("#life-application-status");
+        life_application_changes = this.$("#life-application-changes");
+        life_after_changes_new_premium = this.$("#life-after-changes-new-premium");
+        life_application_declined_reason = this.$("#life-application-declined-reason");
+        ancilliary_auto_priority_code = this.$("#ancilliary-auto-priority-code");
+        ancilliary_priority_code = this.$("#ancilliary-priority-code");
+        ancilliary_lead_source = this.$("#ancilliary-lead-source");
+        ancilliary_partner = this.$("#ancilliary-partner");
+        ancilliary_insurance_policy_number = this.$("#ancilliary-insurance-policy-number");
+        ancilliary_writing_agent = this.$("#ancilliary-writing-agent");
+        ancilliary_scrubber = this.$("#ancilliary-scrubber");
+        ancilliary_lead_status = this.$("#ancilliary-lead-status");
+        ancilliary_accident = this.$("#ancilliary-accident");
+        ancilliary_critical_illness = this.$("#ancilliary-critical-illness");
+        ancilliary_hospital_confinement = this.$("#ancilliary-hospital-confinement");
+        ancilliary_dental_care = this.$("#ancilliary-dental-care");
+        ancilliary_dental_lead_status = this.$("#ancilliary-dental-lead-status");
+        ancilliary_ancillary_total = this.$("#ancilliary-ancillary-total");
+        ancilliary_abnormal_cancer_screening_test = this.$("#ancilliary-abnormal-cancer-screening-test");
+        ancilliary_cysts_growths_etc_not_seen_for = this.$("#ancilliary-cysts-growths-etc-not-seen-for");
+        ancilliary_carotid_artery_stenosis_etc = this.$("#ancilliary-carotid-artery-stenosis-etc");
+        ancilliary_hiv_positive_aids_related_complex_aids = this.$("#ancilliary-hiv-positive-aids-related-complex-aids");
+        ancilliary_multiple_sclerosis_memory_loss_etc = this.$("#ancilliary-multiple-sclerosis-memory-loss-etc");
+        ancilliary_abnormal_tests_requiring_follow_up = this.$("#ancilliary-abnormal-tests-requiring-follow-up");
+        ancilliary_any_non_routine_consultation_scheduled = this.$("#ancilliary-any-non-routine-consultation-scheduled");
+        ancilliary_one_or_more_imm_relatives_with_issues = this.$("#ancilliary-one-or-more-imm-relatives-with-issues");
+        ancilliary_two_or_more_imm_relatives_with_issues = this.$("#ancilliary-two-or-more-imm-relatives-with-issues");
+        ancilliary_bening_tumor_hypertension_etc = this.$("#ancilliary-bening_tumor-hypertension-etc");
+        ancilliary_prescription_medication_in_last_three_years = this.$("#ancilliary-prescription-medication-in-last-three-years");
+        ancilliary_disorder_disease_heart_kidney_lungs = this.$("#ancilliary-disorder-disease-heart-kidney-lungs");
+        ancilliary_disease_quad_lou_gehrigs_other_motor = this.$("#ancilliary-disease-quad-lou-gehrigs-other-motor");
+        ancilliary_alcohol_or_substance_abuse_five_years = this.$("#ancilliary-alcohol-or-substance-abuse-five-years");
+        ancilliary_heart_attack_stroke_transient_ischemic = this.$("#ancilliary-heart-attack-stroke-transient-ischemic");
+        ancilliary_diabetes_type_one_or_two_blood_press_am = this.$("#ancilliary-diabetes-type-one-or-two-blood-press-am");
+        ancilliary_nursing_home_hospitalized_etc = this.$("#ancilliary-nursing-home-hospitalized-etc");
+        ancilliary_hospitalized_in_the_last_twelve_months = this.$("#ancilliary-hospitalized-in-the-last-twelve-months");
+        ancilliary_diagnosed_or_treated_for_medical_issues = this.$("#ancilliary-diagnosed_or_treated_for_medical_issues");
+        ancilliary_pregnant = this.$("#ancilliary-pregnant");
+        ancilliary_ever_had_a_problem_pregnancy = this.$("#ancilliary-ever_had_a_problem_pregnancy");
+        ancilliary_hypertension = this.$("#ancilliary-hypertension");
+        ancilliary_accident_elite_request_eff_date = this.$("#ancilliary-accident-elite-request_eff_date");
+        ancilliary_accident_elite_premium = this.$("#ancilliary-accident-elite-premium");
+        ancilliary_accident_elite_notes = this.$("#ancilliary-accident-elite-notes");
+        ancilliary_critical_care_request_eff_date = this.$("#ancilliary-critical-care-request-eff-date");
+        ancilliary_critial_care_premium = this.$("#ancilliary-critial-care-premium");
+        ancilliary_critical_care_notes = this.$("#ancilliary-critical-care-notes");
+        ancilliary_request_eff_date = this.$("#ancilliary-request-eff-date");
+        ancilliary_hospital_confinement_premium = this.$("#ancilliary-hospital-confinement-premium");
+        ancilliary_hospital_confinement_notes = this.$("#ancilliary-hospital-confinement-notes");
+        ancilliary_dental_request_eff_date = this.$("#ancilliary-dental-request-eff-date");
+        ancilliary_dental_care_premium = this.$("#ancilliary-dental-care-premium");
+        ancilliary_dental_care_notes = this.$("#ancilliary-dental-care-notes");
+
+
         payment_binder_payment_option = this.$("#payment-binder-payment-option");
         payment_payment_charge_request = this.$("#payment-payment-charge-request");
         payment_ccredit_card_type = this.$("#payment-ccredit-card-type");
@@ -672,27 +840,21 @@ fun.views.footer = Backbone.View.extend({
     showMailingAddressDifferent: function(event){
         var value = $('#contact-info-mailing-address-different').val();
         if(value===true||value==='true'){
-            $('#mailingAddressDifferentDiv').removeClass('hide');
-            $('#mailingAddressDifferentDiv').addClass('show');
+            $('#contact-info-mailingAddressDifferentDiv').removeClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv').addClass('show');
         } else {
-            $('#mailingAddressDifferentDiv').removeClass('show');
-            $('#mailingAddressDifferentDiv').addClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv').removeClass('show');
+            $('#contact-info-mailingAddressDifferentDiv').addClass('hide');
         }
-        // if(event.target.checked===true){
-            
-        // } else {
-            
-        // }
     },
 
     changeMaritalStatus: function(event){
-
-        if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='single'){
-            $('#contactSpouseInfoTab').removeClass('show');
-            $('#contactSpouseInfoTab').addClass('hide');
-        } else {
+        if($('#contact-info-marital-status').val()==='married'){
             $('#contactSpouseInfoTab').removeClass('hide');
             $('#contactSpouseInfoTab').addClass('show');
+        } else {
+            $('#contactSpouseInfoTab').removeClass('show');
+            $('#contactSpouseInfoTab').addClass('hide');
         }
     },
 
@@ -802,7 +964,8 @@ fun.views.footer = Backbone.View.extend({
     },
 
     changeNumberChildren: function(event){
-        switch($('#agent-number-of-children').val()){
+        console.log('KIDS!!',$('#contact-info-number-of-children').val(),typeof $('#contact-info-number-of-children').val());
+        switch($('#contact-info-number-of-children').val()){
 
             case '0':
                 $('#childrenInfoTab').removeClass('show');
