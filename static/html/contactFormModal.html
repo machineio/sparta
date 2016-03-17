@@ -4,11 +4,11 @@
             <icon class="fa fa-user"></icon> Customer Info
         </a>
     </li>
-    <li id="contactSpouseInfoTab" class="hide">
+    <!-- <li id="contactSpouseInfoTab" class="hide">
         <a href="#contactSpouseInfo" role="tab" data-toggle="tab">
             <i class="fa fa-envelope"></i> Contact Spouse Info
         </a>
-    </li>
+    </li> -->
     <li id="childrenInfoTab" class="hide">
         <a href="#childrenInfo" role="tab" data-toggle="tab">
             <i class="fa fa-envelope"></i> Children Info
@@ -340,8 +340,91 @@
                     </div>
             </div>
         </div>
+        <div id="contactSpouseInfoTab" class="hide">
+            <br>
+            <h3>Contact Spouse Info</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseFirstName") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-first-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseLastName") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-last-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseGender") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-gender" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseDob") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-dob" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("doYouHaveSocialSecurityNumber") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-do-you-have-a-social-security-number" class="form-control">
+                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseSocial") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-social" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseIncomeSource") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-income-source" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseYearlyIncome") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-yearly-income" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseEmployersName") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-employers-name" class="form-control">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <th scope="row"><%= translate("spouseEmployersPhoneNumber") %></th>
+                                     <td>
+                                          <input type="text" id="spouse-employers-phone-number" class="form-control">
+                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="tab-pane fade" id="contactSpouseInfo">
+    <!-- <div class="tab-pane fade" id="contactSpouseInfo">
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -420,7 +503,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="tab-pane fade" id="childrenInfo">
         <div class="row">
             <div class="col-md-6">
