@@ -1,5 +1,34 @@
 <div class="container">
     <div class="row equal">
+
+        <div class="col-md-6">
+            <div class="panel panel-default panel-full-width">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("exportMessages") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="fa-stack fa-4x panel-icons">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cloud-download fa-stack-1x"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="export-message-form" class="form-export" novalidate="novalidate">
+                                <p class="help-block"><%= translate("getMessageList") %>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="panel panel-default panel-full-width">
                 <div class="panel-heading">
@@ -73,34 +102,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="panel panel-default panel-full-width">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("exportMessages") %></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <span class="fa-stack fa-4x panel-icons">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-cloud-download fa-stack-1x"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form id="export-message-form" class="form-export" novalidate="novalidate">
-                                <p class="help-block"><%= translate("getMessageList") %>.</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <div class="row">
