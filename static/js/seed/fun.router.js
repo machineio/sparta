@@ -1257,10 +1257,10 @@ fun.Router = Backbone.Router.extend({
                 /*fun.instances.profile.renderCampaignList(
                     resources.campaigns
                 );*/
-                fun.instances.profile.renderCampaignInboundList(
+                fun.instances.profile.renderInboundCampaignList(
                     resources.campaignsInbound
                 );
-                fun.instances.profile.renderCampaignOutboundList(
+                fun.instances.profile.renderOutboundCampaignList(
                     resources.campaignsOutbound
                 );
                 fun.instances.profile.renderTaskList(
