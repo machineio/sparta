@@ -791,12 +791,12 @@ fun.Router = Backbone.Router.extend({
 
                 // set navbar account dropdown
                 fun.instances.navbar.renderAccountDropdown(
-                    models.user
+                    resources.user
                 );
 
                 // set profile info
                 fun.instances.settings.setProfileInformation(
-                    models.user
+                    resources.user
                 );
 
                 //fun.instances.campaigns.renderCampaignsList(
@@ -1246,8 +1246,8 @@ fun.Router = Backbone.Router.extend({
             campaignsOutbound: new fun.models.CampaignsOutbound(),
             tasks: new fun.models.Tasks(),
             contacts: new fun.models.Contacts(),
-        };
-
+        }
+;
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
