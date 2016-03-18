@@ -115,17 +115,17 @@ fun.views.profile = Backbone.View.extend({
             template;
         
         if (campaigns) {
-            this.campaigns = campaigns;
+            this.inboundCampaigns = campaigns;
         }
 
-        this.listgroup = this.$('#profile-inbound-list');
+        this.inboundListGroup = this.$('#profile-inbound-list');
 
         // campaigns length
-        length = this.campaigns.length;
+        length = this.inboundCampaigns.length;
 
         if (length > 0){
-            rows = this.listgroup.html('');
-            _.each(this.campaigns.toJSON(), function(value){
+            rows = this.inboundListGroup.html('');
+            _.each(this.inboundCampaigns.toJSON(), function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.campaignItem)
                 )(value);
