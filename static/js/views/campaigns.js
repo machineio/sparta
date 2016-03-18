@@ -407,9 +407,9 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * Render Outbound Campaigns list
+    * Render Outbound Campaign list
     */
-    renderOutboundCampaignsList: function(campaigns){
+    renderOutboundCampaignList: function(campaigns){
         'use strict';
         var template,
             outboundCampaigns;
