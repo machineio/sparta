@@ -177,7 +177,33 @@ fun.views.profile = Backbone.View.extend({
     },
 
     renderContactList: function(contacts){
-        console.log('render profile contacts list');
+        'use strict';
+        var length,
+            rows,
+            template;
+
+        // Yes the lol is with this.campaigns but lets see just what happen 
+        if (contacts) {
+            this.profileContacts = contacts;
+        }
+        // again with this.shit? what is wrong with you!
+        this.contactList = this.$('#profile-contact-list');
+
+        // campaigns length
+        length = this.profileContacts.length;
+
+        if (length > 0) {
+            rows = this.contactList.html('');
+            _.each(this.profileContacts.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.profileContactItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no profile contact list');
+            /*this.noCampaigns();*/
+        }
     },
 
     oneDay: function(event){
