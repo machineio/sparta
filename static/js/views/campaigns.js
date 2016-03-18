@@ -122,10 +122,10 @@ fun.views.campaigns = Backbone.View.extend({
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
-                fun.instances.campaigns.renderInboundCampaignsList(
+                fun.instances.campaigns.renderInboundCampaignList(
                    resources.inbound
                 );
-                fun.instances.campaigns.renderOutboundCampaignsList(
+                fun.instances.campaigns.renderOutboundCampaignList(
                    resources.outbound
                 );
             }
