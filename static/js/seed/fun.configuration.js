@@ -342,6 +342,7 @@ fun.conf.templates = {
     errorLarge: fun.utils.format('%s/errorLarge.html', fun.conf.html),
     phone: fun.utils.format('%s/phone.html', fun.conf.html),
     profile: fun.utils.format('%s/profile.html', fun.conf.html),
+    profileContactItem: fun.utils.format('%s/profileContactItem.html', fun.conf.html),
     activity: fun.utils.format('%s/activity.html', fun.conf.html),
     members: fun.utils.format('%s/members.html', fun.conf.html),
     memberRow: fun.utils.format('%s/memberRow.html', fun.conf.html),
