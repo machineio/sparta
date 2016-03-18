@@ -155,11 +155,11 @@ fun.views.profile = Backbone.View.extend({
         this.listgroup = this.$('#profile-outbound-list');
 
         // campaigns length
-        length = this.campaigns.length;
+        length = this.outboundCampaigns.length;
 
         if (length > 0) {
             rows = this.listgroup.html('');
-            _.each(this.campaigns.toJSON(), function(value){
+            _.each(this.outboundCampaigns.toJSON(), function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.outboundCampaignItem)
                 )(value);
