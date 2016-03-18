@@ -122,10 +122,10 @@ fun.views.campaigns = Backbone.View.extend({
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
-                fun.instances.campaigns.renderInboundCampaignsList(
+                fun.instances.campaigns.renderInboundCampaignList(
                    resources.inbound
                 );
-                fun.instances.campaigns.renderOutboundCampaignsList(
+                fun.instances.campaigns.renderOutboundCampaignList(
                    resources.outbound
                 );
             }
@@ -340,9 +340,9 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * Render Inbound Campaigns list
+    * Render Inbound Campaign list
     */
-    renderInboundCampaignsList: function(campaigns){
+    renderInboundCampaignList: function(campaigns){
         'use strict';
         var template,
             inboundCampaigns;
@@ -407,9 +407,9 @@ fun.views.campaigns = Backbone.View.extend({
     },
 
     /*
-    * Render Outbound Campaigns list
+    * Render Outbound Campaign list
     */
-    renderOutboundCampaignsList: function(campaigns){
+    renderOutboundCampaignList: function(campaigns){
         'use strict';
         var template,
             outboundCampaigns;
