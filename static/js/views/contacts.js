@@ -1026,6 +1026,10 @@ fun.views.contacts = Backbone.View.extend({
 
         contact.fetch({
             success: function(response){
+
+
+                console.log(response);/*
+
                 contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));
                 contact_info_first_name.val(response.get('first_name'));
@@ -1052,7 +1056,7 @@ fun.views.contacts = Backbone.View.extend({
 
                 $('#contactModal').modal({
                     'show': true
-                });
+                });*/
             },
             error: function(error){
                 console.log(error);
