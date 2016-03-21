@@ -197,10 +197,10 @@ fun.views.profile = Backbone.View.extend({
         console.log(length);
 
         if (length > 0) {
-            rows = this.contactList.html('');
-            _.each(this.profileContacts.toJSON(), function(value){
+            rows = this.taskList.html('');
+            _.each(this.profileTasks.toJSON(), function(value){
                 template = _.template(
-                    fun.utils.getTemplate(fun.conf.templates.profileContactItem)
+                    fun.utils.getTemplate(fun.conf.templates.profileTaskItem)
                 )(value);
                 rows.append(template);
             });
