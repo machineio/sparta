@@ -185,14 +185,31 @@ fun.views.profile = Backbone.View.extend({
             template;
 
         // Yes the lol is with this.campaigns but lets see just what happen 
-        if (contacts) {
-            this.profileContacts = contacts;
+        if (tasks) {
+            this.profileTasks = tasks;
         }
         // again with this.shit? what is wrong with you!
-        this.contactList = this.$('#profile-contact-list');
+        this.taskList = this.$('#profile-task-list');
         console.log('render profile tasks list');
+
+        // campaigns length
+        length = this.profileTasks.length;
+        console.log(length);
+
+        if (length > 0) {
+            rows = this.contactList.html('');
+            _.each(this.profileContacts.toJSON(), function(value){
+                template = _.template(
+                    fun.utils.getTemplate(fun.conf.templates.profileContactItem)
+                )(value);
+                rows.append(template);
+            });
+        } else {
+            console.log('no profile contact list');
+        }
         
-        profile-tasks-list
+
+
     },
 
     renderContactList: function(contacts){
