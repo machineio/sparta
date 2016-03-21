@@ -705,18 +705,20 @@
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><%= translate("recentlyViewed") %></h3>
                                     </div>
+
+
+                                    <table id="profile-tasks-list" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th><%= translate("title") %></th>
+                                                <th><%= translate("label") %></th>
+                                                <th><%= translate("status") %></th>
+                                                <th><%= translate("actions") %></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="profile-contact-list"></tbody>
+                                    </table>
                                     
-
-                                    <ul id="profile-contact-list" class="list-group">
-                                        <!-- <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-fw pull-left"></i>
-                                              
-                                            <p class="description">
-                                               cebus created campaign cebus/godzilla_out  5 hours ago
-                                            </p>
-
-                                        </li> -->                                        
-                                    </ul>
                                 </div>
                             </div>
 
