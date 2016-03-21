@@ -28,7 +28,8 @@ fun.strings = {
     findContact: "Find contact",
     dba: "DBA",
     privateWord: "Private",
-
+    edit: "Edit",
+    remove: "Delete",
     publicWord: "Public",
     disconnect: "Disconnect",
     systemReports: "System Reports",
