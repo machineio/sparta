@@ -698,27 +698,27 @@
                         </div>
 
                         <div class="row">
-                            
+                            <table id="profile-tasks-list" class="table">
+                                <thead>
+                                    <tr>
+                                        <th><%= translate("firstName") %></th>
+                                        <th><%= translate("lastName") %></th>
+                                        <th><%= translate("email") %></th>
+                                        <th><%= translate("phone") %></th>
+                                        <th><%= translate("actions") %></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="profile-contact-list"></tbody>
+                            </table>
+                        </div>
+
+                        <div class="row">
 
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><%= translate("recentlyViewed") %></h3>
                                     </div>
-
-
-                                    <table id="profile-tasks-list" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th><%= translate("firstName") %></th>
-                                                <th><%= translate("lastName") %></th>
-                                                <th><%= translate("email") %></th>
-                                                <th><%= translate("phone") %></th>
-                                                <th><%= translate("actions") %></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="profile-contact-list"></tbody>
-                                    </table>
                                     
                                 </div>
                             </div>
