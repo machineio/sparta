@@ -179,7 +179,20 @@ fun.views.profile = Backbone.View.extend({
     },
 
     renderTaskList: function(tasks){
+        'use strict';
+        var length,
+            rows,
+            template;
+
+        // Yes the lol is with this.campaigns but lets see just what happen 
+        if (contacts) {
+            this.profileContacts = contacts;
+        }
+        // again with this.shit? what is wrong with you!
+        this.contactList = this.$('#profile-contact-list');
         console.log('render profile tasks list');
+        
+        profile-tasks-list
     },
 
     renderContactList: function(contacts){
