@@ -206,9 +206,6 @@ fun.views.profile = Backbone.View.extend({
         } else {
             console.log('no profile contact list');
         }
-        
-
-
     },
 
     renderContactList: function(contacts){
