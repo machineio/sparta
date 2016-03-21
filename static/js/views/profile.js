@@ -194,7 +194,6 @@ fun.views.profile = Backbone.View.extend({
 
         // campaigns length
         length = this.profileTasks.length;
-        console.log(length);
 
         if (length > 0) {
             rows = this.taskList.html('');
