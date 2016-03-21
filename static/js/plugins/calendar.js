@@ -1023,9 +1023,9 @@ if(!String.prototype.formatNum) {
 			event.stopPropagation();
 
 			var url = $(this).attr('href');
-			var id = $(this).data("event-id");
+			var id = $(this).data("event-uuid");
 			var event = _.find(self.options.events, function(event) {
-				return event.id == id
+				return event.uuid == id
 			});
 
 			if(self.options.modal_type == "iframe") {
@@ -1033,7 +1033,7 @@ if(!String.prototype.formatNum) {
 				$('.modal-body', modal).html(ifrm);
 			}
 
-			if(!modal.data('handled.bootstrap-calendar') || (modal.data('handled.bootstrap-calendar') && modal.data('handled.event-id') != event.id)) {
+			if(!modal.data('handled.bootstrap-calendar') || (modal.data('handled.bootstrap-calendar') && modal.data('handled.event-uuid') != event.uuid)) {
 				modal.off('show.bs.modal')
 					.off('shown.bs.modal')
 					.off('hidden.bs.modal')
@@ -1071,7 +1071,7 @@ if(!String.prototype.formatNum) {
 					.on('hidden.bs.modal', function() {
 						self.options.onAfterModalHidden.call(self, self.options.events);
 					})
-					.data('handled.bootstrap-calendar', true).data('handled.event-id', event.id);
+					.data('handled.bootstrap-calendar', true).data('handled.event-uuid', event.uuid);
 			}
 			modal.modal('show');
 		});
@@ -1118,7 +1118,7 @@ if(!String.prototype.formatNum) {
 
 
 		self.context.find('a.event').mouseenter(function() {
-			$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
+			$('a[data-event-id="' + $(this).data('event-uuid') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
 		});
 		self.context.find('a.event').mouseleave(function() {
 			$('div.cal-cell1').removeClass('day-highlight dh-' + $(this).data('event-class'));
@@ -1214,7 +1214,7 @@ if(!String.prototype.formatNum) {
 		// Wait 400ms before updating the modal & attach the mouseenter&mouseleave(400ms is the time for the slider to fade out and slide up)
 		setTimeout(function() {
 			$('a.event-item').mouseenter(function() {
-				$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
+				$('a[data-event-id="' + $(this).data('event-uuid') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
 			});
 			$('a.event-item').mouseleave(function() {
 				$('div.cal-cell1').removeClass('day-highlight dh-' + $(this).data('event-class'));

@@ -1253,9 +1253,9 @@ fun.Router = Backbone.Router.extend({
                 fun.instances.settings.setProfileInformation(
                     resources.user
                 );
-                /*fun.instances.profile.renderCampaignList(
-                    resources.campaigns
-                );*/
+                fun.instances.profile.renderAccountInformation(
+                    resources.user
+                );
                 fun.instances.profile.renderInboundCampaignList(
                     resources.campaignsInbound
                 );

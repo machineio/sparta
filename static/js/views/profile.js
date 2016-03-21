@@ -141,6 +141,12 @@ fun.views.profile = Backbone.View.extend({
         
     },
 
+    renderAccountInformation: function(account){
+        'use strict';
+        console.log(account);
+        console.log('now you are getting it');
+    },
+
     renderOutboundCampaignList: function(campaigns){
         'use strict';
         var length,
