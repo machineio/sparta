@@ -62,6 +62,9 @@ fun.views.contacts = Backbone.View.extend({
     },
 
 
+    /*
+    * Update Contacts
+    */
     updateContacts: function(){
         'use strict';
         var account = this.account, resource, resources, vonCount = 0, onSuccess;
@@ -140,6 +143,10 @@ fun.views.contacts = Backbone.View.extend({
         }
     },
 
+
+    /*
+    * Render Contact Modal Form
+    */
     renderContactModalForm: function(){
         'use strict';
         var contactModalTabs;
@@ -397,7 +404,6 @@ fun.views.contacts = Backbone.View.extend({
     contactDetails: function(event){
         'use strict';
         event.preventDefault();
-        //view cache
 
 
         fun.omnibus.trigger("toronja:contact");
@@ -730,7 +736,6 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_zip_code = this.$("#contact-info-zip-code");
         contact_info_county = this.$("#contact-info-county");
         contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
-
         contact_mailing_address = this.$("#contact-mailing-address");
         contact_info_mailing_city = this.$("#contact-info-mailing-city");
         contact_info_mailing_state = this.$("#contact-info-mailing-state");
@@ -748,9 +753,7 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
         contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
         contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
-
         contact_info_renew_as_is_email_received = this.$("#contact-info-renew-as-is-email-received");
-
         health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
         spouse_first_name = this.$("#spouse-first-name");
         spouse_last_name = this.$("#spouse-last-name");
@@ -773,7 +776,6 @@ fun.views.contacts = Backbone.View.extend({
         child_3_name = this.$("#child-3-name");
         child_3_dob = this.$("#child-3-dob");
         child_3_gender = this.$("#child-3-gender");
-
         child_3_social = this.$("#child-3-social");
         child_4_name = this.$("#child-4-name");
         child_4_dob = this.$("#child-4-dob");
@@ -837,7 +839,6 @@ fun.views.contacts = Backbone.View.extend({
         health_quoted_renewal_net_premium_2016 = this.$("#health-quoted-renewal-net-premium-2016");
         health_username = this.$("#health-username");
         health_password = this.$("#health-password");
-
         home_priority_code = this.$("#home-priority-code");
         home_auto_priority_code = this.$("#home-auto-priority-code");
         home_lead_source = this.$("#home-lead-source");
@@ -1003,8 +1004,6 @@ fun.views.contacts = Backbone.View.extend({
         ancilliary_dental_request_eff_date = this.$("#ancilliary-dental-request-eff-date");
         ancilliary_dental_care_premium = this.$("#ancilliary-dental-care-premium");
         ancilliary_dental_care_notes = this.$("#ancilliary-dental-care-notes");
-
-
         payment_binder_payment_option = this.$("#payment-binder-payment-option");
         payment_payment_charge_request = this.$("#payment-payment-charge-request");
         payment_ccredit_card_type = this.$("#payment-ccredit-card-type");
@@ -1020,6 +1019,9 @@ fun.views.contacts = Backbone.View.extend({
 
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
+
+
+        console.log(name);
 
         contact = new fun.models.Contact({'uuid':name});
 
