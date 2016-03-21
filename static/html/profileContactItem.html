@@ -1,10 +1,14 @@
 <li class="list-group-item">
-    <tr>
-	    <td><%= first_name %></td>
-	    <td><%= last_name %></td>
-	    <td><%= email %></td>
-	    <td><%= phone_number %></td>
-	    <td><i href="javascript:;" data-name="<%= uuid %>" class="fa fa-eye contact-popup"></i></td>
-	</tr>
-
+	<div class="col-md-3">
+		<%= first_name %> <%= last_name %>
+	</div>
+	<div class="col-md-3">
+		<%= email %>
+	</div>
+	<div class="col-md-3">
+		<%= phone_number %>
+	</div>
+	<div class="col-md-3">
+		<i href="javascript:;" data-name="<%= uuid %>" class="fa fa-eye contact-popup"></i>
+	</div>
 </li>
