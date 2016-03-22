@@ -1308,7 +1308,7 @@ fun.models.CampaignsInbound = Backbone.Collection.extend({
 });
 
 
-fun.models.OutboundCampaigns = Backbone.Collection.extend({
+fun.models.CampaignsOutbound = Backbone.Collection.extend({
 
     model: fun.models.Campaign,
 
