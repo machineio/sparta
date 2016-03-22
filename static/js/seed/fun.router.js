@@ -1241,12 +1241,11 @@ fun.Router = Backbone.Router.extend({
 
         resources = {
             user: new fun.models.User({'account':account}),
-            campaignsInbound: new fun.models.InboundCampaigns(),
-            campaignsOutbound: new fun.models.OutboundCampaigns(),
+            campaignsInbound: new fun.models.CampaignsInbound(),
+            campaignsOutbound: new fun.models.CampaignsOutbound(),
             tasks: new fun.models.Tasks(),
             contacts: new fun.models.Contacts(),
-        }
-;
+        };
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
