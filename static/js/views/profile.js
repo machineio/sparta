@@ -146,42 +146,25 @@ fun.views.profile = Backbone.View.extend({
         console.log('now you are getting it');
         // view cache this
         var account = account,
-            name,
+            name = $('#profile-name'),
             fullName,
             email,
-            firstName,
-            lastName,
-            location,
-            company,
+            location = $('#profile-location'),
+            company = $('#profile-company'),
             url;
         // assign this variable values
 
 
         
         //'profile-username'
-        
-        
 
-        // real shit
-
-        console.log(account);
-
-        console.log(account.get('first_name'));
 
         fullName = fun.utils.format('%s %s', account.get('first_name') || 'First', account.get('last_name') || 'Lastname');
-
-        console.log(fullName);
-        console.log('gooo!');
-
-
-        name = this.$('#profile-name');
-        location = this.$('#profile-location');
-        company = this.$('#profile-company');
 
         // get stuff from account profile
 
         name.val(fullName);
-        location.val(account.get('location') || '');
+        location.html(account.get('location') || '');
         company.val(account.get('company') || '');
     },
 
