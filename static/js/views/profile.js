@@ -164,7 +164,7 @@ fun.views.profile = Backbone.View.extend({
 
         // real shit
 
-        console.log(account);
+        console.log(account['first_name']);
 
         fullName = fun.utils.format('%s %s', account['first_name'] || 'First', account['last_name'] || 'Lastname');
 
