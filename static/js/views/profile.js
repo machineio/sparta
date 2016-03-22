@@ -163,9 +163,9 @@ fun.views.profile = Backbone.View.extend({
 
         // get stuff from account profile
 
-        name.val(fullName);
-        location.html(account.get('location') || '');
-        company.val(account.get('company') || '');
+        name.html(fullName);
+        location.html(account.get('location') || 'Mars');
+        company.html(account.get('company') || '');
     },
 
     renderOutboundCampaignList: function(campaigns){
