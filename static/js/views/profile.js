@@ -164,7 +164,7 @@ fun.views.profile = Backbone.View.extend({
 
         // real shit
 
-        console.log(account.get('first_name');
+        console.log(account.get('first_name'));
 
         console.log(account);
 
