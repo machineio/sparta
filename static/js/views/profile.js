@@ -164,13 +164,11 @@ fun.views.profile = Backbone.View.extend({
 
         // real shit
 
-        console.log(account.get('first_name'));
-
         console.log(account);
 
-        console.log(account['first_name']);
+        console.log(account.get('first_name'));
 
-        fullName = fun.utils.format('%s %s', account['first_name'] || 'First', account['last_name'] || 'Lastname');
+        fullName = fun.utils.format('%s %s', account.get('first_name') || 'First', account.get('last_name') || 'Lastname');
 
         console.log(fullName);
         console.log('gooo!');
@@ -183,8 +181,8 @@ fun.views.profile = Backbone.View.extend({
         // get stuff from account profile
 
         name.val(fullName);
-        location.val(account['location'] || '');
-        company.val(account['company'] || '');
+        location.val(account.get('location') || '');
+        company.val(account.get('company') || '');
     },
 
     renderOutboundCampaignList: function(campaigns){
