@@ -842,9 +842,21 @@ fun.views.footer = Backbone.View.extend({
         if(value===true||value==='true'){
             $('#contact-info-mailingAddressDifferentDiv').removeClass('hide');
             $('#contact-info-mailingAddressDifferentDiv').addClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-city').removeClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-city').addClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-state').removeClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-state').addClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-zipcode').removeClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-zipcode').addClass('show');
         } else {
             $('#contact-info-mailingAddressDifferentDiv').removeClass('show');
             $('#contact-info-mailingAddressDifferentDiv').addClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-city').removeClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-city').addClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-state').removeClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-state').addClass('hide');
+            $('#contact-info-mailingAddressDifferentDiv-zipcode').removeClass('show');
+            $('#contact-info-mailingAddressDifferentDiv-zipcode').addClass('hide');
         }
     },
 
