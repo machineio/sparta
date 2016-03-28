@@ -98,6 +98,8 @@ fun.views.profile = Backbone.View.extend({
             });
         });
 
+        $('#test-calendar').addClass('hide');
+
         function GAconverter(data) {
             var i, total, results = {};
             for(i = 0, total = data.length; i < total; i++) {
@@ -113,7 +115,6 @@ fun.views.profile = Backbone.View.extend({
         var length,
             rows,
             template;
-        
         if (campaigns) {
             this.inboundCampaigns = campaigns;
         }

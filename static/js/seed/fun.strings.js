@@ -1039,6 +1039,12 @@ fun.strings = {
     autoDocumentsNeeded: "Auto Documents Needed",
     mailingZipCode: "Mailing Zip Code",
 
+    subject: "Subject",
+    reminder: "Reminder",
+    taskType: "Task Type",
+    sendNotificationEmail: "Send Notification Email",
+    saveNew: "Save New",
+
     systemMonitor: "System Monitor",
     goodBye: "Good bye",
     asterisk: "*",
