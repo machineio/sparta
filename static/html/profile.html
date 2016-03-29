@@ -966,7 +966,7 @@
 
                             <div class="col-md-4">
                                 <div class="pull-right">
-                                    <a href="#tasks" class="btn btn-success pull-right newTaskButton newtask-button-margin">
+                                    <a href="#" class="btn btn-success pull-right newTaskButton newtask-button-margin" data-toggle="modal" data-target="#profileTaskNewModal">
                                         <i class="fa fa-plug fa-fw"></i>
                                         <%= translate("newOption") %>
                                     </a>
@@ -1030,6 +1030,86 @@
     </div>
 </div>
 
+<!-- NEW TASK MODAL -->
+<div class="modal fade" id="profileTaskNewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Task</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("subject") %></th>
+                                        <td>
+                                            <input type="text" id="profile-task-new-modal-subject" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("reminder") %></th>
+                                        <td>
+                                            <input type="datetime" id="profile-task-new-modal-reminder" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("taskType") %></th>
+                                        <td>
+                                            <select id="profile-task-new-modal-task-type" class="form-control">
+                                                <option value="Appointment">Appointment</option>
+                                                <option value="Call">Call</option>
+                                                <option value="Email">Email</option>
+                                                <option value="CallBack">CallBack</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("privateWord") %></th>
+                                        <td>
+                                            <input id="profile-task-new-modal-private" class="form-control" type="checkbox" value="false">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("description") %></th>
+                                        <td>
+                                            <textarea id="profile-task-new-modal-description" rows="5"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("sendNotificationEmail") %></th>
+                                        <td>
+                                            <select id="profile-task-new-modal-send-notification-email" class="form-control">
+                                                <option value="false">No</option>
+                                                <option value="true">Yes</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-4">
+                        <button id="profile-tast-new-modal-save" class="btn btn-lg btn-primary btn-block" type="button"><%= translate("save") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="profile-tast-new-modal-save-new" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("saveNew") %></button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="profile-tast-new-modal-close" class="btn btn-lg btn-danger btn-block" type="submit"><%= translate("cancel") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- contact Modal popup -->
 <div class="modal fade" id="profileContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
