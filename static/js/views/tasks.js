@@ -52,9 +52,6 @@ fun.views.tasks = Backbone.View.extend({
                 fun.instances.tasks.renderTasksList(
                     resources.tasks
                 );
-                fun.instances.settings.setProfileInformation(
-                    resources.user
-                );
                 fun.instances.tasks.renderNowTasksList(
                     resources.now
                 );
@@ -63,6 +60,12 @@ fun.views.tasks = Backbone.View.extend({
                 );
                 fun.instances.tasks.renderDoneTasksList(
                     resources.done
+                );
+                /*fun.instances.tasks.setAllTasksPagination(
+                    
+                );*/
+                fun.instances.settings.setProfileInformation(
+                    resources.user
                 );
             }
         };
