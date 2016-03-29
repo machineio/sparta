@@ -107,6 +107,8 @@ fun.views.profile = Backbone.View.extend({
             }
             return results;
         }
+
+        $('#profile-task-new-modal-reminder').datepicker();
     },
 
 
