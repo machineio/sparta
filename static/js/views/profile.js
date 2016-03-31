@@ -82,6 +82,8 @@ fun.views.profile = Backbone.View.extend({
             }
         };
 
+        $('#profile-task-new-modal-reminder').datetimepicker();
+
         calendar = $('#test-calendar').calendar(options);
 
         $('.btn-group button[data-calendar-nav]').each(function() {
@@ -107,6 +109,8 @@ fun.views.profile = Backbone.View.extend({
             }
             return results;
         }
+
+        $('#profile-task-new-modal-reminder').datepicker();
     },
 
 
