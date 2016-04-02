@@ -1013,7 +1013,7 @@ fun.Router = Backbone.Router.extend({
     advanced: function(){
         'use strict';
 
-        var advanced = translate('advancedSearch'),
+        var advancedSearch = translate('advancedSearch'),
             account,
             context,
             resource,
@@ -1042,7 +1042,7 @@ fun.Router = Backbone.Router.extend({
             fun.utils.hideAll();
             fun.instances.navbar.render();
             fun.instances.navbar.renderDropdown();
-            fun.instances.subheader.render(advanced);
+            fun.instances.subheader.render(advancedSearch);
             fun.instances.subheader.renderHeadNav();
             fun.instances.subheader.renderHeadNavProfile();
 

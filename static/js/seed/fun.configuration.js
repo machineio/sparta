@@ -259,7 +259,6 @@ fun.conf.templates = {
     allGateways: fun.utils.format('%s/allGateways.html', fun.conf.html),
     gatewayRow: fun.utils.format('%s/gatewayRow.html', fun.conf.html),
     gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
-    advanced: fun.utils.format('%s/advanced.html', fun.conf.html),
     accounts: fun.utils.format('%s/accounts.html', fun.conf.html),
     accountsAllTab: fun.utils.format('%s/accountsAllTab.html', fun.conf.html),
     accountsActiveTab: fun.utils.format('%s/accountsActiveTab.html', fun.conf.html),
