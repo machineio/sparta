@@ -1,5 +1,5 @@
 /*
- Configuration seed 
+ Configuration seed
 */
 fun.conf = {
     // username account
@@ -14,6 +14,8 @@ fun.conf = {
     urlRoot: '/api/',
     // system uuid's
     uuidRecord: 'record_uuid',
+    uuidVector: 'vector_uuid',
+    uuidHash: 'hash_uuid',
     uuidRecording: 'recording_uuid',
     uuidBilling: 'billing_uuid',
     uuidCampaign: 'campaign_uuid',
@@ -103,7 +105,6 @@ fun.conf.sip = {
     trace_sip: false,
     // use pre loaded route
     use_preloaded_route: false,
-    
     // #TODO: is this still relevant?
     hack_via_tcp: true,
     hacK_ip_in_contact: false
@@ -112,7 +113,7 @@ fun.conf.sip = {
 /*
  System urls
 */
-fun.conf.urls = { 
+fun.conf.urls = {
     login: '/login/',
     logout: '/logout/',
     user: fun.utils.format('/users/%s', fun.conf.account),
@@ -217,6 +218,7 @@ fun.conf.templates = {
     landing: fun.utils.format('%s/landing.html', fun.conf.html),
     workshop: fun.utils.format('%s/workshop.html', fun.conf.html),
     workspace: fun.utils.format('%s/workspace.html', fun.conf.html),
+    advanced: fun.utils.format('%s/advanced.html', fun.conf.html),
     navbar: fun.utils.format('%s/navbar.html', fun.conf.html),
     navLanding: fun.utils.format('%s/navLanding.html', fun.conf.html),
     navDashboard: fun.utils.format('%s/navDashboard.html', fun.conf.html),
@@ -257,6 +259,7 @@ fun.conf.templates = {
     allGateways: fun.utils.format('%s/allGateways.html', fun.conf.html),
     gatewayRow: fun.utils.format('%s/gatewayRow.html', fun.conf.html),
     gatewayListItem: fun.utils.format('%s/gatewayListItem.html', fun.conf.html),
+    advanced: fun.utils.format('%s/advanced.html', fun.conf.html),
     accounts: fun.utils.format('%s/accounts.html', fun.conf.html),
     accountsAllTab: fun.utils.format('%s/accountsAllTab.html', fun.conf.html),
     accountsActiveTab: fun.utils.format('%s/accountsActiveTab.html', fun.conf.html),
@@ -376,8 +379,9 @@ fun.conf.hash = {
     landing: '#landing',
     features: '#features',
     enterprise: '#enterprise',
-    enterprise: '#calendars',
-    enterprise: '#monitors',
+    calendars: '#calendars',
+    advanced: '#advanced',
+    monitors: '#monitors',
     pricing: '#pricing',
     terms: '#terms',
     privacy: '#privacy',
