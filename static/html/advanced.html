@@ -1,13 +1,4 @@
 <div class="container">
-        
-    <div class="row">
-
-        <div class="col-md-12">
-            <p>lol</p>    
-        </div>
-            
-    </div>
-
 	<div class="row">
 		<div class="col-md-12">
 			<h3>Customer Info</h3>
@@ -446,6 +437,252 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+    	<div class="col-md-12">
+    		<h3>Home Owner's Insurance</h3>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-6">
+    		<div class="panel panel-default">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                             <th scope="row"><%= translate("priorityCode") %></th>
+                             <td>
+                                <select id="home-priority-code" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("autoPriorityCode") %></th>
+                             <td>
+                                <select id="home-auto-priority-code" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("leadSource") %></th>
+                             <td>
+                                <select id="home-lead-source" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("writingAgent") %></th>
+                             <td>
+                                <select id="home-writing-agent" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("scrubber") %></th>
+                             <td>
+                                <select id="home-scrubber" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("homeLeadStatus") %></th>
+                            <td>
+                                <select id="home-lead-status" class="form-control-cm">
+                                    <option value="false" selected="selected"></option>
+                                    <option value="presold">Presold</option>
+                                    <option value="enrolled">Enrolled</option>
+                                    <option value="bound">Bound</option>
+                                    <option value="active">Active</option>
+                                    <option value="submitted">Submitted</option>
+                                    <option value="sold">Sold</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("newPurchase") %></th>
+                            <td>
+                                <select id="home-new-purchase" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("occupancyStatus") %></th>
+                            <td>
+                                <select id="home-occupancy-status" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("typeOfDwelling") %></th>
+                             <td>
+                                <select id="home-type-of-dwelling" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("garage") %></th>
+                             <td>
+                                <select id="home-garage" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("constructionType") %></th>
+                             <td>
+                                <select id="home-construction-type" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("stories") %></th>
+                             <td>
+                                <select id="home-stories" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("numberOfStoriesInTheBuilding") %></th>
+                             <td>
+                                <select id="home-number-of-stories-in-the-building" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("quoteUpdateRequest") %></th>
+                             <td>
+                                <select id="home-quote-update-request" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    	</div>
+    	<div class="col-md-6">
+    		<div class="panel panel-default">
+                <table class="table">
+                    <tbody>
+                    	<tr>
+                             <th scope="row"><%= translate("fourPointIfApplicable") %></th>
+                             <td>
+                                <select id="home-four-point-if-applicable" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("quotedHomeCompany") %></th>
+                            <td>
+                                <select id="home-quoted-home-company" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("windMit") %></th>
+                             <td>
+                                <select id="home-wind-mit" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("roofMaterial") %></th>
+                             <td>
+                                <select id="home-roof-material" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("bathrooms") %></th>
+                             <td>
+                                <select id="home-bathrooms" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("dog") %></th>
+                             <td>
+                                <select id="home-dog" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("pool") %></th>
+                             <td>
+                                <select id="home-pool" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("fenceOrScreenEnclosure") %></th>
+                             <td>
+                                <select id="home-fence-or-screen-enclosure" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("bankrupcyOrForeclosureInThePastFiveYears") %></th>
+                             <td>
+                                <select id="home-bankrupcy-or-Foreclosure-in-the-past-five-years" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("centrallyMonitoredAlarm") %></th>
+                             <td>
+                                <select id="home-centrally-monitored-alarm" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("gatedCommunity") %></th>
+                             <td>
+                                <select id="home-gated-community" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("homePaymentOption") %></th>
+                             <td>
+                                <select id="home-payment-option" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <th scope="row"><%= translate("homeInsuranceCarrier") %></th>
+                             <td>
+                                <select id="home-insurance-carrier" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    	</div>
     </div>
 
 
