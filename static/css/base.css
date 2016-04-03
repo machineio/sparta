@@ -1,5 +1,9 @@
-#advancedInlineForm > label {
-  font-size: 11px !important;
+#advancedInlineForm div .form-group label {
+  font-size: 9px !important;
+}
+
+#advancedInlineForm div .form-group {
+  font-size: 9px;
 }
 
 
