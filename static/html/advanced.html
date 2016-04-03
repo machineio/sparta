@@ -1,4 +1,40 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>General</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Date Created</h4>
+                </div>
+                <form class="form-inline">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="date-created-between">is between (and including)</label>
+                            <input type="text" class="form-control" id="date-created-between">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="date-created-and">and</label>
+                            <input type="text" class="form-control" id="date-created-and">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="date-created-within">and/or is <strong>within</strong></label>
+                            <input type="text" class="form-control" id="date-created-within"> days
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 	<div class="row">
 		<div class="col-md-12">
 			<h3>Customer Info</h3>
@@ -1063,9 +1099,64 @@
                     </tbody>
                 </table>
             </div>
+            <br>
+            <h5>Other Information</h5>
+            <hr>
+            <div class="panel panel-default">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row"><%= translate("nursingHomeHospitalizedEtc") %></th>
+                            <td>
+                                <select id="ancilliary-nursing-home-hospitalized-etc" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("hospitalizedInTheLastTwelveMonths") %></th>
+                            <td>
+                                <select id="ancilliary-hospitalized-in-the-last-twelve-months" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("diagnosedOrTreatedForMedicalIssues") %></th>
+                            <td>
+                                <select id="ancilliary-diagnosed_or_treated_for_medical_issues" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("pregnant") %></th>
+                            <td>
+                                <select id="ancilliary-pregnant" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("everHadAProblemPregnancy") %></th>
+                            <td>
+                                <select id="ancilliary-ever_had_a_problem_pregnancy" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><%= translate("hypertension") %></th>
+                            <td>
+                                <select id="ancilliary-hypertension" class="form-control-cm">
+                                    <option value="">FILL</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-
         <div class="col-md-6">
             <br>
             <h5>Diagnosed or currently have</h5>
@@ -1213,63 +1304,6 @@
                     </tbody>
                 </table>
             </div>
-            <br>
-            <h5>Other Information</h5>
-            <hr>
-            <div class="panel panel-default">
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th scope="row"><%= translate("nursingHomeHospitalizedEtc") %></th>
-                            <td>
-                                <select id="ancilliary-nursing-home-hospitalized-etc" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><%= translate("hospitalizedInTheLastTwelveMonths") %></th>
-                            <td>
-                                <select id="ancilliary-hospitalized-in-the-last-twelve-months" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><%= translate("diagnosedOrTreatedForMedicalIssues") %></th>
-                            <td>
-                                <select id="ancilliary-diagnosed_or_treated_for_medical_issues" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><%= translate("pregnant") %></th>
-                            <td>
-                                <select id="ancilliary-pregnant" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><%= translate("everHadAProblemPregnancy") %></th>
-                            <td>
-                                <select id="ancilliary-ever_had_a_problem_pregnancy" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><%= translate("hypertension") %></th>
-                            <td>
-                                <select id="ancilliary-hypertension" class="form-control-cm">
-                                    <option value="">FILL</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 
@@ -1303,8 +1337,6 @@
                 </table>
             </div>
         </div>
-
-
         <div class="col-md-6">
             <div class="panel panel-default">
                 <table class="table">
@@ -1329,5 +1361,5 @@
                 </table>
             </div>
         </div>
-
+    </div>
 </div>
