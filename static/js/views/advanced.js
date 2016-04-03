@@ -25,6 +25,14 @@ fun.views.advanced = Backbone.View.extend({
         $('#date-created-between').datepicker();
         $('#date-created-and').datepicker();
         $('#date-created-within').datepicker();
+
+        $('#date-modified-between').datepicker();
+        $('#date-modified-and').datepicker();
+        $('#date-modified-within').datepicker();
+
+        $('#date-close-between').datepicker();
+        $('#date-close-and').datepicker();
+        $('#date-close-within').datepicker();
         this.$el.removeClass("hide").addClass("show");
     }
 
