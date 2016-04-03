@@ -1,3 +1,8 @@
+#advancedInlineForm > label {
+  font-size: 11px !important;
+}
+
+
 #profile-task-new-modal-description {
   width: 100%;
 }
