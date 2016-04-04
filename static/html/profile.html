@@ -1001,126 +1001,45 @@
                                                     <th><%= translate("remove") %></th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="profile-task-list"></tbody>
+                                            <tbody id="profile-task-all-list"></tbody>
                                         </table>
                                     </div>
-
-
-                                    <!-- so if this is contacts here is the list of directories that we're using on the system -->
-                                    <div class="row">
-                                        <div class="col-md-12 margin-calendar-profilecm">
-                                            <div id='test-calendar'></div>
-                                        </div><!-- /.tab-content -->
-                                    </div>
-
-                                    <ul class="list-group">
-
-                                        <li class="list-group-item">
-                                            <i class="fa fa-calendar-plus-o fa-2x pull-left"></i>
-                                            <ul class="list-inline pull-right">
-                                                <li>
-                                                    <i class="fa fa-star fa-fw"></i> 0
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-check fa-fw"></i> 0
-                                                </li>
-                                            </ul>
-
-                                            <h4 class="list-group-item-heading"><a class="task-popup">martian</a></h4>
-
-                                            <p class="description">
-                                                It is a long established fact that a task will be distracted by the readable content of the description when looking at its nonsense.
-                                            </p>
-
-                                            <p class="updated-at text-muted">
-                                                Last updated <time datetime="2016-08-22T09:20:51-07:00" is="relative-time" title="Aug 22, 2016 10:20 AM MDT">23 minutes ago</time>
-                                            </p>
-
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <i class="fa fa-calendar-plus-o fa-2x pull-left"></i>
-                                            <ul class="list-inline pull-right">
-                                                <li class="status"><%= translate("paused") %></li>
-                                                <li>
-                                                    <i class="fa fa-star fa-fw"></i> 0
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-share fa-fw"></i> 0
-                                                </li>
-                                            </ul>
-
-                                            <h4 class="list-group-item-heading"><a class="event-popup">julian</a></h4>
-
-                                            <p class="description">
-                                                Bring daemons to life or destroy them forever. Cross platform, between planets and space rocks.
-                                            </p>
-
-                                            <p class="updated-at text-muted">
-                                                Last updated <time datetime="2014-08-22T09:20:51-07:00" is="relative-time" title="Aug 22, 2014 10:20 AM MDT">45 minutes ago</time>
-                                            </p>
-
-                                        </li>
-
-                                    </ul>
 
                                 </div>
 
                                 <div id="profile-tasks-now" class="tab-pane">
-                                    <ul class="list-group">
-
-                                        <li class="list-group-item">
-                                            <i class="fa fa-random fa-2x pull-left"></i>
-                                            <ul class="list-inline pull-right">
-                                                <li>
-                                                    <i class="fa fa-star fa-fw"></i> 0
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-check fa-fw"></i> 0
-                                                </li>
-                                            </ul>
-
-                                            <h4 class="list-group-item-heading"><a class="inbound-campaign-popup">godzilla_in</a></h4>
-
-                                            <p class="description">
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                            </p>
-
-                                            <p class="updated-at text-muted">
-                                                Last updated <time datetime="2014-08-22T09:20:51-07:00" is="relative-time" title="Aug 22, 2014 10:20 AM MDT">23 minutes ago</time>
-                                            </p>
-
-                                        </li>
-                                    </ul>
+                                    <div class="row">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th><%= translate("title") %></th>
+                                                    <th><%= translate("label") %></th>
+                                                    <th><%= translate("status") %></th>
+                                                    <th><%= translate("view") %></th>
+                                                    <th><%= translate("edit") %></th>
+                                                    <th><%= translate("remove") %></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="profile-task-now-list"></tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div id="profile-tasks-overdue" class="tab-pane">
-                                    <ul class="list-group">
-
-                                        <li class="list-group-item">
-                                            <i class="fa fa-bullhorn fa-flip-horizontal fa-2x pull-left"></i>
-                                            <ul class="list-inline pull-right">
-                                                <li class="status"><%= translate("paused") %></li>
-                                                <li>
-                                                    <i class="fa fa-star fa-fw"></i> 0
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-share fa-fw"></i> 0
-                                                </li>
-                                            </ul>
-
-                                            <h4 class="list-group-item-heading"><a class="outbound-campaign-popup">godzilla_out</a></h4>
-
-                                            <p class="description">
-                                                Bring daemons to life or destroy them forever. Cross platform, Node.js.
-                                            </p>
-
-                                            <p class="updated-at text-muted">
-                                                Last updated <time datetime="2014-08-22T09:20:51-07:00" is="relative-time" title="Aug 22, 2014 10:20 AM MDT">45 minutes ago</time>
-                                            </p>
-
-                                        </li>
-
-                                    </ul>
+                                    <div class="row">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th><%= translate("title") %></th>
+                                                    <th><%= translate("label") %></th>
+                                                    <th><%= translate("status") %></th>
+                                                    <th><%= translate("view") %></th>
+                                                    <th><%= translate("edit") %></th>
+                                                    <th><%= translate("remove") %></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="profile-task-overdue-list"></tbody>
+                                        </table>
+                                    </div>
                                 </div>
                               </div><!-- /.tab-content -->
 
