@@ -85,9 +85,6 @@ fun.views.reports = Backbone.View.extend({
         startEndLapse = {
             start:this.start,
             end:this.end,
-            
-            // get time lapse from dom
-            // lapse:this.lapse,
             lapse:this.lapse
         };
 
@@ -96,8 +93,6 @@ fun.views.reports = Backbone.View.extend({
             summary: new fun.models.SummaryStartEnd(startEnd),
             summaries: new fun.models.SummariesStartEnd(startEnd),
             billing: new fun.models.BillingStartEnd(startEnd)
-
-            // lapseSummary : new fun.models.LapseSummaryStartEnd(startEndLapse)
         };
 
         success = function() {
