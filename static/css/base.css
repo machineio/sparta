@@ -1,3 +1,12 @@
+#advancedInlineForm div .form-group label {
+  font-size: 9px !important;
+}
+
+#advancedInlineForm div .form-group {
+  font-size: 9px;
+}
+
+
 #profile-task-new-modal-description {
   width: 100%;
 }

@@ -1041,6 +1041,7 @@ fun.strings = {
     autoInsurancePolicyNumber: "Auto Insurance Policy Number",
     autoDocumentsNeeded: "Auto Documents Needed",
     mailingZipCode: "Mailing Zip Code",
+    advancedSearch: "Advanced Search",
 
     subject: "Subject",
     reminder: "Reminder",
