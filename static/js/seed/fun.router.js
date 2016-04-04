@@ -304,7 +304,6 @@ fun.Router = Backbone.Router.extend({
         );
 
         resources = {
-            
             user: new fun.models.User({'account':account}),
             tasks: new fun.models.TasksContainer(), // <!----------------------- HERE IS THE FUCKING TEST WITH THE NEW TYPE OF COLLECTION CONTAINER AND SUPPORT FUCKING PAGINATIONS AND METADATA
             now: new fun.models.TasksNow(),
