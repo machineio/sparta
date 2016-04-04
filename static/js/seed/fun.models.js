@@ -1635,6 +1635,11 @@ fun.models.TasksContainer = Backbone.Model.extend({
 
         return obj;
     },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
     
 });
 
