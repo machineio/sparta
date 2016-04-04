@@ -94,6 +94,8 @@ fun.views.tasks = Backbone.View.extend({
             this.tasks = tasks;
         }
 
+        console.log(tasks);
+
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.allTasks)
         );
