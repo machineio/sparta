@@ -6,6 +6,7 @@ fun.views.tasks = Backbone.View.extend({
     events: {
         "click #create-task-btn": "createTask",
         "click .task-popup": "taskDetails",
+        'click .task-all-pagination': 'paginationAllTasks',
         "click #update-task-btn": "updateTask",
         "click #close-task-btn": "closeTask",
         "click input[name='task_status']": 'updateStatus'
@@ -452,6 +453,31 @@ fun.views.tasks = Backbone.View.extend({
             view.$('#task_name').val('');
             view.$('#task_description').val('');
         }
+    },
+
+
+    paginationAllTasks: function(event){
+        'use strict';
+        event.preventDefault();
+        //view cache
+        var view = this,
+            task,
+            pageNumber;
+
+        // get the name of the element targeted by this event
+        name = $(event.target).data('name');
+
+
+        var stuff = {};
+
+        startEnd = {
+            start:this.start,
+            end:this.end,
+            lapse:'hours',
+            'page':pageNumber
+        };
+
+        task = new fun.models.Task();
     },
 
     /*
