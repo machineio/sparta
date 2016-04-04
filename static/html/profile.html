@@ -989,6 +989,30 @@
                                 <div class="tab-content">
                                 <div id="profile-tasks-all" class="tab-pane active">
 
+                                    <div class="row">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th><%= translate("title") %></th>
+                                                    <th><%= translate("label") %></th>
+                                                    <th><%= translate("status") %></th>
+                                                    <th><%= translate("view") %></th>
+                                                    <th><%= translate("edit") %></th>
+                                                    <th><%= translate("remove") %></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="profile-task-list"></tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- so if this is contacts here is the list of directories that we're using on the system -->
+                                    <div class="row">
+                                        <div class="col-md-12 margin-calendar-profilecm">
+                                            <div id='test-calendar'></div>
+                                        </div><!-- /.tab-content -->
+                                    </div>
+
                                     <ul class="list-group">
 
                                         <li class="list-group-item">
@@ -1120,35 +1144,7 @@
                             </div>
                         </div>
                     </div>
-
-                        <div class="row">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th><%= translate("title") %></th>
-                                        <th><%= translate("label") %></th>
-                                        <th><%= translate("status") %></th>
-                                        <th><%= translate("view") %></th>
-                                        <th><%= translate("edit") %></th>
-                                        <th><%= translate("remove") %></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="profile-task-list"></tbody>
-                            </table>
-                        </div>
-
-
-                        <!-- so if this is contacts here is the list of directories that we're using on the system -->
-                        <div class="row">
-                            <div class="col-md-12 margin-calendar-profilecm">
-                                <div id='test-calendar'></div>
-                            </div><!-- /.tab-content -->
-                        </div>
-                    </div>
-
-                </div><!-- /.tab-content -->
-                <!-- wtf? -->
-                </div><!-- /.tab-content -->
+                </div>
 
             </div>
         </div>
