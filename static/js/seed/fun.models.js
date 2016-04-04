@@ -1599,10 +1599,6 @@ fun.models.Tasks = Backbone.Collection.extend({
 
     urlRoot: fun.conf.urls.tasks,
 
-    count: response.count,
-
-    page: response.page,
-
     url: function(response) {
         return this.urlRoot;
     },
