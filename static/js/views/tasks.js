@@ -461,23 +461,24 @@ fun.views.tasks = Backbone.View.extend({
         event.preventDefault();
         //view cache
         var view = this,
+            start = moment.utc().startOf('day'),
+            end = moment.utc().startOf('day').add(1, 'day'),
+            startEnd,
             task,
-            pageNumber;
+            page = $(event.target).data('page');
 
-        // get the name of the element targeted by this event
-        name = $(event.target).data('name');
-
-
-        var stuff = {};
+        // unix timestamps
 
         startEnd = {
-            start:this.start,
-            end:this.end,
+            start:start.unix(),
+            end:end.unix(),
             lapse:'hours',
-            'page':pageNumber
+            page:page
         };
 
-        task = new fun.models.Task();
+        console.log(startEnd);
+
+        task = new fun.models.Tasks(startEnd);
     },
 
     /*
