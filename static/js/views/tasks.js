@@ -102,7 +102,7 @@ fun.views.tasks = Backbone.View.extend({
 
         this.taskCount = this.$('#all-tasks-count');
 
-        this.allPagination = this.$('all-tasks-pagination');
+        this.allPagination = this.$('#all-tasks-pagination');
 
         this.$el.removeClass("hide").addClass("show");
         this.renderTaskRows();
