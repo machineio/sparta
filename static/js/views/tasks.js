@@ -100,6 +100,8 @@ fun.views.tasks = Backbone.View.extend({
 
         this.tbody = this.$('#tasks-list > tbody');
 
+        this.taskCount = this.$('#all-tasks-count');
+
         this.$el.removeClass("hide").addClass("show");
         this.renderTaskRows();
     },
@@ -110,19 +112,24 @@ fun.views.tasks = Backbone.View.extend({
     renderTaskRows: function(){
         'use strict';
         var length,
+            results
+            taskCount,
+            currentPage,
+            vonCount,
             rows,
             template;
         // tasks length
         length = this.tasks.attributes.results.length;
+        results = this.tasks.attributes.results;
+        vonCount = this.tasks.attributes.count;
+        currentPage = this.tasks.attributes.page;
 
-
-        console.log(this.tasks.attributes.count);
-        console.log(this.tasks.attributes.page);
+        this.taskCount.html(vonCount);
 
 
         if (length > 0){
             rows = this.tbody.html('');
-            _.each(this.tasks.attributes.results, function(value){
+            _.each(results, function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.taskRow)
                 )(value);
