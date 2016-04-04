@@ -112,12 +112,11 @@ fun.views.tasks = Backbone.View.extend({
     renderTaskRows: function(){
         'use strict';
         var length,
-            results
+            results,
             currentPage,
             vonCount,
             rows,
             template;
-        // tasks length
         length = this.tasks.attributes.results.length;
         results = this.tasks.attributes.results;
         vonCount = this.tasks.attributes.count;
