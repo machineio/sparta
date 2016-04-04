@@ -122,7 +122,13 @@ fun.views.tasks = Backbone.View.extend({
         vonCount = this.tasks.attributes.count;
         currentPage = this.tasks.attributes.page;
 
-        console.log(vonCount / length);
+        var thisRange = _.range(1, Math.round(vonCount / length));
+
+        console.log(thisRange);
+
+        _.each(thisRange, function(value){
+            console.log(value);
+        });
 
         this.taskCount.html(vonCount);
         if (length > 0){
