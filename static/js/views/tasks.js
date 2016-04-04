@@ -121,6 +121,9 @@ fun.views.tasks = Backbone.View.extend({
         results = this.tasks.attributes.results;
         vonCount = this.tasks.attributes.count;
         currentPage = this.tasks.attributes.page;
+
+        console.log(vonCount / length);
+
         this.taskCount.html(vonCount);
         if (length > 0){
             rows = this.tbody.html('');
