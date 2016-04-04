@@ -455,7 +455,6 @@ fun.views.tasks = Backbone.View.extend({
         }
     },
 
-
     paginationAllTasks: function(event){
         'use strict';
         event.preventDefault();
