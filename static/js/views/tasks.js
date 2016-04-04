@@ -80,10 +80,7 @@ fun.views.tasks = Backbone.View.extend({
         }
     },
 
-
-
-
-     /*
+    /*
     * Render tasks list
     */
     renderTasksList: function(tasks){
