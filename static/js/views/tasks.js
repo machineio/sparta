@@ -91,8 +91,6 @@ fun.views.tasks = Backbone.View.extend({
             this.tasks = tasks;
         }
 
-        console.log(tasks);
-
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.allTasks)
         );
@@ -117,7 +115,10 @@ fun.views.tasks = Backbone.View.extend({
         // tasks length
         //length = this.tasks.results.length;
 
-        console.log(this.tasks.attributes);
+        console.log(this.tasks.attributes.results.length);
+        console.log(this.tasks.attributes.count);
+        console.log(this.tasks.attributes.page);
+
 
         if (length > 0){
             rows = this.tbody.html('');
