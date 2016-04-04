@@ -1627,7 +1627,10 @@ fun.models.TasksContainer = Backbone.Model.extend({
         delete obj.dataPoints;
 
         return obj;
-    }
+    },
+
+    urlRoot: fun.conf.urls.tasks,
+    
 });
 
 
