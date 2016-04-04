@@ -1614,7 +1614,7 @@ fun.models.Tasks = Backbone.Collection.extend({
 });
 
 
-var TasksContainer = Backbone.Model.extend({
+fun.models.TasksContainer = Backbone.Model.extend({
     defaults: {
         dataPoints: new fun.models.Tasks(),
         unit: "quarts"
