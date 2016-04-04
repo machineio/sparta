@@ -1619,6 +1619,13 @@ fun.models.TasksContainer = Backbone.Model.extend({
         dataPoints: new fun.models.Tasks(),
         unit: "quarts"
     },
+
+    urlRoot: fun.conf.urls.tasks,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
     parse: function(obj) {
         // update the inner collection
         this.get("dataPoints").refresh(obj.dataPoints);
@@ -1628,8 +1635,6 @@ fun.models.TasksContainer = Backbone.Model.extend({
 
         return obj;
     },
-
-    urlRoot: fun.conf.urls.tasks,
     
 });
 
