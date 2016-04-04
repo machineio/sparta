@@ -1628,7 +1628,7 @@ fun.models.TasksContainer = Backbone.Model.extend({
 
     parse: function(obj) {
         // update the inner collection
-        this.get("dataPoints").refresh(obj.dataPoints);
+        this.get("dataPoints").reset(obj.dataPoints);
 
         // this mightn't be necessary
         delete obj.dataPoints;
