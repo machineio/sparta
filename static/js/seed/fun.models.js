@@ -1618,6 +1618,23 @@ fun.models.Tasks = Backbone.Collection.extend({
 });
 
 
+var TasksContainer = Backbone.Model.extend({
+    defaults: {
+        dataPoints: new fun.models.Tasks(),
+        unit: "quarts"
+    },
+    parse: function(obj) {
+        // update the inner collection
+        this.get("dataPoints").refresh(obj.dataPoints);
+
+        // this mightn't be necessary
+        delete obj.dataPoints;
+
+        return obj;
+    }
+});
+
+
 fun.models.TasksNow = Backbone.Collection.extend({
 
     model: fun.models.Task,
