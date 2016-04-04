@@ -113,7 +113,6 @@ fun.views.tasks = Backbone.View.extend({
         'use strict';
         var length,
             results
-            taskCount,
             currentPage,
             vonCount,
             rows,
@@ -123,10 +122,7 @@ fun.views.tasks = Backbone.View.extend({
         results = this.tasks.attributes.results;
         vonCount = this.tasks.attributes.count;
         currentPage = this.tasks.attributes.page;
-
         this.taskCount.html(vonCount);
-
-
         if (length > 0){
             rows = this.tbody.html('');
             _.each(results, function(value){
