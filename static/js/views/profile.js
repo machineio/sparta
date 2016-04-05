@@ -48,7 +48,16 @@ fun.views.profile = Backbone.View.extend({
     },
 
     editContact:function(event){
+        'use strict';
+        event.preventDefault();
         console.log('edit contact event');
+        // view cache
+        var view = this,
+            name;
+        $('#profileContactModal').modal({
+            'show': true
+        });
+        this.renderContactModalForm();
     },
 
     deleteContact:function(event){
