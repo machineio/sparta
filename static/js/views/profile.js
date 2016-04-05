@@ -40,7 +40,7 @@ fun.views.profile = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         console.log('call this fucker');
-    }
+    },
 
     viewContact: function(event){
         'use strict';
