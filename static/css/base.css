@@ -1,3 +1,13 @@
+#advanceTD {
+  padding: 10px 0px 10px 0px;
+}
+
+#advanceTD .col-md-4, #advanceTD .col-md-3  {
+  padding: 2px;
+}
+
+
+
 #advancedInlineForm div .form-group label {
   font-size: 9px !important;
 }
