@@ -1033,27 +1033,88 @@ fun.views.contacts = Backbone.View.extend({
 
                 console.log(response);
 
+
+                /*
+
+
+                child_1_dob: ""
+                child_1_first_name: ""
+                child_1_gender: ""
+                child_1_last_name: ""
+                child_2_dob: ""
+                child_2_first_name: ""
+                child_2_gender: ""
+                child_2_last_name: ""
+                child_3_dob: ""
+                child_3_first_name: ""
+                child_3_gender: ""
+                child_3_last_name: ""
+                child_4_dob: ""
+                child_4_first_name: ""
+                child_4_gender: ""
+                child_4_last_name: ""
+                city: "Bradenton"
+                current_carrier: ""
+                current_coverage: ""
+                do_not_disturb: false
+                dob: "08/02/1967"
+                email: "nansear@gmail.com"
+                employment_status: ""
+                first_name: "Nancy"
+                gender: "Female"
+                has_directory: false
+                have_coverage: "No"
+                language_preference: ""
+                last_name: "Rhine"
+                marital_status: "Single"
+                mobile_number: ""
+                number_of_children: "0"
+                partner: "precise-shr"
+                phone_number: "9084897909"
+                priority_code: ""
+                spouse_1_gender: ""
+                spouse_dob: ""
+                spouse_first_name: ""
+                spouse_last_name: ""
+                state: "FL"
+                street_address: "6383 Golden Eye Glen"
+                ttl_hse_inc: "0"
+                ttl_idv_inc: "0"
+                us_citizenship: ""
+                uuid: "071cb159-833b-49cb-82a7-242337ca7eb4"
+                zip_code: "34202"
+
+
+                */
+
                 /*contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));*/
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
+                contact_info_state.val(response.get('state') || '');
+                contact_info_phone.val(response.get('phone_number'));
+                contact_info_email.val(response.get('email') || '');
+                contact_info_gender.val(response.get('gender') || '');
+                contact_info_marital_status.val(response.get('marital_status') || '');
+
+
                 //contact_info_location.val(response.get('location') || '');
                 /*contact_info_timezone.val(response.get('time_zone') || '');
                 contact_info_zip.val(response.get('zip') || '');
-                contact_info_phone.val(response.get('phone_number'));
+               
                 contact_info_tags.html(response.get('tags') || '');
-                contact_info_email.val(response.get('email') || '');
+                
                 contact_info_address.val(response.get('address') || '');
                 contact_info_country.val(response.get('country') || '');
                 contact_info_checked.val(response.get('checked') || '');
                 contact_info_dnd.val(response.get('do_not_disturb') || '');
                 contact_info_city.val(response.get('city') || '');
-                contact_info_state.val(response.get('state') || '');
+                
                 contact_info_status.val(response.get('status') || '');
                 contact_info_description.html(response.get('description') || '');
                 contact_info_history.html(response.get('history') || '');
                 contact_info_comment.val(response.get('comment') || '');
-                contact_info_gender.val(response.get('gender') || '');
+                
 
                 contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');*/
                 
