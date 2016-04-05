@@ -53,16 +53,31 @@ fun.views.profile = Backbone.View.extend({
         console.log('edit contact event');
         // view cache
         var view = this,
+            name_uuid,
+            stuff = JSON.parse(localStorage.getItem("profile")),
+            contact,
             name;
+
+        name_uuid = $(event.target).data('name');
+
         $('#profileContactModal').modal({
             'show': true
         });
+
         this.renderContactModalForm();
 
+        console.log(stuff);
 
+        console.log(name_uuid);
 
-        contact = new fun.models.Contact({'uuid':name});
+        var lolol = {
+            'uuid': name_uuid,
+            'account':stuff['account']
+        };
 
+        console.log(lolol);
+
+        contact = new fun.models.Contact(lolol);
 
         contact.fetch({
             success: function(response){
