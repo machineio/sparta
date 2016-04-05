@@ -1055,10 +1055,10 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_gender.val(response.get('gender') || '');
 
                 contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');
-
+                */
                 $('#contactModal').modal({
                     'show': true
-                });*/
+                });
             },
             error: function(error){
                 console.log(error);
