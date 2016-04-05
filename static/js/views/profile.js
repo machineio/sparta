@@ -74,7 +74,7 @@ fun.views.profile = Backbone.View.extend({
         console.log(name_uuid);
 
         confirm = new fun.models.Contact({
-            'uuid':'how',
+            'uuid': name_uuid,
             'account':'thefuck'
         });
         callbacks = {
