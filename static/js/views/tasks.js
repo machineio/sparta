@@ -129,7 +129,7 @@ fun.views.tasks = Backbone.View.extend({
         var thisRange = _.range(1, Math.round(vonCount / length));
 
         _.each(thisRange, function(value){
-            pags.append(fun.utils.format('<li><a href="javascript:;">%s</a></li>', value));
+            pags.append(fun.utils.format('<li><a class="task-all-pagination" data-page="%s">%s</a></li>', value, value));
         });
 
         this.taskCount.html(vonCount);
