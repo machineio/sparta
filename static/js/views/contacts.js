@@ -1095,22 +1095,22 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_marital_status.val(response.get('marital_status') || '');
 
 
-                contact_child_1_dob.val(response.get('child_1_dob') || '');
-                contact_child_1_first_name.val(response.get('child_1_first_name') || '');
-                contact_child_1_gender.val(response.get('child_1_gender') || '');
-                contact_child_1_last_name.val(response.get('child_1_last_name') || '');
-                contact_child_2_dob.val(response.get('child_2_dob') || '');
-                contact_child_2_first_name.val(response.get('child_2_first_name') || '');
-                contact_child_2_gender.val(response.get('child_2_gender') || '');
-                contact_child_2_last_name.val(response.get('child_2_last_name') || '');
-                contact_child_3_dob.val(response.get('child_3_dob') || '');
-                contact_child_3_first_name.val(response.get('child_3_first_name') || '');
-                contact_child_3_gender.val(response.get('child_3_gender') || '');
-                contact_child_3_last_name.val(response.get('child_3_last_name') || '');
-                contact_child_4_dob.val(response.get('child_4_dob') || '');
-                contact_child_4_first_name.val(response.get('child_4_first_name') || '');
-                contact_child_4_gender.val(response.get('child_4_gender') || '');
-                contact_child_4_last_name.val(response.get('child_4_last_name') || '');
+                contact_info_child_1_dob.val(response.get('child_1_dob') || '');
+                contact_info_child_1_first_name.val(response.get('child_1_first_name') || '');
+                contact_info_child_1_gender.val(response.get('child_1_gender') || '');
+                contact_info_child_1_last_name.val(response.get('child_1_last_name') || '');
+                contact_info_child_2_dob.val(response.get('child_2_dob') || '');
+                contact_info_child_2_first_name.val(response.get('child_2_first_name') || '');
+                contact_info_child_2_gender.val(response.get('child_2_gender') || '');
+                contact_info_child_2_last_name.val(response.get('child_2_last_name') || '');
+                contact_info_child_3_dob.val(response.get('child_3_dob') || '');
+                contact_info_child_3_first_name.val(response.get('child_3_first_name') || '');
+                contact_info_child_3_gender.val(response.get('child_3_gender') || '');
+                contact_info_child_3_last_name.val(response.get('child_3_last_name') || '');
+                contact_info_child_4_dob.val(response.get('child_4_dob') || '');
+                contact_info_child_4_first_name.val(response.get('child_4_first_name') || '');
+                contact_info_child_4_gender.val(response.get('child_4_gender') || '');
+                contact_info_child_4_last_name.val(response.get('child_4_last_name') || '');
 
 
                 //contact_info_location.val(response.get('location') || '');
