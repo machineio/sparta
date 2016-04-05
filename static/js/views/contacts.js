@@ -1038,7 +1038,7 @@ fun.views.contacts = Backbone.View.extend({
 
 
                 
-                city: "Bradenton" ????????
+
                 current_carrier: ""
                 current_coverage: ""
                 do_not_disturb: false
@@ -1050,7 +1050,7 @@ fun.views.contacts = Backbone.View.extend({
                 has_directory: false
                 have_coverage: "No"
                 language_preference: ""
-                last_name: "Rhine"
+
                 marital_status: "Single"
                 mobile_number: ""
                 number_of_children: "0"
@@ -1067,14 +1067,11 @@ fun.views.contacts = Backbone.View.extend({
 
 
 
-
-                street_address: "6383 Golden Eye Glen"
                 ttl_hse_inc: "0"
                 ttl_idv_inc: "0"
                 us_citizenship: ""
 
 
-                uuid: "071cb159-833b-49cb-82a7-242337ca7eb4"
                 zip_code: "34202"
 
 
@@ -1085,6 +1082,8 @@ fun.views.contacts = Backbone.View.extend({
 
 
                 contact_info_city.val(response.get('city') || '');
+
+                contact_info_partner.val(response.get('partner') || '');
 
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
