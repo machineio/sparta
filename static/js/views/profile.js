@@ -9,10 +9,9 @@ fun.views.profile = Backbone.View.extend({
         'click #act_2': 'threeDays',
         'click #act_3': 'oneWeek',
         'click #act_4': 'oneMonth',
-        'click .contact-popup': 'contactDetails',
-        'click .view-contact-popup': 'contactDetails',
-        'click .edit-contact-popup': 'contactDetails',
-        'click .delete-contact-pupup': 'contactDetails',
+        'click .view-contact-popup': 'viewContact',
+        'click .edit-contact-popup': 'editContact',
+        'click .delete-contact-pupup': 'deleteContact',
         'change #profile-contact-modal-mailing-address-different': 'showMailingAddressDifferent',
         'change #profile-contact-modal-marital-status': 'changeMaritalStatus',
         'change #profile-contact-modal-agent-home-insurance-checkbox': 'homeInsuranceTab',
@@ -33,6 +32,19 @@ fun.views.profile = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.profile = this.$el;
+    },
+
+
+    viewContact: function(event){
+        console.log('view contact event');
+    },
+
+    editContact:function(event){
+        console.log('edit contact event');
+    },
+
+    deleteContact:function(event){
+        console.log('delete contact event');
     },
 
     /**
