@@ -167,7 +167,7 @@
             <div class="modal-header">
                 <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                 <!--<h4 class="modal-title" id="myModalLabel"><%= translate("pvtScriptModalTitle") %></h4>-->
-                <h4 class="modal-title" id="myModalLabel"><%= translate("incomingCall") %></h4>
+                <h4 class="modal-title" id="myModalLabel"><%= translate("leadDetails") %></h4>
             </div>
             <div class="modal-body">
                 
@@ -181,98 +181,8 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h4>Call Control</h4>
-                                    <button id="next-outbound-btn" class="btn btn-lg btn-success btn-block update-button-taskmodal" type="submit"><%= translate("next") %></button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button id="skip-outbound-btn" class="btn btn-lg btn-success btn-block update-button-taskmodal" type="submit"><%= translate("skip") %></button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button id="leave-voicemail-btn" class="btn btn-lg btn-success btn-block update-button-taskmodal" type="submit"><%= translate("leaveVM") %></button>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button id="set-callback-btn" class="btn btn-lg btn-success btn-block update-button-taskmodal" type="button"><%= translate("setCallback") %></button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                <h4>Disposition</h4>
-
-                                <div class="btn-group ">
-                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                        <i class="fa fa-phone fa-fw"></i>
-                                        <span data-label-placement="" id="in_call_status">Wrong Number</span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-
-                                        <li>
-                                            <input type="radio" id="call_status_wrong_number" name="call_status" value="1">
-                                            <label for="call_status_wrong_number">Wrong Number</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_contacted" name="call_status" value="2">
-                                            <label for="call_status_contacted">Contacted</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_appointment" name="call_status" value="3">
-                                            <label for="call_status_appointment">Set Appointment</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_notinterested" name="call_status" value="4">
-                                            <label for="call_status_notinterested">Dead not interested</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_medicare" name="call_status" value="5">
-                                            <label for="call_status_medicare">Dead medicare</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_transferred" name="call_status" value="6">
-                                            <label for="call_status_transferred">Transferred</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="radio" id="call_status_bcbs" name="call_status" value="7">
-                                            <label for="call_status_bcbs">Transferred BCBS</label>
-                                        </li>
-
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>Transfer</h4>
-
-
-                                <div class="input-group">
-                                    <span class="input-group-addon">#</span>
-                                    <input id="cube_name" type="text" class="form-control-cm" placeholder="Queue, Account or Phone number">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Send</button>
-                                  </span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        </div>
-                        <div id="pills" class="col-md-8">
+                        
+                        <div id="pills" class="col-md-12">
                             <div id="hot-contact-modal-tabs" class="hide"></div>
                         </div>
                     </div>
@@ -305,7 +215,7 @@
                 </div>
             </div>
         </div>
-	 
+
 
 		  <!-- <div class="modal-content">
 				<div class="modal-body">
