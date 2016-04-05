@@ -79,13 +79,15 @@ fun.views.profile = Backbone.View.extend({
 
         console.log(name_uuid);
 
-        confirm = new fun.models.Contact({
+        var lolol = {
             'uuid': name_uuid,
             'account':stuff['account']
-        });
+        };
 
-        console.log(confirm);
-        
+        console.log(lolol);
+
+        confirm = new fun.models.Contact(lolol);
+
         callbacks = {
             success: function(){
                 console.log("inside success, but we don't see any of this shit.");
