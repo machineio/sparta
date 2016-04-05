@@ -1037,8 +1037,6 @@ fun.views.contacts = Backbone.View.extend({
                 /*
 
 
-                
-
                 current_carrier: ""
                 current_coverage: ""
                 do_not_disturb: false
@@ -1080,12 +1078,9 @@ fun.views.contacts = Backbone.View.extend({
                 /*contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));*/
 
-          
-                var element = document.getElementById('contact-info-marital-status');
 
-                element.value = response.get('marital_status').toLowerCase();
+                contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
 
-                console.log('test');
 
                 contact_info_city.val(response.get('city') || '');
 
