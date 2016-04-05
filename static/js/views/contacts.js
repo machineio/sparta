@@ -1080,10 +1080,6 @@ fun.views.contacts = Backbone.View.extend({
                 /*contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));*/
 
-
-
-                contact-info-marital-status
-
                 contact_info_marital_status.value(response.get('marital_status').toLowerCase() || '');
 
 
