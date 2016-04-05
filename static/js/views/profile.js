@@ -39,7 +39,50 @@ fun.views.profile = Backbone.View.extend({
     callPhoneNumber: function(event){
         'use strict';
         event.preventDefault();
+
+    
         console.log('call this fucker');
+    
+        var view = this,
+            name_uuid = $(event.target).data('name'),
+            stuff = JSON.parse(localStorage.getItem("profile")),
+            callbacks_and_stuff,
+            lolol,
+            contact;
+
+        name_uuid = $(event.target).data('name');
+
+        $('#profileContactModal').modal({
+            'show': true
+        });
+
+        this.renderContactModalForm();
+
+        console.log(stuff);
+
+        console.log(name_uuid);
+
+        lolol = {
+            'uuid': name_uuid,
+            'account':stuff['account']
+        };
+
+
+        callbacks_and_stuff = {
+            success: function(response){
+                console.log(response);
+            },
+            error: function(error){
+                console.log(error);
+            }
+        }
+
+        console.log(lolol);
+
+        contact = new fun.models.Contact(lolol);
+        contact.fetch(callbacks_and_stuff);
+
+
     },
 
     viewContact: function(event){
@@ -63,8 +106,9 @@ fun.views.profile = Backbone.View.extend({
         var view = this,
             name_uuid,
             stuff = JSON.parse(localStorage.getItem("profile")),
-            contact,
-            name;
+            callbacks_and_stuff,
+            lolol,
+            contact;
 
         name_uuid = $(event.target).data('name');
 
@@ -78,125 +122,25 @@ fun.views.profile = Backbone.View.extend({
 
         console.log(name_uuid);
 
-        var lolol = {
+        lolol = {
             'uuid': name_uuid,
             'account':stuff['account']
         };
 
-        console.log(lolol);
 
-        contact = new fun.models.Contact(lolol);
-
-        contact.fetch({
+        callbacks_and_stuff = {
             success: function(response){
-
-
                 console.log(response);
-
-                /*
-                current_carrier: ""
-                current_coverage: ""
-                do_not_disturb: false
-                dob: "08/02/1967"
-                
-                employment_status: ""
-                
-                gender: "Female"
-                has_directory: false
-                have_coverage: "No"
-                language_preference: ""
-
-                marital_status: "Single"
-                mobile_number: ""
-                number_of_children: "0"
-                partner: "precise-shr"
-                
-                priority_code: ""
-
-
-                spouse_1_gender: ""
-                spouse_dob: ""
-                spouse_first_name: ""
-                spouse_last_name: ""
-
-
-                ttl_hse_inc: "0"
-                ttl_idv_inc: "0"
-                us_citizenship: ""
-
-
-                zip_code: "34202"
-
-
-                /*contact_uuid.html(response.get('uuid'));
-                contact_account.html(response.get('account'));
-                */
-
-
-                contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
-
-                contact_info_city.val(response.get('city') || '');
-
-                contact_info_partner.val(response.get('partner') || '');
-
-                contact_info_first_name.val(response.get('first_name'));
-                contact_info_last_name.val(response.get('last_name'));
-                contact_info_state.val(response.get('state') || '');
-                contact_info_phone_number.val(response.get('phone_number'));
-                contact_info_email.val(response.get('email') || '');
-                contact_info_gender.val(response.get('gender') || '');
-                contact_info_marital_status.val(response.get('marital_status') || '');
-
-
-                contact_info_property_address.val(response.get('street_address') || '');
-
-
-                contact_info_child_1_dob.val(response.get('child_1_dob') || '');
-                contact_info_child_1_name.val(response.get('child_1_first_name') || '');
-                contact_info_child_1_gender.val(response.get('child_1_gender') || '');
-                //contact_info_child_1_last_name.val(response.get('child_1_last_name') || '');
-                contact_info_child_2_dob.val(response.get('child_2_dob') || '');
-                contact_info_child_2_name.val(response.get('child_2_first_name') || '');
-                contact_info_child_2_gender.val(response.get('child_2_gender') || '');
-                //contact_info_child_2_last_name.val(response.get('child_2_last_name') || '');
-                contact_info_child_3_dob.val(response.get('child_3_dob') || '');
-                contact_info_child_3_name.val(response.get('child_3_first_name') || '');
-                contact_info_child_3_gender.val(response.get('child_3_gender') || '');
-                //contact_info_child_3_last_name.val(response.get('child_3_last_name') || '');
-                contact_info_child_4_dob.val(response.get('child_4_dob') || '');
-                contact_info_child_4_name.val(response.get('child_4_first_name') || '');
-                contact_info_child_4_gender.val(response.get('child_4_gender') || '');
-                //contact_info_child_4_last_name.val(response.get('child_4_last_name') || '');
-
-
-                //contact_info_location.val(response.get('location') || '');
-                /*contact_info_timezone.val(response.get('time_zone') || '');
-                contact_info_zip.val(response.get('zip') || '');
-               
-                contact_info_tags.html(response.get('tags') || '');
-                
-                contact_info_address.val(response.get('address') || '');
-                contact_info_country.val(response.get('country') || '');
-                contact_info_checked.val(response.get('checked') || '');
-                contact_info_dnd.val(response.get('do_not_disturb') || '');
-                
-                
-                contact_info_status.val(response.get('status') || '');
-                contact_info_description.html(response.get('description') || '');
-                contact_info_history.html(response.get('history') || '');
-                contact_info_comment.val(response.get('comment') || '');
-                
-
-                contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');*/
-                
-                $('#contactModal').modal({
-                    'show': true
-                });
             },
             error: function(error){
                 console.log(error);
             }
-        });
+        }
+
+        console.log(lolol);
+
+        contact = new fun.models.Contact(lolol);
+        contact.fetch(callbacks_and_stuff);
 
 
 
