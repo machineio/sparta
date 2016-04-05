@@ -71,6 +71,12 @@ fun.views.profile = Backbone.View.extend({
 
         name_uuid = $(event.target).data('name');
 
+
+        var stuff = JSON.parse(localStorage.getItem("profile"));
+
+
+        console.log(stuff);
+
         console.log(name_uuid);
 
         confirm = new fun.models.Contact({
