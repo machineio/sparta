@@ -60,12 +60,19 @@ fun.views.profile = Backbone.View.extend({
         this.renderContactModalForm();
     },
 
+
     deleteContact:function(event){
         'use strict';
         event.preventDefault();
         console.log('delete contact event');
-        var confirm, 
+        var confirm,
+            name_uuid,
             callbacks;
+
+        name_uuid = $(event.target).data('name');
+
+        console.log(name_uuid);
+
         confirm = new fun.models.Contact({
             'uuid':'how',
             'account':'thefuck'
