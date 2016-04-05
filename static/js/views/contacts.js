@@ -1036,7 +1036,6 @@ fun.views.contacts = Backbone.View.extend({
 
                 /*
 
-
                 current_carrier: ""
                 current_coverage: ""
                 do_not_disturb: false
