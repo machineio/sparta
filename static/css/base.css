@@ -1,8 +1,8 @@
-#advanceTD {
+.advanceTD {
   padding: 10px 0px 10px 0px;
 }
 
-#advanceTD .col-md-4, #advanceTD .col-md-3  {
+.advanceTD .col-md-4, .advanceTD .col-md-3  {
   padding: 2px;
 }
 
