@@ -1614,6 +1614,40 @@ fun.models.Tasks = Backbone.Collection.extend({
 });
 
 
+fun.models.TasksStartEndPage = Backbone.Collection.extend({
+    
+    model: fun.models.Task,
+
+    initialize: function(options){
+        this.start = options.start;
+        this.end = options.end;
+        this.page = options.page;
+    },
+
+    urlRoot: fun.conf.urls.tasksStartEndPage,
+
+    url: function(){
+        var url = this.urlRoot.replace(fun.conf.startTime, this.start);
+
+        url = url.replace(fun.conf.endTime, this.end);
+
+        url = url.replace(fun.conf.pageNumber, this.page);
+        
+        return url;
+    },
+
+    parse: function(response){
+        return response.results;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+
 fun.models.TasksContainer = Backbone.Model.extend({
     defaults: {
         results: new fun.models.Tasks(),

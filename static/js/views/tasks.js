@@ -475,7 +475,7 @@ fun.views.tasks = Backbone.View.extend({
             page:page
         };
 
-        task = new fun.models.Tasks(startEnd);
+        task = new fun.models.TasksStartEndPage(startEnd);
         task.fetch();
     },
 
