@@ -1038,14 +1038,14 @@ fun.views.contacts = Backbone.View.extend({
 
 
                 
-                city: "Bradenton"
+                city: "Bradenton" ????????
                 current_carrier: ""
                 current_coverage: ""
                 do_not_disturb: false
                 dob: "08/02/1967"
-                email: "nansear@gmail.com"
+                
                 employment_status: ""
-                first_name: "Nancy"
+                
                 gender: "Female"
                 has_directory: false
                 have_coverage: "No"
@@ -1055,17 +1055,25 @@ fun.views.contacts = Backbone.View.extend({
                 mobile_number: ""
                 number_of_children: "0"
                 partner: "precise-shr"
-                phone_number: "9084897909"
+                
                 priority_code: ""
+
+
+
                 spouse_1_gender: ""
                 spouse_dob: ""
                 spouse_first_name: ""
                 spouse_last_name: ""
-                state: "FL"
+
+
+
+
                 street_address: "6383 Golden Eye Glen"
                 ttl_hse_inc: "0"
                 ttl_idv_inc: "0"
                 us_citizenship: ""
+
+
                 uuid: "071cb159-833b-49cb-82a7-242337ca7eb4"
                 zip_code: "34202"
 
@@ -1074,6 +1082,10 @@ fun.views.contacts = Backbone.View.extend({
 
                 /*contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));*/
+
+
+                contact_info_city.val(response.get('city') || '');
+
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
                 contact_info_state.val(response.get('state') || '');
@@ -1111,7 +1123,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_country.val(response.get('country') || '');
                 contact_info_checked.val(response.get('checked') || '');
                 contact_info_dnd.val(response.get('do_not_disturb') || '');
-                contact_info_city.val(response.get('city') || '');
+                
                 
                 contact_info_status.val(response.get('status') || '');
                 contact_info_description.html(response.get('description') || '');
