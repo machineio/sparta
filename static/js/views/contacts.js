@@ -1092,7 +1092,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
                 contact_info_state.val(response.get('state') || '');
-                contact_info_phone.val(response.get('phone_number'));
+                contact_info_phone_number.val(response.get('phone_number'));
                 contact_info_email.val(response.get('email') || '');
                 contact_info_gender.val(response.get('gender') || '');
                 contact_info_marital_status.val(response.get('marital_status') || '');
