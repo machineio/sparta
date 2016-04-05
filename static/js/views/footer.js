@@ -4,6 +4,11 @@ fun.views.footer = Backbone.View.extend({
         'click #wtfMae': 'incomingCall',
         // 'change #lead-type': 'leadTypeChange',
         // 'click #incoming-form-btn': 'showIncomingForm',
+
+
+        
+
+
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
         'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',

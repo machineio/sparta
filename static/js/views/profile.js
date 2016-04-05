@@ -9,6 +9,7 @@ fun.views.profile = Backbone.View.extend({
         'click #act_2': 'threeDays',
         'click #act_3': 'oneWeek',
         'click #act_4': 'oneMonth',
+        'click .call-number-popup': 'callPhoneNumber',
         'click .view-contact-popup': 'viewContact',
         'click .edit-contact-popup': 'editContact',
         'click .delete-contact-pupup': 'deleteContact',
@@ -33,6 +34,13 @@ fun.views.profile = Backbone.View.extend({
     initialize: function(options){
         fun.containers.profile = this.$el;
     },
+
+
+    callPhoneNumber: function(event){
+        'use strict';
+        event.preventDefault();
+        console.log('call this fucker');
+    }
 
     viewContact: function(event){
         'use strict';
