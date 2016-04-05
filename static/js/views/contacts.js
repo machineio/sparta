@@ -406,10 +406,15 @@ fun.views.contacts = Backbone.View.extend({
         event.preventDefault();
 
 
-        fun.omnibus.trigger("toronja:contact");
+        //fun.omnibus.trigger("toronja:contact");
+
+
+        console.log('are u sure?');
 
 
         this.renderContactModalForm();
+
+        console.log('gooo');
         var view = this,
             name,
             contact,
