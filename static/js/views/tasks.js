@@ -458,7 +458,7 @@ fun.views.tasks = Backbone.View.extend({
     paginationAllTasks: function(event){
         'use strict';
         event.preventDefault();
-        //view cache
+
         var view = this,
             start = moment.utc().startOf('day'),
             end = moment.utc().startOf('day').add(1, 'day'),
