@@ -1073,25 +1073,14 @@ fun.views.contacts = Backbone.View.extend({
                 zip_code: "34202"
 
 
-                */
-
                 /*contact_uuid.html(response.get('uuid'));
-                contact_account.html(response.get('account'));*/
+                contact_account.html(response.get('account'));
 
 
-
-                var nanox = response.get('marital_status').toLowerCase() || '';
-
-                console.log(nanox)
+                */
 
 
                 contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
-
-
-                $('#contact-info-marital-status').val('single');
-
-
-                console.log('maeee');
 
                 contact_info_city.val(response.get('city') || '');
 
