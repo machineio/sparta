@@ -720,7 +720,6 @@ fun.views.contacts = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
-
         contact_info_first_name = this.$("#contact-info-first-name");
         contact_info_last_name = this.$("#contact-info-last-name");
         contact_info_phone_number = this.$("#contact-info-phone-number");
@@ -1032,7 +1031,7 @@ fun.views.contacts = Backbone.View.extend({
             success: function(response){
 
 
-                console.log(response);/*
+                console.log(response);
 
                 contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));
@@ -1057,7 +1056,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_gender.val(response.get('gender') || '');
 
                 contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');
-                */
+                
                 $('#contactModal').modal({
                     'show': true
                 });
