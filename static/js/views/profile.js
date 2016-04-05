@@ -34,9 +34,17 @@ fun.views.profile = Backbone.View.extend({
         fun.containers.profile = this.$el;
     },
 
-
     viewContact: function(event){
+        'use strict';
+        event.preventDefault();
         console.log('view contact event');
+        // view cache
+        var view = this,
+            name;
+        $('#profileContactModal').modal({
+            'show': true
+        });
+        this.renderContactModalForm();
     },
 
     editContact:function(event){
@@ -145,7 +153,9 @@ fun.views.profile = Backbone.View.extend({
         contactModalTabs.removeClass("hide").addClass("show");
     },
 
-
+    /*
+    * Render Inbound Campaign List
+    */
     renderInboundCampaignList: function(campaigns){
         'use strict';
         var length,
