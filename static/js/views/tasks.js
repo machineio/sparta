@@ -478,6 +478,9 @@ fun.views.tasks = Backbone.View.extend({
         console.log(startEnd);
 
         task = new fun.models.Tasks(startEnd);
+        task.fetch();
+
+        console.log('ok dale');
     },
 
     /*
