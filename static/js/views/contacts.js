@@ -1037,8 +1037,8 @@ fun.views.contacts = Backbone.View.extend({
                 contact_account.html(response.get('account'));*/
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
-                contact_info_location.val(response.get('location') || '');
-                contact_info_timezone.val(response.get('time_zone') || '');
+                //contact_info_location.val(response.get('location') || '');
+                /*contact_info_timezone.val(response.get('time_zone') || '');
                 contact_info_zip.val(response.get('zip') || '');
                 contact_info_phone.val(response.get('phone_number'));
                 contact_info_tags.html(response.get('tags') || '');
@@ -1055,7 +1055,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_comment.val(response.get('comment') || '');
                 contact_info_gender.val(response.get('gender') || '');
 
-                contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');
+                contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');*/
                 
                 $('#contactModal').modal({
                     'show': true
