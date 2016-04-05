@@ -467,22 +467,22 @@ fun.views.contacts = Backbone.View.extend({
             spouse_yearly_income,
             spouse_employers_name,
             spouse_employers_phone_number,
-            child_1_name,
-            child_1_dob,
-            child_1_gender,
-            child_1_social,
-            child_2_name,
-            child_2_dob,
-            child_2_gender,
-            child_2_social,
-            child_3_name,
-            child_3_dob,
-            child_3_gender,
-            child_3_social,
-            child_4_name,
-            child_4_dob,
-            child_4_gender,
-            child_4_social,
+            contact_info_child_1_name,
+            contact_info_child_1_dob,
+            contact_info_child_1_gender,
+            contact_info_child_1_social,
+            contact_info_child_2_name,
+            contact_info_child_2_dob,
+            contact_info_child_2_gender,
+            contact_info_child_2_social,
+            contact_info_child_3_name,
+            contact_info_child_3_dob,
+            contact_info_child_3_gender,
+            contact_info_child_3_social,
+            contact_info_child_4_name,
+            contact_info_child_4_dob,
+            contact_info_child_4_gender,
+            contact_info_child_4_social,
             health_auto_priority_code,
             health_lead_type,
             health_priority_code,
@@ -766,22 +766,22 @@ fun.views.contacts = Backbone.View.extend({
         spouse_yearly_income = this.$("#spouse-yearly-income");
         spouse_employers_name = this.$("#spouse-employers-name");
         spouse_employers_phone_number = this.$("#spouse-employers-phone-number");
-        child_1_name = this.$("#child-1-name");
-        child_1_dob = this.$("#child-1-dob");
-        child_1_gender = this.$("#child-1-gender");
-        child_1_social = this.$("#child-1-social");
-        child_2_name = this.$("#child-2-name");
-        child_2_dob = this.$("#child-2-dob");
-        child_2_gender = this.$("#child-2-gender");
-        child_2_social = this.$("#child-2-social");
-        child_3_name = this.$("#child-3-name");
-        child_3_dob = this.$("#child-3-dob");
-        child_3_gender = this.$("#child-3-gender");
-        child_3_social = this.$("#child-3-social");
-        child_4_name = this.$("#child-4-name");
-        child_4_dob = this.$("#child-4-dob");
-        child_4_gender = this.$("#child-4-gender");
-        child_4_social = this.$("#child-4-social");
+        contact_info_child_1_name = this.$("#child-1-name");
+        contact_info_child_1_dob = this.$("#child-1-dob");
+        contact_info_child_1_gender = this.$("#child-1-gender");
+        contact_info_child_1_social = this.$("#child-1-social");
+        contact_info_child_2_name = this.$("#child-2-name");
+        contact_info_child_2_dob = this.$("#child-2-dob");
+        contact_info_child_2_gender = this.$("#child-2-gender");
+        contact_info_child_2_social = this.$("#child-2-social");
+        contact_info_child_3_name = this.$("#child-3-name");
+        contact_info_child_3_dob = this.$("#child-3-dob");
+        contact_info_child_3_gender = this.$("#child-3-gender");
+        contact_info_child_3_social = this.$("#child-3-social");
+        contact_info_child_4_name = this.$("#child-4-name");
+        contact_info_child_4_dob = this.$("#child-4-dob");
+        contact_info_child_4_gender = this.$("#child-4-gender");
+        contact_info_child_4_social = this.$("#child-4-social");
         health_auto_priority_code = this.$("#health-auto-priority-code");
         health_lead_type = this.$("#health-lead-type");
         health_priority_code = this.$("#health-priority-code");
@@ -1037,22 +1037,7 @@ fun.views.contacts = Backbone.View.extend({
                 /*
 
 
-                child_1_dob: ""
-                child_1_first_name: ""
-                child_1_gender: ""
-                child_1_last_name: ""
-                child_2_dob: ""
-                child_2_first_name: ""
-                child_2_gender: ""
-                child_2_last_name: ""
-                child_3_dob: ""
-                child_3_first_name: ""
-                child_3_gender: ""
-                child_3_last_name: ""
-                child_4_dob: ""
-                child_4_first_name: ""
-                child_4_gender: ""
-                child_4_last_name: ""
+                
                 city: "Bradenton"
                 current_carrier: ""
                 current_coverage: ""
@@ -1096,6 +1081,24 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_email.val(response.get('email') || '');
                 contact_info_gender.val(response.get('gender') || '');
                 contact_info_marital_status.val(response.get('marital_status') || '');
+
+
+                contact_child_1_dob.val(response.get('child_1_dob') || '');
+                contact_child_1_first_name.val(response.get('child_1_first_name') || '');
+                contact_child_1_gender.val(response.get('child_1_gender') || '');
+                contact_child_1_last_name.val(response.get('child_1_last_name') || '');
+                contact_child_2_dob.val(response.get('child_2_dob') || '');
+                contact_child_2_first_name.val(response.get('child_2_first_name') || '');
+                contact_child_2_gender.val(response.get('child_2_gender') || '');
+                contact_child_2_last_name.val(response.get('child_2_last_name') || '');
+                contact_child_3_dob.val(response.get('child_3_dob') || '');
+                contact_child_3_first_name.val(response.get('child_3_first_name') || '');
+                contact_child_3_gender.val(response.get('child_3_gender') || '');
+                contact_child_3_last_name.val(response.get('child_3_last_name') || '');
+                contact_child_4_dob.val(response.get('child_4_dob') || '');
+                contact_child_4_first_name.val(response.get('child_4_first_name') || '');
+                contact_child_4_gender.val(response.get('child_4_gender') || '');
+                contact_child_4_last_name.val(response.get('child_4_last_name') || '');
 
 
                 //contact_info_location.val(response.get('location') || '');
