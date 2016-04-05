@@ -719,6 +719,7 @@ fun.views.contacts = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
+
         contact_info_first_name = this.$("#contact-info-first-name");
         contact_info_last_name = this.$("#contact-info-last-name");
         contact_info_phone_number = this.$("#contact-info-phone-number");
@@ -1032,8 +1033,8 @@ fun.views.contacts = Backbone.View.extend({
 
                 console.log(response);
 
-                contact_uuid.html(response.get('uuid'));
-                contact_account.html(response.get('account'));
+                /*contact_uuid.html(response.get('uuid'));
+                contact_account.html(response.get('account'));*/
                 contact_info_first_name.val(response.get('first_name'));
                 contact_info_last_name.val(response.get('last_name'));
                 contact_info_location.val(response.get('location') || '');
