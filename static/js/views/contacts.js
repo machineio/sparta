@@ -1079,6 +1079,12 @@ fun.views.contacts = Backbone.View.extend({
                 contact_account.html(response.get('account'));*/
 
 
+
+                var nanox = response.get('marital_status').toLowerCase() || '';
+
+                console.log(nanox)
+
+
                 contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
 
 
