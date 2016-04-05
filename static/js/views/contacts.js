@@ -408,7 +408,6 @@ fun.views.contacts = Backbone.View.extend({
 
         //fun.omnibus.trigger("toronja:contact");
 
-
         this.renderContactModalForm();
 
 
