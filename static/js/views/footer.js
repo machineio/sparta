@@ -26,7 +26,7 @@ fun.views.footer = Backbone.View.extend({
         }, this);
 
         fun.omnibus.on("toronja:contact", function(){
-            console.log('on toronja contact en el footer mae!');
+            console.log('on footer reacting to fun.omnibus on toronja:contact');
         }, this);
     },
 
