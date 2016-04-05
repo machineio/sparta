@@ -114,6 +114,22 @@ fun.views.profile = Backbone.View.extend({
     },
 
 
+    /*
+    * Render Contact Modal Form
+    */
+    renderContactModalForm: function(){
+        'use strict';
+        var contactModalTabs;
+        var template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.contactFormModal)
+        );
+
+        contactModalTabs = this.$('#profile-contact-modal-tabs');
+        contactModalTabs.html(template);
+        contactModalTabs.removeClass("hide").addClass("show");
+    },
+
+
     renderInboundCampaignList: function(campaigns){
         'use strict';
         var length,
@@ -293,7 +309,11 @@ fun.views.profile = Backbone.View.extend({
             'show': true
         });
 
-        name = $(event.target).data('name');
+
+        this.renderContactModalForm();
+
+
+        /*name = $(event.target).data('name');
 
         task = new fun.models.Task({'uuid':name});
 
@@ -319,7 +339,7 @@ fun.views.profile = Backbone.View.extend({
             error: function(error){
                 console.log(error);
             }
-        });
+        });*/
     },
 
     showMailingAddressDifferent: function(event){
