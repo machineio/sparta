@@ -1088,6 +1088,11 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
 
 
+                $('#contact-info-marital-status').val('single');
+
+
+                console.log('maeee');
+
                 contact_info_city.val(response.get('city') || '');
 
                 contact_info_partner.val(response.get('partner') || '');
