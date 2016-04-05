@@ -61,9 +61,29 @@ fun.views.profile = Backbone.View.extend({
     },
 
     deleteContact:function(event){
+        'use strict';
+        event.preventDefault();
         console.log('delete contact event');
+        var confirm, 
+            callbacks;
+        confirm = new fun.models.Contact({
+            'uuid':'how',
+            'account':'thefuck'
+        });
+        callbacks = {
+            success: function(){
+                console.log("inside success, but we don't see any of this shit.");
+            },
+            error: function(){
+                fun.utils.redirect(fun.conf.hash.home);
+            }
+        };
+        confirm.destroy();
+        $('#deleteAccountModal').modal('hide');
+        $('#deleteAccountModal').on('hidden.bs.modal', function(e){
+            fun.utils.logout(callbacks);
+        });
 
-        
     },
 
     /**
