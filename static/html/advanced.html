@@ -100,7 +100,17 @@
                     	<tr>
                             <th scope="row"><%= translate("gender") %></th>
                             <td>
-                                <select name="contact-info-gender" id="contact-info-gender" class="form-control-cm">
+                                <select name="contact-info-gender-1" id="contact-info-gender-1" class="form-control-cm">
+                                    <option value="false" selected="selected"></option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <select name="contact-info-gender-and-or" id="contact-info-gender-and-or" class="form-control-cm">
+                                    <option value="false" selected="selected"></option>
+                                    <option value="and">and</option>
+                                    <option value="or">or</option>
+                                </select>
+                                <select name="contact-info-gender-2" id="contact-info-gender-2" class="form-control-cm">
                                     <option value="false" selected="selected"></option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
