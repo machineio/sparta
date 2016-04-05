@@ -62,6 +62,8 @@ fun.views.profile = Backbone.View.extend({
 
     deleteContact:function(event){
         console.log('delete contact event');
+
+        
     },
 
     /**
