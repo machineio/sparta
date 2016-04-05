@@ -1033,9 +1033,7 @@ fun.views.contacts = Backbone.View.extend({
 
                 console.log(response);
 
-
                 /*
-
                 current_carrier: ""
                 current_coverage: ""
                 do_not_disturb: false
@@ -1056,12 +1054,10 @@ fun.views.contacts = Backbone.View.extend({
                 priority_code: ""
 
 
-
                 spouse_1_gender: ""
                 spouse_dob: ""
                 spouse_first_name: ""
                 spouse_last_name: ""
-
 
 
                 ttl_hse_inc: "0"
@@ -1074,8 +1070,6 @@ fun.views.contacts = Backbone.View.extend({
 
                 /*contact_uuid.html(response.get('uuid'));
                 contact_account.html(response.get('account'));
-
-
                 */
 
 
