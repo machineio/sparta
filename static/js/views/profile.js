@@ -39,21 +39,20 @@ fun.views.profile = Backbone.View.extend({
     callPhoneNumber: function(event){
         'use strict';
         event.preventDefault();
-    
+
         console.log('call this fucker');
     
         var view = this,
             name_uuid = $(event.target).data('name'),
-            callbacks_and_stuff,
+            stuff = JSON.parse(localStorage.getItem("profile")),
+            async_callback,
             struct,
             contact;
 
         name_uuid = $(event.target).data('name');
 
-
         // this stuff is in the fucking profile and we need to fucking trigger fucking something in the footer you fucking son of a bitch,
         // so... lets use the fucking omnibus and complete and fucking shit you bastard.
-
 
         struct = {
             'uuid': name_uuid,
@@ -61,7 +60,7 @@ fun.views.profile = Backbone.View.extend({
         };
 
 
-        callbacks_and_stuff = {
+        async_callback = {
             success: function(response){
                 sessionStorage.setItem("active_contact", JSON.stringify(response));
                 fun.omnibus.trigger("call:contact");
@@ -73,7 +72,9 @@ fun.views.profile = Backbone.View.extend({
         }
 
         contact = new fun.models.Contact(struct);
-        contact.fetch(callbacks_and_stuff);
+        contact.fetch(async_callback);
+
+
     },
 
     viewContact: function(event){
