@@ -35,8 +35,24 @@ fun.views.footer = Backbone.View.extend({
 
     callActiveContact: function(){
         'use strict';
-        var active_contact = JSON.parse(sessionStorage.getItem("active_contact"));
+        var activeContact = JSON.parse(sessionStorage.getItem("active_contact")),
+            currentAccount = JSON.parse(localStorage.getItem("profile")),
+            struct;
+
+
         console.log(active_contact);
+
+
+        struct = {
+            phone_number: active_contact['phone_number'],
+            account: currentAccount['account']
+        };
+
+
+        console.log(struct);
+
+        //new fun.models.Outbound();
+
     },
 
     renderContactModalForm: function(){
