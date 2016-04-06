@@ -1392,7 +1392,6 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_critical_illness.val(response.get('ancilliary_critical_illness') || '');
                 ancilliary_hospital_confinement.val(response.get('ancilliary_hospital_confinement') || '');
                 ancilliary_dental_care.val(response.get('ancilliary_dental_care') || '');
-
                 ancilliary_dental_lead_status.val(response.get('ancilliary_dental_lead_status') || '');
                 ancilliary_ancillary_total.val(response.get('ancilliary_ancillary_total') || '');
                 ancilliary_abnormal_cancer_screening_test.val(response.get('ancilliary_abnormal_cancer_screening_test') || '');
@@ -1403,7 +1402,6 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_abnormal_tests_requiring_follow_up.val(response.get('ancilliary_abnormal_tests_requiring_follow_up') || '');
                 ancilliary_any_non_routine_consultation_scheduled.val(response.get('ancilliary_any_non_routine_consultation_scheduled') || '');
                 ancilliary_one_or_more_imm_relatives_with_issues.val(response.get('ancilliary_one_or_more_imm_relatives_with_issues') || '');
-
                 ancilliary_two_or_more_imm_relatives_with_issues.val(response.get('ancilliary_two_or_more_imm_relatives_with_issues') || '');
                 ancilliary_bening_tumor_hypertension_etc.val(response.get('ancilliary_bening_tumor_hypertension_etc') || '');
                 ancilliary_prescription_medication_in_last_three_years.val(response.get('ancilliary_prescription_medication_in_last_three_years') || '');
@@ -1412,7 +1410,6 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_alcohol_or_substance_abuse_five_years.val(response.get('ancilliary_alcohol_or_substance_abuse_five_years') || '');
                 ancilliary_heart_attack_stroke_transient_ischemic.val(response.get('ancilliary_heart_attack_stroke_transient_ischemic') || '');
                 ancilliary_diabetes_type_one_or_two_blood_press_am.val(response.get('ancilliary_diabetes_type_one_or_two_blood_press_am') || '');
-
                 ancilliary_nursing_home_hospitalized_etc.val(response.get('ancilliary_nursing_home_hospitalized_etc') || '');
                 ancilliary_hospitalized_in_the_last_twelve_months.val(response.get('ancilliary_hospitalized_in_the_last_twelve_months') || '');
                 ancilliary_diagnosed_or_treated_for_medical_issues.val(response.get('ancilliary_diagnosed_or_treated_for_medical_issues') || '');
@@ -1422,7 +1419,6 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_accident_elite_request_eff_date.val(response.get('ancilliary_accident_elite_request_eff_date') || '');
                 ancilliary_accident_elite_premium.val(response.get('ancilliary_accident_elite_premium') || '');
                 ancilliary_accident_elite_notes.val(response.get('ancilliary_accident_elite_notes') || '');
-                
                 ancilliary_critical_care_request_eff_date.val(response.get('ancilliary_critical_care_request_eff_date') || '');
                 ancilliary_critial_care_premium.val(response.get('ancilliary_critial_care_premium') || '');
                 ancilliary_critical_care_notes.val(response.get('ancilliary_critical_care_notes') || '');
@@ -1433,26 +1429,7 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
-                //contact_info_location.val(response.get('location') || '');
-                /*contact_info_timezone.val(response.get('time_zone') || '');
-                contact_info_zip.val(response.get('zip') || '');
-               
-                contact_info_tags.html(response.get('tags') || '');
-                
-                contact_info_address.val(response.get('address') || '');
-                contact_info_country.val(response.get('country') || '');
-                contact_info_checked.val(response.get('checked') || '');
-                contact_info_dnd.val(response.get('do_not_disturb') || '');
-                
-                
-                contact_info_status.val(response.get('status') || '');
-                contact_info_description.html(response.get('description') || '');
-                contact_info_history.html(response.get('history') || '');
-                contact_info_comment.val(response.get('comment') || '');
-                
 
-                contact_auto_priority_code.val(response.get('auto_priority_code') || 'None');*/
-                
                 $('#contactModal').modal({
                     'show': true
                 });
