@@ -435,10 +435,10 @@ fun.views.contacts = Backbone.View.extend({
             contact_info_state,
             contact_info_city,
             contact_info_zip_code,
-            contact_info_county,
+            contact_info_country,
             contact_info_mailing_address_different,
             contact_info_mailingAddressDifferentDiv,
-            contact_mailing_address,
+            contact_info_mailing_address,
             contact_info_mailing_city,
             contact_info_mailing_state,
             contact_info_mailing_zipcode,
@@ -736,9 +736,9 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_state = this.$("#contact-info-state");
         contact_info_city = this.$("#contact-info-city");
         contact_info_zip_code = this.$("#contact-info-zip-code");
-        contact_info_county = this.$("#contact-info-county");
+        contact_info_country = this.$("#contact-info-country");
         contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
-        contact_mailing_address = this.$("#contact-mailing-address");
+        contact_info_mailing_address = this.$("#contact-info-mailing-address");
         contact_info_mailing_city = this.$("#contact-info-mailing-city");
         contact_info_mailing_state = this.$("#contact-info-mailing-state");
         contact_info_mailing_zipcode = this.$("#contact-info-mailing-zipcode");
@@ -1073,46 +1073,144 @@ fun.views.contacts = Backbone.View.extend({
                 contact_account.html(response.get('account'));
                 */
 
-
-                //contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
-
-                contact_info_city.val(response.get('city') || '');
-
-                contact_info_partner.val(response.get('partner') || '');
-
-                contact_info_first_name.val(response.get('first_name'));
-                contact_info_last_name.val(response.get('last_name'));
-                contact_info_state.val(response.get('state') || '');
-                contact_info_phone_number.val(response.get('phone_number'));
+<<<<<<< HEAD
+                // CONTACT INFO
+                contact_uuid.val(response.get('uuid'));
+                contact_account.val(response.get('account') || '');
+                contact_description.val(response.get('description') || '');
+                contact_history.val(response.get('history') || '');
+                contact_comment.val(response.get('comment') || '');
+                contact_info_first_name.val(response.get('first_name') || '');
+                contact_info_last_name.val(response.get('last_name') || '');
+                contact_info_phone_number.val(response.get('phone_number') || '');
+                contact_info_cellphone.val(response.get('mobile_number') || '');
                 contact_info_email.val(response.get('email') || '');
+                contact_info_other_phone.val(response.get('other_phone') || '');
+                contact_info_date_of_birth.val(response.get('dob') || '');
                 contact_info_gender.val(response.get('gender') || '');
-                console.log('DETAILS 1!!!',contact_info_marital_status.selector, typeof contact_info_marital_status.selector);
+
                 contact_info_marital_status.value = response.get('marital_status') || '';
-                // contact_info_marital_status.filter('option[value=' + response.get('marital_status') + ']').attr('selected', true);
                 $(contact_info_marital_status.selector + " option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
-                // (response.get('marital_status') || '');
+
+                contact_info_number_of_children.val(response.get('number_of_children') || 0);
+                contact_info_social_security_number.val(response.get('social_security_number') || '');
+                contact_info_property_address.val(response.get('property_address'));
+                contact_info_state.val(response.get('state') || '');
+                contact_info_city.val(response.get('city') || '');
+                contact_info_zip_code.val(response.get('zip_code') || '');
+                contact_info_country.val(response.get('country') || '');
+                contact_info_mailing_address_different.val(response.get('mailing_address_different') || '');
+                contact_info_mailing_address.val(response.get('mailing_address') || '');
+                contact_info_mailing_city.val(response.get('mailing_city') || '');
+                contact_info_mailing_state.val(response.get('mailing_state') || '');
+                contact_info_mailing_zipcode.val(response.get('mailing_zipcode') || '');
+                contact_info_marketplace_email.val(response.get('marketplace_email') || '');
+                contact_info_language_preference.val(response.get('language_preference') || '');
+                contact_info_writing_agent.val(response.get('writing_agent') || '');
+                contact_info_lead_source.val(response.get('lead_source') || '');
+                contact_info_partner.val(response.get('partner') || '');
+                contact_info_last_modified_by.val(response.get('last_modified_by') || '');
+                contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || '');
+                contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
+                contact_info_auto_insurance_checkbox.val(response.get('auto_insurance_status') || '');
+                contact_info_life_insurance_checkbox.val(response.get('life_insurance_status') || '');
+                contact_info_ancilliary_insurance_checkbox.val(response.get('ancilliary_insurance_status') || '');
+                contact_info_other_policy_sold.val(response.get('other_policy_sold') || '');
+                contact_info_federal_do_not_call.val(response.get('federal_do_not_call') || '');
+                contact_info_renew_as_is_email_received.val(response.get('renew_as_email_received') || '');
 
 
-                contact_info_property_address.val(response.get('street_address') || '');
+                // SPOUSE INFO
+                spouse_first_name.val(response.get('spouse_first_name') || '');
+                spouse_last_name.val(response.get('spouse_last_name') || '');
+                spouse_gender.val(response.get('spouse_gender') || '');
+                spouse_dob.val(response.get('spouse_dob') || '');
+                spouse_do_you_have_a_social_security_number.val(response.get('spouse_do_you_have_a_social_security_number') || false);
+                spouse_social.val(response.get('spouse_social') || '');
+                spouse_income_source.val(response.get('spouse_income_source') || '');
+                spouse_yearly_income.val(response.get('spouse_yearly_income') || '');
+                spouse_employers_name.val(response.get('spouse_employers_name') || '');
+                spouse_employers_phone_number.val(response.get('spouse_employers_phone_number') || '');
 
 
-                contact_info_child_1_dob.val(response.get('child_1_dob') || '');
-                contact_info_child_1_name.val(response.get('child_1_first_name') || '');
-                contact_info_child_1_gender.val(response.get('child_1_gender') || '');
-                //contact_info_child_1_last_name.val(response.get('child_1_last_name') || '');
-                contact_info_child_2_dob.val(response.get('child_2_dob') || '');
-                contact_info_child_2_name.val(response.get('child_2_first_name') || '');
-                contact_info_child_2_gender.val(response.get('child_2_gender') || '');
-                //contact_info_child_2_last_name.val(response.get('child_2_last_name') || '');
-                contact_info_child_3_dob.val(response.get('child_3_dob') || '');
-                contact_info_child_3_name.val(response.get('child_3_first_name') || '');
-                contact_info_child_3_gender.val(response.get('child_3_gender') || '');
-                //contact_info_child_3_last_name.val(response.get('child_3_last_name') || '');
-                contact_info_child_4_dob.val(response.get('child_4_dob') || '');
-                contact_info_child_4_name.val(response.get('child_4_first_name') || '');
-                contact_info_child_4_gender.val(response.get('child_4_gender') || '');
-                //contact_info_child_4_last_name.val(response.get('child_4_last_name') || '');
+                // CHILD INFO
+                contact_info_child_1_name.val(response.get('contact_info_child_1_name') || '');
+                contact_info_child_1_dob.val(response.get('contact_info_child_1_dob') || '');
+                contact_info_child_1_gender.val(response.get('contact_info_child_1_gender') || '');
+                contact_info_child_1_social.val(response.get('contact_info_child_1_social') || '');
+                contact_info_child_2_name.val(response.get('contact_info_child_2_dob') || '');
+                contact_info_child_2_dob.val(response.get('contact_info_child_2_dob') || '');
+                contact_info_child_2_gender.val(response.get('contact_info_child_2_gender') || '');
+                contact_info_child_2_social.val(response.get('contact_info_child_2_social') || '');
+                contact_info_child_3_name.val(response.get('contact_info_child_3_name') || '');
+                contact_info_child_3_dob.val(response.get('contact_info_child_3_dob') || '');
+                contact_info_child_3_gender.val(response.get('contact_info_child_3_gender') || '');
+                contact_info_child_3_social.val(response.get('contact_info_child_3_social') || '');
+                contact_info_child_4_name.val(response.get('contact_info_child_4_name') || '');
+                contact_info_child_4_dob.val(response.get('contact_info_child_4_dob') || '');
+                contact_info_child_4_gender.val(response.get('contact_info_child_4_gender') || '');
+                contact_info_child_4_social.val(response.get('contact_info_child_4_social') || '');
 
+
+                // HEALTH INFO
+                health_auto_priority_code.val(response.get('health_auto_priority_code') || '');
+                health_lead_type.val(response.get('health_lead_type') || '');
+                health_priority_code.val(response.get('health_priority_code') || '');
+                health_lead_source.val(response.get('health_lead_source') || '');
+                health_partner.val(response.get('health_partner') || '');
+                health_lead_status.val(response.get('health_lead_status') || '');
+                health_writing_agent.val(response.get('health_writing_agent') || '');
+                health_scrubber.val(response.get('health_scrubber') || '');
+                health_total_individual_income.val(response.get('health_total_individual_income') || '');
+                health_total_household_income.val(response.get('health_total_household_income') || '');
+                health_primary_applicants_income_source.val(response.get('health_primary_applicants_income_source') || '');
+                health_primary_applicants_employers_name.val(response.get('health_primary_applicants_employers_name') || '');
+                health_applicant_employers_phone_number.val(response.get('health_applicant_employers_phone_number') || '');
+                health_marital_status.val(response.get('health_marital_status') || '');
+                health_number_of_dependent_children_in_house.val(response.get('health_number_of_dependent_children_in_house') || '');
+                health_renewal_source_2016.val(response.get('health_renewal_source_2016') || '');
+                health_renewal_agent_2016.val(response.get('health_renewal_agent_2016') || '');
+                health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
+                health_application_number_2016_info.val(response.get('health_application_number_2016_info') || '');
+                health_effective_date_2016.val(response.get('health_effective_date_2016') || '');
+                health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
+                health_total_income_used_on_application.val(response.get('health_total_income_used_on_application') || '');
+                health_final_gross_premium_2016.val(response.get('health_final_gross_premium_2016') || '');
+                health_final_subsidy_2016.val(response.get('health_final_subsidy_2016') || '');
+                heatlh_plan_2016.val(response.get('health_plan_2016') || '');
+                health_final_premium_after_subsidy_2016.val(response.get('health_final_premium_after_subsidy_2016') || '');
+                health_verification_documents_needed_2016.val(response.get('health_verification_documents_needed_2016') || '');
+                health_verification_documents_due_date_2016.val(response.get('health_verification_documents_due_date_2016') || '');
+                health_application_number_2016_selection.val(response.get('health_application_number_2016_selection') || '');
+                health_adults_applying_for_coverage_2016.val(response.get('health_adults_applying_for_coverage_2016') || '');
+                health_total_household_size_2016.val(response.get('health_total_household_size_2016') || '');
+                health_cloud_gross_premium_2016.val(response.get('cloud_gross_premium_2016') || '');
+                health_children_applying_for_coverage_2016.val(response.get('health_children_applying_for_coverage_2016') || '');
+                health_cloud_subsidy_2016.val(response.get('health_cloud_subsidy_2016') || '');
+                health_cloud_premium_after_subsidy_2016.val(response.get('health_cloud_premium_after_subsidy_2016') || '');
+                health_lead_has_a_marketplace_account.val(response.get('health_lead_has_marketplace_account') || '');
+                health_current_coverage.val(response.get('health_number_of_dependent_children_in_house') || '');
+                health_marketplace_app_id_2015.val(response.get('health_marketplace_app_id_2015') || '');
+                health_current_premium.val(response.get('health_current_premium') || '');
+                health_subsidy_amount.val(response.get('health_subsidy_amount') || '');
+                health_current_net_premium.val(response.get('health_current_net_premium') || '');
+                health_effective_date_2015.val(response.get('health_effective_date_2015') || '');
+                health_application_id_2015.val(response.get('health_application_id_2015') || '');
+                health_premium_2015.val(response.get('health_premium_2015') || '');
+                health_carrier_2015.val(response.get('health_carrier_2015') || '');
+                health_subsidy_2015.val(response.get('health_subsidy_2015') || '');
+                health_adult_on_plan_2015.val(response.get('health_adult_on_plan_2015') || '');
+                health_children_on_plan_2015.val(response.get('health_children_on_plan_2015') || '');
+                health_income_verification_needed_2015.val(response.get('health_income_verification_needed_2015') || '');
+                health_citizenship_documents_needed_2015.val(response.get('health_citizenship_documents_needed_2015') || '');
+                health_policy.val(response.get('health_policy') || '');
+                health_contact_code_2015.val(response.get('health_contact_code_2015') || '');
+                health_wants_to_renew_same_plan_for_2016.val(response.get('health_wants_to_renew_same_plan_for_2016') || '');
+                health_quoted_renewal_gross_premium_2016.val(response.get('health_quoted_renewal_gross_premium_2016') || '');
+                health_quoted_renewal_subsidy_2016.val(response.get('health_quoted_renewal_subsidy_2016') || '');
+                health_quoted_renewal_net_premium_2016.val(response.get('health_quoted_renewal_net_premium_2016') || '');
+                health_username.val(response.get('health_username') || '');
+                health_password.val(response.get('health_password') || '');
 
                 //contact_info_location.val(response.get('location') || '');
                 /*contact_info_timezone.val(response.get('time_zone') || '');
