@@ -1165,22 +1165,22 @@ fun.views.contacts = Backbone.View.extend({
 
 
                 // CHILD INFO
-                contact_info_child_1_name.val(response.get('contact_info_child_1_name') || '');
-                contact_info_child_1_dob.val(response.get('contact_info_child_1_dob') || '');
-                contact_info_child_1_gender.val(response.get('contact_info_child_1_gender') || '');
-                contact_info_child_1_social.val(response.get('contact_info_child_1_social') || '');
-                contact_info_child_2_name.val(response.get('contact_info_child_2_dob') || '');
-                contact_info_child_2_dob.val(response.get('contact_info_child_2_dob') || '');
-                contact_info_child_2_gender.val(response.get('contact_info_child_2_gender') || '');
-                contact_info_child_2_social.val(response.get('contact_info_child_2_social') || '');
-                contact_info_child_3_name.val(response.get('contact_info_child_3_name') || '');
-                contact_info_child_3_dob.val(response.get('contact_info_child_3_dob') || '');
-                contact_info_child_3_gender.val(response.get('contact_info_child_3_gender') || '');
-                contact_info_child_3_social.val(response.get('contact_info_child_3_social') || '');
-                contact_info_child_4_name.val(response.get('contact_info_child_4_name') || '');
-                contact_info_child_4_dob.val(response.get('contact_info_child_4_dob') || '');
-                contact_info_child_4_gender.val(response.get('contact_info_child_4_gender') || '');
-                contact_info_child_4_social.val(response.get('contact_info_child_4_social') || '');
+                contact_info_child_1_name.val(response.get('child_1_name') || '');
+                contact_info_child_1_dob.val(response.get('child_1_dob') || '');
+                contact_info_child_1_gender.val(response.get('child_1_gender') || '');
+                contact_info_child_1_social.val(response.get('child_1_social') || '');
+                contact_info_child_2_name.val(response.get('child_2_dob') || '');
+                contact_info_child_2_dob.val(response.get('child_2_dob') || '');
+                contact_info_child_2_gender.val(response.get('child_2_gender') || '');
+                contact_info_child_2_social.val(response.get('child_2_social') || '');
+                contact_info_child_3_name.val(response.get('child_3_name') || '');
+                contact_info_child_3_dob.val(response.get('child_3_dob') || '');
+                contact_info_child_3_gender.val(response.get('child_3_gender') || '');
+                contact_info_child_3_social.val(response.get('child_3_social') || '');
+                contact_info_child_4_name.val(response.get('child_4_name') || '');
+                contact_info_child_4_dob.val(response.get('child_4_dob') || '');
+                contact_info_child_4_gender.val(response.get('child_4_gender') || '');
+                contact_info_child_4_social.val(response.get('child_4_social') || '');
 
 
                 // HEALTH INFO
