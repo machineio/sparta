@@ -132,7 +132,7 @@ fun.views.contacts = Backbone.View.extend({
         length = this.contacts.length;
         if (length > 0){
             rows = this.tbody.html('');
-            console.log('CONTACT!!!!!',this.contacts.toJSON());
+            console.log('CONTACT!!!!!',JSON.stringify(this.contacts.toJSON()[0]));
             _.each(this.contacts.toJSON(), function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.contactRow)
@@ -1086,7 +1086,10 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_phone_number.val(response.get('phone_number'));
                 contact_info_email.val(response.get('email') || '');
                 contact_info_gender.val(response.get('gender') || '');
-                contact_info_marital_status.val(response.get('marital_status') || '');
+                console.log('DETAILS 1!!!',contact_info_marital_status.value);
+                contact_info_marital_status.value = response.get('marital_status') || '';
+                console.log('DETAILS 2!!!',contact_info_marital_status.value);
+                // (response.get('marital_status') || '');
 
 
                 contact_info_property_address.val(response.get('street_address') || '');
