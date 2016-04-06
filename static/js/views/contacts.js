@@ -411,6 +411,13 @@ fun.views.contacts = Backbone.View.extend({
 
         this.renderContactModalForm();
 
+        function renderDate(date){
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+            return today;
+        }
+
 
         var view = this,
             name,
@@ -1086,7 +1093,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_cellphone.val(response.get('mobile_number') || '');
                 contact_info_email.val(response.get('email') || '');
                 contact_info_other_phone.val(response.get('other_phone') || '');
-                contact_info_date_of_birth.val(response.get('dob') || '');
+                contact_info_date_of_birth.val(renderDate(response.get('dob')) || '');
                 contact_info_gender.val(response.get('gender') || '');
 
                 contact_info_marital_status.value = response.get('marital_status') || '';
