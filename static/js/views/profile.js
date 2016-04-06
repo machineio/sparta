@@ -53,7 +53,6 @@ fun.views.profile = Backbone.View.extend({
         name_uuid = $(event.target).data('name');
 
 
-
         // this stuff is in the fucking profile and we need to fucking trigger fucking something in the footer you fucking son of a bitch,
         // so... lets use the fucking omnibus and complete and fucking shit you bastard.
 
@@ -80,9 +79,7 @@ fun.views.profile = Backbone.View.extend({
             }
         }
 
-        console.log(lolol);
-
-        contact = new fun.models.Contact(lolol);
+        contact = new fun.models.Contact(struct);
         contact.fetch(callbacks_and_stuff);
 
 
