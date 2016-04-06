@@ -58,6 +58,7 @@ fun.views.footer = Backbone.View.extend({
         var stuff,
             contact_uuid,
             message,
+            contact,
             callbacks;
 
 
@@ -109,8 +110,6 @@ fun.views.footer = Backbone.View.extend({
                 console.log(error);
             }
         });
-
-
     },
 
     incomingCall: function(event){
