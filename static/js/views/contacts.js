@@ -412,10 +412,12 @@ fun.views.contacts = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
+            console.log('DATE 1',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+            console.log('DATE 2',today);
             return today;
         }
 
