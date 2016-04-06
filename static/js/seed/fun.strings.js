@@ -16,6 +16,7 @@ fun.strings = {
     fewestcalls: "Fewest calls",
     leastrecent: "Least recent",
     ringall: "Ring all",
+    callNow: "Call Now",
     rrmemory: "Round Robin with memory",
     disable: "Disable",
     taskMonitor: "Task Monitor",
