@@ -132,7 +132,7 @@ fun.views.contacts = Backbone.View.extend({
         length = this.contacts.length;
         if (length > 0){
             rows = this.tbody.html('');
-            console.log('CONTACT!!!!!',this.contacts.toJSON());
+            console.log('CONTACT!!!!!',JSON.stringify(this.contacts.toJSON()[0]));
             _.each(this.contacts.toJSON(), function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.contactRow)
