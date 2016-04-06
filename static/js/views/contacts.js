@@ -1057,49 +1057,7 @@ fun.views.contacts = Backbone.View.extend({
 
         contact.fetch({
             success: function(response){
-
-
                 console.log(response);
-
-                /*
-                current_carrier: ""
-                current_coverage: ""
-                do_not_disturb: false
-                dob: "08/02/1967"
-                
-                employment_status: ""
-                
-                gender: "Female"
-                has_directory: false
-                have_coverage: "No"
-                language_preference: ""
-
-                marital_status: "Single"
-                mobile_number: ""
-                number_of_children: "0"
-                partner: "precise-shr"
-                
-                priority_code: ""
-
-
-                spouse_1_gender: ""
-                spouse_dob: ""
-                spouse_first_name: ""
-                spouse_last_name: ""
-
-
-                ttl_hse_inc: "0"
-                ttl_idv_inc: "0"
-                us_citizenship: ""
-
-
-                zip_code: "34202"
-
-
-                /*contact_uuid.html(response.get('uuid'));
-                contact_account.html(response.get('account'));
-                */
-
 
                 // CONTACT INFO
                 contact_uuid = response.get('uuid');
