@@ -422,7 +422,7 @@ fun.views.contacts = Backbone.View.extend({
         }
 
         function changeMaritalStatus_fx(){
-            if($('#contact-info-marital-status').val()==='married'){
+            if($('#contact-info-marital-status').val()==='Married'){
                 $('#contactSpouseInfoTab').removeClass('hide');
                 $('#contactSpouseInfoTab').addClass('show');
             } else {
