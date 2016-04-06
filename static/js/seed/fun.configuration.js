@@ -13,6 +13,7 @@ fun.conf = {
     // seed url root
     urlRoot: '/api/',
     // system uuid's
+    uuidOutbound: 'outbound_uuid',
     uuidRecord: 'record_uuid',
     uuidVector: 'vector_uuid',
     uuidHash: 'hash_uuid',
@@ -190,6 +191,8 @@ fun.conf.urls = {
     campaigns: '/campaigns/',
     alert: fun.utils.format('/alerts/%s', fun.conf.uuidAlert),
     alerts: '/alerts/',
+    outbound: fun.utils.format('/outbounds/%s', fun.conf.uuidOutbound),
+    outbounds: '/outbounds/',
     notifications: '/notifications/',
     gateway: fun.utils.format('/gateways/%s', fun.conf.uuidGateway),
     gateways: '/gateways/',
