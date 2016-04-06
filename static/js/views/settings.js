@@ -42,6 +42,7 @@ fun.views.settings = Backbone.View.extend({
 
         template = _.template(fun.utils.getTemplate(fun.conf.templates.settings))({'account':account});
         this.$el.html(template);
+
         // assign this variable values
         this.email = this.$('#user_email');
         this.newEmail = this.$('#new_email');
@@ -53,6 +54,7 @@ fun.views.settings = Backbone.View.extend({
         this.location = this.$('#user_location');
         this.company = this.$('#user_company');
         this.url = this.$('#user_url');
+
         // get stuff from account profile
         this.firstName.val(this.accountProfile['first_name'] || '');
         this.lastName.val(this.accountProfile['last_name'] || '');
@@ -60,6 +62,12 @@ fun.views.settings = Backbone.View.extend({
         this.company.val(this.accountProfile['company'] || '');
         this.url.val(this.accountProfile['url'] || '');
         this.email.val(this.accountProfile['email'] || '');
+
+        this.phoneNumber.val(this.accountProfile['phone_number'] || '');
+
+        this.extension.val(this.accountProfile['extension'] || '');
+
+
 
         this.renderOrganizationList();
         this.renderEmailList();
@@ -85,6 +93,8 @@ fun.views.settings = Backbone.View.extend({
             last_name,
             location,
             company,
+            phone_number,
+            extension,
             confirm,
             url;
 
@@ -98,6 +108,8 @@ fun.views.settings = Backbone.View.extend({
         email = this.email.val();
         first_name = this.firstName.val();
         last_name = this.lastName.val();
+        phone_number = this.phoneNumber.val();
+        extension = this.extension.val();
         location = this.location.val();
         company = this.company.val();
         url = this.url.val();
@@ -106,10 +118,14 @@ fun.views.settings = Backbone.View.extend({
             'first_name': first_name,
             'last_name': last_name,
             'email': email,
+            'phone_number': phone_number,
+            'extension': extension,
             'company': company,
             'location': location,
             'url': url
         };
+
+        console.log(accountInformation);
 
         confirm.save(accountInformation, {patch: true});
 
