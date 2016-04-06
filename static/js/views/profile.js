@@ -70,7 +70,7 @@ fun.views.profile = Backbone.View.extend({
         callbacks_and_stuff = {
             success: function(response){
                 console.log(response);
-                sessionStorage.setItem("active_contact", JSON.dumps(response));
+                sessionStorage.setItem("active_contact", JSON.stringify(response));
                 fun.omnibus.trigger("call:contact");
 
             },
