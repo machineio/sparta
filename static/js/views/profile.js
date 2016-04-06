@@ -47,7 +47,7 @@ fun.views.profile = Backbone.View.extend({
             name_uuid = $(event.target).data('name'),
             stuff = JSON.parse(localStorage.getItem("profile")),
             callbacks_and_stuff,
-            lolol,
+            struct,
             contact;
 
         name_uuid = $(event.target).data('name');
@@ -58,19 +58,11 @@ fun.views.profile = Backbone.View.extend({
         // so... lets use the fucking omnibus and complete and fucking shit you bastard.
 
 
-
-        
-        $('#profileContactModal').modal({
-            'show': true
-        });
-
-        this.renderContactModalForm();
-
         console.log(stuff);
 
         console.log(name_uuid);
 
-        lolol = {
+        struct = {
             'uuid': name_uuid,
             'account':stuff['account']
         };
@@ -79,6 +71,7 @@ fun.views.profile = Backbone.View.extend({
         callbacks_and_stuff = {
             success: function(response){
                 console.log(response);
+                sessionStorage.setItem("active_contact", JSON.dumps(response));
                 fun.omnibus.trigger("call:contact");
 
             },
