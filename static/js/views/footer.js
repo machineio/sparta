@@ -32,6 +32,15 @@ fun.views.footer = Backbone.View.extend({
 
         fun.omnibus.on("call:contact", function(){
             console.log('on footer reacting to fun.omnibus on call:contact');
+            
+
+            var active_contact =  JSON.parse(sessionStorage.getItem("active_contact"));
+
+
+            console.log(active_contact);
+         
+
+
         }, this);
     },
 
