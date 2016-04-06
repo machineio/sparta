@@ -111,7 +111,7 @@ fun.views.footer = Backbone.View.extend({
         });
 
 
-    }
+    },
 
     incomingCall: function(event){
         'use strict';
