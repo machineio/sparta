@@ -1132,7 +1132,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_writing_agent.val(response.get('writing_agent') || '');
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
 
-                contact_info_lead_source.val(response.get('lead_source') || '');
+                contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
                 contact_info_partner.val(response.get('partner') || '');
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
