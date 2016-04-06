@@ -1086,10 +1086,10 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_phone_number.val(response.get('phone_number'));
                 contact_info_email.val(response.get('email') || '');
                 contact_info_gender.val(response.get('gender') || '');
-                console.log('DETAILS 1!!!',contact_info_marital_status);
+                console.log('DETAILS 1!!!',contact_info_marital_status.selector, typeof contact_info_marital_status.selector);
                 contact_info_marital_status.value = response.get('marital_status') || '';
                 // contact_info_marital_status.filter('option[value=' + response.get('marital_status') + ']').attr('selected', true);
-                $(contact_info_marital_status.selector + "option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
+                $(contact_info_marital_status.selector + " option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
                 // (response.get('marital_status') || '');
 
 
