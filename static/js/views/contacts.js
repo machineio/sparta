@@ -1108,7 +1108,7 @@ fun.views.contacts = Backbone.View.extend({
                 $(contact_info_number_of_children.selector + " option[value='" + response.get('number_of_children') + "']").attr("selected", "selected");
 
                 contact_info_social_security_number.val(response.get('social_security_number') || '');
-                contact_info_property_address.val(response.get('property_address'));
+                contact_info_property_address.val(response.get('street_address'));
 
                 contact_info_state.val(response.get('state') || '');
                 $(contact_info_state.selector + " option[value='" + response.get('state') + "']").attr("selected", "selected");
@@ -1202,8 +1202,8 @@ fun.views.contacts = Backbone.View.extend({
                 health_lead_status.val(response.get('health_lead_status') || '');
                 health_writing_agent.val(response.get('health_writing_agent') || '');
                 health_scrubber.val(response.get('health_scrubber') || '');
-                health_total_individual_income.val(response.get('health_total_individual_income') || '');
-                health_total_household_income.val(response.get('health_total_household_income') || '');
+                health_total_individual_income.val(response.get('ttl_idv_inc') || '');
+                health_total_household_income.val(response.get('ttl_hse_inc') || '');
                 health_primary_applicants_income_source.val(response.get('health_primary_applicants_income_source') || '');
                 health_primary_applicants_employers_name.val(response.get('health_primary_applicants_employers_name') || '');
                 health_applicant_employers_phone_number.val(response.get('health_applicant_employers_phone_number') || '');
