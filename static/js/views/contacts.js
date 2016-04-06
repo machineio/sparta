@@ -1097,7 +1097,9 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_email.val(response.get('email') || '');
                 contact_info_other_phone.val(response.get('other_phone') || '');
                 contact_info_date_of_birth.val(renderDate(response.get('dob')) || '');
+
                 contact_info_gender.val(response.get('gender') || '');
+                $(contact_info_gender.selector + " option[value='" + response.get('gender') + "']").attr("selected", "selected");
 
                 contact_info_marital_status.value = response.get('marital_status') || '';
                 $(contact_info_marital_status.selector + " option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
