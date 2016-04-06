@@ -25,14 +25,11 @@ fun.views.footer = Backbone.View.extend({
         }, this);
 
         fun.omnibus.on("toronja:contact", function(){
-            console.log('on footer reacting to fun.omnibus on toronja:contact');
+            console.log('on footer reacting to fun.omnibus on toronja:contact');                // WTF IS THIS SHIT YOU ??????
         }, this);
 
         fun.omnibus.on("call:contact", function(){
-            console.log('on footer reacting to fun.omnibus on call:contact');
-
             this.callActiveContact();
-
         }, this);
     },
 
