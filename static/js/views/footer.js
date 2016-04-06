@@ -37,6 +37,7 @@ fun.views.footer = Backbone.View.extend({
         'use strict';
         var activeContact = JSON.parse(sessionStorage.getItem("active_contact")),
             currentAccount = JSON.parse(localStorage.getItem("profile")),
+            outbound,
             struct;
 
         struct = {
@@ -48,7 +49,8 @@ fun.views.footer = Backbone.View.extend({
 
         console.log(struct);
 
-        //new fun.models.Outbound();
+        outbound = new fun.models.Outbound(struct);
+        outbound.save();
 
     },
 
