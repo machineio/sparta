@@ -1075,7 +1075,7 @@ fun.views.contacts = Backbone.View.extend({
 
 
                 // CONTACT INFO
-                // contact_uuid.val(response.get('uuid'));
+                contact_uuid = response.get('uuid');
                 contact_account.val(response.get('account') || '');
                 contact_description.val(response.get('description') || '');
                 contact_history.val(response.get('history') || '');
