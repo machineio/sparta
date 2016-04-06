@@ -39,15 +39,10 @@ fun.views.footer = Backbone.View.extend({
             currentAccount = JSON.parse(localStorage.getItem("profile")),
             struct;
 
-
-        console.log(active_contact);
-
-
         struct = {
-            phone_number: active_contact['phone_number'],
+            phone_number: activeContact['phone_number'],
             account: currentAccount['account']
         };
-
 
         console.log(struct);
 
