@@ -41,7 +41,9 @@ fun.views.footer = Backbone.View.extend({
 
         struct = {
             phone_number: activeContact['phone_number'],
-            account: currentAccount['account']
+            account: currentAccount['account'],
+            caller_id: currentAccount['phone_number'],
+            extension: currentAccount['extension']
         };
 
         console.log(struct);
@@ -79,9 +81,6 @@ fun.views.footer = Backbone.View.extend({
             message,
             contact,
             callbacks;
-
-
-        console.log('gut gut?');
 
         // get the name of the element targeted by this event
         contact_uuid = $(event.target).data('name');

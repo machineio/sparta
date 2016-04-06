@@ -1073,6 +1073,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_account.html(response.get('account'));
                 */
 
+<<<<<<< HEAD
                 // CONTACT INFO
                 contact_uuid.val(response.get('uuid'));
                 contact_account.val(response.get('account') || '');

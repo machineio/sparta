@@ -31,6 +31,7 @@ fun.strings = {
     createDirectoryList: "Create directory list",
     addDirectory: "Add directory",
     dba: "DBA",
+    extension: "Extension",
     privateWord: "Private",
     leadDetails: "Lead details",
     edit: "Edit",

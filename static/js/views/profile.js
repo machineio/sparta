@@ -38,10 +38,7 @@ fun.views.profile = Backbone.View.extend({
 
     callPhoneNumber: function(event){
         'use strict';
-        event.preventDefault();
-
-        console.log('call this fucker');
-    
+        event.preventDefault();    
         var view = this,
             name_uuid = $(event.target).data('name'),
             stuff = JSON.parse(localStorage.getItem("profile")),
