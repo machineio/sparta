@@ -2,6 +2,7 @@ fun.views.footer = Backbone.View.extend({
 
     events: {
         'click #wtfMae': 'incomingCall',
+        'click #callContactNow': 'outboundFuckingMonkey',
         // 'change #lead-type': 'leadTypeChange',
         // 'click #incoming-form-btn': 'showIncomingForm',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
@@ -51,6 +52,66 @@ fun.views.footer = Backbone.View.extend({
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
     },
+
+    outboundFuckingMonkey: function(event){
+        'use strict';
+        var stuff,
+            contact_uuid,
+            message,
+            callbacks;
+
+
+        console.log('gut gut?');
+
+        // get the name of the element targeted by this event
+        contact_uuid = $(event.target).data('name');
+
+        console.log(contact_uuid);
+
+        console.log('are you fucking sure?');
+
+        contact = new fun.models.Contact({'uuid':name});
+
+        console.log(contact.toJSON());
+
+        contact.fetch({
+            success: function(response){
+
+                console.log('RESPONSE!!!');
+                console.log(response);
+
+                contact_uuid.html(response.get('uuid'));
+                contact_account.html(response.get('account'));
+                contact_info_first_name.val(response.get('first_name'));
+                contact_info_last_name.val(response.get('last_name'));
+                contact_info_location.val(response.get('location') || '');
+                contact_info_timezone.val(response.get('time_zone') || '');
+                contact_info_zip.val(response.get('zip') || '');
+                contact_info_phone.val(response.get('phone_number'));
+                contact_info_tags.html(response.get('tags') || '');
+                contact_info_email.val(response.get('email') || '');
+                contact_info_address.val(response.get('address') || '');
+                contact_info_country.val(response.get('country') || '');
+                contact_info_checked.val(response.get('checked') || '');
+                contact_info_dnd.val(response.get('do_not_disturb') || '');
+                contact_info_city.val(response.get('city') || '');
+                contact_info_state.val(response.get('state') || '');
+                contact_info_status.val(response.get('status') || '');
+                contact_info_description.html(response.get('description') || '');
+                contact_info_history.html(response.get('history') || '');
+                contact_info_comment.val(response.get('comment') || '');
+
+                $('#contactModal').modal({
+                    'show': true
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+
+
+    }
 
     incomingCall: function(event){
         'use strict';
