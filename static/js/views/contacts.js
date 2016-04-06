@@ -1074,7 +1074,7 @@ fun.views.contacts = Backbone.View.extend({
                 */
 
 
-                contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
+                //contact_info_marital_status.val(response.get('marital_status').toLowerCase() || '');
 
                 contact_info_city.val(response.get('city') || '');
 
