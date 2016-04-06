@@ -1190,8 +1190,8 @@ fun.views.contacts = Backbone.View.extend({
                 spouse_first_name.val(response.get('spouse_first_name') || '');
                 spouse_last_name.val(response.get('spouse_last_name') || '');
 
-                spouse_gender.val(response.get('spouse_gender') || '');
-                $(spouse_gender.selector + " option[value='" + response.get('spouse_gender') + "']").attr("selected", "selected");
+                spouse_gender.val(response.get('spouse_1_gender') || '');
+                $(spouse_gender.selector + " option[value='" + response.get('spouse_1_gender') + "']").attr("selected", "selected");
 
                 spouse_dob.val(response.get('spouse_dob') || '');
 
