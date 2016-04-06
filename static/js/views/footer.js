@@ -3,8 +3,6 @@ fun.views.footer = Backbone.View.extend({
     events: {
         'click #wtfMae': 'incomingCall',
         'click #callContactNow': 'outboundFuckingMonkey',
-        // 'change #lead-type': 'leadTypeChange',
-        // 'click #incoming-form-btn': 'showIncomingForm',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
         'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
@@ -39,7 +37,8 @@ fun.views.footer = Backbone.View.extend({
     },
 
     callActiveContact: function(){
-        var active_contact =  JSON.parse(sessionStorage.getItem("active_contact"));
+        'use strict';
+        var active_contact = JSON.parse(sessionStorage.getItem("active_contact"));
         console.log(active_contact);
     },
 
