@@ -1136,8 +1136,9 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_partner.val(response.get('partner') || '');
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
-                contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || '');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
+                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
 
                 contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
                 $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
@@ -1428,6 +1429,9 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_dental_request_eff_date.val(response.get('ancilliary_dental_request_eff_date') || '');
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
+
+                changeMaritalStatus();
+                healthInsuranceTab();
 
 
                 $('#contactModal').modal({
