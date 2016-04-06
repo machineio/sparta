@@ -309,8 +309,6 @@ fun.views.profile = Backbone.View.extend({
         }
 
         /*this.$el.removeClass("hide").addClass("show");*/
-
-        
     },
 
     renderAccountInformation: function(account){
@@ -368,7 +366,6 @@ fun.views.profile = Backbone.View.extend({
             console.log('no outbound campaign list');
             /*this.noCampaigns();*/
         }
-
     },
 
     renderTaskList: function(tasks){
