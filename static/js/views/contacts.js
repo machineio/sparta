@@ -476,6 +476,7 @@ fun.views.contacts = Backbone.View.extend({
             contact_info_language_preference,
             contact_info_writing_agent,
             contact_info_lead_source,
+            contact_lead_type,
             contact_info_partner,
             contact_info_last_modified_by,
             contact_info_health_insurance_checkbox,
@@ -484,7 +485,6 @@ fun.views.contacts = Backbone.View.extend({
             contact_info_life_insurance_checkbox,
             contact_info_ancilliary_insurance_checkbox,
             contact_info_other_policy_sold,
-            contact_info_federal_do_not_call,
             contact_info_federal_do_not_call,
             contact_info_renew_as_is_email_received,
             health_us_citizen_or_legal_permanent_resident,
@@ -515,12 +515,10 @@ fun.views.contacts = Backbone.View.extend({
             contact_info_child_4_gender,
             contact_info_child_4_social,
             health_auto_priority_code,
-            health_lead_type,
             health_priority_code,
             health_lead_source,
             health_partner,
             health_lead_status,
-            health_writing_agent,
             health_writing_agent,
             health_scrubber,
             health_total_individual_income,
@@ -535,7 +533,6 @@ fun.views.contacts = Backbone.View.extend({
             health_presold_processor_2016,
             health_application_number_2016_info,
             health_effective_date_2016,
-            health_presold_processor_2016,
             health_total_income_used_on_application,
             health_final_gross_premium_2016,
             health_final_subsidy_2016,
@@ -662,7 +659,6 @@ fun.views.contacts = Backbone.View.extend({
             auto_quoted_auto_number,
             auto_insurance_carrier,
             auto_insurance_premium,
-            auto_insurance_premium,
             auto_document_needed,
             life_auto_priority_code,
             life_priority_code,
@@ -776,6 +772,7 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_language_preference = this.$("#contact-info-language-preference");
         contact_info_writing_agent = this.$("#contact-info-writing-agent");
         contact_info_lead_source = this.$("#contact-info-lead-source");
+        contact_lead_type = this.$("#contact-lead-type");
         contact_info_partner = this.$("#contact-info-partner");
         contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
         contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
@@ -813,8 +810,8 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_child_4_dob = this.$("#child-4-dob");
         contact_info_child_4_gender = this.$("#child-4-gender");
         contact_info_child_4_social = this.$("#child-4-social");
+
         health_auto_priority_code = this.$("#health-auto-priority-code");
-        health_lead_type = this.$("#health-lead-type");
         health_priority_code = this.$("#health-priority-code");
         health_lead_source = this.$("#health-lead-source");
         health_partner = this.$("#health-partner");
@@ -1152,6 +1149,10 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_writing_agent.val(response.get('writing_agent') || '');
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
 
+                contact_lead_type.val(response.get('contact_lead_type') || 'health');
+                $(contact_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                // $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
+
                 contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
                 // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
@@ -1188,9 +1189,16 @@ fun.views.contacts = Backbone.View.extend({
                 // SPOUSE INFO
                 spouse_first_name.val(response.get('spouse_first_name') || '');
                 spouse_last_name.val(response.get('spouse_last_name') || '');
+
                 spouse_gender.val(response.get('spouse_gender') || '');
+                $(spouse_gender.selector + " option[value='" + response.get('spouse_gender') + "']").attr("selected", "selected");
+
                 spouse_dob.val(response.get('spouse_dob') || '');
-                spouse_do_you_have_a_social_security_number.val(response.get('spouse_do_you_have_a_social_security_number') || false);
+
+                spouse_do_you_have_a_social_security_number.val(response.get('spouse_do_you_have_a_social_security_number') || 'none');
+                $(spouse_do_you_have_a_social_security_number.selector + " option[value='none']").attr("selected", "selected");
+                // $(spouse_do_you_have_a_social_security_number.selector + " option[value='" + response.get('spouse_do_you_have_a_social_security_number') + "']").attr("selected", "selected");
+
                 spouse_social.val(response.get('spouse_social') || '');
                 spouse_income_source.val(response.get('spouse_income_source') || '');
                 spouse_yearly_income.val(response.get('spouse_yearly_income') || '');
@@ -1219,7 +1227,6 @@ fun.views.contacts = Backbone.View.extend({
 
                 // HEALTH INFO
                 health_auto_priority_code.val(response.get('health_auto_priority_code') || '');
-                health_lead_type.val(response.get('health_lead_type') || '');
                 health_priority_code.val(response.get('health_priority_code') || '');
                 health_lead_source.val(response.get('health_lead_source') || '');
                 health_partner.val(response.get('health_partner') || '');

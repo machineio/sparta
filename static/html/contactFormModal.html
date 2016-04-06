@@ -240,6 +240,19 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <th scope="row"><%= translate("leadType") %></th>
+                                    <td>
+                                        <select id="contact-info-lead-type" class="form-control-cm">
+                                            <option value="none" selected="selected"></option>
+                                            <option value="health">Health</option>
+                                            <option value="home">Home</option>
+                                            <option value="auto">Auto</option>
+                                            <option value="life">Life</option>
+                                            <option value="ancilliary">Ancilliary</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th scope="row"><%= translate("partner") %></th>
                                     <td>
                                         <input type="text" id="contact-info-partner" class="form-control-cm">
@@ -367,7 +380,10 @@
                                 <tr>
                                      <th scope="row"><%= translate("spouseGender") %></th>
                                      <td>
-                                          <input type="text" id="spouse-gender" class="form-control-cm">
+                                        <select name="" id="spouse-gender" class="form-control-cm">
+                                            <option value="F">Female</option>
+                                            <option value="M">Male</option>
+                                        </select>
                                      </td>
                                 </tr>
                                 <tr>
@@ -379,7 +395,11 @@
                                 <tr>
                                      <th scope="row"><%= translate("doYouHaveSocialSecurityNumber") %></th>
                                      <td>
-                                          <input type="text" id="spouse-do-you-have-a-social-security-number" class="form-control-cm">
+                                        <select name="" id="spouse-do-you-have-a-social-security-number" class="form-control-cm">
+                                            <option value="none" selected="selected"></option>
+                                            <option value="false">No</option>
+                                            <option value="true">Yes</option>
+                                        </select>
                                      </td>
                                 </tr>
                             </tbody>
@@ -650,19 +670,6 @@
                                 <td>
                                     <select id="health-auto-priority-code" class="form-control-cm">
                                         <option value="">FILL</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><%= translate("leadType") %></th>
-                                <td>
-                                    <select id="health-lead-type" class="form-control-cm">
-                                        <option value="none" selected="selected"></option>
-                                        <option value="healthinsurance">Health Insurance</option>
-                                        <option value="homeownersInsurance">Homeowners Insurance</option>
-                                        <option value="autoInsurance">Auto Insurance</option>
-                                        <option value="lifeInsurance">Life Insurance</option>
-                                        <option value="ancilliary">Ancilliary</option>
                                     </select>
                                 </td>
                             </tr>
