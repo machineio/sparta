@@ -80,9 +80,6 @@ fun.views.footer = Backbone.View.extend({
             contact,
             callbacks;
 
-
-        console.log('gut gut?');
-
         // get the name of the element targeted by this event
         contact_uuid = $(event.target).data('name');
 
