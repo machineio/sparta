@@ -778,7 +778,7 @@ fun.views.profile = Backbone.View.extend({
                 $(profile_contact_modal_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
 
                 profile_contact_modal_lead_type.val(response.get('lead_type') || 'health');
-                $(contact_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                $(profile_contact_modal_lead_type.selector + " option[value='health']").attr("selected", "selected");
                 // $(profile_contact_modal_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
 
                 profile_contact_modal_lead_source.val(response.get('lead_source') || 'boberdoo');
