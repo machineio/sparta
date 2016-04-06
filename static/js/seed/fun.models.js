@@ -1329,6 +1329,51 @@ fun.models.CampaignsOutbound = Backbone.Collection.extend({
 });
 
 
+fun.models.Outbound = Backbone.Model.extend({
+
+    idAttribute: 'uuid',
+
+    urlRoot: fun.conf.urls.outbound,
+
+    url: function() {
+        'use strict';
+        var url;
+        if (!this.isNew()){
+            url = this.urlRoot.replace(fun.conf.uuidOutbound, this.id);
+        } else {
+            url = fun.conf.urls.outbounds;
+        }
+        return url;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
+fun.models.Outbounds = Backbone.Collection.extend({
+
+    model: fun.models.Outbound,
+
+    urlRoot: fun.conf.urls.outbounds,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.outbounds;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
 fun.models.Alert = Backbone.Model.extend({
 
     idAttribute: 'uuid',
