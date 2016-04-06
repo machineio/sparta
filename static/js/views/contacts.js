@@ -1086,6 +1086,7 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_phone_number.val(response.get('phone_number'));
                 contact_info_email.val(response.get('email') || '');
                 contact_info_gender.val(response.get('gender') || '');
+                console.log('DETAILS!!!',contact_info_marital_status);
                 contact_info_marital_status.val(response.get('marital_status') || '');
 
 
