@@ -41,7 +41,9 @@ fun.views.footer = Backbone.View.extend({
 
         struct = {
             phone_number: activeContact['phone_number'],
-            account: currentAccount['account']
+            account: currentAccount['account'],
+            caller_id: currentAccount['phone_number'],
+            extension: currentAccount['extension']
         };
 
         console.log(struct);
