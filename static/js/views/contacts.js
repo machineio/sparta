@@ -421,6 +421,26 @@ fun.views.contacts = Backbone.View.extend({
             return today;
         }
 
+        function changeMaritalStatus_fx(){
+            if($('#contact-info-marital-status').val()==='married'){
+                $('#contactSpouseInfoTab').removeClass('hide');
+                $('#contactSpouseInfoTab').addClass('show');
+            } else {
+                $('#contactSpouseInfoTab').removeClass('show');
+                $('#contactSpouseInfoTab').addClass('hide');
+            }
+        }
+
+        function healthInsuranceTab_fx(){
+            if(($('#contact-info-health-insurance-checkbox').val()==="true")||($('#contact-info-health-insurance-checkbox').val()===true)){
+                $('#healthInsuranceTab').removeClass('hide');
+                $('#healthInsuranceTab').addClass('show');
+            } else {
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+            }
+        }
+
 
         var view = this,
             name,
@@ -1430,8 +1450,8 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
-                changeMaritalStatus();
-                healthInsuranceTab();
+                changeMaritalStatus_fx();
+                healthInsuranceTab_fx();
 
 
                 $('#contactModal').modal({
