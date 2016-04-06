@@ -1090,7 +1090,6 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_marital_status.value = response.get('marital_status') || '';
                 // contact_info_marital_status.filter('option[value=' + response.get('marital_status') + ']').attr('selected', true);
                 $(contact_info_marital_status.selector + "option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
-                console.log('DETAILS 2!!!',typeof contact_info_marital_status.value);
                 // (response.get('marital_status') || '');
 
 
