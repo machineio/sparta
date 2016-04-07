@@ -92,7 +92,7 @@ fun.views.profile = Backbone.View.extend({
         }
 
         function changeMaritalStatus_fx(){
-            if($('#profile-contact-modal-marital-status').val()==='Married'){
+            if($('#contact-info-marital-status').val()==='Married'){
                 $('#contactSpouseInfoTab').removeClass('hide');
                 $('#contactSpouseInfoTab').addClass('show');
             } else {
@@ -102,7 +102,7 @@ fun.views.profile = Backbone.View.extend({
         }
 
         function healthInsuranceTab_fx(){
-            if(($('#profile-contact-modal-health-insurance-checkbox').val()==="true")||($('#profile-contact-modal-health-insurance-checkbox').val()===true)){
+            if(($('#contact-info-health-insurance-checkbox').val()==="true")||($('#contact-info-health-insurance-checkbox').val()===true)){
                 $('#healthInsuranceTab').removeClass('hide');
                 $('#healthInsuranceTab').addClass('show');
             } else {
@@ -1088,6 +1088,7 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
+                $("#profile-contact-modal-tabs :input").prop("disabled", true);
                 changeMaritalStatus_fx();
                 healthInsuranceTab_fx();
 
