@@ -45,7 +45,7 @@
         </a>
     </li>
     <!-- <li id="marketingInfoTab" class="hide"> -->
-    <li id="marketingInfoTab">
+    <li id="marketingInfoTab" class="hide">
         <a href="#marketingInfo" role="tab" data-toggle="tab">
             <i class="fa fa-cog"></i> Marketing Information
         </a>
@@ -310,6 +310,15 @@
                                     <th scope="row"><%= translate("ancilliaryInsurance") %></th>
                                     <td>
                                         <select id="contact-info-ancilliary-insurance-checkbox" class="form-control-cm">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("marketingTab") %></th>
+                                    <td>
+                                        <select id="contact-info-marketing-checkbox" class="form-control-cm">
                                             <option value="false" selected="selected">NO</option>
                                             <option value="true">YES</option>
                                         </select>

@@ -20,6 +20,7 @@ fun.views.profile = Backbone.View.extend({
         'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
         'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
         'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
+        'change #contact-info-marketing-checkbox': 'showMarketingTab',
         'change #contact-info-number-of-children': 'changeNumberChildren',
         'change #health-lead-status': 'showPaymentTab',
         'change #home-lead-status': 'showPaymentTab',
@@ -2654,6 +2655,15 @@ fun.views.profile = Backbone.View.extend({
         } else {
             $('#sendSMSButtonWrapper').removeClass('show');
             $('#sendSMSButtonWrapper').addClass('hide');
+        }
+    },
+    showMarketingTab: function(event){
+        if($('#contact-info-marketing-checkbox').val()==="true"){
+            $('#marketingInfoTab').removeClass('hide');
+            $('#marketingInfoTab').addClass('show');
+        } else {
+            $('#marketingInfoTab').removeClass('show');
+            $('#marketingInfoTab').addClass('hide');
         }
     }
 });
