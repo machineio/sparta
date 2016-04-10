@@ -18,12 +18,14 @@ fun.views.contacts = Backbone.View.extend({
         'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
         'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
         'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
+        'change #contact-info-marketing-checkbox': 'showMarketingTab',
         'change #contact-info-number-of-children': 'changeNumberChildren',
         'change #health-lead-status': 'showPaymentTab',
         'change #home-lead-status': 'showPaymentTab',
         'change #auto-lead-status': 'showPaymentTab',
         'change #life-lead-status': 'showPaymentTab',
-        'change #ancilliary-lead-status': 'showPaymentTab'
+        'change #ancilliary-lead-status': 'showPaymentTab',
+        'change #marketing-compliant': 'showSendSMSButton',
     },
 
     /*
@@ -1854,6 +1856,24 @@ fun.views.contacts = Backbone.View.extend({
         } else {
             $('#paymentInfoTab').removeClass('show');
             $('#paymentInfoTab').addClass('hide');
+        }
+    },
+    showSendSMSButton: function(event){
+        if($('#marketing-compliant').val()==="true"){
+            $('#sendSMSButtonWrapper').removeClass('hide');
+            $('#sendSMSButtonWrapper').addClass('show');
+        } else {
+            $('#sendSMSButtonWrapper').removeClass('show');
+            $('#sendSMSButtonWrapper').addClass('hide');
+        }
+    },
+    showMarketingTab: function(event){
+        if($('#contact-info-marketing-checkbox').val()==="true"){
+            $('#marketingInfoTab').removeClass('hide');
+            $('#marketingInfoTab').addClass('show');
+        } else {
+            $('#marketingInfoTab').removeClass('show');
+            $('#marketingInfoTab').addClass('hide');
         }
     }
 });

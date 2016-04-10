@@ -2647,7 +2647,6 @@ fun.views.profile = Backbone.View.extend({
             $('#paymentInfoTab').addClass('hide');
         }
     },
-
     showSendSMSButton: function(event){
         if($('#marketing-compliant').val()==="true"){
             $('#sendSMSButtonWrapper').removeClass('hide');
