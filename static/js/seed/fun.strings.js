@@ -1051,6 +1051,7 @@ fun.strings = {
     taskType: "Task Type",
     sendNotificationEmail: "Send Notification Email",
     saveNew: "Save New",
+    marketingTab: "Marketing Tab",
 
     systemMonitor: "System Monitor",
     goodBye: "Good bye",
