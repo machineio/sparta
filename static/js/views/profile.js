@@ -25,20 +25,8 @@ fun.views.profile = Backbone.View.extend({
         'change #home-lead-status': 'showPaymentTab',
         'change #auto-lead-status': 'showPaymentTab',
         'change #life-lead-status': 'showPaymentTab',
-        'change #ancilliary-lead-status': 'showPaymentTab'
-        // 'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
-        // 'change #contact-info-marital-status': 'changeMaritalStatus',
-        // 'change #contact-info-agent-home-insurance-checkbox': 'homeInsuranceTab',
-        // 'change #contact-info-agent-health-insurance-checkbox': 'healthInsuranceTab',
-        // 'change #contact-info-agent-auto-insurance-checkbox': 'autoInsuranceTab',
-        // 'change #contact-info-agent-life-insurance-checkbox': 'lifeInsuranceTab',
-        // 'change #contact-info-agent-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
-        // 'change #contact-info-agent-number-of-children': 'changeNumberChildren',
-        // 'change #contact-info-health-lead-status': 'showPaymentTab',
-        // 'change #contact-info-home-lead-status': 'showPaymentTab',
-        // 'change #contact-info-auto-lead-status': 'showPaymentTab',
-        // 'change #contact-info-life-lead-status': 'showPaymentTab',
-        // 'change #contact-info-ancilliary-lead-status': 'showPaymentTab'
+        'change #ancilliary-lead-status': 'showPaymentTab',
+        'change #marketing-compliant': 'showSendSMSButton',
     },
 
     /**
@@ -2656,6 +2644,16 @@ fun.views.profile = Backbone.View.extend({
         } else {
             $('#paymentInfoTab').removeClass('show');
             $('#paymentInfoTab').addClass('hide');
+        }
+    },
+
+    showSendSMSButton: function(event){
+        if($('#marketing-compliant').val()==="true"){
+            $('#sendSMSButtonWrapper').removeClass('hide');
+            $('#sendSMSButtonWrapper').addClass('show');
+        } else {
+            $('#sendSMSButtonWrapper').removeClass('show');
+            $('#sendSMSButtonWrapper').addClass('hide');
         }
     }
 });
