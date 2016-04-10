@@ -791,8 +791,8 @@ fun.views.profile = Backbone.View.extend({
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
 
                 contact_info_lead_type.val(response.get('lead_type') || 'health');
-                $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
-                // $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
+                // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
 
                 contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
@@ -802,8 +802,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
                 contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
 
                 contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
                 $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
@@ -1840,8 +1840,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
                 contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
 
                 contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
                 $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
