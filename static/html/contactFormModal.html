@@ -44,6 +44,12 @@
             <i class="fa fa-cog"></i> Payment Information
         </a>
     </li>
+    <!-- <li id="marketingInfoTab" class="hide"> -->
+    <li id="marketingInfoTab" class="hide">
+        <a href="#marketingInfo" role="tab" data-toggle="tab">
+            <i class="fa fa-cog"></i> Marketing Information
+        </a>
+    </li>
 
 </ul>
 
@@ -304,6 +310,15 @@
                                     <th scope="row"><%= translate("ancilliaryInsurance") %></th>
                                     <td>
                                         <select id="contact-info-ancilliary-insurance-checkbox" class="form-control-cm">
+                                            <option value="false" selected="selected">NO</option>
+                                            <option value="true">YES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><%= translate("marketingTab") %></th>
+                                    <td>
+                                        <select id="contact-info-marketing-checkbox" class="form-control-cm">
                                             <option value="false" selected="selected">NO</option>
                                             <option value="true">YES</option>
                                         </select>
@@ -2717,6 +2732,67 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="marketingInfo">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("federalDoNotCall") %></th>
+                                <td>
+                                    <select id="marketing-federal-do-not-call" class="form-control-cm">
+                                        <option value="">-- select --</option>
+                                        <option value="false">No</option>
+                                        <option value="true">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("renewAsEmailReceived") %></th>
+                                <td>
+                                    <select id="marketing-renew-as-email-received" class="form-control-cm">
+                                        <option value="">-- select --</option>
+                                        <option value="false">No</option>
+                                        <option value="true">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("compliant") %></th>
+                                <td>
+                                    <select id="marketing-compliant" class="form-control-cm">
+                                        <option value="">-- select --</option>
+                                        <option value="false">No</option>
+                                        <option value="true">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="sendEmailButton">Send Email</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="sendVoicemailButton">Voicemail</button>
+            </div>
+            <div class="col-md-4 hide" id="sendSMSButtonWrapper">
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="sendSMSButton">Send SMS</button>
             </div>
         </div>
     </div>

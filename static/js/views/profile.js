@@ -13,19 +13,21 @@ fun.views.profile = Backbone.View.extend({
         'click .view-contact-popup': 'viewContact',
         'click .edit-contact-popup': 'editContact',
         'click .delete-contact-pupup': 'deleteContact',
-        'change #profile-contact-modal-mailing-address-different': 'showMailingAddressDifferent',
-        'change #profile-contact-modal-marital-status': 'changeMaritalStatus',
-        'change #profile-contact-modal-agent-home-insurance-checkbox': 'homeInsuranceTab',
-        'change #profile-contact-modal-agent-health-insurance-checkbox': 'healthInsuranceTab',
-        'change #profile-contact-modal-agent-auto-insurance-checkbox': 'autoInsuranceTab',
-        'change #profile-contact-modal-agent-life-insurance-checkbox': 'lifeInsuranceTab',
-        'change #profile-contact-modal-agent-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
-        'change #profile-contact-modal-agent-number-of-children': 'changeNumberChildren',
-        'change #profile-contact-modal-health-lead-status': 'showPaymentTab',
-        'change #profile-contact-modal-home-lead-status': 'showPaymentTab',
-        'change #profile-contact-modal-auto-lead-status': 'showPaymentTab',
-        'change #profile-contact-modal-life-lead-status': 'showPaymentTab',
-        'change #profile-contact-modal-ancilliary-lead-status': 'showPaymentTab'
+        'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
+        'change #contact-info-marital-status': 'changeMaritalStatus',
+        'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
+        'change #contact-info-health-insurance-checkbox': 'healthInsuranceTab',
+        'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
+        'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
+        'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
+        'change #contact-info-marketing-checkbox': 'showMarketingTab',
+        'change #contact-info-number-of-children': 'changeNumberChildren',
+        'change #health-lead-status': 'showPaymentTab',
+        'change #home-lead-status': 'showPaymentTab',
+        'change #auto-lead-status': 'showPaymentTab',
+        'change #life-lead-status': 'showPaymentTab',
+        'change #ancilliary-lead-status': 'showPaymentTab',
+        'change #marketing-compliant': 'showSendSMSButton',
     },
 
     /**
@@ -778,8 +780,8 @@ fun.views.profile = Backbone.View.extend({
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
 
                 contact_info_lead_type.val(response.get('lead_type') || 'health');
-                $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
-                // $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
+                // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
 
                 contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
@@ -789,8 +791,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
                 contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
 
                 contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
                 $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
@@ -1827,8 +1829,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_last_modified_by.val(response.get('last_modified_by') || '');
 
                 contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
 
                 contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
                 $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
@@ -2518,7 +2520,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     showMailingAddressDifferent: function(event){
-        var value = $('#mailing-address-different').val();
+        var value = $('#contact-info-mailing-address-different').val();
         if(value===true||value==='true'){
             $('#mailingAddressDifferentDiv').removeClass('hide');
             $('#mailingAddressDifferentDiv').addClass('show');
@@ -2530,7 +2532,7 @@ fun.views.profile = Backbone.View.extend({
 
     changeMaritalStatus: function(event){
 
-        if($('#profile-contact-modal-marital-status').val()==='none'||$('#profile-contact-modal-marital-status').val()==='Single'){
+        if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='Single'){
             $('#contactSpouseInfoTab').removeClass('show');
             $('#contactSpouseInfoTab').addClass('hide');
         } else {
@@ -2540,8 +2542,8 @@ fun.views.profile = Backbone.View.extend({
     },
 
     healthInsuranceTab: function(event){
-        console.log('IN HEALTH INSURANCE!!!',$('#agent-health-insurance-checkbox').val());
-        if($('#agent-health-insurance-checkbox').val()==="true"){
+        console.log('IN HEALTH INSURANCE!!!',$('#contact-info-health-insurance-checkbox').val());
+        if($('#contact-info-health-insurance-checkbox').val()==="true"){
             $('#healthInsuranceTab').removeClass('hide');
             $('#healthInsuranceTab').addClass('show');
         } else {
@@ -2551,7 +2553,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     homeInsuranceTab: function(event){
-        if($('#agent-home-insurance-checkbox').val()==="true"){
+        if($('#contact-info-home-insurance-checkbox').val()==="true"){
             $('#homeOwnersInsuranceTab').removeClass('hide');
             $('#homeOwnersInsuranceTab').addClass('show');
         } else {
@@ -2561,7 +2563,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     autoInsuranceTab: function(event){
-        if($('#agent-auto-insurance-checkbox').val()==="true"){
+        if($('#contact-info-auto-insurance-checkbox').val()==="true"){
             $('#automobileInsuranceTab').removeClass('hide');
             $('#automobileInsuranceTab').addClass('show');
         } else {
@@ -2571,7 +2573,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     lifeInsuranceTab: function(event){
-        if($('#agent-life-insurance-checkbox').val()==="true"){
+        if($('#contact-info-life-insurance-checkbox').val()==="true"){
             $('#lifeInsuranceTab').removeClass('hide');
             $('#lifeInsuranceTab').addClass('show');
         } else {
@@ -2581,7 +2583,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     ancilliaryInsuranceTab: function(event){
-        if($('#agent-ancilliary-insurance-checkbox').val()==="true"){
+        if($('#contact-info-ancilliary-insurance-checkbox').val()==="true"){
             $('#ancilliaryInsuranceTab').removeClass('hide');
             $('#ancilliaryInsuranceTab').addClass('show');
         } else {
@@ -2591,7 +2593,7 @@ fun.views.profile = Backbone.View.extend({
     },
 
     changeNumberChildren: function(event){
-        switch($('#agent-number-of-children').val()){
+        switch($('#contact-info-number-of-children').val()){
 
             case '0':
                 $('#childrenInfoTab').removeClass('show');
@@ -2643,6 +2645,24 @@ fun.views.profile = Backbone.View.extend({
         } else {
             $('#paymentInfoTab').removeClass('show');
             $('#paymentInfoTab').addClass('hide');
+        }
+    },
+    showSendSMSButton: function(event){
+        if($('#marketing-compliant').val()==="true"){
+            $('#sendSMSButtonWrapper').removeClass('hide');
+            $('#sendSMSButtonWrapper').addClass('show');
+        } else {
+            $('#sendSMSButtonWrapper').removeClass('show');
+            $('#sendSMSButtonWrapper').addClass('hide');
+        }
+    },
+    showMarketingTab: function(event){
+        if($('#contact-info-marketing-checkbox').val()==="true"){
+            $('#marketingInfoTab').removeClass('hide');
+            $('#marketingInfoTab').addClass('show');
+        } else {
+            $('#marketingInfoTab').removeClass('show');
+            $('#marketingInfoTab').addClass('hide');
         }
     }
 });
