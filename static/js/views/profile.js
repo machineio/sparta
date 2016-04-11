@@ -67,9 +67,9 @@ fun.views.profile = Backbone.View.extend({
                 console.log(error);
             }
         }
-
-        contact = new fun.models.Contact(struct);
-        contact.fetch(async_callback);
+        alert('lol');
+        //contact = new fun.models.Contact(struct);
+        //contact.fetch(async_callback);
 
 
     },
