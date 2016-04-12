@@ -49,9 +49,7 @@ fun.views.footer = Backbone.View.extend({
 
         console.log(struct);
 
-        $('#contactModal').modal({
-            'show': true
-        });
+        $('#callingModal').modal('show');
 
         //outbound = new fun.models.Outbound(struct);
         //outbound.save();
