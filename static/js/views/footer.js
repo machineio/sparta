@@ -2,7 +2,6 @@ fun.views.footer = Backbone.View.extend({
 
     events: {
         'click #wtfMae': 'incomingCall',
-        'click #callContactNow': 'outboundFuckingMonkey',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
         'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
@@ -50,7 +49,8 @@ fun.views.footer = Backbone.View.extend({
         console.log(struct);
 
         $('#callingModal').modal('show');
-
+        this.renderContactModalForm();
+        
         //outbound = new fun.models.Outbound(struct);
         //outbound.save();
 
@@ -76,35 +76,6 @@ fun.views.footer = Backbone.View.extend({
 
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
-    },
-
-    outboundFuckingMonkey: function(event){
-        'use strict';
-        var stuff,
-            contact_uuid,
-            message,
-            contact,
-            callbacks;
-
-        // get the name of the element targeted by this event
-        contact_uuid = $(event.target).data('name');
-
-        console.log(contact_uuid);
-
-        console.log('are you fucking sure?');
-
-        contact = new fun.models.Contact({'uuid':name});
-
-        console.log(contact.toJSON());
-
-        contact.fetch({
-            success: function(response){
-                console.log('que putas');
-            },
-            error: function(error){
-                console.log(error);
-            }
-        });
     },
 
     incomingCall: function(event){
