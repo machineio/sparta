@@ -1,6 +1,7 @@
 fun.views.footer = Backbone.View.extend({
 
     events: {
+        'click #call-outbound-btn': 'callNowContact',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
         'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
@@ -31,12 +32,13 @@ fun.views.footer = Backbone.View.extend({
         }, this);
     },
 
-    callActiveContact: function(){
+    callNowContact: function(){
         'use strict';
+        console.log('dial the shit out of');
         var activeContact = JSON.parse(sessionStorage.getItem("active_contact")),
             currentAccount = JSON.parse(localStorage.getItem("profile")),
-            outbound,
-            struct;
+            struct,
+            outbound;
 
         struct = {
             phone_number: activeContact['phone_number'],
@@ -45,16 +47,17 @@ fun.views.footer = Backbone.View.extend({
             extension: currentAccount['extension']
         };
 
-        console.log(struct);
+        outbound = new fun.models.Outbound(struct);
+        outbound.save();
 
+        console.log('this????0');
+    },
+
+    callActiveContact: function(){
+        'use strict';
         $('#callingModal').modal('show');
-
         this.renderContactModalForm();
         this.renderActiveContactInformation();
-
-        //outbound = new fun.models.Outbound(struct);
-        //outbound.save();
-
     },
 
     renderActiveContactInformation: function(){
