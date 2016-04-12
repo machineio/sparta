@@ -50,7 +50,7 @@ fun.views.footer = Backbone.View.extend({
 
         $('#callingModal').modal('show');
         this.renderContactModalForm();
-        
+
         //outbound = new fun.models.Outbound(struct);
         //outbound.save();
 
@@ -58,12 +58,11 @@ fun.views.footer = Backbone.View.extend({
 
     renderContactModalForm: function(){
         'use strict';
+        console.log('render contact form');
         var contactModalTabs;
         var template = _.template(
             fun.utils.getTemplate(fun.conf.templates.contactFormModal)
         );
-
-        console.log('TEMPLATE!!!!', template);
         contactModalTabs = this.$('#hot-contact-modal-tabs');
         contactModalTabs.html(template);
         contactModalTabs.removeClass("hide").addClass("show");
