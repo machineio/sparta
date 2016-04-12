@@ -698,6 +698,10 @@ fun.views.footer = Backbone.View.extend({
 
 
         function renderThisShit(response){
+
+
+
+                console.log(response);
             
                 // CONTACT INFO
                 contact_uuid = response.get('uuid');
