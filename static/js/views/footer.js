@@ -48,11 +48,18 @@ fun.views.footer = Backbone.View.extend({
         console.log(struct);
 
         $('#callingModal').modal('show');
+        
         this.renderContactModalForm();
+        this.renderActiveContactInformation();
 
         //outbound = new fun.models.Outbound(struct);
         //outbound.save();
 
+    },
+
+    renderActiveContactInformation: function(){
+        'use strict';
+        console.log('render active contact information');
     },
 
     renderContactModalForm: function(){
