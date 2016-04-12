@@ -44,8 +44,8 @@ fun.views.profile = Backbone.View.extend({
         var view = this,
             name_uuid = $(event.target).data('name'),
             stuff = JSON.parse(localStorage.getItem("profile")),
-            async_callback,
             struct,
+            async_callback,
             contact;
 
         name_uuid = $(event.target).data('name');
@@ -58,7 +58,6 @@ fun.views.profile = Backbone.View.extend({
             'account':stuff['account']
         };
 
-
         async_callback = {
             success: function(response){
                 sessionStorage.setItem("active_contact", JSON.stringify(response));
@@ -68,12 +67,10 @@ fun.views.profile = Backbone.View.extend({
             error: function(error){
                 console.log(error);
             }
-        }
-        alert('lol');
-        //contact = new fun.models.Contact(struct);
-        //contact.fetch(async_callback);
+        };
 
-
+        contact = new fun.models.Contact(struct);
+        contact.fetch(async_callback);
     },
 
     viewContact: function(event){

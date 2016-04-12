@@ -49,8 +49,8 @@ fun.views.footer = Backbone.View.extend({
 
         console.log(struct);
 
-        outbound = new fun.models.Outbound(struct);
-        outbound.save();
+        //outbound = new fun.models.Outbound(struct);
+        //outbound.save();
 
     },
 
