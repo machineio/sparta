@@ -81,12 +81,10 @@ fun.views.profile = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
-            console.log('DATE 1',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-            console.log('DATE 2',today);
             return today;
         }
 
@@ -719,14 +717,11 @@ fun.views.profile = Backbone.View.extend({
         name = $(event.target).data('name');
 
 
-        console.log(name);
-
         contact = new fun.models.Contact({'uuid':name});
 
 
         contact.fetch({
             success: function(response){
-                console.log(response);
 
                 // CONTACT INFO
                 contact_uuid = response.get('uuid');
@@ -1119,12 +1114,10 @@ fun.views.profile = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
-            console.log('DATE 1',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-            console.log('DATE 2',today);
             return today;
         }
 
@@ -1756,15 +1749,11 @@ fun.views.profile = Backbone.View.extend({
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
 
-
-        console.log(name);
-
         contact = new fun.models.Contact({'uuid':name});
 
 
         contact.fetch({
             success: function(response){
-                console.log(response);
 
                 // CONTACT INFO
                 contact_uuid = response.get('uuid');
@@ -2174,19 +2163,12 @@ fun.views.profile = Backbone.View.extend({
 
         name_uuid = $(event.target).data('name');
 
-
         var stuff = JSON.parse(localStorage.getItem("profile"));
-
-        console.log(stuff);
-
-        console.log(name_uuid);
 
         var lolol = {
             'uuid': name_uuid,
             'account':stuff['account']
         };
-
-        console.log(lolol);
 
         confirm = new fun.models.Contact(lolol);
 
