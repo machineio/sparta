@@ -1053,6 +1053,10 @@ fun.strings = {
     saveNew: "Save New",
     marketingTab: "Marketing Tab",
 
+    dialAttempts: "Dial Attempts",
+    dateOfLastCall: "Date Of Last Call",
+    minutesSinceLastCall: "Minutes Since Last Call",
+
     systemMonitor: "System Monitor",
     goodBye: "Good bye",
     asterisk: "*",
