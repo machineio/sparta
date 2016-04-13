@@ -1095,8 +1095,6 @@ fun.views.profile = Backbone.View.extend({
                 console.log(error);
             }
         });
-
-
     },
 
     editContact:function(event){
@@ -2150,7 +2148,6 @@ fun.views.profile = Backbone.View.extend({
 
         // contact = new fun.models.Contact(lolol);
         // contact.fetch(callbacks_and_stuff);
-
     },
 
     deleteContact:function(event){
@@ -2185,7 +2182,6 @@ fun.views.profile = Backbone.View.extend({
         $('#deleteAccountModal').on('hidden.bs.modal', function(e){
             fun.utils.logout(callbacks);
         });
-
     },
 
     /**
