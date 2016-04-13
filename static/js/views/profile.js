@@ -2305,7 +2305,6 @@ fun.views.profile = Backbone.View.extend({
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.campaignItem)
                 )(value);
-                console.log('IN RENDERINBOUNDCAMPAIGNLIST');
                 rows.append(template);
             });
         } else {
