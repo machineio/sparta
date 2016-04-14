@@ -1062,8 +1062,11 @@ fun.strings = {
     defaultScript: "Default Script",
     agentTimeBetweenCalls: "Agent Time between Calls",
 
+    campaignInfo: "Campaign Info",
     campaignName: "Campaign Name",
     campaignType: "Campaign Type",
+    queries: "Queries",
+    clearAll: "Clear All",
 
     // systemMonitor: "System Monitor",
     goodBye: "Good bye",

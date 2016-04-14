@@ -16,12 +16,6 @@
                                             <input type="text" id="create-outbound-campaign-campaign-name" class="form-control-cm">
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"><%= translate("description") %></th>
-                                        <td>
-                                            <input type="text" id="create-outbound-campaign-campaign-description" name="campaign_description" class="form-control-cm">
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -35,16 +29,6 @@
                                                 <option value="">-- SELECT --</option>
                                                 <option value="inbound">Inbound</option>
                                                 <option value="outbound">Outbound</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><%= translate("script") %></th>
-                                        <td>
-                                            <select class="form-control-cm" id="create-outbound-campaign-campaign-script">
-                                                <option value="">-- SELECT --</option>
-                                                <option value="true">Yes</option>
-                                                <option value="false">No</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -185,6 +169,35 @@
                     <div class="row">
                         <div class="col-md-4">
                             <button class="btn btn-lg btn-primary btn-block">Add Query</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><%= translate("queries") %></h3>
+                    </div>
+                    <div class="panel-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class"row">
+                            <div class="col-md-6">
+                                <button id="create-campaign-clear-btn" class="btn btn-lg btn-danger btn-block" type="button"><%= translate("clearAll") %></button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="create-campaign-submit" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("create") %></button>
+                            </div>
                         </div>
                     </div>
                 </div>
