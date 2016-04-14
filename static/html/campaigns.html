@@ -221,6 +221,1785 @@
     </div>
 </div>
 
+
+<!-- QUERY MODAL -->
+<div class="modal fade" id="queryFilterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content margin-inboundcampaign-cm">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><%= translate("query") %></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pull-left">
+                            <h2>General</h2>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-warning">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Date Created</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-created-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-created-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-created-and">and</label>
+                                        <input type="text" class="form-control" id="date-created-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-created-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-created-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Date Modified</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-modified-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-modified-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-modified-and">and</label>
+                                        <input type="text" class="form-control" id="date-modified-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-modified-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-modified-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Close Date</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-close-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-close-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-close-and">and</label>
+                                        <input type="text" class="form-control" id="date-close-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-close-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-close-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Customer Info</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" width="30%">Gender</th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select name="contact-info-gender-1" id="contact-info-gender-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">-- SELECT --</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select name="contact-info-gender-2" id="contact-info-gender-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">-- SELECT --</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <th scope="row"><%= translate("gender") %></th>
+                                            </div>
+                                            <td>
+                                                <div class="col-md-3">
+                                                    <select name="contact-info-gender-1" id="contact-info-gender-1" class="form-control-cm">
+                                                        <option value="false" selected="selected"></option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select name="contact-info-gender-and-or" id="contact-info-gender-and-or" class="form-control-cm">
+                                                        <option value="false" selected="selected"></option>
+                                                        <option value="and">and</option>
+                                                        <option value="or">or</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select name="contact-info-gender-2" id="contact-info-gender-2" class="form-control-cm">
+                                                        <option value="false" selected="selected"></option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </div>
+                                    </tr> -->
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("maritalStatus") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-marital-status-1" class="form-control-cm">
+                                                    <option value="none" selected="selected"></option>
+                                                    <option value="single">Single</option>
+                                                    <option value="married">Married</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-marital-status-2" class="form-control-cm">
+                                                    <option value="none" selected="selected"></option>
+                                                    <option value="single">Single</option>
+                                                    <option value="married">Married</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("numberOfChildren") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-number-of-children-1" class="form-control-cm">
+                                                    <option value="0" selected="selected">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-number-of-children-2" class="form-control-cm">
+                                                    <option value="0" selected="selected">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("mailingAddressDifferent") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-mailing-address-different-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-mailing-address-different-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("healthInsurance") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-health-insurance-checkbox-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-health-insurance-checkbox-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("homeInsurance") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-home-insurance-checkbox-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-home-insurance-checkbox-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("autoInsurance") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-auto-insurance-checkbox-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-auto-insurance-checkbox-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("lifeInsurance") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-life-insurance-checkbox-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-life-insurance-checkbox-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("ancilliaryInsurance") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-ancilliary-insurance-checkbox-1" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-ancilliary-insurance-checkbox-2" class="form-control-cm">
+                                                    <option value="false" selected="selected">NO</option>
+                                                    <option value="true">YES</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("otherPolicySold") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-other-policy-sold-1" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-other-policy-sold-2" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("federalDoNotCall") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-federal-do-not-call-1" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-federal-do-not-call-2" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("doYouOwnYourHome") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-federal-do-not-call-1" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-federal-do-not-call-2" class="form-control-cm">
+                                                    <option value="">Get Info</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" width="30%"><%= translate("renewAsIsEmailReceived") %></th>
+                                        <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="contact-info-renew-as-is-email-received-1" class="form-control-cm">
+                                                    <option value="true">Yes</option>
+                                                    <option value="false">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="contact-info-renew-as-is-email-received-2" class="form-control-cm">
+                                                    <option value="true">Yes</option>
+                                                    <option value="false">No</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row" width="30%"><%= translate("usCitizenOrLegalPermanentResident") %></th>
+                                         <td class="advanceTD">
+                                            <div class="col-md-5">
+                                                <select id="health-us-citizen-or-legal-permanent-resident-1" class="form-control-cm">
+                                                    <option value="">FILL</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p>and/or</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <select id="health-us-citizen-or-legal-permanent-resident-2" class="form-control-cm">
+                                                    <option value="">FILL</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Health Insurance</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                        <td>
+                                            <select id="health-auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("leadType") %></th>
+                                        <td>
+                                            <select id="health-lead-type" class="form-control-cm">
+                                                <option value="none" selected="selected"></option>
+                                                <option value="healthinsurance">Health Insurance</option>
+                                                <option value="homeownersInsurance">Homeowners Insurance</option>
+                                                <option value="autoInsurance">Auto Insurance</option>
+                                                <option value="lifeInsurance">Life Insurance</option>
+                                                <option value="ancilliary">Ancilliary</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("priorityCode") %></th>
+                                         <td>
+                                              <select id="health-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("leadSource") %></th>
+                                         <td>
+                                              <select id="health-lead-source" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("healthLeadStatus") %></th>
+                                        <td>
+                                            <select id="health-lead-status" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="presold">Presold</option>
+                                                <option value="enrolled">Enrolled</option>
+                                                <option value="bound">Bound</option>
+                                                <option value="active">Active</option>
+                                                <option value="submitted">Submitted</option>
+                                                <option value="sold">Sold</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("healthWritingAgent") %></th>
+                                         <td>
+                                            <select id="health-writing-agent" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("writingAgent") %></th>
+                                         <td>
+                                              <input type="text" id="health-writing-agent" class="form-control-cm">
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("scrubber") %></th>
+                                         <td>
+                                            <select id="health-scrubber" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>Current Job Income Info</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("maritalStatus") %></th>
+                                         <td>
+                                            <select id="health-marital-status" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("numberOfDependentChildrenInHouse") %></th>
+                                         <td>
+                                            <select id="health-number-of-dependent-children-in-house" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>2016 Processed Information</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("renewalSource2016") %></th>
+                                        <td>
+                                            <select id="health-renewal-source-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("renewalAgent2016") %></th>
+                                        <td>
+                                            <select id="health-renewal-agent-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("presoldProcessor2016") %></th>
+                                        <td>
+                                            <select id="health-presold-processor-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("marketplacePolicy2016") %></th>
+                                        <td>
+                                            <select id="health-presold-processor-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("verificationDocumentsNeeded2016") %></th>
+                                        <td>
+                                            <select id="health-verification-documents-needed-2016" class="form-control-cm" multiple>
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <h5>2016 Plan Selection</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("adultsApplyingForCoverage2016") %></th>
+                                         <td>
+                                            <select id="health-adults-applying-for-coverage-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("totalHouseholdSize2016") %></th>
+                                        <td>
+                                            <select id="health-total-household-size-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("childrenApplyingForCoverage2016") %></th>
+                                         <td>
+                                            <select id="health-children-applying-for-coverage-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>2015 Contact Info</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("leadHasAMarketplaceAccount") %></th>
+                                         <td>
+                                            <select id="health-lead-has-a-marketplace-account" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("currentCoverage") %></th>
+                                         <td>
+                                            <select id="health-current-coverage" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>2015 Plan Selection</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("healthCarrier2015") %></th>
+                                         <td>
+                                            <select id="health-carrier-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("adultsOnPlan2015") %></th>
+                                         <td>
+                                            <select id="health-adult-on-plan-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("childrenOnPlan2015") %></th>
+                                         <td>
+                                            <select id="health-children-on-plan-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("incomeVerificationNeeded") %></th>
+                                         <td>
+                                            <select id="health-income-verification-needed-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("citizenshipDocumentsNeeded") %></th>
+                                         <td>
+                                            <select id="health-citizenship-documents-needed-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("agentCode") %></th>
+                                         <td>
+                                            <select id="health-contact-code-2015" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("wantsToRenewSamePlanFor2016") %></th>
+                                         <td>
+                                            <select id="health-wants-to-renew-same-plan-for-2016" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Home Owner's Insurance</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("priorityCode") %></th>
+                                         <td>
+                                            <select id="home-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                         <td>
+                                            <select id="home-auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("leadSource") %></th>
+                                         <td>
+                                            <select id="home-lead-source" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("writingAgent") %></th>
+                                         <td>
+                                            <select id="home-writing-agent" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("scrubber") %></th>
+                                         <td>
+                                            <select id="home-scrubber" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("homeLeadStatus") %></th>
+                                        <td>
+                                            <select id="home-lead-status" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="presold">Presold</option>
+                                                <option value="enrolled">Enrolled</option>
+                                                <option value="bound">Bound</option>
+                                                <option value="active">Active</option>
+                                                <option value="submitted">Submitted</option>
+                                                <option value="sold">Sold</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("newPurchase") %></th>
+                                        <td>
+                                            <select id="home-new-purchase" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("occupancyStatus") %></th>
+                                        <td>
+                                            <select id="home-occupancy-status" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("typeOfDwelling") %></th>
+                                         <td>
+                                            <select id="home-type-of-dwelling" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("garage") %></th>
+                                         <td>
+                                            <select id="home-garage" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("constructionType") %></th>
+                                         <td>
+                                            <select id="home-construction-type" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("stories") %></th>
+                                         <td>
+                                            <select id="home-stories" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("numberOfStoriesInTheBuilding") %></th>
+                                         <td>
+                                            <select id="home-number-of-stories-in-the-building" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("quoteUpdateRequest") %></th>
+                                         <td>
+                                            <select id="home-quote-update-request" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("fourPointIfApplicable") %></th>
+                                         <td>
+                                            <select id="home-four-point-if-applicable" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("quotedHomeCompany") %></th>
+                                        <td>
+                                            <select id="home-quoted-home-company" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("windMit") %></th>
+                                         <td>
+                                            <select id="home-wind-mit" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("roofMaterial") %></th>
+                                         <td>
+                                            <select id="home-roof-material" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("bathrooms") %></th>
+                                         <td>
+                                            <select id="home-bathrooms" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("dog") %></th>
+                                         <td>
+                                            <select id="home-dog" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("pool") %></th>
+                                         <td>
+                                            <select id="home-pool" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("fenceOrScreenEnclosure") %></th>
+                                         <td>
+                                            <select id="home-fence-or-screen-enclosure" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("bankrupcyOrForeclosureInThePastFiveYears") %></th>
+                                         <td>
+                                            <select id="home-bankrupcy-or-Foreclosure-in-the-past-five-years" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("centrallyMonitoredAlarm") %></th>
+                                         <td>
+                                            <select id="home-centrally-monitored-alarm" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("gatedCommunity") %></th>
+                                         <td>
+                                            <select id="home-gated-community" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("homePaymentOption") %></th>
+                                         <td>
+                                            <select id="home-payment-option" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("homeInsuranceCarrier") %></th>
+                                         <td>
+                                            <select id="home-insurance-carrier" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Automobile Insurance</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                         <td>
+                                            <select id="auto-auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("priorityCode") %></th>
+                                         <td>
+                                            <select id="auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("leadSource") %></th>
+                                         <td>
+                                            <select id="auto-lead-source" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("autoLeadStatus") %></th>
+                                        <td>
+                                            <select id="auto-lead-status" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="presold">Presold</option>
+                                                <option value="enrolled">Enrolled</option>
+                                                <option value="bound">Bound</option>
+                                                <option value="active">Active</option>
+                                                <option value="submitted">Submitted</option>
+                                                <option value="sold">Sold</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("writingAgent") %></th>
+                                         <td>
+                                            <select id="auto-writing-agent" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("scrubber") %></th>
+                                         <td>
+                                            <select id="auto-scrubber" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("currentResidenceType") %></th>
+                                         <td>
+                                            <select id="auto-current-residence-type" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("autoOneTowing") %></th>
+                                        <td>
+                                            <select id="auto-1-towing" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoOneRentalCar") %></th>
+                                         <td>
+                                            <select id="auto-1-rental-car" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoTwoTowing") %></th>
+                                         <td>
+                                            <select id="auto-2-towing" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoTwoRentalCar") %></th>
+                                         <td>
+                                            <select id="auto-2-rental-car" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoQuoteUpdateRequest") %></th>
+                                        <td>
+                                            <select id="auto-quote-update-request" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("paymentOption") %></th>
+                                         <td>
+                                            <select id="auto-payment-option" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoDocumentsNeeded") %></th>
+                                         <td>
+                                            <select id="auto-document-needed" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Life Insurance</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                         <td>
+                                            <select id="life-auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("priorityCode") %></th>
+                                         <td>
+                                            <select id="life-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("leadSource") %></th>
+                                         <td>
+                                            <select id="life-lead-source" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("lifeLeadStatus") %></th>
+                                        <td>
+                                            <select id="life-lead-status" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="presold">Presold</option>
+                                                <option value="enrolled">Enrolled</option>
+                                                <option value="bound">Bound</option>
+                                                <option value="active">Active</option>
+                                                <option value="submitted">Submitted</option>
+                                                <option value="sold">Sold</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("writingAgent") %></th>
+                                         <td>
+                                            <select id="life-writing-agent" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("scrubber") %></th>
+                                         <td>
+                                            <select id="life-scrubber" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("smoke") %></th>
+                                         <td>
+                                            <select id="life-smoke" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("majorHealthIssuesInRelatives") %></th>
+                                         <td>
+                                            <select id="life-major-health-issues-in-relatives" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("convictedOfDrunkDriving") %></th>
+                                         <td>
+                                            <select id="life-convicted-of-drunk-driving" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("lifeQuoteStatus") %></th>
+                                         <td>
+                                            <select id="life-quote-status" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("lifeApplicationStatus") %></th>
+                                         <td>
+                                            <select id="life-application-status" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Ancilliary Insurance</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("autoPriorityCode") %></th>
+                                        <td>
+                                            <select id="ancilliary-auto-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("priorityCode") %></th>
+                                        <td>
+                                            <select id="ancilliary-priority-code" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("leadSource") %></th>
+                                        <td>
+                                            <select id="ancilliary-lead-source" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("writingAgent") %></th>
+                                        <td>
+                                            <select id="ancilliary-writing-agent" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("scrubber") %></th>
+                                        <td>
+                                            <select id="ancilliary-scrubber" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("floodLeadStatus") %></th>
+                                        <td>
+                                            <select id="ancilliary-lead-status" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="presold">Presold</option>
+                                                <option value="enrolled">Enrroled</option>
+                                                <option value="bound">Bound</option>
+                                                <option value="active">Active</option>
+                                                <option value="submitted">Submitted</option>
+                                                <option value="sold">Sold</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("accident") %></th>
+                                        <td>
+                                            <select id="ancilliary-accident" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="applicationSubmitted">Application Submitted</option>
+                                                <option value="pending">Pending</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("criticalIllness") %></th>
+                                        <td>
+                                            <select id="ancilliary-critical-illness" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="applicationSubmitted">Application Submitted</option>
+                                                <option value="pending">Pending</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("hospitalConfinemet") %></th>
+                                        <td>
+                                            <select id="ancilliary-hospital-confinement" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="applicationSubmitted">Application Submitted</option>
+                                                <option value="pending">Pending</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("dentalCare") %></th>
+                                        <td>
+                                            <select id="ancilliary-dental-care" class="form-control-cm">
+                                                <option value="false" selected="selected"></option>
+                                                <option value="applicationSubmitted">Application Submitted</option>
+                                                <option value="pending">Pending</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("dentalLeadStatus") %></th>
+                                        <td>
+                                            <select id="ancilliary-dental-lead-status" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>Other Information</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("nursingHomeHospitalizedEtc") %></th>
+                                        <td>
+                                            <select id="ancilliary-nursing-home-hospitalized-etc" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("hospitalizedInTheLastTwelveMonths") %></th>
+                                        <td>
+                                            <select id="ancilliary-hospitalized-in-the-last-twelve-months" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("diagnosedOrTreatedForMedicalIssues") %></th>
+                                        <td>
+                                            <select id="ancilliary-diagnosed_or_treated_for_medical_issues" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("pregnant") %></th>
+                                        <td>
+                                            <select id="ancilliary-pregnant" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("everHadAProblemPregnancy") %></th>
+                                        <td>
+                                            <select id="ancilliary-ever_had_a_problem_pregnancy" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("hypertension") %></th>
+                                        <td>
+                                            <select id="ancilliary-hypertension" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <h5>Diagnosed or currently have</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("abnormalCancerScreeningTest") %></th>
+                                        <td>
+                                            <select id="ancilliary-abnormal-cancer-screening-test" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("cystsGrowthsEtcNotSeenFor") %></th>
+                                        <td>
+                                            <select id="ancilliary-cysts-growths-etc-not-seen-for" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("carotidArteryStenosisEtc") %></th>
+                                        <td>
+                                            <select id="ancilliary-carotid-artery-stenosis-etc" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("hivPositiveAidsRelatedComplexAids") %></th>
+                                        <td>
+                                            <select id="ancilliary-hiv-positive-aids-related-complex-aids" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("multipleSclerosisMemoryLossEtc") %></th>
+                                        <td>
+                                            <select id="ancilliary-multiple-sclerosis-memory-loss-etc" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("abnormalTestsRequiringFollowUp") %></th>
+                                        <td>
+                                            <select id="ancilliary-abnormal-tests-requiring-follow-up" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("anyNonRoutineConsultationScheduled") %></th>
+                                        <td>
+                                            <select id="ancilliary-any-non-routine-consultation-scheduled" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("oneOrMoreImmRelativesWithIssues") %></th>
+                                        <td>
+                                            <select id="ancilliary-one-or-more-imm-relatives-with-issues" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("twoOrMoreImmRelativesWithIssues") %></th>
+                                        <td>
+                                            <select id="ancilliary-two-or-more-imm-relatives-with-issues" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("beningTumorHypertensionEtc") %></th>
+                                        <td>
+                                            <select id="ancilliary-bening_tumor-hypertension-etc" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("presciptionMedicationInLastThreeYears") %></th>
+                                        <td>
+                                            <select id="ancilliary-prescription-medication-in-last-three-years" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <h5>Diagnosed, been treated form or taken medication for...</h5>
+                        <hr>
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("disorderDiseaseHeartKidneyLungs") %></th>
+                                        <td>
+                                            <select id="ancilliary-disorder-disease-heart-kidney-lungs" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("diseaseQuadLouGehrigsOtherMotor") %></th>
+                                        <td>
+                                            <select id="ancilliary-disease-quad-lou-gehrigs-other-motor" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("alcoholOrSubstanceAbuseFiveYears") %></th>
+                                        <td>
+                                            <select id="ancilliary-alcohol-or-substance-abuse-five-years" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("heartAttackStrokeTransientIschemis") %></th>
+                                        <td>
+                                            <select id="ancilliary-heart-attack-stroke-transient-ischemic" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("diabetesTypeOneOrTwoBloodPressAm") %></th>
+                                        <td>
+                                            <select id="ancilliary-diabetes-type-one-or-two-blood-press-am" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Payment Info</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("binderPaymentOption") %></th>
+                                         <td>
+                                            <select id="payment-binder-payment-option" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("paymentChargeRequest") %></th>
+                                         <td>
+                                            <select id="payment-payment-charge-request" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("creditCardType") %></th>
+                                         <td>
+                                            <select id="payment-ccredit-card-type" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("bankAccountType") %></th>
+                                         <td>
+                                            <select id="payment-bank-account-type" class="form-control-cm">
+                                                <option value="">FILL</option>
+                                            </select>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Dial Attempts</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-created-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-created-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-created-and">and</label>
+                                        <input type="text" class="form-control" id="date-created-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-created-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-created-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Date Modified</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-modified-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-modified-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-modified-and">and</label>
+                                        <input type="text" class="form-control" id="date-modified-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-modified-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-modified-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>Close Date</h5>
+                            </div>
+                            <form class="form-inline" id="advancedInlineForm">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date-close-between">is between (and including)</label>
+                                        <input type="text" class="form-control" id="date-close-between">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-close-and">and</label>
+                                        <input type="text" class="form-control" id="date-close-and">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="date-close-within">and/or is <strong>within</strong></label>
+                                        <input type="text" class="form-control" id="date-close-within">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("dialAttempts") %></th>
+                                         <td>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <input id="advanced-dial-attempts-1" type="text" class="form-control-cm">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p>between</p>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <input id="advanced-dial-attempts-2" type="text" class="form-control-cm">
+                                                </div>
+                                            </div>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                         <th scope="row"><%= translate("dateOfLastCall") %></th>
+                                         <td>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <input id="advanced-day-of-last-call-1" type="text" class="form-control-cm">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p>between</p>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <input id="advanced-day-of-last-call-2" type="text" class="form-control-cm">
+                                                </div>
+                                            </div>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                         <th scope="row"><%= translate("minutesSinceLastCall") %></th>
+                                         <td>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <input id="advanced-minutes-since-last-call-1" type="text" class="form-control-cm">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p>between</p>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <input id="advanced-minutes-since-last-call-2" type="text" class="form-control-cm">
+                                                </div>
+                                            </div>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class"row">
+                    <div class="col-md-6">
+                        <button id="clearAllQueryFilterButton" class="btn btn-lg btn-danger btn-block cancel-button-taskmodal" type="button"><%= translate("clearAll") %></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="addQueryFilterButton" class="btn btn-lg btn-primary btn-block update-button-taskmodal" type="submit"><%= translate("add") %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- task Modal popup -->
 <div class="modal fade" id="inboundCampaignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
