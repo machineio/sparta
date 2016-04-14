@@ -3,6 +3,63 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("campaignInfo") %></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("campaignName") %></th>
+                                        <td>
+                                            <input type="text" id="create-outbound-campaign-campaign-name" class="form-control-cm">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("description") %></th>
+                                        <td>
+                                            <input type="text" id="create-outbound-campaign-campaign-description" name="campaign_description" class="form-control-cm">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("campaignType") %></th>
+                                        <td>
+                                            <select class="form-control-cm" id="create-outbound-campaign-campaign-type">
+                                                <option value="">-- SELECT --</option>
+                                                <option value="inbound">Inbound</option>
+                                                <option value="outbound">Outbound</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("script") %></th>
+                                        <td>
+                                            <select class="form-control-cm" id="create-outbound-campaign-campaign-script">
+                                                <option value="">-- SELECT --</option>
+                                                <option value="true">Yes</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <h3 class="panel-title"><%= translate("settings") %></h3>
                 </div>
                 <div class="panel-body">
@@ -34,7 +91,7 @@
                                     <tr>
                                         <th scope="row"><%= translate("defaultScript") %></th>
                                         <td>
-                                            <textarea id="create-outbound-campaign-default-script" rows="5"></textarea>
+                                            <textarea class="form-control" id="create-outbound-campaign-default-script" rows="5"></textarea>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -65,7 +122,7 @@
                                     <tr>
                                         <th scope="row"><%= translate("description") %></th>
                                         <td>
-                                            <textarea id="create-outbound-campaign-description" rows="5"></textarea>
+                                            <textarea class="form-control" id="create-outbound-campaign-description" rows="5"></textarea>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -124,15 +181,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("filters") %></h3>
-                </div>
-                <div class="panel-body">
+
+                    <div class="row">
+                        <button class="btn btn-default btn-lg">Add Query</button>
+                    </div>
                 </div>
             </div>
         </div>
