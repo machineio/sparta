@@ -548,7 +548,7 @@ body {
     width: 80vw;
 }
 
-#outboundCampaignModal .modal-dialog {
+#outboundCampaignModal .modal-dialog, #queryFilterModal .modal-dialog {
     width: 90vw;
 }
 

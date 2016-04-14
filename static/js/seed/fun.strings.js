@@ -1067,6 +1067,7 @@ fun.strings = {
     campaignType: "Campaign Type",
     queries: "Queries",
     clearAll: "Clear All",
+    query: "Query",
 
     // systemMonitor: "System Monitor",
     goodBye: "Good bye",
