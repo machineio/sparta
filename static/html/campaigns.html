@@ -1,125 +1,138 @@
 <div class="container">
-    <div class="row equal">
-        <div class="col-md-6">
-            <div class="panel panel-default panel-full-width">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("exportCampaigns") %></h3>
+                    <h3 class="panel-title"><%= translate("settings") %></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-12 text-center">
-                            <span class="fa-stack fa-4x panel-icons">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-cloud-download fa-stack-1x"></i>
-                            </span>
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("attendees") %></th>
+                                        <td>
+                                            <select id="create-outbound-campaign-attendees" class="form-control-cm">
+                                                <option value="">-- SELECT --</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("timeBetweenCalls") %></th>
+                                        <td>
+                                            <select id="create-outbound-campaign-time-between-calls-hours" class="form-control-cm">
+                                                <option value="">-- SELECT --</option>
+                                            </select>
+                                            <p>hours</p>
+                                            <select id="create-outbound-campaign-time-between-calls-minutes" class="form-control-cm">
+                                                <option value="">-- SELECT --</option>
+                                            </select>
+                                            <p>minutes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("defaultScript") %></th>
+                                        <td>
+                                            <textarea id="create-outbound-campaign-default-script" rows="5"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form id="export-campaign-form" class="form-export" novalidate="novalidate">
-                                <p class="help-block"><%= translate("getCampaignList") %>.</p>
-                            </form>
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><%= translate("callerId") %></th>
+                                        <td>
+                                            <input type="text" id="create-outbound-campaign-callerid" name="agent_first_name" class="form-control-cm">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("agentTimeBetweenCalls") %></th>
+                                        <td>
+                                            <select id="create-outbound-campaign-agent-time-between-calls-hours" class="form-control-cm">
+                                                <option value="">-- SELECT --</option>
+                                            </select>
+                                            <p>hours</p>
+                                            <select id="create-outbound-campaign-agent-time-between-calls-minutes" class="form-control-cm">
+                                                <option value="">-- SELECT --</option>
+                                            </select>
+                                            <p>minutes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><%= translate("description") %></th>
+                                        <td>
+                                            <textarea id="create-outbound-campaign-description" rows="5"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
+                <!-- <div class="panel-footer">
                     <button id="get-export-btn" class="btn btn-success btn-block" type="submit"><%= translate("exportCSV") %></button>
+                </div> -->
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= translate("queries") %></h3>
+                </div>
+                <div class="panel-body">
+                    <h4>Local Settings</h4>
+                    <p>The campaign will not dial outside of these hours, based on the timezone assiciated with the contacts, area code and prefix.</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="transfer_digit"><%= translate("from") %></label>
+                                <select class="form-control-cm" id="transfer_digit" name="transfer_digit">
+                                    <option value="8a">8:00 AM</option>
+                                    <option value="9a" selected>9:00 AM</option>
+                                    <option value="10a">10:00 AM</option>
+                                    <option value="11a">11:00 AM</option>
+                                    <option value="12a">12:00 AM</option>
+                                    <option value="1p">1:00 PM</option>
+                                    <option value="2p">2:00 PM</option>
+                                    <option value="3p">3:00 PM</option>
+                                    <option value="4p">4:00 PM</option>
+                                    <option value="5p">5:00 PM</option>
+                                    <option value="6p">6:00 PM</option>
+                                    <option value="7p">7:00 PM</option>
+                                    <option value="8p">8:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="transfer_digit"><%= translate("to") %></label>
+                                <select class="form-control-cm" id="transfer_digit" name="transfer_digit">
+                                    <option value="1p">1:00 PM</option>
+                                    <option value="2p">2:00 PM</option>
+                                    <option value="3p">3:00 PM</option>
+                                    <option value="4p">4:00 PM</option>
+                                    <option value="5p selected">5:00 PM</option>
+                                    <option value="6p">6:00 PM</option>
+                                    <option value="7p">7:00 PM</option>
+                                    <option value="8p">8:00 PM</option>
+                                    <option value="9p">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="panel panel-default panel-full-width">
+        <div class="col-md-12">
+            <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><%= translate("newCampaign") %></h3>
+                    <h3 class="panel-title"><%= translate("filters") %></h3>
                 </div>
                 <div class="panel-body">
-
-                    <div class="row">
-                        <div class="col-md-12 text-center" id="campaignIconInbound">
-                            <span class="fa-stack fa-4x panel-icons">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-random fa-stack-1x"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 text-center hide" id="campaignIconOutbound">
-                            <span class="fa-stack fa-4x panel-icons">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-bullhorn fa-stack-1x fa-flip-horizontal"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form id="profile-form" class="form-profile" novalidate="novalidate">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">/</span>
-                                            <input name="campaign_name" id="campaign_name" type="text" class="form-control-cm" placeholder="Schedule for using Pillows and Beanbags">
-                                        </div>
-                                        <p><%= translate("greatCampaignNames") %>.</p>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="campaign_description"><%= translate("descriptionOptional") %></label>
-                                    <input type="text" id="campaign_description" name="campaign_description" class="form-control-cm">
-                                </div>
-
-                                <div class="form-checkbox">
-                                    <label>
-                                        <input id="campaign_type_inbound" name="campaign_type" type="radio" value="inbound" checked="checked" >
-                                        <%= translate("inbound") %>
-                                    </label>
-
-                                    <!--
-                                    <span class="mega-octicon octicon-repo"></span>
-                                    -->
-
-                                    <span class="note">
-                                        Anyone can see this campaign. You choose who can send messages.
-                                    </span>
-                                </div>
-
-                                <div class="form-checkbox">
-                                    <label>
-                                        <input id="campaign_type_outbound" name="campaign_type" type="radio" value="outbound">
-                                        <%= translate("outbound") %>
-                                    </label>
-
-                                    <!--
-                                    <span class="mega-octicon octicon-lock"></span>
-                                    -->
-
-                                    <span class="note">
-                                        <%= translate("youChooseWhoUseCampaign") %>.
-                                    </span>
-                                </div>
-
-                                <div class="form-checkbox">
-                                    <label>
-                                        <input id="campaign_script_true" value="true" type="checkbox">
-                                        <%= translate("script") %>
-                                    </label>
-                                    <!--
-                                    <span class="mega-octicon octicon-repo"></span>
-                                    -->
-
-                                    <span class="note">
-                                        This campaign use the following script.
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <button id="create-campaign-btn" class="btn btn-success btn-block" type="submit"><%= translate("createCampaign") %></button>
                 </div>
             </div>
         </div>
@@ -324,76 +337,72 @@
                     <div class="tab-pane fade active in" id="createOutboundCampaignSettings">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="panel panel-default">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row"><%= translate("attendees") %></th>
-                                                <td>
-                                                    <select id="create-outbound-campaign-attendees" class="form-control-cm">
-                                                        <option value="">-- SELECT --</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><%= translate("timeBetweenCalls") %></th>
-                                                <td>
-                                                    <select id="create-outbound-campaign-time-between-calls-hours" class="form-control-cm">
-                                                        <option value="">-- SELECT --</option>
-                                                    </select>
-                                                    <p>hours</p>
-                                                    <select id="create-outbound-campaign-time-between-calls-minutes" class="form-control-cm">
-                                                        <option value="">-- SELECT --</option>
-                                                    </select>
-                                                    <p>minutes</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><%= translate("defaultScript") %></th>
-                                                <td>
-                                                    <textarea id="create-outbound-campaign-default-script" rows="5"></textarea>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("attendees") %></th>
+                                            <td>
+                                                <select id="create-outbound-campaign-attendees" class="form-control-cm">
+                                                    <option value="">-- SELECT --</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("timeBetweenCalls") %></th>
+                                            <td>
+                                                <select id="create-outbound-campaign-time-between-calls-hours" class="form-control-cm">
+                                                    <option value="">-- SELECT --</option>
+                                                </select>
+                                                <p>hours</p>
+                                                <select id="create-outbound-campaign-time-between-calls-minutes" class="form-control-cm">
+                                                    <option value="">-- SELECT --</option>
+                                                </select>
+                                                <p>minutes</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("defaultScript") %></th>
+                                            <td>
+                                                <textarea id="create-outbound-campaign-default-script" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="col-md-6">
-                                <div class="panel panel-default">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row"><%= translate("callerId") %></th>
-                                                <td>
-                                                    <input type="text" id="create-outbound-campaign-callerid" name="agent_first_name" class="form-control-cm">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><%= translate("agentTimeBetweenCalls") %></th>
-                                                <td>
-                                                    <select id="create-outbound-campaign-agent-time-between-calls-hours" class="form-control-cm">
-                                                        <option value="">-- SELECT --</option>
-                                                    </select>
-                                                    <p>hours</p>
-                                                    <select id="create-outbound-campaign-agent-time-between-calls-minutes" class="form-control-cm">
-                                                        <option value="">-- SELECT --</option>
-                                                    </select>
-                                                    <p>minutes</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><%= translate("description") %></th>
-                                                <td>
-                                                    <textarea id="create-outbound-campaign-description" rows="5"></textarea>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><%= translate("callerId") %></th>
+                                            <td>
+                                                <input type="text" id="create-outbound-campaign-callerid" name="agent_first_name" class="form-control-cm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("agentTimeBetweenCalls") %></th>
+                                            <td>
+                                                <select id="create-outbound-campaign-agent-time-between-calls-hours" class="form-control-cm">
+                                                    <option value="">-- SELECT --</option>
+                                                </select>
+                                                <p>hours</p>
+                                                <select id="create-outbound-campaign-agent-time-between-calls-minutes" class="form-control-cm">
+                                                    <option value="">-- SELECT --</option>
+                                                </select>
+                                                <p>minutes</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><%= translate("description") %></th>
+                                            <td>
+                                                <textarea id="create-outbound-campaign-description" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade active in" id="createOutboundCampaignQueries">
+                    <div class="tab-pane fade" id="createOutboundCampaignQueries">
                         <div class="row">
                             <div class="col-md-12">
                                 <h3>Local Settings</h3>
