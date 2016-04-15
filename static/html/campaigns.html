@@ -29,6 +29,7 @@
                                                 <option value="">-- SELECT --</option>
                                                 <option value="inbound">Inbound</option>
                                                 <option value="outbound">Outbound</option>
+                                                <option value="predicted">Predicted</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -2321,152 +2322,86 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h5>Dial Attempts</h5>
+                        <div class="panel panel-default">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5>Dial Attempts</h5>
+                                </div>
+                                <form class="form-inline" id="advancedInlineForm">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="date-created-between">is between (and including)</label>
+                                            <input type="text" class="form-control" id="date-created-between">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date-created-and">and</label>
+                                            <input type="text" class="form-control" id="date-created-and">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date-created-within">and/or is <strong>within</strong></label>
+                                            <input type="text" class="form-control" id="date-created-within">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <form class="form-inline" id="advancedInlineForm">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="date-created-between">is between (and including)</label>
-                                        <input type="text" class="form-control" id="date-created-between">
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5><%= translate("dateOfLastCall") %></h5>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-created-and">and</label>
-                                        <input type="text" class="form-control" id="date-created-and">
+                                <form class="form-inline" id="advancedInlineForm">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="advanced-day-of-last-call-between">is between (and including)</label>
+                                            <input type="text" class="form-control" id="advanced-day-of-last-call-between">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-created-within">and/or is <strong>within</strong></label>
-                                        <input type="text" class="form-control" id="date-created-within">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="advanced-day-of-last-call-and">and</label>
+                                            <input type="text" class="form-control" id="advanced-day-of-last-call-and">
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h5>Date Modified</h5>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="advanced-day-of-last-call-within">and/or is <strong>within</strong></label>
+                                            <input type="text" class="form-control" id="advanced-day-of-last-call-within">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <form class="form-inline" id="advancedInlineForm">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="date-modified-between">is between (and including)</label>
-                                        <input type="text" class="form-control" id="date-modified-between">
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5><%= translate("minutesSinceLastCall") %></h5>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-modified-and">and</label>
-                                        <input type="text" class="form-control" id="date-modified-and">
+                                <form class="form-inline" id="advancedInlineForm">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="advanced-minutes-since-last-call-between">is between (and including)</label>
+                                            <input type="text" class="form-control" id="advanced-minutes-since-last-call-between">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-modified-within">and/or is <strong>within</strong></label>
-                                        <input type="text" class="form-control" id="date-modified-within">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="advanced-minutes-since-last-call-and">and</label>
+                                            <input type="text" class="form-control" id="advanced-minutes-since-last-call-and">
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h5>Close Date</h5>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="advanced-minutes-since-last-call-within">and/or is <strong>within</strong></label>
+                                            <input type="text" class="form-control" id="advanced-minutes-since-last-call-within">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <form class="form-inline" id="advancedInlineForm">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="date-close-between">is between (and including)</label>
-                                        <input type="text" class="form-control" id="date-close-between">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-close-and">and</label>
-                                        <input type="text" class="form-control" id="date-close-and">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="date-close-within">and/or is <strong>within</strong></label>
-                                        <input type="text" class="form-control" id="date-close-within">
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                         <th scope="row"><%= translate("dialAttempts") %></th>
-                                         <td>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <input id="advanced-dial-attempts-1" type="text" class="form-control-cm">
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <p>between</p>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <input id="advanced-dial-attempts-2" type="text" class="form-control-cm">
-                                                </div>
-                                            </div>
-                                         </td>
-                                    </tr>
-                                    <tr>
-                                         <th scope="row"><%= translate("dateOfLastCall") %></th>
-                                         <td>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <input id="advanced-day-of-last-call-1" type="text" class="form-control-cm">
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <p>between</p>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <input id="advanced-day-of-last-call-2" type="text" class="form-control-cm">
-                                                </div>
-                                            </div>
-                                         </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                         <th scope="row"><%= translate("minutesSinceLastCall") %></th>
-                                         <td>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <input id="advanced-minutes-since-last-call-1" type="text" class="form-control-cm">
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <p>between</p>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <input id="advanced-minutes-since-last-call-2" type="text" class="form-control-cm">
-                                                </div>
-                                            </div>
-                                         </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
                 <div class"row">
