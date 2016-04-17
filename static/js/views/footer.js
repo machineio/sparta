@@ -45,7 +45,25 @@ fun.views.footer = Backbone.View.extend({
         console.log('hell yeah??');
 
         console.log(list_of_states);
-        
+    },
+
+    getDropdownInfo: function(_id){
+        'use strict';
+        var list,
+            options,
+            id;
+
+        options = {
+            unique: true
+        };
+
+        id = _id.substring(1);
+        options[id] = true;
+
+        list = new fun.models.ContactsContainer();
+        list.fetch(options);
+
+        return list;
     },
 
     callNowContact: function(){
