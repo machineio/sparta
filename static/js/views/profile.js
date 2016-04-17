@@ -1107,7 +1107,9 @@ fun.views.profile = Backbone.View.extend({
             unique: true
         };
 
-        id = _id.substring(1);
+        id = _id;
+        // id = _id.substring(1);
+        console.log("DROPDOWN ID",id);
         options[id] = true;
 
         list = new fun.models.ContactsContainer();
@@ -1474,7 +1476,7 @@ fun.views.profile = Backbone.View.extend({
         contact_info_gender = this.$("#contact-info-gender");
 
         console.log('DROPDOWN INFO');
-        console.log(this.getDropdownInfo(contact_info_gender.context.activeElement.id));
+        console.log(this.getDropdownInfo(contact_info_gender.context.activeElement.id).toJSON().results);
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
