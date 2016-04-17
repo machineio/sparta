@@ -13,6 +13,11 @@ Backbone.sync = function(method, model, options){
     options || (options = {});
     options.crossDomain = true;
 
+    // Jquery will auto process data object into query string,
+    if (options.type !== 'GET' && !Backbone.emulateJSON) {
+        options.processData = false;
+    }
+
     /*
      * The jQuery 'ajax' method includes a 'headers' option
      * which lets you set any headers you like
