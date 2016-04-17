@@ -15,7 +15,7 @@ var fun = {
     omnibus: _.extend({}, Backbone.Events)
 };
 
-
+// trying to put some new blood and magic to our nonsense combo!
 var app = Marionette.Application.extend({
   initialize: function(options) {
     console.log('My container:', options.container);
@@ -23,12 +23,11 @@ var app = Marionette.Application.extend({
 });
 
 
-
 // Although applications will not do anything
 // with a `container` option out-of-the-box, you
 // could build an Application Class that does use
 // such an option.
-var app = new app({container: '#app'});/*
+var app = new app(fun);/*
 
 
 var my_template_html = '<div><%= args.name %></div>'
@@ -42,5 +41,3 @@ var MyView = Marionette.View.extend({
   }
 });
 */
-
-console.log('yeah alex');
