@@ -18,7 +18,7 @@ var fun = {
 // trying to put some new blood and magic to our nonsense combo!
 var app = Marionette.Application.extend({
   initialize: function(options) {
-    console.log('My container:', options.container);
+    console.log('My containers:', options.containers);
   }
 });
 
