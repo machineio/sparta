@@ -1,7 +1,7 @@
-/*
-* Routes are resource address capability service nouns.
-*/
-fun.Router = Backbone.Router.extend({
+
+// nouns and resources!
+
+fun.Router = Marionette.AppRouter.extend({
 
     /*
      Seed server routes
@@ -1410,10 +1410,4 @@ fun.Router = Backbone.Router.extend({
         fun.instances.login.render();
         fun.instances.footer.render();
     }
-});
-
-// init the shit out of this
-$(function(){
-    fun.instances.router = new fun.Router();
-    Backbone.history.start();
 });

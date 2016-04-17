@@ -24,3 +24,13 @@ var MyView = Marionette.View.extend({
   }
 });
 */
+
+
+app.start();
+/*
+// init the shit out of this
+$(function(){
+    fun.instances.router = new fun.Router();
+    Backbone.history.start();
+});
+*/
