@@ -1475,7 +1475,7 @@ fun.views.profile = Backbone.View.extend({
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
         contact_info_gender = this.$("#contact-info-gender");
 
-        console.log('DROPDOWN INFO',contact_info_gender);
+        console.log('DROPDOWN INFO',contact_info_gender['0'].id);
         console.log(this.getDropdownInfo(contact_info_gender.context.activeElement.id).toJSON().results);
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
