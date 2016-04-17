@@ -1,6 +1,7 @@
 fun.views.footer = Backbone.View.extend({
 
     events: {
+        'click #thisIsATest': 'testWithAlex',
         'click #call-outbound-btn': 'callNowContact',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
@@ -30,6 +31,19 @@ fun.views.footer = Backbone.View.extend({
         fun.omnibus.on("call:contact", function(){
             this.callActiveContact();
         }, this);
+    },
+
+
+    testWithAlex: function(){
+        'use strict';
+        var list_of_states,
+            leads;
+
+        list_of_states = new fun.models.Contacts();
+        list_of_states.fetch({data: {state:True, unique:True}});
+
+        console.log(list_of_states);
+        
     },
 
     callNowContact: function(){
