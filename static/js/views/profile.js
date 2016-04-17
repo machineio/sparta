@@ -1097,6 +1097,25 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
+    getDropdownInfo: function(_id){
+        'use strict';
+        var list,
+            options,
+            id;
+
+        options = {
+            unique: true
+        };
+
+        id = _id.substring(1);
+        options[id] = true;
+
+        list = new fun.models.ContactsContainer();
+        list.fetch(options);
+
+        return list;
+    },
+
     editContact:function(event){
         'use strict';
         event.preventDefault();
@@ -1453,6 +1472,10 @@ fun.views.profile = Backbone.View.extend({
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
         contact_info_gender = this.$("#contact-info-gender");
+
+        console.log('DROPDOWN INFO');
+        console.log(this.getDropdownInfo(contact_info_gender.context.activeElement.id));
+
         contact_info_marital_status = this.$("#contact-info-marital-status");
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
         contact_info_social_security_number = this.$("#contact-info-social-security-number");
@@ -1742,6 +1765,8 @@ fun.views.profile = Backbone.View.extend({
         payment_bank_name = this.$("#payment-bank-name");
         payment_bank_routuing_number = this.$("#payment-bank-routuing-number");
         payment_bank_account_number = this.$("#payment-bank-account-number");
+
+
 
 
         // get the name of the element targeted by this event
