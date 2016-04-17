@@ -1,20 +1,3 @@
-/*
-* Fun namespace container
-*/
-var fun = {
-    account: {}, 
-    utils: {},
-    views: {},
-    instances: {},
-    containers: {},
-    models: {},
-    strings: {},
-    conf: {},
-    session: {}, //account and context maybe?
-    cache: {templates : {}},
-    omnibus: _.extend({}, Backbone.Events)
-};
-
 // trying to put some new blood and magic to our nonsense combo!
 var app = Marionette.Application.extend({
   initialize: function(options) {
