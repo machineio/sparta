@@ -1,3 +1,11 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+.advanceSearchFilters {
+  padding: 20px;
+}
+
 .advanceTD {
   padding: 10px 0px 10px 0px;
 }
@@ -548,7 +556,7 @@ body {
     width: 80vw;
 }
 
-#outboundCampaignModal .modal-dialog {
+#outboundCampaignModal .modal-dialog, #queryFilterModal .modal-dialog {
     width: 90vw;
 }
 
