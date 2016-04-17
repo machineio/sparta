@@ -1112,6 +1112,8 @@ fun.views.profile = Backbone.View.extend({
         console.log("DROPDOWN ID",id);
         options[id] = true;
 
+
+        console.log('DROPDOWN OPTIONS',options);
         list = new fun.models.ContactsContainer();
         list.fetch(options);
 
