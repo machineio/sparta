@@ -10,7 +10,7 @@ var app = Marionette.Application.extend({
 // with a `container` option out-of-the-box, you
 // could build an Application Class that does use
 // such an option.
-var app = new app();/*
+var app = new app(fun);/*
 
 
 var my_template_html = '<div><%= args.name %></div>'
@@ -27,11 +27,11 @@ var MyView = Marionette.View.extend({
 
 console.log('lol')
 
-app.start(fun);
-/*
-// init the shit out of this
-$(function(){
-    fun.instances.router = new fun.Router();
-    Backbone.history.start();
+app.on("start", function(options){
+	fun.instances.router = new fun.Router();
+ 	if (Backbone.history){
+    	Backbone.history.start();
+  	}
 });
-*/
+
+app.start();
