@@ -12,10 +12,12 @@ var backboneSync = Backbone.sync;
 Backbone.sync = function(method, model, options){
     options || (options = {});
     options.crossDomain = true;
-
+    
     // Jquery will auto process data object into query string,
     if (options.type !== 'GET' && !Backbone.emulateJSON) {
         options.processData = false;
+    } else {
+        options.processData = true;
     }
 
     /*
