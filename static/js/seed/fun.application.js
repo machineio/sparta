@@ -25,6 +25,8 @@ app.on("start", function(options){
     	Backbone.history.start();
   	}
 
+  	console.log('uli uli!')
+
   	app.contacts = new fun.models.Contacts();
 
   	app.contacts.on("add", function(ship) {
@@ -34,6 +36,6 @@ app.on("start", function(options){
   	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
 	app.contactList.show(new fun.views.contactsView());
 });
-console.log('donde dice');
+console.log('tu alma uli');
 
 app.start();
