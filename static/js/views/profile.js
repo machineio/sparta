@@ -1099,29 +1099,23 @@ fun.views.profile = Backbone.View.extend({
 
     getDropdownInfo: function(_id){
         'use strict';
-        var list,
-            options,
+        var list_of_stuff,
+            data,
             id;
 
-        options = {
-            data: {
-                unique: true
-            }
-        };
-
         id = _id;
-        // id = _id.substring(1);
-        console.log("DROPDOWN ID",id);
-        options.data[id] = true;
 
-        options.data = $.param(options.data);
+        data = {unique:true}
+        data[id] = true;
 
+        console.log("DROPDOWN ID", id);
 
-        console.log('DROPDOWN OPTIONS',options);
-        list = new fun.models.ContactsContainer();
-        list.fetch(options);
+        list_of_stuff = new fun.models.ContactsContainer();
+        list_of_stuff.fetch({data: $.param(data)});
 
-        return list;
+        console.log(list_of_stuff.attributes.results);
+
+        return list_of_stuff.attributes.results;
     },
 
     editContact:function(event){
