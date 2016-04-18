@@ -11,6 +11,45 @@ fun.views.accounts = Backbone.View.extend({
     */
     initialize: function(options) {
         fun.containers.accounts = this.$el;
+
+
+
+
+        // this.model is missing!, 
+                // this.model is missing!, 
+                        // this.model is missing!, 
+                                // this.model is missing!, 
+                                        // this.model is missing!, 
+                                                // this.model is missing!, 
+                                                        // this.model is missing!, 
+                                                                // this.model is missing!, 
+                                                                        // this.model is missing!, 
+                                                                                // this.model is missing!, 
+                                                                                        // this.model is missing!, 
+                                                                                                // this.model is missing!, 
+                                                                                                        // this.model is missing!, 
+                                                                                                                // this.model is missing!, 
+                                                                                                                        // this.model is missing!, 
+                                                                                                                                // this.model is missing!, 
+                                                                                                                                        // this.model is missing!, 
+                                                                                                                                                // this.model is missing!, 
+                                                                                                                                                        // this.model is missing!, 
+                                                                                                                                                                // this.model is missing!, 
+                                                                                                                                                                        // this.model is missing!, 
+
+
+
+
+    <!--
+
+
+        //MAE!! EVITE HACER MIERDAS CON MODELS EN FUN.ROUTER
+
+     -->
+
+
+
+
     },
     /*
     * Render the cubes view

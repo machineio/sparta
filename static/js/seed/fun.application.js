@@ -25,8 +25,6 @@ var MyView = Marionette.View.extend({
 });
 */
 
-console.log('lol')
-
 app.on("start", function(options){
 	fun.instances.router = new fun.Router();
  	if (Backbone.history){
