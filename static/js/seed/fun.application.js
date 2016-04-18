@@ -20,8 +20,8 @@ app.on("start", function(options){
 });
 
 app.addRegions({
-  contactForm: 'm-contact-form',
-  contactList: 'm-contact-list'
+  contactForm: '#m-contact-form',
+  contactList: '#m-contact-list'
 })
 
 
