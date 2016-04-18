@@ -18,6 +18,7 @@ app.addRegions({
 })
 
 
+
 app.on("start", function(options){
 	fun.instances.router = new fun.Router();
  	if (Backbone.history){
@@ -25,6 +26,10 @@ app.on("start", function(options){
   	}
 
   	app.contacts = new fun.models.Contacts();
+
+  	app.contacts.on("add", function(ship) {
+	  alert("Ahoy " + ship.get("first_name") + "!");
+	});
 
   	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
 	app.contactList.show(new fun.views.contactsView());
