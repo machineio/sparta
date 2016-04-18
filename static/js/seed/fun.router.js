@@ -158,7 +158,7 @@ fun.Router = Marionette.AppRouter.extend({
 
         // contactItem
         fun.instances.contactItem = new fun.views.contactItem({
-            el:"#fun-contactItem"
+            el:"#fun-contact-item"
         });
 
         // recordings
