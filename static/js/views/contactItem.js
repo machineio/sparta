@@ -48,7 +48,11 @@ fun.forms.contactItem = Marionette.ItemView.extend({
     events: {
         'click .create-contact-button': 'createNewContact',
     },
-    
+
+    ui: {
+
+    },
+
     /*
     * Some marionette magic
     */
