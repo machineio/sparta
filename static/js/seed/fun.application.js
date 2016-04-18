@@ -24,4 +24,8 @@ app.addRegions({
   contactList: 'm-contact-list'
 })
 
+
+app.contactForm.show(new fun.forms.contactItem({collection:fun.models.Contacts}));
+app.contactList.show(new fun.views.contactsView());
+
 app.start();
