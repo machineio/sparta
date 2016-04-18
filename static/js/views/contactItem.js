@@ -1,12 +1,4 @@
 fun.views.contactItem = Marionette.ItemView.extend({
-
-    /*
-    * Init function
-    */
-    initialize: function(options) {
-        this.model = new fun.models.Contact();
-    },
-
     /*
     * Some marionette magic
     */
