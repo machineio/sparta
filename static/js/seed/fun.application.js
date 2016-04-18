@@ -26,6 +26,7 @@ app.on("start", function(options){
   	}
 
   	app.contacts = new fun.models.Contacts();
+  	app.contacts.fetch();
 
   	app.contacts.on("add", function(ship) {
 	  alert("Ahoy " + ship.get("first_name") + "!");
