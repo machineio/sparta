@@ -28,12 +28,9 @@ app.on("start", function(options){
   	app.contacts = new fun.models.Contacts();
   	app.contacts.fetch();
 
-  	app.contacts.on("add", function(ship) {
-	  alert("Ahoy " + ship.get("first_name") + "!");
-	});
-
-  	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
+  	
 	app.contactList.show(new fun.views.contactsView({ collection: app.contacts }));
+	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
 });
 console.log('tu alma uli');
 
