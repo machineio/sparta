@@ -1104,13 +1104,17 @@ fun.views.profile = Backbone.View.extend({
             id;
 
         options = {
-            unique: true
+            data: {
+                unique: true
+            }
         };
 
         id = _id;
         // id = _id.substring(1);
         console.log("DROPDOWN ID",id);
-        options[id] = true;
+        options.data[id] = true;
+
+        options.data = $.param(options.data);
 
 
         console.log('DROPDOWN OPTIONS',options);
