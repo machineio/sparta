@@ -36,8 +36,7 @@ fun.views.contactsView = Marionette.CollectionView.extend({
     * trying to make sense of marionette!
     */
     childView: fun.views.contactItem,
-    emptyView: fun.views.noContact,
-    collection: fun.models.Contacts
+    emptyView: fun.views.noContact
 });
 
 
