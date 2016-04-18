@@ -5,9 +5,6 @@ fun.views.contactItem = Marionette.ItemView.extend({
     * Init function
     */
     initialize: function(options) {
-
-        console.log(options);
-
         this.model = new fun.models.Contact();
     },
 
@@ -34,7 +31,20 @@ fun.views.contactItem = Marionette.ItemView.extend({
     }
 });
 
+fun.views.noContact = Marionette.ItemView.extend({
+    /*
+    * Some marionette magic
+    */
+    template: function() {
+        return _.template(fun.utils.getTemplate(fun.conf.templates.noContact));
+    },
+})
+
 
 fun.views.contactsView = Marionette.CollectionView.extend({
-  childView: fun.views.contactItem
+    /*
+    * trying to make sense of marionette!
+    */
+    childView: fun.views.contactItem,
+    emptyView: fun.views.noContact
 });
