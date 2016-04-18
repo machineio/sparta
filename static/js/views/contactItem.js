@@ -50,7 +50,10 @@ fun.forms.contactItem = Marionette.ItemView.extend({
     },
 
     ui: {
-
+        first_name: '#contact_first_name',
+        last_name: '#contact_last_name',
+        phone: '#contact_phone_number',
+        email: '#contact_email'
     },
 
     /*
