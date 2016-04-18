@@ -354,6 +354,7 @@ fun.conf.templates = {
     memberRow: fun.utils.format('%s/memberRow.html', fun.conf.html),
     teams: fun.utils.format('%s/teams.html', fun.conf.html),
     teamRow: fun.utils.format('%s/teamRow.html', fun.conf.html),
+    contactItem: fun.utils.format('%s/contactItem.html', fun.conf.html),
     contacts: fun.utils.format('%s/contacts.html', fun.conf.html),
     allContacts: fun.utils.format('%s/allContacts.html', fun.conf.html),
     directoryList: fun.utils.format('%s/directoryList.html', fun.conf.html),

@@ -155,6 +155,12 @@ fun.Router = Marionette.AppRouter.extend({
         fun.instances.contacts = new fun.views.contacts({
             el:"#fun-contacts"
         });
+
+        // contactItem
+        fun.instances.contactItem = new fun.views.contactItem({
+            el:"#fun-contactItem"
+        });
+
         // recordings
         fun.instances.recordings = new fun.views.recordings({
             el:"#fun-recordings"
