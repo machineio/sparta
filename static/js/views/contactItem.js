@@ -71,13 +71,15 @@ fun.forms.contactItem = Marionette.ItemView.extend({
     */
     createNewContact: function(event) {
         console.log('create new contact');
-        this.collection.add(
-            {
-                first_name:this.ui.first_name.val(),
-                last_name:this.ui.last_name.val(),
-                phone:this.ui.phone.val(),
-                email:this.ui.email.val()
-            }
-        )
+        this.collection.add({
+            first_name:this.ui.first_name.val(),
+            last_name:this.ui.last_name.val(),
+            phone:this.ui.phone.val(),
+            email:this.ui.email.val()
+        });
+        this.ui.first_name.val("");
+        this.ui.last_name.val("");
+        this.ui.phone.val("");
+        this.ui.email.val("");
     }
 })
