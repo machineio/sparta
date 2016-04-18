@@ -1345,8 +1345,8 @@ fun.Router = Marionette.AppRouter.extend({
         fun.instances.navbar.renderDropdown();
         fun.instances.subheader.render(profile);
         fun.instances.subheader.renderHeadNavProfile();
-        console.log('warrior 1');
         fun.instances.contactItem.render();
+        fun.instances.contactForm.render();
         fun.instances.profile.render();
         fun.instances.footer.render();
     },

@@ -1,4 +1,3 @@
-
 fun.views.contactItem = Marionette.ItemView.extend({
 
     /*
@@ -8,14 +7,6 @@ fun.views.contactItem = Marionette.ItemView.extend({
         this.model = new fun.models.Contact();
     },
 
-
-    /*
-    * Bind event functions to the different HTML elements
-    */
-    events: {
-        'click .test-btn': 'testEvent',
-    },
-    
     /*
     * Some marionette magic
     */
@@ -26,10 +17,9 @@ fun.views.contactItem = Marionette.ItemView.extend({
         });
     },
 
-    testEvent: function(event){
-        console.log('test event');
-    }
+    
 });
+
 
 fun.views.noContact = Marionette.ItemView.extend({
     /*
@@ -46,5 +36,33 @@ fun.views.contactsView = Marionette.CollectionView.extend({
     * trying to make sense of marionette!
     */
     childView: fun.views.contactItem,
-    emptyView: fun.views.noContact
+    emptyView: fun.views.noContact,
+    collection: fun.models.Contacts
 });
+
+
+fun.forms.contactItem = Marionette.ItemView.extend({
+    /*
+    * Bind event functions to the different HTML elements
+    */
+    events: {
+        'click .create-contact-button': 'createNewContact',
+    },
+    
+    /*
+    * Some marionette magic
+    */
+    template: function(serialized_model) {
+        var name = serialized_model.name;
+        return _.template(fun.utils.getTemplate(fun.conf.templates.contactForm))({
+            first_name : name,
+        });
+    },
+
+    /*
+    * Create new contact
+    */
+    createNewContact: function(event) {
+        console.log('create new contact');
+    }
+})
