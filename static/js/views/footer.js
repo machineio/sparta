@@ -42,9 +42,7 @@ fun.views.footer = Backbone.View.extend({
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({data: $.param({state:true, unique:true})});
 
-        console.log('hell yeah??');
-
-        console.log(list_of_states);
+        console.log(list_of_states.attributes.results);
     },
 
     getDropdownInfo: function(_id){
