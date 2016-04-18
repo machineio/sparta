@@ -12,7 +12,6 @@ var app = Marionette.Application.extend({
 // such an option.
 app = new app(fun);
 
-
 app.addRegions({
   contactForm: '#m-contact-form',
   contactList: '#m-contact-list'
@@ -24,9 +23,12 @@ app.on("start", function(options){
  	if (Backbone.history){
     	Backbone.history.start();
   	}
-  	app.contactForm.show(new fun.forms.contactItem());
+
+  	app.contacts = new fun.models.Contacts();
+
+  	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
 	app.contactList.show(new fun.views.contactsView());
 });
-console.log('que dice');
+console.log('donde dice');
 
 app.start();
