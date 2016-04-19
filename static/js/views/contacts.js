@@ -1757,7 +1757,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
     },
 
     changeNumberChildren: function(event){
-        console.log('KIDS!!',$('#contact-info-number-of-children').val(),typeof $('#contact-info-number-of-children').val());
+        console.log('This guys have KIDS!!',$('#contact-info-number-of-children').val(),typeof $('#contact-info-number-of-children').val());
         switch($('#contact-info-number-of-children').val()){
 
             case '0':
@@ -1836,6 +1836,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             $('#paymentInfoTab').addClass('hide');
         }
     },
+
     showSendSMSButton: function(event){
         if($('#marketing-compliant').val()==="true"){
             $('#sendSMSButtonWrapper').removeClass('hide');
@@ -1845,6 +1846,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             $('#sendSMSButtonWrapper').addClass('hide');
         }
     },
+
     showMarketingTab: function(event){
         if($('#contact-info-marketing-checkbox').val()==="true"){
             $('#marketingInfoTab').removeClass('hide');
