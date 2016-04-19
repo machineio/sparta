@@ -5,6 +5,7 @@ var fun = {
     account: {}, 
     utils: {},
     views: {},
+    layouts: {},
     forms: {},
     instances: {},
     containers: {},

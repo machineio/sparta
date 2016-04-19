@@ -1,3 +1,18 @@
+
+
+
+var AppLayoutView = Marionette.LayoutView.extend({
+  template: "#layout-view-template",
+
+  regions: {
+    menu: "#menu",
+    content: "#content"
+  }
+});
+
+
+
+
 fun.views.contactItem = Marionette.ItemView.extend({
     /*
     * Some marionette magic
