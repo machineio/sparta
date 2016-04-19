@@ -1,10 +1,12 @@
 // trying to put some new blood and magic to our nonsense combo!
-var app = Marionette.Application.extend({
+var app,
+	RootView;
+
+app = Marionette.Application.extend({
   initialize: function(options) {
     console.log('My containers:', options.containers);
   }
 });
-
 
 // Although applications will not do anything
 // with a `container` option out-of-the-box, you
@@ -12,12 +14,19 @@ var app = Marionette.Application.extend({
 // such an option.
 app = new app(fun);
 
+RootView = Marionette.LayoutView.extend({
+  el: 'body'
+});
+
+
+app.rootView = new RootView();
+/*
+
 app.addRegions({
   contactForm: '#m-contact-form',
   contactList: '#m-contact-list'
 })
-
-
+*/
 
 app.on("start", function(options){
 	fun.instances.router = new fun.Router();
@@ -26,12 +35,14 @@ app.on("start", function(options){
   	}
 
   	app.contacts = new fun.models.Contacts();
-  	app.contacts.fetch();
+  	app.contacts.fetch()
 
-  	
-	app.contactList.show(new fun.views.contactsView({ collection: app.contacts }));
-	app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
+  	app.contacts.on("add", function(ship) {
+	  alert("Ahoy " + ship.get("first_name") + "!");
+	});
+
+  	/*app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
+	app.contactList.show(new fun.views.contactsView({ collection: app.contacts }));*/
 });
-console.log('tu alma uli');
 
 app.start();
