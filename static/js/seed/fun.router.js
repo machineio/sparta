@@ -630,7 +630,7 @@ fun.Router = Marionette.AppRouter.extend({
 
 
             // something new that looks exacly the same.
-            fun.layouts.contacts.render();
+            //fun.layouts.contacts.render();
 
             for (resource in resources){
                 resources[resource].fetch({

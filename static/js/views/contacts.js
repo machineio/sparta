@@ -1,16 +1,5 @@
 fun.layouts.contacts = Marionette.LayoutView.extend({
 
-    initialize: function(options){
-        fun.containers.contacts = this.$el;
-    },
-
-    template: function(serialized_model) {
-        var name = serialized_model.name;
-        return _.template(fun.utils.getTemplate(fun.conf.templates.contacts))({
-            first_name : name,
-        });
-    },
-
     ui: {
         first_name: '#contact_first_name',
         last_name: '#contact_last_name',
@@ -48,7 +37,14 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
         'change #marketing-compliant': 'showSendSMSButton',
     },
 
+    initialize: function(options){
+        fun.containers.contacts = this.$el;
+    },
 
+    template: function() {
+        'use strict';
+        return _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
+    },
 
     /*
     * Update Contacts
