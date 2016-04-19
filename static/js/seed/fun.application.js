@@ -38,7 +38,7 @@ app.on("start", function(options){
   	app.contacts.fetch()
 
   	app.contacts.on("add", function(ship) {
-	  alert("Ahoy " + ship.get("first_name") + "!");
+	  console.log("Ahoy " + ship.get("first_name") + "!");
 	});
 
   	/*app.contactForm.show(new fun.forms.contactItem({ collection: app.contacts }));
