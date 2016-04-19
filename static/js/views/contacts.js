@@ -1,3 +1,12 @@
+fun.layouts.contacts = Marionette.LayoutView.extend({
+  template: "#layout-view-template",
+
+  regions: {
+    menu: "#menu",
+    content: "#content"
+  }
+});
+
 fun.views.contacts = Backbone.View.extend({
 
     /*
