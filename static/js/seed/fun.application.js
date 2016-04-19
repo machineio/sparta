@@ -1,4 +1,7 @@
 // trying to put some new blood and magic to our nonsense combo!
+
+console.log("I thought what I'd do was, I'd pretend I was one of those deaf-mutes.");
+
 var app,
 	RootView;
 
@@ -9,9 +12,9 @@ app = Marionette.Application.extend({
 });
 
 // Although applications will not do anything
-// with a `container` option out-of-the-box, you
-// could build an Application Class that does use
-// such an option.
+// with a 'container' option out-of-the-box, you
+// could build stuff that does use such option.
+
 app = new app(fun);
 
 RootView = Marionette.LayoutView.extend({
@@ -20,8 +23,8 @@ RootView = Marionette.LayoutView.extend({
 
 
 app.rootView = new RootView();
-/*
 
+/*
 app.addRegions({
   contactForm: '#m-contact-form',
   contactList: '#m-contact-list'
