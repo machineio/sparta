@@ -1,10 +1,11 @@
-
-// nouns and resources!
+/*
+Get your fucking house in order.
+*/
 
 fun.Router = Marionette.AppRouter.extend({
 
     /*
-     Seed server routes
+     Seed routes
     */
     routes: {
         "": "home",
@@ -626,6 +627,10 @@ fun.Router = Marionette.AppRouter.extend({
             fun.instances.subheader.renderHeadNav();
             // render contacts view
             fun.instances.contacts.render();
+
+
+            // something new that looks exacly the same.
+            fun.layouts.contacts.render();
 
             for (resource in resources){
                 resources[resource].fetch({
