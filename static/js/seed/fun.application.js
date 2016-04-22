@@ -1,5 +1,4 @@
 // trying to put some new blood and magic to our nonsense combo!
-
 console.log("I thought what I'd do was, I'd pretend I was one of those deaf-mutes.");
 
 var app,
@@ -20,7 +19,6 @@ app = new app(fun);
 RootView = Marionette.LayoutView.extend({
   el: 'body'
 });
-
 
 app.rootView = new RootView();
 
