@@ -10,6 +10,7 @@ fun.strings = {
     setCallback: "Set callback",
     exportWAV: "Export WAV",
     login: "Login",
+    saveAndContinue: "Save and Continue",
     lunch: "Lunch",
     active: "Active",
     random: "Random",
