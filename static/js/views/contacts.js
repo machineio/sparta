@@ -46,41 +46,6 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
         return _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
     },
 
-    /*
-    * Update Contacts
-    */
-    updateContacts: function(){
-        'use strict';
-        var account = this.account, resource, resources, vonCount = 0, onSuccess;
-
-        resources = {
-            contacts: new fun.models.Contacts(),
-            directories: new fun.models.Directories()
-        };
-
-        onSuccess = function(){
-            if(++vonCount === _.keys(resources).length){
-                console.log('get resources success!');
-
-                fun.instances.contacts.renderContactLists(
-                    resources.contacts
-                );
-
-                fun.instances.contacts.renderDirectoryLists(
-                    resources.directories
-                );
-            }
-        };
-
-        for (resource in resources){
-            resources[resource].fetch({
-                success: onSuccess,
-                error: function() {
-                    console.log('fuck error!');
-                }
-            });
-        }
-    },
 
     /*
     * Render contact lists
@@ -125,6 +90,43 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             });
         } else {
             this.noContacts();
+        }
+    },
+
+    
+    /*
+    * Update Contacts
+    */
+    updateContacts: function(){
+        'use strict';
+        var account = this.account, resource, resources, vonCount = 0, onSuccess;
+
+        resources = {
+            contacts: new fun.models.Contacts(),
+            directories: new fun.models.Directories()
+        };
+
+        onSuccess = function(){
+            if(++vonCount === _.keys(resources).length){
+                console.log('get resources success!');
+
+                fun.instances.contacts.renderContactLists(
+                    resources.contacts
+                );
+
+                fun.instances.contacts.renderDirectoryLists(
+                    resources.directories
+                );
+            }
+        };
+
+        for (resource in resources){
+            resources[resource].fetch({
+                success: onSuccess,
+                error: function() {
+                    console.log('fuck error!');
+                }
+            });
         }
     },
 
