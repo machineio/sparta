@@ -605,7 +605,7 @@ fun.Router = Marionette.AppRouter.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.layouts.contacts.renderContactLists(
+                fun.instances.contacts.renderContactLists(
                     resources.contacts
                 );
 
