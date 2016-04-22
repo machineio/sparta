@@ -605,13 +605,13 @@ fun.Router = Marionette.AppRouter.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.contacts.renderContactLists(
+                fun.layouts.contacts.renderContactLists(
                     resources.contacts
                 );
 
-                fun.instances.contacts.renderDirectoryLists(
+                /*fun.instances.contacts.renderDirectoryLists(
                     resources.directories
-                );
+                );*/
             }
         };
 
