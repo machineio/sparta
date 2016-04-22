@@ -2449,6 +2449,11 @@ fun.views.profile = Backbone.View.extend({
         if (length > 0) {
             rows = this.contactList.html('');
             _.each(this.profileContacts.toJSON(), function(value){
+
+                console.log("its the end of the line");
+                console.log(value);
+
+
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.profileContactItem)
                 )(value);
