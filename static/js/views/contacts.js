@@ -93,7 +93,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
         }
     },
 
-    
+
     /*
     * Update Contacts
     */
@@ -110,7 +110,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.instances.contacts.renderContactLists(
+                fun.layouts.contacts.renderContactLists(
                     resources.contacts
                 );
 
