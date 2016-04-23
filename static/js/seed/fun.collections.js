@@ -820,6 +820,27 @@ fun.models.TasksNow = Backbone.Collection.extend({
 });
 
 
+fun.models.Tasks = Backbone.Collection.extend({
+
+    model: fun.models.Task,
+
+    urlRoot: fun.conf.urls.tasks,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response){
+        return response.results;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+});
+
+
 fun.models.TasksLater = Backbone.Collection.extend({
 
     model: fun.models.Task,
@@ -1043,4 +1064,60 @@ fun.models.Memberships = Backbone.Collection.extend({
     parse: function(response){
         return response.results;
     }
+});
+
+
+fun.models.TasksContainer = Backbone.Model.extend({
+    defaults: {
+        results: new fun.models.Tasks(),
+    },
+
+    urlRoot: fun.conf.urls.tasks,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response) {
+        // update the inner collection
+        this.get("results").reset(response.results);
+
+        // this mightn't be necessary
+        //delete response.dataPoints;
+        return response;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+    
+});
+
+
+fun.models.ContactsContainer = Backbone.Model.extend({
+    defaults: {
+        results: new fun.models.Contacts(),
+    },
+
+    urlRoot: fun.conf.urls.contacts,
+
+    url: function() {
+        return this.urlRoot;
+    },
+
+    parse: function(response) {
+        // update the inner collection
+        this.get("results").reset(response.results);
+
+        // this mightn't be necessary
+        //delete response.dataPoints;
+        return response;
+    },
+
+    sync: function(method, model, options) {
+        options.contentType = 'application/json';
+        return Backbone.sync(method, model, options);
+    }
+    
 });

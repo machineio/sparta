@@ -596,34 +596,6 @@ fun.models.Contact = Backbone.Model.extend({
 });
 
 
-fun.models.ContactsContainer = Backbone.Model.extend({
-    defaults: {
-        results: new fun.models.Contacts(),
-    },
-
-    urlRoot: fun.conf.urls.contacts,
-
-    url: function() {
-        return this.urlRoot;
-    },
-
-    parse: function(response) {
-        // update the inner collection
-        this.get("results").reset(response.results);
-
-        // this mightn't be necessary
-        //delete response.dataPoints;
-        return response;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    }
-    
-});
-
-
 fun.models.Directory = Backbone.Model.extend({
 
     idAttribute: 'uuid',
@@ -815,32 +787,6 @@ fun.models.Task = Backbone.Model.extend({
 });
 
 
-fun.models.TasksContainer = Backbone.Model.extend({
-    defaults: {
-        results: new fun.models.Tasks(),
-    },
-
-    urlRoot: fun.conf.urls.tasks,
-
-    url: function() {
-        return this.urlRoot;
-    },
-
-    parse: function(response) {
-        // update the inner collection
-        this.get("results").reset(response.results);
-
-        // this mightn't be necessary
-        //delete response.dataPoints;
-        return response;
-    },
-
-    sync: function(method, model, options) {
-        options.contentType = 'application/json';
-        return Backbone.sync(method, model, options);
-    }
-    
-});
 
 
 fun.models.Company = Backbone.Model.extend({
