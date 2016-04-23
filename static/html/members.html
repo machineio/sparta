@@ -108,23 +108,23 @@
                 <h4 class="modal-title" id="myModalLabel"><%= translate("addMembersTo") %> <%= org %></h4>
             </div>
             <div class="modal-body">
-
-
-
-                <form id="add-member-form" class="form-profile" novalidate="novalidate">
-                                
-                    <fieldset>
-                        <label for="searchUserAddMember"><%= translate("searchUserAddMember") %></label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-user fa-fw"></i></span>
-                            <input type="text" class="form-control-cm" name="add_username" id="add_username">
-                            <span class="input-group-btn">
-                                <button id="new-member-btn" class="btn btn-default" type="button"><%= translate("sendInvite") %></button>
-                            </span>
-                        </div>
-                    </fieldset>
+                <form id="signup-form" class="form-signup" novalidate="novalidate">
+                    <h3><%= translate("createYourUserAccount") %></h3>
+                    <div class="form-group">
+                        <input type="text" id="signup_username" name="signup_username" class="form-control-cm" placeholder="<%= translate("yourUsername") %>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="signup_email" name="signup_email" class="form-control-cm" placeholder="<%= translate("yourEmail") %>">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control-cm" id="signup_password" name="signup_password" placeholder="<%= translate("password") %>"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control-cm" id="signup_confirm_password" name="signup_confirm_password" placeholder="<%= translate("confirmPassword") %>"/>
+                    </div>
+                    <button id="signup-btn" class="btn btn-lg btn-primary btn-block" type="submit"><%= translate("signUp") %></button>
+                    <p>By clicking "Sign up", you agree to our terms of service and privacy policy. We will send you account related emails occasionally.</p>
                 </form>
-                
             </div>
             <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><%= translate("cancel") %></button>
