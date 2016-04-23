@@ -188,10 +188,10 @@ fun.views.members = Backbone.View.extend({
             validForm;
         event.preventDefault();
         signupError = this.signupError;
-        account = this.account.val();
-        password = this.password.val();
-        confirmPassword = this.confirmPassword.val();
-        email = this.email.val();
+        account = this.$('#signup_username').val();
+        password = this.$('#signup_password').val();
+        confirmPassword = this.$('#signup_confirm_password').val();
+        email = this.$('#signup_email').val();
         // check if this view stuff is really needed
         view = this;
         // form validation rules
@@ -216,7 +216,7 @@ fun.views.members = Backbone.View.extend({
                     
                 }
             }
-        }
+        };
         validationRules = $.extend (rules, fun.utils.validationRules);
 
         $('#signup-form').validate(validationRules);
