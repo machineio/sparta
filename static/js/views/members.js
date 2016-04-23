@@ -187,7 +187,7 @@ fun.views.members = Backbone.View.extend({
             callbacks,
             validForm;
         event.preventDefault();
-        signupError = this.signupError;
+        signupError = this.$('#signupError');
         account = this.$('#signup_username').val();
         password = this.$('#signup_password').val();
         confirmPassword = this.$('#signup_confirm_password').val();
@@ -213,14 +213,13 @@ fun.views.members = Backbone.View.extend({
                     required: true,
                     minlength: 8,
                     equalTo: '#signup_password'
-                    
                 }
             }
         };
         validationRules = $.extend (rules, fun.utils.validationRules);
 
         $('#signup-form').validate(validationRules);
-        
+
         // new user account callbacks
         callbacks = {
             success: function(){
@@ -273,10 +272,9 @@ fun.views.members = Backbone.View.extend({
                 else {
                     signupError.find('p').html('what daa!?');
                 }
-                
             }
         };
-        
+
         // check for a valid form and create the new user account
         validForm = $('#signup-form').valid();
         if (validForm){
