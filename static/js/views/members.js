@@ -233,6 +233,7 @@ fun.views.members = Backbone.View.extend({
                 setTimeout(function(){
                     signupError.removeClass('show').addClass('hide');
                     signupError.find('p').html('');
+                    console.log('DONE!!!!!!');
                 },3000);
             },
 
