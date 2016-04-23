@@ -249,6 +249,7 @@ fun.views.members = Backbone.View.extend({
                                         localStorage.setItem("username", account);
                                     }
                                     fun.utils.redirect(fun.conf.hash.login);
+                                    $('#addMemberModal').modal('hide');
                                     break;
                                 default:
                                     console.log('the monkey is down');
