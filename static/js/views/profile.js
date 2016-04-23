@@ -1787,83 +1787,83 @@ fun.views.profile = Backbone.View.extend({
                 contact_description = response.get('description');
                 contact_history = response.get('history');
                 contact_comment = response.get('comment');
-                contact_info_first_name.val(response.get('first_name') || '');
-                contact_info_last_name.val(response.get('last_name') || '');
-                contact_info_phone_number.val(response.get('phone_number') || '');
-                contact_info_cellphone.val(response.get('mobile_number') || '');
-                contact_info_email.val(response.get('email') || '');
-                contact_info_other_phone.val(response.get('other_phone') || '');
-                contact_info_date_of_birth.val(renderDate(response.get('dob')) || '');
+                contact_info_first_name.val(response.get('contact_info_first_name') || '');
+                contact_info_last_name.val(response.get('contact_info_last_name') || '');
+                contact_info_phone_number.val(response.get('contact_info_phone_number') || '');
+                contact_info_cellphone.val(response.get('contact_info_mobile_number') || '');
+                contact_info_email.val(response.get('contact_info_email') || '');
+                contact_info_other_phone.val(response.get('contact_info_other_phone') || '');
+                contact_info_date_of_birth.val(renderDate(response.get('contact_info_dob')) || '');
 
-                contact_info_gender.val(response.get('gender') || '');
-                $(contact_info_gender.selector + " option[value='" + response.get('gender') + "']").attr("selected", "selected");
+                contact_info_gender.val(response.get('contact_info_gender') || '');
+                $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
 
-                contact_info_marital_status.value = response.get('marital_status') || '';
-                $(contact_info_marital_status.selector + " option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
+                contact_info_marital_status.value = response.get('contact_info_marital_status') || '';
+                $(contact_info_marital_status.selector + " option[value='" + response.get('contact_info_marital_status') + "']").attr("selected", "selected");
 
-                contact_info_number_of_children.val(response.get('number_of_children') || 0);
-                $(contact_info_number_of_children.selector + " option[value='" + response.get('number_of_children') + "']").attr("selected", "selected");
+                contact_info_number_of_children.val(response.get('contact_info_number_of_children') || 0);
+                $(contact_info_number_of_children.selector + " option[value='" + response.get('contact_info_number_of_children') + "']").attr("selected", "selected");
 
-                contact_info_social_security_number.val(response.get('social_security_number') || '');
-                contact_info_property_address.val(response.get('street_address'));
+                contact_info_social_security_number.val(response.get('contact_info_social_security_number') || '');
+                contact_info_property_address.val(response.get('contact_info_street_address'));
 
-                contact_info_state.val(response.get('state') || '');
-                $(contact_info_state.selector + " option[value='" + response.get('state') + "']").attr("selected", "selected");
+                contact_info_state.val(response.get('contact_info_state') || '');
+                $(contact_info_state.selector + " option[value='" + response.get('contact_info_state') + "']").attr("selected", "selected");
 
-                contact_info_city.val(response.get('city') || '');
-                contact_info_zip_code.val(response.get('zip_code') || '');
-                contact_info_country.val(response.get('country') || '');
+                contact_info_city.val(response.get('contact_info_city') || '');
+                contact_info_zip_code.val(response.get('contact_info_zip_code') || '');
+                contact_info_country.val(response.get('contact_info_country') || '');
 
-                contact_info_mailing_address_different.val(response.get('mailing_address_different') || '');
-                $(contact_info_mailing_address_different.selector + " option[value='" + response.get('mailing_address_different') + "']").attr("selected", "selected");
+                contact_info_mailing_address_different.val(response.get('contact_info_mailing_address_different') || '');
+                $(contact_info_mailing_address_different.selector + " option[value='" + response.get('contact_info_mailing_address_different') + "']").attr("selected", "selected");
 
-                contact_info_mailing_address.val(response.get('mailing_address') || '');
-                contact_info_mailing_city.val(response.get('mailing_city') || '');
-                contact_info_mailing_state.val(response.get('mailing_state') || '');
-                contact_info_mailing_zipcode.val(response.get('mailing_zipcode') || '');
-                contact_info_marketplace_email.val(response.get('marketplace_email') || '');
+                contact_info_mailing_address.val(response.get('contact_info_mailing_address') || '');
+                contact_info_mailing_city.val(response.get('contact_info_mailing_city') || '');
+                contact_info_mailing_state.val(response.get('contact_info_mailing_state') || '');
+                contact_info_mailing_zipcode.val(response.get('contact_info_mailing_zipcode') || '');
+                contact_info_marketplace_email.val(response.get('contact_info_marketplace_email') || '');
 
-                contact_info_language_preference.val(response.get('language_preference') || '');
-                $(contact_info_language_preference.selector + " option[value='" + response.get('language_preference') + "']").attr("selected", "selected");
+                contact_info_language_preference.val(response.get('contact_info_language_preference') || '');
+                $(contact_info_language_preference.selector + " option[value='" + response.get('contact_info_language_preference') + "']").attr("selected", "selected");
 
-                contact_info_writing_agent.val(response.get('writing_agent') || '');
-                $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
+                contact_info_writing_agent.val(response.get('contact_info_writing_agent') || '');
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_writing_agent') + "']").attr("selected", "selected");
 
-                contact_info_lead_type.val(response.get('lead_type') || 'health');
-                $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
-                // $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
+                contact_info_lead_type.val(response.get('contact_info_lead_type') || 'health');
+                // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_lead_type') + "']").attr("selected", "selected");
 
-                contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
+                contact_info_lead_source.val(response.get('contact_info_lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
                 // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
 
-                contact_info_partner.val(response.get('partner') || '');
-                contact_info_last_modified_by.val(response.get('last_modified_by') || '');
+                contact_info_partner.val(response.get('contact_info_partner') || '');
+                contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
 
-                contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
+                contact_info_health_insurance_checkbox.val(response.get('contact_info_health_insurance_status') || 'true');
                 // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('contact_info_health_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
-                $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
+                contact_info_home_insurance_checkbox.val(response.get('contact_info_home_insurance_status') || '');
+                $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('contact_info_home_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_auto_insurance_checkbox.val(response.get('auto_insurance_status') || '');
-                $(contact_info_auto_insurance_checkbox.selector + " option[value='" + response.get('auto_insurance_status') + "']").attr("selected", "selected");
+                contact_info_auto_insurance_checkbox.val(response.get('contact_info_auto_insurance_status') || '');
+                $(contact_info_auto_insurance_checkbox.selector + " option[value='" + response.get('contact_info_auto_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_life_insurance_checkbox.val(response.get('life_insurance_status') || '');
-                $(contact_info_life_insurance_checkbox.selector + " option[value='" + response.get('life_insurance_status') + "']").attr("selected", "selected");
+                contact_info_life_insurance_checkbox.val(response.get('contact_info_life_insurance_status') || '');
+                $(contact_info_life_insurance_checkbox.selector + " option[value='" + response.get('contact_info_life_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_ancilliary_insurance_checkbox.val(response.get('ancilliary_insurance_status') || '');
-                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('ancilliary_insurance_status') + "']").attr("selected", "selected");
+                contact_info_ancilliary_insurance_checkbox.val(response.get('contact_info_ancilliary_insurance_status') || '');
+                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('contact_info_ancilliary_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_other_policy_sold.val(response.get('other_policy_sold') || '');
-                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('other_policy_sold') + "']").attr("selected", "selected");
+                contact_info_other_policy_sold.val(response.get('contact_info_other_policy_sold') || '');
+                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('contact_info_other_policy_sold') + "']").attr("selected", "selected");
 
-                contact_info_federal_do_not_call.val(response.get('federal_do_not_call') || '');
-                $(contact_info_federal_do_not_call.selector + " option[value='" + response.get('federal_do_not_call') + "']").attr("selected", "selected");
+                contact_info_federal_do_not_call.val(response.get('contact_info_federal_do_not_call') || '');
+                $(contact_info_federal_do_not_call.selector + " option[value='" + response.get('contact_info_federal_do_not_call') + "']").attr("selected", "selected");
 
-                contact_info_renew_as_is_email_received.val(response.get('renew_as_email_received') || '');
-                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('renew_as_email_received') + "']").attr("selected", "selected");
+                contact_info_renew_as_is_email_received.val(response.get('contact_info_renew_as_email_received') || '');
+                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('contact_info_renew_as_email_received') + "']").attr("selected", "selected");
 
 
                 // SPOUSE INFO
