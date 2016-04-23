@@ -248,7 +248,6 @@ fun.views.members = Backbone.View.extend({
                                         // Store
                                         localStorage.setItem("username", account);
                                     }
-                                    fun.utils.redirect(fun.conf.hash.login);
                                     $('#addMemberModal').modal('hide');
                                     break;
                                 default:
