@@ -228,35 +228,14 @@ fun.views.members = Backbone.View.extend({
                 view.$('#signup_email').val('');
                 view.$('#signup_password').val('');
                 view.$('#signup_confirm_password').val('');
-                signupError.hide();
-                // login the created user
-                fun.utils.login(account, password,
-                    {
-                        success : function(xhr, status){
-                            fun.utils.redirect(fun.conf.hash.profile);
-                        },
-                        error : function(xhr, status, error){
-                            switch(xhr.status) {
-                                case 403:
-                                    var message = fun.utils.translate("usernameOrPasswordError");
-                                    signupError.find('p').html(message);
-                                    signupError.removeClass("hide").addClass("show");
-                                    break;
-                                case 200:
-                                    // Check browser support
-                                    if (typeof(Storage) != "undefined") {
-                                        // Store
-                                        localStorage.setItem("username", account);
-                                    }
-                                    $('#addMemberModal').modal('hide');
-                                    break;
-                                default:
-                                    console.log('the monkey is down');
-                                    break;
-                            }
-                        }
-                    }
-                );
+                signupError.removeClass('hide').addClass('show');
+                signupError.find('p').html('Employee created!');
+                setTimeout(function(){
+                    signupError.removeClass('show').addClass('hide');
+                    signupError.find('p').html('');
+                },3);
+
+                $('#addMemberModal').modal('hide');
             },
 
             error: function(model, error){
