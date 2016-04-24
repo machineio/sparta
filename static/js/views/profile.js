@@ -2304,7 +2304,7 @@ fun.views.profile = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
-        fun.messages.on('contacts:updateForms',function(){
+        fun.messages.on('contacts:updateForms',function(this){
             this.showMailingAddressDifferent();
             this.changeMaritalStatus();
             this.homeInsuranceTab();
@@ -2996,7 +2996,7 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
 
-                fun.messages.trigger('contacts:updateForms');
+                fun.messages.trigger('contacts:updateForms',this);
                 console.log('I SEND THE MESSAGE!!!');
                 showMailingAddressDifferent_fx();
                 changeMaritalStatus_fx();
