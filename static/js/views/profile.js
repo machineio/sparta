@@ -2644,6 +2644,7 @@ fun.views.profile = Backbone.View.extend({
 
 
                 fun.messages.trigger('HEYBRO');
+                console.log('I SEND THE MESSAGE!!!');
                 showMailingAddressDifferent_fx();
                 changeMaritalStatus_fx();
                 homeInsuranceTab_fx();
