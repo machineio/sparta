@@ -2304,20 +2304,20 @@ fun.views.profile = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
-        fun.messages.on('contacts:updateForms',function(){
-            this.showMailingAddressDifferent();
-            this.changeMaritalStatus();
-            this.homeInsuranceTab();
-            this.healthInsuranceTab();
-            this.autoInsuranceTab();
-            this.lifeInsuranceTab();
-            this.ancilliaryInsuranceTab();
-            this.showMarketingTab();
-            this.changeNumberChildren();
-            this.showPaymentTab();
-            this.showPaymentTab();
-            this.showSendSMSButton();
-        });
+        // fun.messages.on('contacts:updateForms',function(){
+        //     this.showMailingAddressDifferent();
+        //     this.changeMaritalStatus();
+        //     this.homeInsuranceTab();
+        //     this.healthInsuranceTab();
+        //     this.autoInsuranceTab();
+        //     this.lifeInsuranceTab();
+        //     this.ancilliaryInsuranceTab();
+        //     this.showMarketingTab();
+        //     this.changeNumberChildren();
+        //     this.showPaymentTab();
+        //     this.showPaymentTab();
+        //     this.showSendSMSButton();
+        // });
 
         contact_info_first_name = this.$("#contact-info-first-name");
         contact_info_last_name = this.$("#contact-info-last-name");
@@ -2996,19 +2996,20 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
 
-                fun.messages.trigger('contacts:updateForms');
+                // fun.messages.trigger('contacts:updateForms');
                 console.log('I SEND THE MESSAGE!!!');
-                // showMailingAddressDifferent_fx();
-                // changeMaritalStatus_fx();
-                // homeInsuranceTab_fx();
-                // healthInsuranceTab_fx();
-                // autoInsuranceTab_fx();
-                // lifeInsuranceTab_fx();
-                // ancilliaryInsuranceTab_fx();
-                // // showMarketingTab_fx();
-                // changeNumberChildren_fx();
-                // showPaymentTab_fx();
-                // // showSendSMSButton_fx();
+                fun.utils.showMailingAddressDifferent();
+                fun.utils.changeMaritalStatus();
+                fun.utils.homeInsuranceTab();
+                fun.utils.healthInsuranceTab();
+                fun.utils.autoInsuranceTab();
+                fun.utils.lifeInsuranceTab();
+                fun.utils.ancilliaryInsuranceTab();
+                fun.utils.showMarketingTab();
+                fun.utils.changeNumberChildren();
+                fun.utils.showPaymentTab();
+                fun.utils.showPaymentTab();
+                fun.utils.showSendSMSButton();
 
                 $('#profileContactModal').modal({
                     'show': true
