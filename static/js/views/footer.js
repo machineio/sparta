@@ -20,15 +20,15 @@ fun.views.footer = Backbone.View.extend({
 
     initialize : function(options) {
         fun.containers.footer = this.$el;
-        fun.omnibus.on("obelix:message", function(){
+        fun.messages.on("obelix:message", function(){
             console.log('lol con uli');
         }, this);
 
-        fun.omnibus.on("toronja:contact", function(){
-            console.log('on footer reacting to fun.omnibus on toronja:contact');                // WTF IS THIS SHIT YOU ??????
+        fun.messages.on("toronja:contact", function(){
+            console.log('on footer reacting to fun.messages on toronja:contact');                // WTF IS THIS SHIT YOU ??????
         }, this);
 
-        fun.omnibus.on("call:contact", function(){
+        fun.messages.on("call:contact", function(){
             this.callActiveContact();
         }, this);
     },

@@ -381,7 +381,7 @@ fun.views.contacts = Backbone.View.extend({
             view.$('#contact_last_name').val('');
             view.$('#new-phone-number').val('');
             view.$('#new-email').val('');
-            fun.omnibus.trigger("add:contact");
+            fun.messages.trigger("add:contact");
         }
     },
 
@@ -393,7 +393,7 @@ fun.views.contacts = Backbone.View.extend({
         event.preventDefault();
 
 
-        //fun.omnibus.trigger("toronja:contact");
+        //fun.messages.trigger("toronja:contact");
 
         this.renderContactModalForm();
 
@@ -2316,7 +2316,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             view.$('#contact_last_name').val('');
             view.$('#new-phone-number').val('');
             view.$('#new-email').val('');
-            fun.omnibus.trigger("add:contact");
+            fun.messages.trigger("add:contact");
         }
     },
 
@@ -2328,7 +2328,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
         event.preventDefault();
 
 
-        //fun.omnibus.trigger("toronja:contact");
+        //fun.messages.trigger("toronja:contact");
 
         this.renderContactModalForm();
 

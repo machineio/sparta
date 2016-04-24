@@ -14,7 +14,7 @@ var fun = {
     conf: {},
     session: {}, //account and context maybe?
     cache: {templates : {}},
-    omnibus: _.extend({}, Backbone.Events)
+    messages: _.extend({}, Backbone.Events)
 };
 
 /*
@@ -34,7 +34,7 @@ fun.utils.updater = {
     processMessage: function(message){
         if (message['message'] !== 'heartbeat'){
             sessionStorage.setItem("obelix", message['message']);
-            fun.omnibus.trigger("obelix:message");
+            fun.messages.trigger("obelix:message");
         }
     }
 };

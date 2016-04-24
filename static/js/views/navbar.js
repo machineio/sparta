@@ -14,11 +14,11 @@ fun.views.navbar = Backbone.View.extend({
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
 
-        fun.omnibus.on("change:context", function(){
+        fun.messages.on("change:context", function(){
             this.renderContext();
         }, this);
 
-        fun.omnibus.on("change:system_admin", function(){
+        fun.messages.on("change:system_admin", function(){
             this.renderContext();
         }, this);
     },
@@ -236,7 +236,7 @@ fun.views.navbar = Backbone.View.extend({
                     // Store
                     sessionStorage.setItem("is_admin", true);
                 }
-                fun.omnibus.trigger("change:system_admin");
+                fun.messages.trigger("change:system_admin");
             }
             // Check browser support
             if (typeof(Storage) != "undefined") {
@@ -245,7 +245,7 @@ fun.views.navbar = Backbone.View.extend({
             }
         });
 
-        fun.omnibus.trigger("change:context");
+        fun.messages.trigger("change:context");
     },
 
     goProfile: function(event){

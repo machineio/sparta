@@ -21,7 +21,7 @@ fun.views.subheader = Backbone.View.extend({
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
 
-        fun.omnibus.on("change:context", function(){
+        fun.messages.on("change:context", function(){
             this.renderHeadNav();
         }, this);
     },
