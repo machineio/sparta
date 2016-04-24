@@ -2617,7 +2617,7 @@ fun.views.profile = Backbone.View.extend({
                 // showMarketingTab_fx();
                 changeNumberChildren_fx();
                 showPaymentTab_fx();
-                showSendSMSButton_fx();
+                // showSendSMSButton_fx();
 
                 $('#profileContactModal').modal({
                     'show': true
