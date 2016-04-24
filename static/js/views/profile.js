@@ -1495,6 +1495,14 @@ fun.views.profile = Backbone.View.extend({
 
         this.renderContactModalForm();
 
+        function renderDate(date){
+            var now = new Date(date);
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+            return today;
+        }
+
         fun.messages.on('contacts:updateForms',function(){
             this.showMailingAddressDifferent();
             this.changeMaritalStatus();
@@ -3038,5 +3046,12 @@ fun.views.profile = Backbone.View.extend({
             $('#marketingInfoTab').removeClass('show');
             $('#marketingInfoTab').addClass('hide');
         }
+    },
+    renderDate: function(date){
+        var now = new Date(date);
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+        return today;
     }
 });
