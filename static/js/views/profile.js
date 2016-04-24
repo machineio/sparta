@@ -1588,6 +1588,12 @@ fun.views.profile = Backbone.View.extend({
                     $('#childrenInfoTab').addClass('show');
                     $('#childrenInfoGroup-1').removeClass('hide');
                     $('#childrenInfoGroup-1').addClass('show');
+                    $('#childrenInfoGroup-2').removeClass('show');
+                    $('#childrenInfoGroup-2').addClass('hide');
+                    $('#childrenInfoGroup-3').removeClass('show');
+                    $('#childrenInfoGroup-3').addClass('hide');
+                    $('#childrenInfoGroup-4').removeClass('show');
+                    $('#childrenInfoGroup-4').addClass('hide');
                     break;
 
                 case '2':
@@ -1597,6 +1603,10 @@ fun.views.profile = Backbone.View.extend({
                     $('#childrenInfoGroup-1').addClass('show');
                     $('#childrenInfoGroup-2').removeClass('hide');
                     $('#childrenInfoGroup-2').addClass('show');
+                    $('#childrenInfoGroup-3').removeClass('show');
+                    $('#childrenInfoGroup-3').addClass('hide');
+                    $('#childrenInfoGroup-4').removeClass('show');
+                    $('#childrenInfoGroup-4').addClass('hide');
                     break;
 
                 case '3':
@@ -1608,6 +1618,8 @@ fun.views.profile = Backbone.View.extend({
                     $('#childrenInfoGroup-2').addClass('show');
                     $('#childrenInfoGroup-3').removeClass('hide');
                     $('#childrenInfoGroup-3').addClass('show');
+                    $('#childrenInfoGroup-4').removeClass('show');
+                    $('#childrenInfoGroup-4').addClass('hide');
                     break;
 
                 case '4':
