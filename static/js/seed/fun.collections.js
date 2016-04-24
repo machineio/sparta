@@ -1108,10 +1108,10 @@ fun.models.ContactsContainer = Backbone.Model.extend({
 
     parse: function(response) {
         // update the inner collection
-        this.get("results").reset(response.results);
+        this.get("results").reset(response.contacts);
 
         // this mightn't be necessary
-        //delete response.dataPoints;
+        delete response.contacts;
         return response;
     },
 
