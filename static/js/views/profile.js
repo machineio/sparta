@@ -1833,7 +1833,7 @@ fun.views.profile = Backbone.View.extend({
 
         console.log('DROPDOWN INFO',contact_info_gender['0'].id);
         // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        console.log(this.getDropdownInfo('contact_info_gender').toJSON());
+        console.log(this.getDropdownInfo('contact_info_gender').results.toJSON());
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
