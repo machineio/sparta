@@ -40,10 +40,16 @@ fun.views.footer = Backbone.View.extend({
             leads;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({data: $.param({contact_info_state:true, unique:true})});
+        list_of_states.fetch({data: $.param({contact_info_state:true, unique:true})});        
 
-        console.log(list_of_states.toJSON());
-        console.log(list_of_states);
+        _.each(list_of_states.results, function(value){
+            /*template = _.template(
+                fun.utils.getTemplate(fun.conf.templates.contactRow)
+            )(value);
+            rows.append(template);*/
+            console.log(value);
+        });
+
     },
 
     getDropdownInfo: function(_id){
