@@ -33,6 +33,22 @@ fun.views.footer = Backbone.View.extend({
         }, this);
     },
 
+    successResult: function(response){
+
+        var lolazo = response.attributes.results.models;
+
+        
+
+        _.each(lolazo, function(value){
+            /*template = _.template(
+                fun.utils.getTemplate(fun.conf.templates.contactRow)
+            )(value);
+            rows.append(template);*/
+            console.log(value);
+        });
+
+    },
+
 
     testWithAlex: function(){
         'use strict';
@@ -40,18 +56,11 @@ fun.views.footer = Backbone.View.extend({
             leads;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({success: function(response){
-                console.log(response.attributes.results);}, data: $.param({contact_info_state:true, unique:true})});
+        list_of_states.fetch({success: this.successResult, data: $.param({contact_info_state:true, unique:true})});
 
               
         console.log('lol');
-        /*_.each(list_of_states.results, function(value){
-            template = _.template(
-                fun.utils.getTemplate(fun.conf.templates.contactRow)
-            )(value);
-            rows.append(template);
-            console.log(value);
-        });*/
+        /**/
 
     },
 
