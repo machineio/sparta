@@ -40,7 +40,7 @@ fun.views.footer = Backbone.View.extend({
             leads;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({data: $.param({state:true, unique:true})});
+        list_of_states.fetch({data: $.param({contact_info_state:true, unique:true})});
 
         console.log(list_of_states.attributes.results);
     },
