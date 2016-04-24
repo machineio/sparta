@@ -17,6 +17,10 @@ var fun = {
     messages: _.extend({}, Backbone.Events)
 };
 
+
+/*
+* Contact Form Functions
+*/
 fun.utils.showMailingAddressDifferent = function(event){
     var value = $('#contact-info-mailing-address-different').val();
     if(value===true||value==='true'){
