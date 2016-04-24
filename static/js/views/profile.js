@@ -2155,10 +2155,12 @@ fun.views.profile = Backbone.View.extend({
                 $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
 
                 contact_info_marital_status.value = response.get('contact_info_marital_status') || '';
-                $(contact_info_marital_status.selector + " option[value='" + response.get('contact_info_marital_status') + "']").attr("selected", "selected");
+                // $(contact_info_marital_status.selector + " option[value='" + response.get('contact_info_marital_status') + "']").attr("selected", "selected");
+                $(contact_info_marital_status.selector + " option[value='Married']").attr("selected", "selected");
 
                 contact_info_number_of_children.val(response.get('contact_info_number_of_children') || 0);
-                $(contact_info_number_of_children.selector + " option[value='" + response.get('contact_info_number_of_children') + "']").attr("selected", "selected");
+                // $(contact_info_number_of_children.selector + " option[value='" + response.get('contact_info_number_of_children') + "']").attr("selected", "selected");
+                $(contact_info_number_of_children.selector + " option[value='4']").attr("selected", "selected");
 
                 contact_info_social_security_number.val(response.get('contact_info_social_security_number') || '');
                 contact_info_property_address.val(response.get('contact_info_street_address'));
