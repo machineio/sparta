@@ -187,7 +187,7 @@ fun.views.members = Backbone.View.extend({
             callbacks,
             validForm;
         event.preventDefault();
-        signupError = this.signupError;
+        signupError = this.$('#signupError');
         account = this.$('#signup_username').val();
         password = this.$('#signup_password').val();
         confirmPassword = this.$('#signup_confirm_password').val();
@@ -213,14 +213,13 @@ fun.views.members = Backbone.View.extend({
                     required: true,
                     minlength: 8,
                     equalTo: '#signup_password'
-                    
                 }
             }
         };
         validationRules = $.extend (rules, fun.utils.validationRules);
 
         $('#signup-form').validate(validationRules);
-        
+
         // new user account callbacks
         callbacks = {
             success: function(){
@@ -229,35 +228,13 @@ fun.views.members = Backbone.View.extend({
                 view.$('#signup_email').val('');
                 view.$('#signup_password').val('');
                 view.$('#signup_confirm_password').val('');
-                signupError.hide();
-                // login the created user
-                fun.utils.login(account, password,
-                    {
-                        success : function(xhr, status){
-                            fun.utils.redirect(fun.conf.hash.profile);
-                        },
-                        error : function(xhr, status, error){
-                            switch(xhr.status) {
-                                case 403:
-                                    var message = fun.utils.translate("usernameOrPasswordError");
-                                    signupError.find('p').html(message);
-                                    signupError.removeClass("hide").addClass("show");
-                                    break;
-                                case 200:
-                                    // Check browser support
-                                    if (typeof(Storage) != "undefined") {
-                                        // Store
-                                        localStorage.setItem("username", account);
-                                    }
-                                    fun.utils.redirect(fun.conf.hash.login);
-                                    break;
-                                default:
-                                    console.log('the monkey is down');
-                                    break;
-                            }
-                        }
-                    }
-                );
+                signupError.removeClass('hide').addClass('show');
+                signupError.find('p').html('Employee created!');
+                setTimeout(function(){
+                    signupError.removeClass('show').addClass('hide');
+                    signupError.find('p').html('');
+                    console.log('DONE!!!!!!');
+                },3000);
             },
 
             error: function(model, error){
@@ -273,10 +250,9 @@ fun.views.members = Backbone.View.extend({
                 else {
                     signupError.find('p').html('what daa!?');
                 }
-                
             }
         };
-        
+
         // check for a valid form and create the new user account
         validForm = $('#signup-form').valid();
         if (validForm){

@@ -280,7 +280,7 @@ ul.pagination li > a {
 }
 
 .panel-default > .panel-heading {
-  background: #eee !important;
+  background: #ddd;
 }
 
 .panel {
@@ -338,7 +338,7 @@ a:hover, a:focus {
 }
 
 #footer .inner {
-    background-color: #000000;
+    background-color: #939597;
     border: none !important;
 }
 
