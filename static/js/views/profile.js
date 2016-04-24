@@ -1471,6 +1471,12 @@ fun.views.profile = Backbone.View.extend({
 
         console.log('DROPDOWN IN HERE!!!!',list_of_stuff.attributes);
 
+        _.each(list_of_stuff.toJSON(), function(value){
+            console.log(value);
+        });
+
+
+
         return list_of_stuff.attributes;
     },
 
