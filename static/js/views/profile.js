@@ -1516,6 +1516,115 @@ fun.views.profile = Backbone.View.extend({
             }
         }
 
+        function showMailingAddressDifferent_fx(event){
+            var value = $('#contact-info-mailing-address-different').val();
+            if(value===true||value==='true'){
+                $('#mailingAddressDifferentDiv').removeClass('hide');
+                $('#mailingAddressDifferentDiv').addClass('show');
+            } else {
+                $('#mailingAddressDifferentDiv').removeClass('show');
+                $('#mailingAddressDifferentDiv').addClass('hide');
+            }
+        }
+
+        function homeInsuranceTab_fx(event){
+            if($('#contact-info-home-insurance-checkbox').val()==="true"){
+                $('#homeOwnersInsuranceTab').removeClass('hide');
+                $('#homeOwnersInsuranceTab').addClass('show');
+            } else {
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+            }
+        }
+
+        function autoInsuranceTab_fx(event){
+            if($('#contact-info-auto-insurance-checkbox').val()==="true"){
+                $('#automobileInsuranceTab').removeClass('hide');
+                $('#automobileInsuranceTab').addClass('show');
+            } else {
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+            }
+        }
+
+        function lifeInsuranceTab_fx(event){
+            if($('#contact-info-life-insurance-checkbox').val()==="true"){
+                $('#lifeInsuranceTab').removeClass('hide');
+                $('#lifeInsuranceTab').addClass('show');
+            } else {
+                $('#lifeInsuranceTab').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+            }
+        }
+
+        function ancilliaryInsuranceTab_fx(event){
+            if($('#contact-info-ancilliary-insurance-checkbox').val()==="true"){
+                $('#ancilliaryInsuranceTab').removeClass('hide');
+                $('#ancilliaryInsuranceTab').addClass('show');
+            } else {
+                $('#ancilliaryInsuranceTab').removeClass('show');
+                $('#ancilliaryInsuranceTab').addClass('hide');
+            }
+        }
+
+        function changeNumberChildren_fx(event){
+            switch($('#contact-info-number-of-children').val()){
+
+                case '0':
+                    $('#childrenInfoTab').removeClass('show');
+                    $('#childrenInfoTab').addClass('hide');
+                    $('#childrenInfoGroup-1').removeClass('show');
+                    $('#childrenInfoGroup-1').addClass('hide');
+                    $('#childrenInfoGroup-2').removeClass('show');
+                    $('#childrenInfoGroup-2').addClass('hide');
+                    $('#childrenInfoGroup-3').removeClass('show');
+                    $('#childrenInfoGroup-3').addClass('hide');
+                    $('#childrenInfoGroup-4').removeClass('show');
+                    $('#childrenInfoGroup-4').addClass('hide');
+                    break;
+
+                case '1':
+                    $('#childrenInfoTab').removeClass('hide');
+                    $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-1').removeClass('hide');
+                    $('#childrenInfoGroup-1').addClass('show');
+                    break;
+
+                case '2':
+                    $('#childrenInfoTab').removeClass('hide');
+                    $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-2').removeClass('hide');
+                    $('#childrenInfoGroup-2').addClass('show');
+                    break;
+
+                case '3':
+                    $('#childrenInfoTab').removeClass('hide');
+                    $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-3').removeClass('hide');
+                    $('#childrenInfoGroup-3').addClass('show');
+                    break;
+
+                case '4':
+                    $('#childrenInfoTab').removeClass('hide');
+                    $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-4').removeClass('hide');
+                    $('#childrenInfoGroup-4').addClass('show');
+                    break;
+            }
+        }
+
+        function showPaymentTab_fx(event){
+            if(event){
+                if(event.currentTarget.value === 'sold'){
+                    $('#paymentInfoTab').removeClass('hide');
+                    $('#paymentInfoTab').addClass('show');
+                } else {
+                    $('#paymentInfoTab').removeClass('show');
+                    $('#paymentInfoTab').addClass('hide');
+                }
+            }
+        }
+
 
         var view = this,
             name,
@@ -2507,17 +2616,17 @@ fun.views.profile = Backbone.View.extend({
                 console.log(error);
             }
         });
-        this.showMailingAddressDifferent();
-        this.changeMaritalStatus();
-        this.homeInsuranceTab();
-        this.healthInsuranceTab();
-        this.autoInsuranceTab();
-        this.lifeInsuranceTab();
-        this.ancilliaryInsuranceTab();
-        this.showMarketingTab();
-        this.changeNumberChildren();
-        this.showPaymentTab();
-        this.showSendSMSButton();
+        showMailingAddressDifferent_fx();
+        changeMaritalStatus_fx();
+        homeInsuranceTab_fx();
+        healthInsuranceTab_fx();
+        autoInsuranceTab_fx();
+        lifeInsuranceTab_fx();
+        ancilliaryInsuranceTab_fx();
+        showMarketingTab_fx();
+        changeNumberChildren_fx();
+        showPaymentTab_fx();
+        showSendSMSButton_fx();
 
         // console.log(stuff);
 
