@@ -3013,12 +3013,14 @@ fun.views.profile = Backbone.View.extend({
     },
 
     showPaymentTab: function(event){
-        if(event.currentTarget.value === 'sold'){
-            $('#paymentInfoTab').removeClass('hide');
-            $('#paymentInfoTab').addClass('show');
-        } else {
-            $('#paymentInfoTab').removeClass('show');
-            $('#paymentInfoTab').addClass('hide');
+        if(event){
+            if(event.currentTarget.value === 'sold'){
+                $('#paymentInfoTab').removeClass('hide');
+                $('#paymentInfoTab').addClass('show');
+            } else {
+                $('#paymentInfoTab').removeClass('show');
+                $('#paymentInfoTab').addClass('hide');
+            }
         }
     },
     showSendSMSButton: function(event){
