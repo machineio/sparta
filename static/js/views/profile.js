@@ -13,21 +13,21 @@ fun.views.profile = Backbone.View.extend({
         'click .view-contact-popup': 'viewContact',
         'click .edit-contact-popup': 'editContact',
         'click .delete-contact-pupup': 'deleteContact',
-        'change #contact-info-mailing-address-different': 'fun.utils.showMailingAddressDifferent',
-        'change #contact-info-marital-status': 'fun.utils.changeMaritalStatus',
-        'change #contact-info-home-insurance-checkbox': 'fun.utils.homeInsuranceTab',
-        'change #contact-info-health-insurance-checkbox': 'fun.utils.healthInsuranceTab',
-        'change #contact-info-auto-insurance-checkbox': 'fun.utils.autoInsuranceTab',
-        'change #contact-info-life-insurance-checkbox': 'fun.utils.lifeInsuranceTab',
-        'change #contact-info-ancilliary-insurance-checkbox': 'fun.utils.ancilliaryInsuranceTab',
-        'change #contact-info-marketing-checkbox': 'fun.utils.showMarketingTab',
-        'change #contact-info-number-of-children': 'fun.utils.changeNumberChildren',
-        'change #health-lead-status': 'fun.utils.showPaymentTab',
-        'change #home-lead-status': 'fun.utils.showPaymentTab',
-        'change #auto-lead-status': 'fun.utils.showPaymentTab',
-        'change #life-lead-status': 'fun.utils.showPaymentTab',
-        'change #ancilliary-lead-status': 'fun.utils.showPaymentTab',
-        'change #marketing-compliant': 'fun.utils.showSendSMSButton',
+        'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
+        'change #contact-info-marital-status': 'changeMaritalStatus',
+        'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
+        'change #contact-info-health-insurance-checkbox': 'healthInsuranceTab',
+        'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
+        'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
+        'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
+        'change #contact-info-marketing-checkbox': 'showMarketingTab',
+        'change #contact-info-number-of-children': 'changeNumberChildren',
+        'change #health-lead-status': 'showPaymentTab',
+        'change #home-lead-status': 'showPaymentTab',
+        'change #auto-lead-status': 'showPaymentTab',
+        'change #life-lead-status': 'showPaymentTab',
+        'change #ancilliary-lead-status': 'showPaymentTab',
+        'change #marketing-compliant': 'showSendSMSButton',
     },
 
     /**
@@ -1470,6 +1470,47 @@ fun.views.profile = Backbone.View.extend({
         });*/
     },
 
+    showMailingAddressDifferent: function(event){
+        fun.utils.showMailingAddressDifferent(event);
+    },
+
+    changeMaritalStatus: function(event){
+        fun.utils.changeMaritalStatus(event);
+    },
+
+    healthInsuranceTab: function(event){
+        fun.utils.healthInsuranceTab(event);
+    },
+
+    homeInsuranceTab: function(event){
+        fun.utils.homeInsuranceTab(event);
+    },
+
+    autoInsuranceTab: function(event){
+        fun.utils.autoInsuranceTab(event);
+    },
+
+    lifeInsuranceTab: function(event){
+        fun.utils.lifeInsuranceTab(event);
+    },
+
+    ancilliaryInsuranceTab: function(event){
+        fun.utils.ancilliaryInsuranceTab(event);
+    },
+
+    changeNumberChildren: function(event){
+        fun.utils.changeNumberChildren(event);
+    },
+
+    showPaymentTab: function(event){
+        fun.utils.showPaymentTab(event);
+    },
+    showSendSMSButton: function(event){
+        fun.utils.showSendSMSButton(event);
+    },
+    showMarketingTab: function(event){
+        fun.utils.showMarketingTab(event);
+    },
     editContact:function(event){
         'use strict';
         event.preventDefault();
