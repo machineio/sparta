@@ -1469,9 +1469,9 @@ fun.views.profile = Backbone.View.extend({
         list_of_stuff = new fun.models.ContactsContainer();
         list_of_stuff.fetch({data: $.param(data)});
 
-        console.log('DROPDOWN IN HERE!!!!',list_of_stuff.attributes.toJSON());
+        console.log('DROPDOWN IN HERE!!!!',list_of_stuff.attributes.contacts.toJSON());
 
-        return list_of_stuff.attributes.toJSON();
+        return list_of_stuff.attributes.contacts.toJSON();
     },
 
     editContact:function(event){
@@ -1966,7 +1966,7 @@ fun.views.profile = Backbone.View.extend({
 
         console.log('DROPDOWN INFO contact_info_gender');
         // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        console.log(this.getDropdownInfo('contact_info_gender').results);
+        console.log(this.getDropdownInfo('contact_info_gender'));
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
