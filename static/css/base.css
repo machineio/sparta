@@ -280,7 +280,7 @@ ul.pagination li > a {
 }
 
 .panel-default > .panel-heading {
-  background: rgba(147, 149, 151, 0.5);
+  background: #ddd;
 }
 
 .panel {
