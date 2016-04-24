@@ -1469,9 +1469,9 @@ fun.views.profile = Backbone.View.extend({
         list_of_stuff = new fun.models.ContactsContainer();
         list_of_stuff.fetch({data: $.param(data)});
 
-        console.log('DROPDOWN IN HERE!!!!',list_of_stuff.attributes);
+        console.log('DROPDOWN IN HERE!!!!',list_of_stuff.attributes.toJSON());
 
-        return list_of_stuff.attributes.results;
+        return list_of_stuff.attributes.toJSON();
     },
 
     editContact:function(event){
