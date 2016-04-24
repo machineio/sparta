@@ -2498,18 +2498,6 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
-                this.showMailingAddressDifferent();
-                this.changeMaritalStatus();
-                this.homeInsuranceTab();
-                this.healthInsuranceTab();
-                this.autoInsuranceTab();
-                this.lifeInsuranceTab();
-                this.ancilliaryInsuranceTab();
-                this.showMarketingTab();
-                this.changeNumberChildren();
-                this.showPaymentTab();
-                this.showSendSMSButton();
-
                 $('#profileContactModal').modal({
                     'show': true
                 });
@@ -2519,6 +2507,17 @@ fun.views.profile = Backbone.View.extend({
                 console.log(error);
             }
         });
+        this.showMailingAddressDifferent();
+        this.changeMaritalStatus();
+        this.homeInsuranceTab();
+        this.healthInsuranceTab();
+        this.autoInsuranceTab();
+        this.lifeInsuranceTab();
+        this.ancilliaryInsuranceTab();
+        this.showMarketingTab();
+        this.changeNumberChildren();
+        this.showPaymentTab();
+        this.showSendSMSButton();
 
         // console.log(stuff);
 
