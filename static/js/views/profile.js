@@ -1477,7 +1477,7 @@ fun.views.profile = Backbone.View.extend({
 
 
 
-        return list_of_stuff.attributes;
+        return list_of_stuff.toJSON();
     },
 
     editContact:function(event){
