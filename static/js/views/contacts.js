@@ -398,35 +398,12 @@ fun.views.contacts = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
-            console.log('DATE 1',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-            console.log('DATE 2',today);
             return today;
         }
-
-        function changeMaritalStatus_fx(){
-            if($('#contact-info-marital-status').val()==='Married'){
-                $('#contactSpouseInfoTab').removeClass('hide');
-                $('#contactSpouseInfoTab').addClass('show');
-            } else {
-                $('#contactSpouseInfoTab').removeClass('show');
-                $('#contactSpouseInfoTab').addClass('hide');
-            }
-        }
-
-        function healthInsuranceTab_fx(){
-            if(($('#contact-info-health-insurance-checkbox').val()==="true")||($('#contact-info-health-insurance-checkbox').val()===true)){
-                $('#healthInsuranceTab').removeClass('hide');
-                $('#healthInsuranceTab').addClass('show');
-            } else {
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-            }
-        }
-
 
         var view = this,
             name,
@@ -462,7 +439,7 @@ fun.views.contacts = Backbone.View.extend({
             contact_info_language_preference,
             contact_info_writing_agent,
             contact_info_lead_source,
-            contact_lead_type,
+            contact_info_lead_type,
             contact_info_partner,
             contact_info_last_modified_by,
             contact_info_health_insurance_checkbox,
@@ -732,7 +709,6 @@ fun.views.contacts = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
-
         contact_info_first_name = this.$("#contact-info-first-name");
         contact_info_last_name = this.$("#contact-info-last-name");
         contact_info_phone_number = this.$("#contact-info-phone-number");
@@ -741,6 +717,11 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
         contact_info_gender = this.$("#contact-info-gender");
+
+        console.log('DROPDOWN INFO contact_info_gender');
+        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
+        console.log(this.getDropdownInfo('contact_info_gender'));
+
         contact_info_marital_status = this.$("#contact-info-marital-status");
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
         contact_info_social_security_number = this.$("#contact-info-social-security-number");
@@ -758,7 +739,7 @@ fun.views.contacts = Backbone.View.extend({
         contact_info_language_preference = this.$("#contact-info-language-preference");
         contact_info_writing_agent = this.$("#contact-info-writing-agent");
         contact_info_lead_source = this.$("#contact-info-lead-source");
-        contact_lead_type = this.$("#contact-lead-type");
+        contact_info_lead_type = this.$("#contact-info-lead-type");
         contact_info_partner = this.$("#contact-info-partner");
         contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
         contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
@@ -1044,91 +1025,94 @@ fun.views.contacts = Backbone.View.extend({
             success: function(response){
                 console.log(response);
 
-                // CONTACT INFO
+            // CONTACT INFO
                 contact_uuid = response.get('uuid');
                 contact_account = response.get('account');
                 contact_description = response.get('description');
                 contact_history = response.get('history');
                 contact_comment = response.get('comment');
-                contact_info_first_name.val(response.get('first_name') || '');
-                contact_info_last_name.val(response.get('last_name') || '');
-                contact_info_phone_number.val(response.get('phone_number') || '');
-                contact_info_cellphone.val(response.get('mobile_number') || '');
-                contact_info_email.val(response.get('email') || '');
-                contact_info_other_phone.val(response.get('other_phone') || '');
-                contact_info_date_of_birth.val(renderDate(response.get('dob')) || '');
+                contact_info_first_name.val(response.get('contact_info_first_name') || '');
+                contact_info_last_name.val(response.get('contact_info_last_name') || '');
+                contact_info_phone_number.val(response.get('contact_info_phone_number') || '');
+                contact_info_cellphone.val(response.get('contact_info_mobile_number') || '');
+                contact_info_email.val(response.get('contact_info_email') || '');
+                contact_info_other_phone.val(response.get('contact_info_other_phone') || '');
+                contact_info_date_of_birth.val(renderDate(response.get('contact_info_dob')) || '');
 
-                contact_info_gender.val(response.get('gender') || '');
-                $(contact_info_gender.selector + " option[value='" + response.get('gender') + "']").attr("selected", "selected");
+                contact_info_gender.val(response.get('contact_info_gender') || '');
+                $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
 
-                contact_info_marital_status.value = response.get('marital_status') || '';
-                $(contact_info_marital_status.selector + " option[value='" + response.get('marital_status') + "']").attr("selected", "selected");
+                contact_info_marital_status.value = response.get('contact_info_marital_status') || '';
+                // $(contact_info_marital_status.selector + " option[value='" + response.get('contact_info_marital_status') + "']").attr("selected", "selected");
+                $(contact_info_marital_status.selector + " option[value='Married']").attr("selected", "selected");
 
-                contact_info_number_of_children.val(response.get('number_of_children') || 0);
-                $(contact_info_number_of_children.selector + " option[value='" + response.get('number_of_children') + "']").attr("selected", "selected");
+                contact_info_number_of_children.val(response.get('contact_info_number_of_children') || 0);
+                // $(contact_info_number_of_children.selector + " option[value='" + response.get('contact_info_number_of_children') + "']").attr("selected", "selected");
+                $(contact_info_number_of_children.selector + " option[value='4']").attr("selected", "selected");
 
-                contact_info_social_security_number.val(response.get('social_security_number') || '');
-                contact_info_property_address.val(response.get('street_address'));
+                contact_info_social_security_number.val(response.get('contact_info_social_security_number') || '');
+                contact_info_property_address.val(response.get('contact_info_street_address'));
 
-                contact_info_state.val(response.get('state') || '');
-                $(contact_info_state.selector + " option[value='" + response.get('state') + "']").attr("selected", "selected");
+                contact_info_state.val(response.get('contact_info_state') || '');
+                $(contact_info_state.selector + " option[value='" + response.get('contact_info_state') + "']").attr("selected", "selected");
 
-                contact_info_city.val(response.get('city') || '');
-                contact_info_zip_code.val(response.get('zip_code') || '');
-                contact_info_country.val(response.get('country') || '');
+                contact_info_city.val(response.get('contact_info_city') || '');
+                contact_info_zip_code.val(response.get('contact_info_zip_code') || '');
+                contact_info_country.val(response.get('contact_info_country') || '');
 
-                contact_info_mailing_address_different.val(response.get('mailing_address_different') || '');
-                $(contact_info_mailing_address_different.selector + " option[value='" + response.get('mailing_address_different') + "']").attr("selected", "selected");
+                contact_info_mailing_address_different.val(response.get('contact_info_mailing_address_different') || '');
+                $(contact_info_mailing_address_different.selector + " option[value='" + response.get('contact_info_mailing_address_different') + "']").attr("selected", "selected");
 
-                contact_info_mailing_address.val(response.get('mailing_address') || '');
-                contact_info_mailing_city.val(response.get('mailing_city') || '');
-                contact_info_mailing_state.val(response.get('mailing_state') || '');
-                contact_info_mailing_zipcode.val(response.get('mailing_zipcode') || '');
-                contact_info_marketplace_email.val(response.get('marketplace_email') || '');
+                contact_info_mailing_address.val(response.get('contact_info_mailing_address') || '');
+                contact_info_mailing_city.val(response.get('contact_info_mailing_city') || '');
+                contact_info_mailing_state.val(response.get('contact_info_mailing_state') || '');
+                contact_info_mailing_zipcode.val(response.get('contact_info_mailing_zipcode') || '');
+                contact_info_marketplace_email.val(response.get('contact_info_marketplace_email') || '');
 
-                contact_info_language_preference.val(response.get('language_preference') || '');
-                $(contact_info_language_preference.selector + " option[value='" + response.get('language_preference') + "']").attr("selected", "selected");
+                contact_info_language_preference.val(response.get('contact_info_language_preference') || '');
+                $(contact_info_language_preference.selector + " option[value='" + response.get('contact_info_language_preference') + "']").attr("selected", "selected");
 
-                contact_info_writing_agent.val(response.get('writing_agent') || '');
-                $(contact_info_writing_agent.selector + " option[value='" + response.get('writing_agent') + "']").attr("selected", "selected");
+                contact_info_writing_agent.val(response.get('contact_info_writing_agent') || '');
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_writing_agent') + "']").attr("selected", "selected");
 
-                contact_lead_type.val(response.get('contact_lead_type') || 'health');
-                $(contact_lead_type.selector + " option[value='health']").attr("selected", "selected");
-                // $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_lead_type') + "']").attr("selected", "selected");
+                contact_info_lead_type.val(response.get('contact_info_lead_type') || 'health');
+                // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
+                $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_lead_type') + "']").attr("selected", "selected");
 
-                contact_info_lead_source.val(response.get('lead_source') || 'boberdoo');
+                contact_info_lead_source.val(response.get('contact_info_lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
                 // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
 
-                contact_info_partner.val(response.get('partner') || '');
-                contact_info_last_modified_by.val(response.get('last_modified_by') || '');
+                contact_info_partner.val(response.get('contact_info_partner') || '');
+                contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
 
-                contact_info_health_insurance_checkbox.val(response.get('health_insurance_status') || 'true');
-                $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
-                // $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('health_insurance_status') + "']").attr("selected", "selected");
+                contact_info_health_insurance_checkbox.val(response.get('contact_info_health_insurance_status') || 'true');
+                // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
+                $(contact_info_health_insurance_checkbox.selector + " option[value='" + response.get('contact_info_health_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_home_insurance_checkbox.val(response.get('home_insurance_status') || '');
-                $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('home_insurance_status') + "']").attr("selected", "selected");
+                contact_info_home_insurance_checkbox.val(response.get('contact_info_home_insurance_status') || '');
+                $(contact_info_home_insurance_checkbox.selector + " option[value='" + response.get('contact_info_home_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_auto_insurance_checkbox.val(response.get('auto_insurance_status') || '');
-                $(contact_info_auto_insurance_checkbox.selector + " option[value='" + response.get('auto_insurance_status') + "']").attr("selected", "selected");
+                contact_info_auto_insurance_checkbox.val(response.get('contact_info_auto_insurance_status') || '');
+                $(contact_info_auto_insurance_checkbox.selector + " option[value='" + response.get('contact_info_auto_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_life_insurance_checkbox.val(response.get('life_insurance_status') || '');
-                $(contact_info_life_insurance_checkbox.selector + " option[value='" + response.get('life_insurance_status') + "']").attr("selected", "selected");
+                contact_info_life_insurance_checkbox.val(response.get('contact_info_life_insurance_status') || '');
+                $(contact_info_life_insurance_checkbox.selector + " option[value='" + response.get('contact_info_life_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_ancilliary_insurance_checkbox.val(response.get('ancilliary_insurance_status') || '');
-                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('ancilliary_insurance_status') + "']").attr("selected", "selected");
+                contact_info_ancilliary_insurance_checkbox.val(response.get('contact_info_ancilliary_insurance_status') || '');
+                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('contact_info_ancilliary_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_other_policy_sold.val(response.get('other_policy_sold') || '');
-                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('other_policy_sold') + "']").attr("selected", "selected");
+                contact_info_other_policy_sold.val(response.get('contact_info_other_policy_sold') || '');
+                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('contact_info_other_policy_sold') + "']").attr("selected", "selected");
 
-                contact_info_federal_do_not_call.val(response.get('federal_do_not_call') || '');
-                $(contact_info_federal_do_not_call.selector + " option[value='" + response.get('federal_do_not_call') + "']").attr("selected", "selected");
+                contact_info_federal_do_not_call.val(response.get('contact_info_federal_do_not_call') || '');
+                $(contact_info_federal_do_not_call.selector + " option[value='" + response.get('contact_info_federal_do_not_call') + "']").attr("selected", "selected");
 
-                contact_info_renew_as_is_email_received.val(response.get('renew_as_email_received') || '');
-                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('renew_as_email_received') + "']").attr("selected", "selected");
+                contact_info_renew_as_is_email_received.val(response.get('contact_info_renew_as_email_received') || '');
+                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('contact_info_renew_as_email_received') + "']").attr("selected", "selected");
 
-                // SPOUSE INFO
+
+            // SPOUSE INFO
                 spouse_first_name.val(response.get('spouse_first_name') || '');
                 spouse_last_name.val(response.get('spouse_last_name') || '');
 
@@ -1147,7 +1131,8 @@ fun.views.contacts = Backbone.View.extend({
                 spouse_employers_name.val(response.get('spouse_employers_name') || '');
                 spouse_employers_phone_number.val(response.get('spouse_employers_phone_number') || '');
 
-                // CHILD INFO
+
+            // CHILD INFO
                 contact_info_child_1_name.val(response.get('child_1_name') || '');
                 contact_info_child_1_dob.val(response.get('child_1_dob') || '');
                 contact_info_child_1_gender.val(response.get('child_1_gender') || '');
@@ -1165,7 +1150,8 @@ fun.views.contacts = Backbone.View.extend({
                 contact_info_child_4_gender.val(response.get('child_4_gender') || '');
                 contact_info_child_4_social.val(response.get('child_4_social') || '');
 
-                // HEALTH INFO
+
+            // HEALTH INFO
                 health_auto_priority_code.val(response.get('health_auto_priority_code') || '');
                 health_priority_code.val(response.get('health_priority_code') || '');
                 health_lead_source.val(response.get('health_lead_source') || '');
@@ -1224,7 +1210,8 @@ fun.views.contacts = Backbone.View.extend({
                 health_username.val(response.get('health_username') || '');
                 health_password.val(response.get('health_password') || '');
 
-                // HOME INFO
+
+            // HOME INFO
                 home_priority_code.val(response.get('home_priority_code') || '');
                 home_auto_priority_code.val(response.get('home_auto_priority_code') || '');
                 home_lead_source.val(response.get('home_lead_source') || '');
@@ -1272,7 +1259,8 @@ fun.views.contacts = Backbone.View.extend({
                 home_insurance_carrier.val(response.get('home_insurance_carrier') || '');
                 home_insurance_premium.val(response.get('home_insurance_premium') || '');
 
-                // AUTO INFO
+
+            // AUTO INFO
                 auto_auto_priority_code.val(response.get('auto_auto_priority_code') || '');
                 auto_priority_code.val(response.get('auto_priority_code') || '');
                 auto_lead_source.val(response.get('auto_lead_source') || '');
@@ -1319,7 +1307,8 @@ fun.views.contacts = Backbone.View.extend({
                 auto_insurance_premium.val(response.get('auto_insurance_premium') || '');
                 auto_document_needed.val(response.get('auto_document_needed') || '');
 
-                // LIFE INFO
+
+            // LIFE INFO
                 life_auto_priority_code.val(response.get('life_auto_priority_code') || '');
                 life_priority_code.val(response.get('life_priority_code') || '');
                 life_lead_source.val(response.get('life_lead_source') || '');
@@ -1347,7 +1336,7 @@ fun.views.contacts = Backbone.View.extend({
                 life_after_changes_new_premium.val(response.get('life_after_changes_new_premium') || '');
                 life_application_declined_reason.val(response.get('life_application_declined_reason') || '');
 
-                // ANCILLIARY INFO
+            // ANCILLIARY INFO
                 ancilliary_auto_priority_code.val(response.get('ancilliary_auto_priority_code') || '');
                 ancilliary_priority_code.val(response.get('ancilliary_priority_code') || '');
                 ancilliary_lead_source.val(response.get('ancilliary_lead_source') || '');
@@ -1397,12 +1386,23 @@ fun.views.contacts = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
-                changeMaritalStatus_fx();
-                healthInsuranceTab_fx();
+                fun.utils.showMailingAddressDifferent();
+                fun.utils.changeMaritalStatus();
+                fun.utils.homeInsuranceTab();
+                fun.utils.healthInsuranceTab();
+                fun.utils.autoInsuranceTab();
+                fun.utils.lifeInsuranceTab();
+                fun.utils.ancilliaryInsuranceTab();
+                fun.utils.showMarketingTab();
+                fun.utils.changeNumberChildren();
+                fun.utils.showPaymentTab();
+                fun.utils.showPaymentTab();
+                fun.utils.showSendSMSButton();
 
                 $('#contactModal').modal({
                     'show': true
                 });
+
             },
             error: function(error){
                 console.log(error);
@@ -1617,242 +1617,45 @@ fun.views.contacts = Backbone.View.extend({
     },
 
     showMailingAddressDifferent: function(event){
-        var value = $('#contact-info-mailing-address-different').val();
-        if(value===true||value==='true'){
-            $('#contact-info-mailingAddressDifferentDiv').removeClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv').addClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-city').removeClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-city').addClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-state').removeClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-state').addClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-zipcode').removeClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-zipcode').addClass('show');
-        } else {
-            $('#contact-info-mailingAddressDifferentDiv').removeClass('show');
-            $('#contact-info-mailingAddressDifferentDiv').addClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-city').removeClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-city').addClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-state').removeClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-state').addClass('hide');
-            $('#contact-info-mailingAddressDifferentDiv-zipcode').removeClass('show');
-            $('#contact-info-mailingAddressDifferentDiv-zipcode').addClass('hide');
-        }
+        fun.utils.showMailingAddressDifferent(event);
     },
 
     changeMaritalStatus: function(event){
-        if($('#contact-info-marital-status').val()==='married'){
-            $('#contactSpouseInfoTab').removeClass('hide');
-            $('#contactSpouseInfoTab').addClass('show');
-        } else {
-            $('#contactSpouseInfoTab').removeClass('show');
-            $('#contactSpouseInfoTab').addClass('hide');
-        }
+        fun.utils.changeMaritalStatus(event);
     },
 
     healthInsuranceTab: function(event){
-        if(($('#contact-info-health-insurance-checkbox').val()==="true")||($('#contact-info-health-insurance-checkbox').val()===true)){
-            $('#healthInsuranceTab').removeClass('hide');
-            $('#healthInsuranceTab').addClass('show');
-        } else {
-            $('#healthInsuranceTab').removeClass('show');
-            $('#healthInsuranceTab').addClass('hide');
-        }
+        fun.utils.healthInsuranceTab(event);
     },
 
     homeInsuranceTab: function(event){
-        if(($('#contact-info-home-insurance-checkbox').val()==="true")||($('#contact-info-home-insurance-checkbox').val()===true)){
-            $('#homeOwnersInsuranceTab').removeClass('hide');
-            $('#homeOwnersInsuranceTab').addClass('show');
-        } else {
-            $('#homeOwnersInsuranceTab').removeClass('show');
-            $('#homeOwnersInsuranceTab').addClass('hide');
-        }
+        fun.utils.homeInsuranceTab(event);
     },
 
     autoInsuranceTab: function(event){
-        if(($('#contact-info-auto-insurance-checkbox').val()==="true")||($('#contact-info-auto-insurance-checkbox').val()===true)){
-            $('#automobileInsuranceTab').removeClass('hide');
-            $('#automobileInsuranceTab').addClass('show');
-        } else {
-            $('#automobileInsuranceTab').removeClass('show');
-            $('#automobileInsuranceTab').addClass('hide');
-        }
+        fun.utils.autoInsuranceTab(event);
     },
 
     lifeInsuranceTab: function(event){
-        if(($('#contact-info-life-insurance-checkbox').val()==="true")||($('#contact-info-life-insurance-checkbox').val()===true)){
-            $('#lifeInsuranceTab').removeClass('hide');
-            $('#lifeInsuranceTab').addClass('show');
-        } else {
-            $('#lifeInsuranceTab').removeClass('show');
-            $('#lifeInsuranceTab').addClass('hide');
-        }
+        fun.utils.lifeInsuranceTab(event);
     },
 
     ancilliaryInsuranceTab: function(event){
-        if(($('#contact-info-ancilliary-insurance-checkbox').val()==="true")||($('#contact-info-ancilliary-insurance-checkbox').val()===true)){
-            $('#ancilliaryInsuranceTab').removeClass('hide');
-            $('#ancilliaryInsuranceTab').addClass('show');
-        } else {
-            $('#ancilliaryInsuranceTab').removeClass('show');
-            $('#ancilliaryInsuranceTab').addClass('hide');
-        }
-    },
-
-    changeTabs: function(event){
-
-        switch(event.target.id){
-            case 'home-insurance-checkbox':
-                if(event.target.checked===true){
-                    $('#homeOwnersInsuranceTab').removeClass('hide');
-                    $('#homeOwnersInsuranceTab').addClass('show');
-                } else {
-                    $('#homeOwnersInsuranceTab').removeClass('show');
-                    $('#homeOwnersInsuranceTab').addClass('hide');
-                }
-                break;
-
-            case 'health-insurance-checkbox':
-                if(event.target.checked===true){
-                    $('#healthInsuranceTab').removeClass('hide');
-                    $('#healthInsuranceTab').addClass('show');
-                } else {
-                    $('#healthInsuranceTab').removeClass('show');
-                    $('#healthInsuranceTab').addClass('hide');
-                }
-                break;
-
-            case 'auto-insurance-checkbox':
-                if(event.target.checked===true){
-                    $('#automobileInsuranceTab').removeClass('hide');
-                    $('#automobileInsuranceTab').addClass('show');
-                } else {
-                    $('#automobileInsuranceTab').removeClass('show');
-                    $('#automobileInsuranceTab').addClass('hide');
-                }
-                break;
-
-            case 'life-insurance-checkbox':
-                if(event.target.checked===true){
-                    $('#lifeInsuranceTab').removeClass('hide');
-                    $('#lifeInsuranceTab').addClass('show');
-                } else {
-                    $('#lifeInsuranceTab').removeClass('show');
-                    $('#lifeInsuranceTab').addClass('hide');
-                }
-                break;
-
-            case 'ancilliary-insurance-checkbox':
-                if(event.target.checked===true){
-                    $('#ancilliaryInsuranceTab').removeClass('hide');
-                    $('#ancilliaryInsuranceTab').addClass('show');
-                } else {
-                    $('#ancilliaryInsuranceTab').removeClass('show');
-                    $('#ancilliaryInsuranceTab').addClass('hide');
-                }
-                break;
-        }
+        fun.utils.ancilliaryInsuranceTab(event);
     },
 
     changeNumberChildren: function(event){
-        console.log('This guys have KIDS!!',$('#contact-info-number-of-children').val(),typeof $('#contact-info-number-of-children').val());
-        switch($('#contact-info-number-of-children').val()){
-
-            case '0':
-                $('#childrenInfoTab').removeClass('show');
-                $('#childrenInfoTab').addClass('hide');
-                $('#childrenInfoGroup-1').removeClass('show');
-                $('#childrenInfoGroup-1').addClass('hide');
-                $('#childrenInfoGroup-2').removeClass('show');
-                $('#childrenInfoGroup-2').addClass('hide');
-                $('#childrenInfoGroup-3').removeClass('show');
-                $('#childrenInfoGroup-3').addClass('hide');
-                $('#childrenInfoGroup-4').removeClass('show');
-                $('#childrenInfoGroup-4').addClass('hide');
-                break;
-
-            case '1':
-                $('#childrenInfoTab').removeClass('hide');
-                $('#childrenInfoTab').addClass('show');
-                $('#childrenInfoGroup-1').removeClass('hide');
-                $('#childrenInfoGroup-1').addClass('show');
-                $('#childrenInfoGroup-2').removeClass('show');
-                $('#childrenInfoGroup-2').addClass('hide');
-                $('#childrenInfoGroup-3').removeClass('show');
-                $('#childrenInfoGroup-3').addClass('hide');
-                $('#childrenInfoGroup-4').removeClass('show');
-                $('#childrenInfoGroup-4').addClass('hide');
-                break;
-
-            case '2':
-                $('#childrenInfoTab').removeClass('hide');
-                $('#childrenInfoTab').addClass('show');
-                $('#childrenInfoGroup-1').removeClass('hide');
-                $('#childrenInfoGroup-1').addClass('show');
-                $('#childrenInfoGroup-2').removeClass('hide');
-                $('#childrenInfoGroup-2').addClass('show');
-                $('#childrenInfoGroup-3').removeClass('show');
-                $('#childrenInfoGroup-3').addClass('hide');
-                $('#childrenInfoGroup-4').removeClass('show');
-                $('#childrenInfoGroup-4').addClass('hide');
-                break;
-
-            case '3':
-                $('#childrenInfoTab').removeClass('hide');
-                $('#childrenInfoTab').addClass('show');
-                $('#childrenInfoGroup-1').removeClass('hide');
-                $('#childrenInfoGroup-1').addClass('show');
-                $('#childrenInfoGroup-2').removeClass('hide');
-                $('#childrenInfoGroup-2').addClass('show');
-                $('#childrenInfoGroup-3').removeClass('hide');
-                $('#childrenInfoGroup-3').addClass('show');
-                $('#childrenInfoGroup-4').removeClass('show');
-                $('#childrenInfoGroup-4').addClass('hide');
-                break;
-
-            case '4':
-                $('#childrenInfoTab').removeClass('hide');
-                $('#childrenInfoTab').addClass('show');
-                $('#childrenInfoGroup-1').removeClass('hide');
-                $('#childrenInfoGroup-1').addClass('show');
-                $('#childrenInfoGroup-2').removeClass('hide');
-                $('#childrenInfoGroup-2').addClass('show');
-                $('#childrenInfoGroup-3').removeClass('hide');
-                $('#childrenInfoGroup-3').addClass('show');
-                $('#childrenInfoGroup-4').removeClass('hide');
-                $('#childrenInfoGroup-4').addClass('show');
-                break;
-        }
+        fun.utils.changeNumberChildren(event);
     },
 
     showPaymentTab: function(event){
-        if(event.currentTarget.value === 'sold'){
-            $('#paymentInfoTab').removeClass('hide');
-            $('#paymentInfoTab').addClass('show');
-        } else {
-            $('#paymentInfoTab').removeClass('show');
-            $('#paymentInfoTab').addClass('hide');
-        }
+        fun.utils.showPaymentTab(event);
     },
-
     showSendSMSButton: function(event){
-        if($('#marketing-compliant').val()==="true"){
-            $('#sendSMSButtonWrapper').removeClass('hide');
-            $('#sendSMSButtonWrapper').addClass('show');
-        } else {
-            $('#sendSMSButtonWrapper').removeClass('show');
-            $('#sendSMSButtonWrapper').addClass('hide');
-        }
+        fun.utils.showSendSMSButton(event);
     },
-
     showMarketingTab: function(event){
-        if($('#contact-info-marketing-checkbox').val()==="true"){
-            $('#marketingInfoTab').removeClass('hide');
-            $('#marketingInfoTab').addClass('show');
-        } else {
-            $('#marketingInfoTab').removeClass('show');
-            $('#marketingInfoTab').addClass('hide');
-        }
+        fun.utils.showMarketingTab(event);
     }
 });
 
