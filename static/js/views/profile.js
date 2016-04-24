@@ -1503,22 +1503,6 @@ fun.views.profile = Backbone.View.extend({
             return today;
         }
 
-        fun.messages.on('contacts:updateForms',function(){
-            this.showMailingAddressDifferent();
-            this.changeMaritalStatus();
-            this.homeInsuranceTab();
-            this.healthInsuranceTab();
-            this.autoInsuranceTab();
-            this.lifeInsuranceTab();
-            this.ancilliaryInsuranceTab();
-            this.showMarketingTab();
-            this.changeNumberChildren();
-            this.showPaymentTab();
-            this.showPaymentTab();
-            this.showSendSMSButton();
-        });
-
-
         var view = this,
             name,
             contact,
@@ -1823,6 +1807,20 @@ fun.views.profile = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
+        fun.messages.on('contacts:updateForms',function(){
+            this.showMailingAddressDifferent();
+            this.changeMaritalStatus();
+            this.homeInsuranceTab();
+            this.healthInsuranceTab();
+            this.autoInsuranceTab();
+            this.lifeInsuranceTab();
+            this.ancilliaryInsuranceTab();
+            this.showMarketingTab();
+            this.changeNumberChildren();
+            this.showPaymentTab();
+            this.showPaymentTab();
+            this.showSendSMSButton();
+        });
 
         contact_info_first_name = this.$("#contact-info-first-name");
         contact_info_last_name = this.$("#contact-info-last-name");
