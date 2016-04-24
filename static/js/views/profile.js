@@ -1593,6 +1593,8 @@ fun.views.profile = Backbone.View.extend({
                 case '2':
                     $('#childrenInfoTab').removeClass('hide');
                     $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-1').removeClass('hide');
+                    $('#childrenInfoGroup-1').addClass('show');
                     $('#childrenInfoGroup-2').removeClass('hide');
                     $('#childrenInfoGroup-2').addClass('show');
                     break;
@@ -1600,6 +1602,10 @@ fun.views.profile = Backbone.View.extend({
                 case '3':
                     $('#childrenInfoTab').removeClass('hide');
                     $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-1').removeClass('hide');
+                    $('#childrenInfoGroup-1').addClass('show');
+                    $('#childrenInfoGroup-2').removeClass('hide');
+                    $('#childrenInfoGroup-2').addClass('show');
                     $('#childrenInfoGroup-3').removeClass('hide');
                     $('#childrenInfoGroup-3').addClass('show');
                     break;
@@ -1607,6 +1613,12 @@ fun.views.profile = Backbone.View.extend({
                 case '4':
                     $('#childrenInfoTab').removeClass('hide');
                     $('#childrenInfoTab').addClass('show');
+                    $('#childrenInfoGroup-1').removeClass('hide');
+                    $('#childrenInfoGroup-1').addClass('show');
+                    $('#childrenInfoGroup-2').removeClass('hide');
+                    $('#childrenInfoGroup-2').addClass('show');
+                    $('#childrenInfoGroup-3').removeClass('hide');
+                    $('#childrenInfoGroup-3').addClass('show');
                     $('#childrenInfoGroup-4').removeClass('hide');
                     $('#childrenInfoGroup-4').addClass('show');
                     break;
