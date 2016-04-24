@@ -44,7 +44,7 @@ fun.views.footer = Backbone.View.extend({
                 fun.utils.getTemplate(fun.conf.templates.contactRow)
             )(value);
             rows.append(template);*/
-            console.log(value);
+            console.log(value.toJSON());
         });
 
     },
