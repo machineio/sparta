@@ -35,6 +35,11 @@ fun.views.profile = Backbone.View.extend({
     */
     initialize: function(options){
         fun.containers.profile = this.$el;
+        var view = this;
+
+        view.listenTo('HEYBRO',function(){
+            console.log('I GOT THE MESSAGE!!!');
+        });
     },
 
 
@@ -2637,6 +2642,8 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
+
+                fun.messages.trigger('HEYBRO');
                 showMailingAddressDifferent_fx();
                 changeMaritalStatus_fx();
                 homeInsuranceTab_fx();
