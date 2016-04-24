@@ -37,7 +37,7 @@ fun.views.profile = Backbone.View.extend({
         fun.containers.profile = this.$el;
         var view = this;
 
-        view.listenTo('HEYBRO',function(){
+        fun.messages.on('HEYBRO',function(){
             console.log('I GOT THE MESSAGE!!!');
         });
     },
