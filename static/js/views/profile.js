@@ -2304,7 +2304,7 @@ fun.views.profile = Backbone.View.extend({
             payment_bank_routuing_number,
             payment_bank_account_number;
 
-        fun.messages.on('contacts:updateForms',function(this){
+        fun.messages.on('contacts:updateForms',function(){
             this.showMailingAddressDifferent();
             this.changeMaritalStatus();
             this.homeInsuranceTab();
@@ -2996,19 +2996,19 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
 
-                fun.messages.trigger('contacts:updateForms',this);
+                fun.messages.trigger('contacts:updateForms');
                 console.log('I SEND THE MESSAGE!!!');
-                showMailingAddressDifferent_fx();
-                changeMaritalStatus_fx();
-                homeInsuranceTab_fx();
-                healthInsuranceTab_fx();
-                autoInsuranceTab_fx();
-                lifeInsuranceTab_fx();
-                ancilliaryInsuranceTab_fx();
-                // showMarketingTab_fx();
-                changeNumberChildren_fx();
-                showPaymentTab_fx();
-                // showSendSMSButton_fx();
+                // showMailingAddressDifferent_fx();
+                // changeMaritalStatus_fx();
+                // homeInsuranceTab_fx();
+                // healthInsuranceTab_fx();
+                // autoInsuranceTab_fx();
+                // lifeInsuranceTab_fx();
+                // ancilliaryInsuranceTab_fx();
+                // // showMarketingTab_fx();
+                // changeNumberChildren_fx();
+                // showPaymentTab_fx();
+                // // showSendSMSButton_fx();
 
                 $('#profileContactModal').modal({
                     'show': true
