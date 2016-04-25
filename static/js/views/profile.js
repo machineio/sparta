@@ -1104,7 +1104,7 @@ fun.views.profile = Backbone.View.extend({
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({data: $.param(options), success: function(collection,response){
-            console.log('COLLECTION!!!',collection.toJSON());
+            console.log('COLLECTION!!!',collection.results.toJSON());
         }});
 
         return list_of_states.attributes.results;
