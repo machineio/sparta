@@ -50,37 +50,18 @@ fun.views.footer = Backbone.View.extend({
     },
 
 
-    testWithAlex: function(){
+    getDropdownInfo: function(select){
         'use strict';
         var list_of_states,
-            leads;
+            options;
+
+        options = {unique:true};
+        options[select] = true;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({success: this.successResult, data: $.param({contact_info_state:true, unique:true})});
+        list_of_states.fetch({data: $.param(options)});
 
-              
-        console.log('lol');
-        /**/
-
-    },
-
-    getDropdownInfo: function(_id){
-        'use strict';
-        var list,
-            options,
-            id;
-
-        options = {
-            unique: true
-        };
-
-        id = _id.substring(1);
-        options[id] = true;
-
-        list = new fun.models.ContactsContainer();
-        list.fetch(options);
-
-        return list;
+        return list_of_states.attributes.results;
     },
 
     callNowContact: function(){

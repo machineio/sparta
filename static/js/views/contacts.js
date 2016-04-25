@@ -1660,9 +1660,6 @@ fun.views.contacts = Backbone.View.extend({
 });
 
 
-<!-- // and now for something completly different that is exactly the same -->
-
-
 fun.views.contacts = Backbone.View.extend({
 
     /*
