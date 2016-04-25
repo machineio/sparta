@@ -319,7 +319,7 @@ ul.pagination li > a {
 }
 
 a {
-    color: #4e4e4e;
+    color: #777;
 }
 
 a:hover, a:focus {
@@ -1076,4 +1076,8 @@ h1 {
 
 .active-button-spartaio {
     padding: 10px 15px;
+}
+
+.btn-default {
+    color: #777;
 }
