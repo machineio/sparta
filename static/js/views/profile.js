@@ -1094,18 +1094,24 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
-    getDropdownInfo: function(select){
+    getDropdownInfo: function(elem){
         'use strict';
         var list_of_states,
             options;
 
         options = {unique:true};
-        options[select] = true;
+        options[elem['0'].id] = true;
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({data: $.param(options)});
+
         console.log('COLLECTION!!!',list_of_states.toJSON());
-        return list_of_states.toJSON().results;
+
+        $.each(list_of_states.toJSON().results.models, function() {
+            elem.append($("<option />").val(this.uuid).text(this.option));
+        });
+        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
+        // return list_of_states.toJSON().results.models;
     },
 
     deleteContact:function(event){
@@ -2416,10 +2422,9 @@ fun.views.profile = Backbone.View.extend({
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
         contact_info_gender = this.$("#contact-info-gender");
+        this.getDropdownInfo(contact_info_gender);
 
         console.log('DROPDOWN INFO contact_info_gender');
-        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        var testing = this.getDropdownInfo('contact_info_gender');
         console.log('testing:',testing);
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
