@@ -1107,3 +1107,10 @@ h1 {
 .but-search-callmodal {
     padding: 15px;
 }
+
+.modalbody-call-sparta {
+    padding-bottom: 20px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 30px;
+}
