@@ -1072,3 +1072,7 @@ h1 {
 .panel-default {
     border-color: #e7e7e7 !important;
 }
+
+.active-button-spartaio {
+    padding: 10px 15px;
+}
