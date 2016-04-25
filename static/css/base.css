@@ -1084,3 +1084,8 @@ h1 {
 
 .panel-default>.panel-heading {
     color: #777;
+}
+
+.button-active-subhead {
+    background-color: #f7f7f7;
+}
