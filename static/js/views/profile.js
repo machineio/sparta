@@ -1107,6 +1107,7 @@ fun.views.profile = Backbone.View.extend({
 
         console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON());
+        console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
 
         $.each(list_of_states.toJSON().results.models, function() {
             console.log('RESULTS!!!!',this);
