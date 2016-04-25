@@ -1090,3 +1090,9 @@ h1 {
 .button-active-subhead {
     background-color: #f7f7f7;
 }
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 4px 0 20px;
+    border-bottom: 1px solid #eee;
+}
