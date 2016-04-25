@@ -1108,6 +1108,7 @@ fun.views.profile = Backbone.View.extend({
         console.log('COLLECTION!!!',list_of_states.toJSON());
 
         $.each(list_of_states.toJSON().results.models, function() {
+            console.log('RESULTS!!!!',this.uuid,this.option);
             elem.append($("<option />").val(this.uuid).text(this.option));
         });
         // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
