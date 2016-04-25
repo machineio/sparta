@@ -1094,13 +1094,13 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
-    getDropdownInfo: function(elem){
+    getDropdownInfo: function(elem,string){
         'use strict';
         var list_of_states,
             options;
 
         options = {unique:true};
-        options[elem['0'].id] = true;
+        options[string] = true;
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({data: $.param(options)});
@@ -2424,7 +2424,7 @@ fun.views.profile = Backbone.View.extend({
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
         contact_info_gender = this.$("#contact-info-gender");
-        this.getDropdownInfo(contact_info_gender);
+        this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
         console.log('DROPDOWN INFO contact_info_gender');
 
