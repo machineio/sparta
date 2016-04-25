@@ -1103,10 +1103,9 @@ fun.views.profile = Backbone.View.extend({
         options[select] = true;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({data: $.param(options), success: function(collection,response){
-            console.log('COLLECTION!!!',collection.toJSON().results.models);
-            return collection.toJSON().results.models;
-        }});
+        list_of_states.fetch({data: $.param(options)});
+        console.log('COLLECTION!!!',list_of_states.toJSON());
+        return list_of_states.toJSON().results;
     },
 
     deleteContact:function(event){
