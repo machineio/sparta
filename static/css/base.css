@@ -1044,8 +1044,8 @@ h1 {
 }
 
 .pad-prof2-sparta {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .marg-profile-spartaio1 {
@@ -1059,4 +1059,8 @@ h1 {
     padding: 20px;
     margin: 10px;
     border: 1px solid #e6e9ed;
+}
+
+.background-profile-spartaio {
+    background-color: #f7f7f7;
 }
