@@ -1047,3 +1047,10 @@ h1 {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.marg-profile-spartaio {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #e6e9ed;
+}
