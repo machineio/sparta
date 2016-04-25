@@ -1042,3 +1042,8 @@ h1 {
 .profile-sparta-padd {
     padding: 13px;
 }
+
+.pad-prof2-sparta {
+    padding-left: 0px;
+    padding-right: 0px;
+}
