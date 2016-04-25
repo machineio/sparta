@@ -1098,3 +1098,12 @@ h1 {
     margin: 4px 0 20px;
     border-bottom: 1px solid #eee;
 }
+
+.but-left-callmodal {
+    padding: 14px;
+
+}
+
+.but-search-callmodal {
+    padding: 15px;
+}
