@@ -338,13 +338,14 @@ a:hover, a:focus {
 }
 
 #footer .inner {
-    background-color: #939597;
+    background-color: rgba(178, 178, 178, 0.36) !important;
     border: none !important;
 }
 
 .navbar {
-  background-color: #939597 !important;
+  background-color: rgba(178, 178, 178, 0.36) !important;
   border-bottom: none !important;
+  padding: 16px;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
