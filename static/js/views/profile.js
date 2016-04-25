@@ -1105,11 +1105,11 @@ fun.views.profile = Backbone.View.extend({
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({data: $.param(options)});
 
-        console.log('ELEM',options);
-        console.log('COLLECTION!!!',list_of_states.toJSON(),elem['0'].id);
+        console.log('ELEM',$.param(options));
+        console.log('COLLECTION!!!',list_of_states.toJSON(),elem.context.activeElement.id);
 
         $.each(list_of_states.toJSON().results.models, function(item) {
-            console.log('RESULTS!!!!',item.uuid,item.option);
+            console.log('RESULTS!!!!',item);
             elem.append($("<option />").val(item.uuid).text(item.option));
         });
         // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
