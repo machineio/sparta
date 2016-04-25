@@ -1068,3 +1068,7 @@ h1 {
 .button-search-sparta {
     border: 1px solid #e7e7e7;
 }
+
+.panel-default {
+    border-color: #e7e7e7 !important;
+}
