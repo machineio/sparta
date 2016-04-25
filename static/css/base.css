@@ -965,7 +965,7 @@ input.error:-ms-input-placeholder {
 }
 
 .update-button-taskmodal {
-    background-color: #ccc;
+    background-color: rgba(178, 178, 178, 0.36) !important;
     margin: 2px;
     padding: 4px;
 }
