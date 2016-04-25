@@ -1081,3 +1081,6 @@ h1 {
 .btn-default {
     color: #777;
 }
+
+.panel-default>.panel-heading {
+    color: #777;
