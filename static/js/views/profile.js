@@ -1604,6 +1604,7 @@ fun.views.profile = Backbone.View.extend({
             contact_info_lead_type,
             contact_info_partner,
             contact_info_last_modified_by,
+            contact_info_do_you_own_your_home,
             contact_info_health_insurance_checkbox,
             contact_info_home_insurance_checkbox,
             contact_info_auto_insurance_checkbox,
