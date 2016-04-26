@@ -396,7 +396,7 @@ textarea {
     padding: 64px;
     margin-bottom: 1.7em;
     text-align: center;
-    background-color: #ddd;
+    background-color: #f3f3f3;
     margin-top: 81px;
 }
 
@@ -415,7 +415,7 @@ textarea {
 #footer .inner {
     padding: 20px 0;
 
-    color: #fff;
+    color: #777;
     
     background-color: #111;
 

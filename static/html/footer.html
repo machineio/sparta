@@ -37,7 +37,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             
-            <div class="modal-body">
+            <div class="modal-body modalbody-call-sparta">
                 
                 <hr>
                 
@@ -58,24 +58,13 @@
                             <h4>Search</h4>
 
 
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-search"></i>
-                                </span>
-
-                                <input id="search_contact_query" type="text" class="form-control-cm" placeholder="Query information on your assigned leads">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Search</button>
-                              </span>
-                            </div>
-
                         </div>
 
 
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 but-left-callmodal">
                             <div class="row">
                                 <div class="col-md-12">
                                     <button id="call-outbound-btn" class="btn btn-lg btn-success btn-block update-button-taskmodal" type="submit"><%= translate("callNow") %></button>
@@ -170,6 +159,17 @@
                             </div>
                         </div>
                         </div>
+
+                            <div class="input-group but-search-callmodal">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-search"></i>
+                                </span>
+
+                                <input id="search_contact_query" type="text" class="form-control-cm" placeholder="Query information on your assigned leads">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Search</button>
+                              </span>
+                            </div>
                         <div id="pills" class="col-md-8">
                             <div id="hot-contact-modal-tabs" class="hide"></div>
                         </div>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer callmodal-footer-sparta">
                 <div class"row">
                     <div class="col-md-6">
                         <button id="update-task-btn" class="btn btn-lg btn-success btn-block cancel-button-taskmodal" type="submit"><%= translate("cancel") %></button>

@@ -280,7 +280,7 @@ ul.pagination li > a {
 }
 
 .panel-default > .panel-heading {
-  background: #ddd;
+  background: #f3f3f3;
 }
 
 .panel {
@@ -319,7 +319,7 @@ ul.pagination li > a {
 }
 
 a {
-    color: #4e4e4e;
+    color: #777;
 }
 
 a:hover, a:focus {
@@ -338,13 +338,14 @@ a:hover, a:focus {
 }
 
 #footer .inner {
-    background-color: #939597;
+    background-color: rgba(178, 178, 178, 0.36) !important;
     border: none !important;
 }
 
 .navbar {
-  background-color: #939597 !important;
+  background-color: rgba(178, 178, 178, 0.36) !important;
   border-bottom: none !important;
+  padding: 16px;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
@@ -487,7 +488,8 @@ html,
 body {
   min-height: 100vh;
   height: auto !important;
-  color: #686565;
+  color: #777;
+  background-color: #f7f7f7;
   /*height: 100%;*/
   /* Negative indent footer by it's height */
   /*margin: 0 auto -60px;*/
@@ -963,7 +965,9 @@ input.error:-ms-input-placeholder {
 }
 
 .update-button-taskmodal {
-    background-color: #636363;
+    background-color: #868686;
+    margin: 2px;
+    padding: 4px;
 }
 
 .cancel-button-taskmodal {
@@ -991,7 +995,7 @@ input.error:-ms-input-placeholder {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #848484;
+    background-color: #b2b2b2;
     border-color: #848484;
 }
 
@@ -1036,4 +1040,81 @@ h1 {
 
 .update-button-search-cm {
     background-color: #DADADA;
+}
+
+
+.profile-sparta-padd {
+    padding: 13px;
+}
+
+.pad-prof2-sparta {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.marg-profile-spartaio1 {
+    background-color: white;
+    padding: 42px;
+    border: 1px solid #e6e9ed;
+}
+
+.marg-profile-spartaio2 {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #e6e9ed;
+}
+
+.background-profile-spartaio {
+    background-color: #f7f7f7;
+}
+
+.button-search-sparta {
+    border: 1px solid #e7e7e7;
+}
+
+.panel-default {
+    border-color: #e7e7e7 !important;
+}
+
+.active-button-spartaio {
+    padding: 10px 15px;
+}
+
+.btn-default {
+    color: #777;
+}
+
+.panel-default>.panel-heading {
+    color: #777;
+}
+
+.button-active-subhead {
+    background-color: #f7f7f7;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 4px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.but-left-callmodal {
+    padding: 14px;
+
+}
+
+.but-search-callmodal {
+    padding: 15px;
+}
+
+.modalbody-call-sparta {
+    padding-bottom: 20px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 30px;
+}
+
+.callmodal-footer-sparta {
+    padding: 40px;
 }
