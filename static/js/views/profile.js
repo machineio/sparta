@@ -38,27 +38,6 @@ fun.views.profile = Backbone.View.extend({
         var view = this;
     },
 
-    successResult: function(response){
-
-        // esto es un hack por una vara ahi que no le voy a explicar x que no es el momento.
-
-        // - X que?
-
-        // (=
-
-        var lolazo = response.attributes.results.models;
-
-        _.each(lolazo, function(value){
-            /*template = _.template(
-                fun.utils.getTemplate(fun.conf.templates.contactRow)
-            )(value);
-            rows.append(template);*/
-            console.log(value.toJSON());
-        });
-
-    },
-
-
     callPhoneNumber: function(event){
         'use strict';
         event.preventDefault();    
@@ -1114,7 +1093,25 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
-    
+    // getDropdownInfo: function(response){
+
+    //     // esto es un hack por una vara ahi que no le voy a explicar x que no es el momento.
+
+    //     // - X que?
+
+    //     // (=
+
+    //     var lolazo = response.attributes.results.models;
+
+    //     _.each(lolazo, function(value){
+    //         /*template = _.template(
+    //             fun.utils.getTemplate(fun.conf.templates.contactRow)
+    //         )(value);
+    //         rows.append(template);*/
+    //         console.log(value.toJSON());
+    //     });
+
+    // },
 
     // satan
 
@@ -1128,17 +1125,23 @@ fun.views.profile = Backbone.View.extend({
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({
-            
-
             data: $.param(options),
-            success: this.successResult,
+            success: function(response){
+                var lolazo = response.attributes.results.models;
+                _.each(lolazo, function(value){
+                    // elem.append($("<option />").val(value.).text(this.option));
+                    /*template = _.template(
+                        fun.utils.getTemplate(fun.conf.templates.contactRow)
+                    )(value);
+                    rows.append(template);*/
+                    console.log(value.toJSON());
+                });
+            },
             error: function(response){
                 console.log('prueba con alex y tony');
                 console.log(response);
             },
         });
-
-        console.log('test 4');
 
         /*console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON().results);
