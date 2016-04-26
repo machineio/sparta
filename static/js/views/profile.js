@@ -1129,11 +1129,7 @@ fun.views.profile = Backbone.View.extend({
             success: function(response){
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
-                    // elem.append($("<option />").val(value.).text(this.option));
-                    /*template = _.template(
-                        fun.utils.getTemplate(fun.conf.templates.contactRow)
-                    )(value);
-                    rows.append(template);*/
+                    elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                     console.log(value.toJSON().option);
                 });
             },
