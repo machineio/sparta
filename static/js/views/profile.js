@@ -1130,7 +1130,6 @@ fun.views.profile = Backbone.View.extend({
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
                     elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
-                    console.log(value.toJSON().option);
                 });
             },
             error: function(response){
