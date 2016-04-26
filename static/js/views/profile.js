@@ -38,6 +38,22 @@ fun.views.profile = Backbone.View.extend({
         var view = this;
     },
 
+    successResult: function(response){
+
+        var lolazo = response.attributes.results.models;
+
+        
+
+        _.each(lolazo, function(value){
+            /*template = _.template(
+                fun.utils.getTemplate(fun.conf.templates.contactRow)
+            )(value);
+            rows.append(template);*/
+            console.log(value.toJSON());
+        });
+
+    },
+
 
     callPhoneNumber: function(event){
         'use strict';
@@ -1108,14 +1124,19 @@ fun.views.profile = Backbone.View.extend({
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({
-            sucess: function(response){
+            
+
+            data: $.param(options),
+            success: this.successResult(),
+            error: function(response){
                 console.log('prueba con alex y tony');
                 console.log(response);
-            }, 
-            data: $.param(options)
+            },
         });
 
-        console.log('ELEM',$.param(options));
+        console.log('test 4');
+
+        /*console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON().results);
         console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
 
@@ -1124,7 +1145,7 @@ fun.views.profile = Backbone.View.extend({
         $.each(list_of_states.toJSON().results.models, function() {
             console.log('RESULTS!!!!',this);
             elem.append($("<option />").val(this.uuid).text(this.option));
-        });
+        });*/
         // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
         // return list_of_states.toJSON().results.models;
     },
