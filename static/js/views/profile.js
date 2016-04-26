@@ -1129,7 +1129,7 @@ fun.views.profile = Backbone.View.extend({
             
 
             data: $.param(options),
-            success: this.successResult(response),
+            success: this.successResult,
             error: function(response){
                 console.log('prueba con alex y tony');
                 console.log(response);
