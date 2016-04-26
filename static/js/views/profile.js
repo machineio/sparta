@@ -40,17 +40,19 @@ fun.views.profile = Backbone.View.extend({
 
     successResult: function(response){
 
-        console.log(response);
-/*
+        // esto es un hack por una vara ahi que no le voy a explicar x que no es el momento.
+
+        // - X que?
+
+        // (=
+
         var lolazo = response.attributes.results.models;
 
-        
-
         _.each(lolazo, function(value){
-            template = _.template(
+            /*template = _.template(
                 fun.utils.getTemplate(fun.conf.templates.contactRow)
             )(value);
-            rows.append(template);
+            rows.append(template);*/
             console.log(value.toJSON());
         });*/
 
