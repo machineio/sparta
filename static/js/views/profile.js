@@ -1094,10 +1094,7 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
-    sucessContainer: function(response){
-        console.log(response);
-        console.log('prueba con alex y tony');
-    },
+    
 
     // satan
 
@@ -1110,11 +1107,19 @@ fun.views.profile = Backbone.View.extend({
         options[string] = true;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({sucess: this.sucessContainer, data: $.param(options)});
+        list_of_states.fetch({
+            sucess: function(response){
+                console.log('prueba con alex y tony');
+                console.log(response);
+            }, 
+            data: $.param(options)
+        });
 
         console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON().results);
         console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
+
+        console.log('test 3');
 
         $.each(list_of_states.toJSON().results.models, function() {
             console.log('RESULTS!!!!',this);
