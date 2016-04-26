@@ -54,7 +54,7 @@ fun.views.profile = Backbone.View.extend({
             )(value);
             rows.append(template);*/
             console.log(value.toJSON());
-        });*/
+        });
 
     },
 
