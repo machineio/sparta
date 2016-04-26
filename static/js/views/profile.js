@@ -40,17 +40,19 @@ fun.views.profile = Backbone.View.extend({
 
     successResult: function(response){
 
+        console.log(response);
+/*
         var lolazo = response.attributes.results.models;
 
         
 
         _.each(lolazo, function(value){
-            /*template = _.template(
+            template = _.template(
                 fun.utils.getTemplate(fun.conf.templates.contactRow)
             )(value);
-            rows.append(template);*/
+            rows.append(template);
             console.log(value.toJSON());
-        });
+        });*/
 
     },
 
