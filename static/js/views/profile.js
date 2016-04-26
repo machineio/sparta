@@ -2580,7 +2580,7 @@ fun.views.profile = Backbone.View.extend({
         this.getDropdownInfo(health_lead_source,'health_lead_source');
 
         health_partner = this.$("#health-partner");
-        this.health_partner(chealth_partner,'contact_info_gender');
+        this.getDropdownInfo(health_partner,'contact_info_gender');
 
         health_lead_status = this.$("#health-lead-status");
         this.getDropdownInfo(health_lead_status,'health_lead_status');
