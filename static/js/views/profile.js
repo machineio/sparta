@@ -1094,6 +1094,13 @@ fun.views.profile = Backbone.View.extend({
         });
     },
 
+    sucessContainer: function(response){
+        console.log(response);
+        console.log('prueba con alex y tony');
+    },
+
+    // satan
+
     getDropdownInfo: function(elem,string){
         'use strict';
         var list_of_states,
@@ -1103,7 +1110,7 @@ fun.views.profile = Backbone.View.extend({
         options[string] = true;
 
         list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({data: $.param(options)});
+        list_of_states.fetch({sucess: this.sucessContainer, data: $.param(options)});
 
         console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON().results);
