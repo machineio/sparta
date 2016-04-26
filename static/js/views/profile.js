@@ -2540,10 +2540,10 @@ fun.views.profile = Backbone.View.extend({
         spouse_last_name = this.$("#spouse-last-name");
 
         spouse_gender = this.$("#spouse-gender");
-        this.spouse_gender(cspouse_gender,'contact_info_gender');
+        this.spouse_gender(spouse_gender,'contact_info_gender');
 
         spouse_dob = this.$("#spouse-dob");
-        this.spouse_dob(cspouse_dob,'contact_info_gender');
+        this.spouse_dob(spouse_dob,'contact_info_gender');
 
         spouse_do_you_have_a_social_security_number = this.$("#spouse-do-you-have-a-social-security-number");
         this.getDropdownInfo(spouse_do_you_have_a_social_security_number,'spouse_do_you_have_a_social_security_number');
