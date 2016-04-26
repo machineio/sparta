@@ -73,6 +73,43 @@ fun.views.profile = Backbone.View.extend({
         contact.fetch(async_callback);
     },
 
+    getDropdownInfo: function(elem,string){
+        'use strict';
+        var list_of_states,
+            options;
+
+        options = {unique:true};
+        options[string] = true;
+
+        list_of_states = new fun.models.ContactsContainer();
+        list_of_states.fetch({
+            data: $.param(options),
+            success: function(response){
+                var lolazo = response.attributes.results.models;
+                _.each(lolazo, function(value){
+                    elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
+                });
+            },
+            error: function(response){
+                console.log('prueba con alex y tony');
+                console.log(response);
+            },
+        });
+
+        /*console.log('ELEM',$.param(options));
+        console.log('COLLECTION!!!',list_of_states.toJSON().results);
+        console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
+
+        console.log('test 3');
+
+        $.each(list_of_states.toJSON().results.models, function() {
+            console.log('RESULTS!!!!',this);
+            elem.append($("<option />").val(this.uuid).text(this.option));
+        });*/
+        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
+        // return list_of_states.toJSON().results.models;
+    },
+
     viewContact: function(event){
         'use strict';
         event.preventDefault();
@@ -125,6 +162,7 @@ fun.views.profile = Backbone.View.extend({
             contact_info_lead_type,
             contact_info_partner,
             contact_info_last_modified_by,
+            contact_info_do_you_own_your_home,
             contact_info_health_insurance_checkbox,
             contact_info_home_insurance_checkbox,
             contact_info_auto_insurance_checkbox,
@@ -399,46 +437,94 @@ fun.views.profile = Backbone.View.extend({
         contact_info_email = this.$("#contact-info-email");
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
-        contact_info_gender = this.$("#contact-info-gender");
 
-        console.log('DROPDOWN INFO contact_info_gender');
-        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        console.log(this.getDropdownInfo('contact_info_gender'));
+        contact_info_gender = this.$("#contact-info-gender");
+        this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
+        this.getDropdownInfo(contact_info_marital_status,'contact_info_marital_status');
+
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
+        this.getDropdownInfo(contact_info_number_of_children,'contact_info_number_of_children');
+
         contact_info_social_security_number = this.$("#contact-info-social-security-number");
         contact_info_property_address = this.$("#contact-info-property-address");
+
         contact_info_state = this.$("#contact-info-state");
+        this.getDropdownInfo(contact_info_state,'contact_info_state');
+
         contact_info_city = this.$("#contact-info-city");
         contact_info_zip_code = this.$("#contact-info-zip-code");
+
         contact_info_country = this.$("#contact-info-country");
+        this.getDropdownInfo(contact_info_country,'contact_info_country');
+
         contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
+        this.getDropdownInfo(contact_info_mailing_address_different,'contact_info_mailing_address_different');
+
         contact_info_mailing_address = this.$("#contact-info-mailing-address");
         contact_info_mailing_city = this.$("#contact-info-mailing-city");
         contact_info_mailing_state = this.$("#contact-info-mailing-state");
         contact_info_mailing_zipcode = this.$("#contact-info-mailing-zipcode");
         contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
+
         contact_info_language_preference = this.$("#contact-info-language-preference");
+        this.getDropdownInfo(contact_info_language_preference,'contact_info_language_preference');
+
         contact_info_writing_agent = this.$("#contact-info-writing-agent");
+        this.getDropdownInfo(contact_info_writing_agent,'contact_info_writing_agent');
+
         contact_info_lead_source = this.$("#contact-info-lead-source");
+        this.getDropdownInfo(contact_info_lead_source,'contact_info_lead_source');
+
         contact_info_lead_type = this.$("#contact-info-lead-type");
+        this.getDropdownInfo(contact_info_lead_type,'contact_info_lead_type');
+
         contact_info_partner = this.$("#contact-info-partner");
         contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
+
         contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
+        this.getDropdownInfo(contact_info_health_insurance_checkbox,'contact_info_health_insurance_checkbox');
+
         contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
+        this.getDropdownInfo(contact_info_home_insurance_checkbox,'contact_info_home_insurance_checkbox');
+
         contact_info_auto_insurance_checkbox = this.$("#contact-info-auto-insurance-checkbox");
+        this.getDropdownInfo(contact_info_auto_insurance_checkbox,'contact_info_auto_insurance_checkbox');
+
         contact_info_life_insurance_checkbox = this.$("#contact-info-life-insurance-checkbox");
+        this.getDropdownInfo(contact_info_life_insurance_checkbox,'contact_info_life_insurance_checkbox');
+
         contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
+        this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'contact_info_ancilliary_insurance_checkbox');
+
         contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
+        this.getDropdownInfo(contact_info_other_policy_sold,'contact_info_other_policy_sold');
+
         contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
+        this.getDropdownInfo(contact_info_federal_do_not_call,'contact_info_federal_do_not_call');
+
+        contact_info_do_you_own_your_home = this.$("#contact-info-do-you-own-your-home");
+        this.getDropdownInfo(contact_info_do_you_own_your_home,'contact_info_do_you_own_your_home');
+
         contact_info_renew_as_is_email_received = this.$("#contact-info-renew-as-is-email-received");
+        this.getDropdownInfo(contact_info_renew_as_is_email_received,'contact_info_renew_as_is_email_received');
+
         health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
+        this.getDropdownInfo(health_us_citizen_or_legal_permanent_resident,'health_us_citizen_or_legal_permanent_resident');
+
         spouse_first_name = this.$("#spouse-first-name");
         spouse_last_name = this.$("#spouse-last-name");
+
         spouse_gender = this.$("#spouse-gender");
+        this.getDropdownInfo(spouse_gender,'contact_info_gender');
+
         spouse_dob = this.$("#spouse-dob");
+        this.getDropdownInfo(spouse_dob,'contact_info_gender');
+
         spouse_do_you_have_a_social_security_number = this.$("#spouse-do-you-have-a-social-security-number");
+        this.getDropdownInfo(spouse_do_you_have_a_social_security_number,'spouse_do_you_have_a_social_security_number');
+
         spouse_social = this.$("#spouse-social");
         spouse_income_source = this.$("#spouse-income-source");
         spouse_yearly_income = this.$("#spouse-yearly-income");
@@ -462,19 +548,38 @@ fun.views.profile = Backbone.View.extend({
         contact_info_child_4_social = this.$("#child-4-social");
 
         health_auto_priority_code = this.$("#health-auto-priority-code");
+        this.getDropdownInfo(health_auto_priority_code,'health_auto_priority_code');
+
         health_priority_code = this.$("#health-priority-code");
+        this.getDropdownInfo(health_priority_code,'health_priority_code');
+
         health_lead_source = this.$("#health-lead-source");
+        this.getDropdownInfo(health_lead_source,'health_lead_source');
+
         health_partner = this.$("#health-partner");
+        this.getDropdownInfo(health_partner,'contact_info_gender');
+
         health_lead_status = this.$("#health-lead-status");
+        this.getDropdownInfo(health_lead_status,'health_lead_status');
+
         health_writing_agent = this.$("#health-writing-agent");
+        this.getDropdownInfo(health_writing_agent,'health_writing_agent');
+
         health_scrubber = this.$("#health-scrubber");
+        this.getDropdownInfo(health_scrubber,'health_scrubber');
+
         health_total_individual_income = this.$("#health-total-individual-income");
         health_total_household_income = this.$("#health-total-household-income");
         health_primary_applicants_income_source = this.$("#health-primary-applicants-income-source");
         health_primary_applicants_employers_name = this.$("#health-primary-applicants-employers-name");
         health_applicant_employers_phone_number = this.$("#health-applicant-employers-phone-number");
+
         health_marital_status = this.$("#health-marital-status");
+        this.getDropdownInfo(health_marital_status,'health_marital_status');
+
         health_number_of_dependent_children_in_house = this.$("#health-number-of-dependent-children-in-house");
+        this.getDropdownInfo(health_number_of_dependent_children_in_house,'health_number_of_dependent_children_in_house');
+
         health_renewal_source_2016 = this.$("#health-renewal-source-2016");
         health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
         health_presold_processor_2016 = this.$("#health-presold-processor-2016");
@@ -489,14 +594,26 @@ fun.views.profile = Backbone.View.extend({
         health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
         health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
         health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
+
         health_adults_applying_for_coverage_2016 = this.$("#health-adults-applying-for-coverage-2016");
+        this.getDropdownInfo(health_adults_applying_for_coverage_2016,'health_adults_applying_for_coverage_2016');
+
         health_total_household_size_2016 = this.$("#health-total-household-size-2016");
+        this.getDropdownInfo(health_total_household_size_2016,'health_total_household_size_2016');
+
         health_cloud_gross_premium_2016 = this.$("#health-cloud-gross-premium-2016");
+        this.getDropdownInfo(health_cloud_gross_premium_2016,'health_cloud_gross_premium_2016');
+
         health_children_applying_for_coverage_2016 = this.$("#health-children-applying-for-coverage-2016");
         health_cloud_subsidy_2016 = this.$("#health-cloud-subsidy-2016");
         health_cloud_premium_after_subsidy_2016 = this.$("#health-cloud-premium-after-subsidy-2016");
+
         health_lead_has_a_marketplace_account = this.$("#health-lead-has-a-marketplace-account");
+        this.getDropdownInfo(health_lead_has_a_marketplace_account,'health_lead_has_a_marketplace_account');
+
         health_current_coverage = this.$("#health-current-coverage");
+        this.getDropdownInfo(health_current_coverage,'health_current_coverage');
+
         health_marketplace_app_id_2015 = this.$("#health-marketplace-app-id-2015");
         health_current_premium = this.$("#health-current-premium");
         health_subsidy_amount = this.$("#health-subsidy-amount");
@@ -504,15 +621,34 @@ fun.views.profile = Backbone.View.extend({
         health_effective_date_2015 = this.$("#health-effective-date-2015");
         health_application_id_2015 = this.$("#health-application-id-2015");
         health_premium_2015 = this.$("#health-premium-2015");
+
         health_carrier_2015 = this.$("#health-carrier-2015");
+        this.getDropdownInfo(health_carrier_2015,'health_carrier_2015');
+
         health_subsidy_2015 = this.$("#health-subsidy-2015");
+        this.getDropdownInfo(health_subsidy_2015,'health_subsidy_2015');
+
         health_adult_on_plan_2015 = this.$("#health-adult-on-plan-2015");
+        this.getDropdownInfo(health_adult_on_plan_2015,'health_adult_on_plan_2015');
+
         health_children_on_plan_2015 = this.$("#health-children-on-plan-2015");
+        this.getDropdownInfo(health_children_on_plan_2015,'health_children_on_plan_2015');
+
         health_income_verification_needed_2015 = this.$("#health-income-verification-needed-2015");
+        this.getDropdownInfo(health_income_verification_needed_2015,'health_income_verification_needed_2015');
+
         health_citizenship_documents_needed_2015 = this.$("#health-citizenship-documents-needed-2015");
+        this.getDropdownInfo(health_citizenship_documents_needed_2015,'health_citizenship_documents_needed_2015');
+
         health_policy = this.$("#health-policy");
+        this.getDropdownInfo(health_policy,'health_policy');
+
         health_contact_code_2015 = this.$("#health-contact-code-2015");
+        this.getDropdownInfo(health_contact_code_2015,'health_contact_code_2015');
+
         health_wants_to_renew_same_plan_for_2016 = this.$("#health-wants-to-renew-same-plan-for-2016");
+        this.getDropdownInfo(health_wants_to_renew_same_plan_for_2016,'health_wants_to_renew_same_plan_for_2016');
+
         health_quoted_renewal_gross_premium_2016 = this.$("#health-quoted-renewal-gross-premium-2016");
         health_quoted_renewal_subsidy_2016 = this.$("#health-quoted-renewal-subsidy-2016");
         health_quoted_renewal_net_premium_2016 = this.$("#health-quoted-renewal-net-premium-2016");
@@ -1112,45 +1248,6 @@ fun.views.profile = Backbone.View.extend({
     //     });
 
     // },
-
-    // satan
-
-    getDropdownInfo: function(elem,string){
-        'use strict';
-        var list_of_states,
-            options;
-
-        options = {unique:true};
-        options[string] = true;
-
-        list_of_states = new fun.models.ContactsContainer();
-        list_of_states.fetch({
-            data: $.param(options),
-            success: function(response){
-                var lolazo = response.attributes.results.models;
-                _.each(lolazo, function(value){
-                    elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
-                });
-            },
-            error: function(response){
-                console.log('prueba con alex y tony');
-                console.log(response);
-            },
-        });
-
-        /*console.log('ELEM',$.param(options));
-        console.log('COLLECTION!!!',list_of_states.toJSON().results);
-        console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
-
-        console.log('test 3');
-
-        $.each(list_of_states.toJSON().results.models, function() {
-            console.log('RESULTS!!!!',this);
-            elem.append($("<option />").val(this.uuid).text(this.option));
-        });*/
-        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        // return list_of_states.toJSON().results.models;
-    },
 
     deleteContact:function(event){
         'use strict';
@@ -1781,46 +1878,94 @@ fun.views.profile = Backbone.View.extend({
         contact_info_email = this.$("#contact-info-email");
         contact_info_other_phone = this.$("#contact-info-other-phone");
         contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
-        contact_info_gender = this.$("#contact-info-gender");
 
-        console.log('DROPDOWN INFO contact_info_gender');
-        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        console.log(this.getDropdownInfo('contact_info_gender'));
+        contact_info_gender = this.$("#contact-info-gender");
+        this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
         contact_info_marital_status = this.$("#contact-info-marital-status");
+        this.getDropdownInfo(contact_info_marital_status,'contact_info_marital_status');
+
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
+        this.getDropdownInfo(contact_info_number_of_children,'contact_info_number_of_children');
+
         contact_info_social_security_number = this.$("#contact-info-social-security-number");
         contact_info_property_address = this.$("#contact-info-property-address");
+
         contact_info_state = this.$("#contact-info-state");
+        this.getDropdownInfo(contact_info_state,'contact_info_state');
+
         contact_info_city = this.$("#contact-info-city");
         contact_info_zip_code = this.$("#contact-info-zip-code");
+
         contact_info_country = this.$("#contact-info-country");
+        this.getDropdownInfo(contact_info_country,'contact_info_country');
+
         contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
+        this.getDropdownInfo(contact_info_mailing_address_different,'contact_info_mailing_address_different');
+
         contact_info_mailing_address = this.$("#contact-info-mailing-address");
         contact_info_mailing_city = this.$("#contact-info-mailing-city");
         contact_info_mailing_state = this.$("#contact-info-mailing-state");
         contact_info_mailing_zipcode = this.$("#contact-info-mailing-zipcode");
         contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
+
         contact_info_language_preference = this.$("#contact-info-language-preference");
+        this.getDropdownInfo(contact_info_language_preference,'contact_info_language_preference');
+
         contact_info_writing_agent = this.$("#contact-info-writing-agent");
+        this.getDropdownInfo(contact_info_writing_agent,'contact_info_writing_agent');
+
         contact_info_lead_source = this.$("#contact-info-lead-source");
+        this.getDropdownInfo(contact_info_lead_source,'contact_info_lead_source');
+
         contact_info_lead_type = this.$("#contact-info-lead-type");
+        this.getDropdownInfo(contact_info_lead_type,'contact_info_lead_type');
+
         contact_info_partner = this.$("#contact-info-partner");
         contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
+
         contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
+        this.getDropdownInfo(contact_info_health_insurance_checkbox,'contact_info_health_insurance_checkbox');
+
         contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
+        this.getDropdownInfo(contact_info_home_insurance_checkbox,'contact_info_home_insurance_checkbox');
+
         contact_info_auto_insurance_checkbox = this.$("#contact-info-auto-insurance-checkbox");
+        this.getDropdownInfo(contact_info_auto_insurance_checkbox,'contact_info_auto_insurance_checkbox');
+
         contact_info_life_insurance_checkbox = this.$("#contact-info-life-insurance-checkbox");
+        this.getDropdownInfo(contact_info_life_insurance_checkbox,'contact_info_life_insurance_checkbox');
+
         contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
+        this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'contact_info_ancilliary_insurance_checkbox');
+
         contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
+        this.getDropdownInfo(contact_info_other_policy_sold,'contact_info_other_policy_sold');
+
         contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
+        this.getDropdownInfo(contact_info_federal_do_not_call,'contact_info_federal_do_not_call');
+
+        contact_info_do_you_own_your_home = this.$("#contact-info-do-you-own-your-home");
+        this.getDropdownInfo(contact_info_do_you_own_your_home,'contact_info_do_you_own_your_home');
+
         contact_info_renew_as_is_email_received = this.$("#contact-info-renew-as-is-email-received");
+        this.getDropdownInfo(contact_info_renew_as_is_email_received,'contact_info_renew_as_is_email_received');
+
         health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
+        this.getDropdownInfo(health_us_citizen_or_legal_permanent_resident,'health_us_citizen_or_legal_permanent_resident');
+
         spouse_first_name = this.$("#spouse-first-name");
         spouse_last_name = this.$("#spouse-last-name");
+
         spouse_gender = this.$("#spouse-gender");
+        this.getDropdownInfo(spouse_gender,'contact_info_gender');
+
         spouse_dob = this.$("#spouse-dob");
+        this.getDropdownInfo(spouse_dob,'contact_info_gender');
+
         spouse_do_you_have_a_social_security_number = this.$("#spouse-do-you-have-a-social-security-number");
+        this.getDropdownInfo(spouse_do_you_have_a_social_security_number,'spouse_do_you_have_a_social_security_number');
+
         spouse_social = this.$("#spouse-social");
         spouse_income_source = this.$("#spouse-income-source");
         spouse_yearly_income = this.$("#spouse-yearly-income");
@@ -1844,19 +1989,38 @@ fun.views.profile = Backbone.View.extend({
         contact_info_child_4_social = this.$("#child-4-social");
 
         health_auto_priority_code = this.$("#health-auto-priority-code");
+        this.getDropdownInfo(health_auto_priority_code,'health_auto_priority_code');
+
         health_priority_code = this.$("#health-priority-code");
+        this.getDropdownInfo(health_priority_code,'health_priority_code');
+
         health_lead_source = this.$("#health-lead-source");
+        this.getDropdownInfo(health_lead_source,'health_lead_source');
+
         health_partner = this.$("#health-partner");
+        this.getDropdownInfo(health_partner,'contact_info_gender');
+
         health_lead_status = this.$("#health-lead-status");
+        this.getDropdownInfo(health_lead_status,'health_lead_status');
+
         health_writing_agent = this.$("#health-writing-agent");
+        this.getDropdownInfo(health_writing_agent,'health_writing_agent');
+
         health_scrubber = this.$("#health-scrubber");
+        this.getDropdownInfo(health_scrubber,'health_scrubber');
+
         health_total_individual_income = this.$("#health-total-individual-income");
         health_total_household_income = this.$("#health-total-household-income");
         health_primary_applicants_income_source = this.$("#health-primary-applicants-income-source");
         health_primary_applicants_employers_name = this.$("#health-primary-applicants-employers-name");
         health_applicant_employers_phone_number = this.$("#health-applicant-employers-phone-number");
+
         health_marital_status = this.$("#health-marital-status");
+        this.getDropdownInfo(health_marital_status,'health_marital_status');
+
         health_number_of_dependent_children_in_house = this.$("#health-number-of-dependent-children-in-house");
+        this.getDropdownInfo(health_number_of_dependent_children_in_house,'health_number_of_dependent_children_in_house');
+
         health_renewal_source_2016 = this.$("#health-renewal-source-2016");
         health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
         health_presold_processor_2016 = this.$("#health-presold-processor-2016");
@@ -1871,14 +2035,26 @@ fun.views.profile = Backbone.View.extend({
         health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
         health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
         health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
+
         health_adults_applying_for_coverage_2016 = this.$("#health-adults-applying-for-coverage-2016");
+        this.getDropdownInfo(health_adults_applying_for_coverage_2016,'health_adults_applying_for_coverage_2016');
+
         health_total_household_size_2016 = this.$("#health-total-household-size-2016");
+        this.getDropdownInfo(health_total_household_size_2016,'health_total_household_size_2016');
+
         health_cloud_gross_premium_2016 = this.$("#health-cloud-gross-premium-2016");
+        this.getDropdownInfo(health_cloud_gross_premium_2016,'health_cloud_gross_premium_2016');
+
         health_children_applying_for_coverage_2016 = this.$("#health-children-applying-for-coverage-2016");
         health_cloud_subsidy_2016 = this.$("#health-cloud-subsidy-2016");
         health_cloud_premium_after_subsidy_2016 = this.$("#health-cloud-premium-after-subsidy-2016");
+
         health_lead_has_a_marketplace_account = this.$("#health-lead-has-a-marketplace-account");
+        this.getDropdownInfo(health_lead_has_a_marketplace_account,'health_lead_has_a_marketplace_account');
+
         health_current_coverage = this.$("#health-current-coverage");
+        this.getDropdownInfo(health_current_coverage,'health_current_coverage');
+
         health_marketplace_app_id_2015 = this.$("#health-marketplace-app-id-2015");
         health_current_premium = this.$("#health-current-premium");
         health_subsidy_amount = this.$("#health-subsidy-amount");
@@ -1886,15 +2062,34 @@ fun.views.profile = Backbone.View.extend({
         health_effective_date_2015 = this.$("#health-effective-date-2015");
         health_application_id_2015 = this.$("#health-application-id-2015");
         health_premium_2015 = this.$("#health-premium-2015");
+
         health_carrier_2015 = this.$("#health-carrier-2015");
+        this.getDropdownInfo(health_carrier_2015,'health_carrier_2015');
+
         health_subsidy_2015 = this.$("#health-subsidy-2015");
+        this.getDropdownInfo(health_subsidy_2015,'health_subsidy_2015');
+
         health_adult_on_plan_2015 = this.$("#health-adult-on-plan-2015");
+        this.getDropdownInfo(health_adult_on_plan_2015,'health_adult_on_plan_2015');
+
         health_children_on_plan_2015 = this.$("#health-children-on-plan-2015");
+        this.getDropdownInfo(health_children_on_plan_2015,'health_children_on_plan_2015');
+
         health_income_verification_needed_2015 = this.$("#health-income-verification-needed-2015");
+        this.getDropdownInfo(health_income_verification_needed_2015,'health_income_verification_needed_2015');
+
         health_citizenship_documents_needed_2015 = this.$("#health-citizenship-documents-needed-2015");
+        this.getDropdownInfo(health_citizenship_documents_needed_2015,'health_citizenship_documents_needed_2015');
+
         health_policy = this.$("#health-policy");
+        this.getDropdownInfo(health_policy,'health_policy');
+
         health_contact_code_2015 = this.$("#health-contact-code-2015");
+        this.getDropdownInfo(health_contact_code_2015,'health_contact_code_2015');
+
         health_wants_to_renew_same_plan_for_2016 = this.$("#health-wants-to-renew-same-plan-for-2016");
+        this.getDropdownInfo(health_wants_to_renew_same_plan_for_2016,'health_wants_to_renew_same_plan_for_2016');
+
         health_quoted_renewal_gross_premium_2016 = this.$("#health-quoted-renewal-gross-premium-2016");
         health_quoted_renewal_subsidy_2016 = this.$("#health-quoted-renewal-subsidy-2016");
         health_quoted_renewal_net_premium_2016 = this.$("#health-quoted-renewal-net-premium-2016");
