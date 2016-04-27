@@ -2371,7 +2371,7 @@ fun.views.profile = Backbone.View.extend({
         this.getDropdownInfo(contact_info_number_of_children,'contact_info_number_of_children');
 
         var contact_info_social_security_number = this.$("#contact-info-social-security-number");
-        contact_info_property_address = this.$("#contact-info-property-address");
+        var contact_info_property_address = this.$("#contact-info-property-address");
 
         var contact_info_state = this.$("#contact-info-state");
         this.getDropdownInfo(contact_info_state,'contact_info_state');
@@ -2508,12 +2508,11 @@ fun.views.profile = Backbone.View.extend({
         var health_presold_processor_2016 = this.$("#health-presold-processor-2016");
         var health_application_number_2016_info = this.$("#health-application-number-2016-info");
         var health_effective_date_2016 = this.$("#health-effective-date-2016");
-        var health_presold_processor_2016 = this.$("#health-presold-processor-2016");
         var health_total_income_used_on_application = this.$("#health-total-income-used-on-application");
         var health_final_gross_premium_2016 = this.$("#health-final-gross-premium-2016");
         var health_final_subsidy_2016 = this.$("#health-final-subsidy-2016");
         var heatlh_plan_2016 = this.$("#heatlh-plan-2016");
-        var health_final_premium_after_subsidy_2016 = this.$("#health-final-premium-after-subsidy-2016")
+        var health_final_premium_after_subsidy_2016 = this.$("#health-final-premium-after-subsidy-2016");
         var health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
         var health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
         var health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
