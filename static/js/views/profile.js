@@ -2892,6 +2892,21 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_child_4_social.val(response.get('child_4_social') || '');
 
 
+            // Now that contact info is loaded we run the functions for the show/hide of the tabs
+                fun.utils.showMailingAddressDifferent();
+                fun.utils.changeMaritalStatus();
+                fun.utils.homeInsuranceTab();
+                fun.utils.healthInsuranceTab();
+                fun.utils.autoInsuranceTab();
+                fun.utils.lifeInsuranceTab();
+                fun.utils.ancilliaryInsuranceTab();
+                fun.utils.showMarketingTab();
+                fun.utils.changeNumberChildren();
+                fun.utils.showPaymentTab();
+                fun.utils.showPaymentTab();
+                fun.utils.showSendSMSButton();
+
+
             // HEALTH INFO
                 health_auto_priority_code.val(response.get('health_auto_priority_code') || '');
                 health_priority_code.val(response.get('health_priority_code') || '');
@@ -3126,19 +3141,6 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_request_eff_date.val(response.get('ancilliary_dental_request_eff_date') || '');
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
-
-                fun.utils.showMailingAddressDifferent();
-                fun.utils.changeMaritalStatus();
-                fun.utils.homeInsuranceTab();
-                fun.utils.healthInsuranceTab();
-                fun.utils.autoInsuranceTab();
-                fun.utils.lifeInsuranceTab();
-                fun.utils.ancilliaryInsuranceTab();
-                fun.utils.showMarketingTab();
-                fun.utils.changeNumberChildren();
-                fun.utils.showPaymentTab();
-                fun.utils.showPaymentTab();
-                fun.utils.showSendSMSButton();
 
             },
             error: function(error){
