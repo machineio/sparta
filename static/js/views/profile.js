@@ -1883,7 +1883,7 @@ fun.views.profile = Backbone.View.extend({
         contact_info_gender = this.$("#contact-info-gender");
         this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
-        contact_info_marital_status = this.$("#contact-info-marital-status");
+        /*contact_info_marital_status = this.$("#contact-info-marital-status");
         this.getDropdownInfo(contact_info_marital_status,'contact_info_marital_status');
 
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
@@ -2271,7 +2271,7 @@ fun.views.profile = Backbone.View.extend({
         payment_bank_account_type = this.$("#payment-bank-account-type");
         payment_bank_name = this.$("#payment-bank-name");
         payment_bank_routuing_number = this.$("#payment-bank-routuing-number");
-        payment_bank_account_number = this.$("#payment-bank-account-number");
+        payment_bank_account_number = this.$("#payment-bank-account-number");*/
 
         // name = $(event.target).data('name');
         // contact = new fun.models.Contact();
