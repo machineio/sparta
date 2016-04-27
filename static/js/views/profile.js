@@ -1883,7 +1883,7 @@ fun.views.profile = Backbone.View.extend({
         contact_info_gender = this.$("#contact-info-gender");
         this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
-        /*contact_info_marital_status = this.$("#contact-info-marital-status");
+        contact_info_marital_status = this.$("#contact-info-marital-status");
         this.getDropdownInfo(contact_info_marital_status,'contact_info_marital_status');
 
         contact_info_number_of_children = this.$("#contact-info-number-of-children");
@@ -2271,7 +2271,7 @@ fun.views.profile = Backbone.View.extend({
         payment_bank_account_type = this.$("#payment-bank-account-type");
         payment_bank_name = this.$("#payment-bank-name");
         payment_bank_routuing_number = this.$("#payment-bank-routuing-number");
-        payment_bank_account_number = this.$("#payment-bank-account-number");*/
+        payment_bank_account_number = this.$("#payment-bank-account-number");
 
         // name = $(event.target).data('name');
         // contact = new fun.models.Contact();
@@ -2780,7 +2780,7 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_cellphone.val(response.get('contact_info_mobile_number') || '');
                 contact_info_email.val(response.get('contact_info_email') || '');
                 contact_info_other_phone.val(response.get('contact_info_other_phone') || '');
-                contact_info_date_of_birth.value = new Date(response.get('contact_info_dob'));
+                contact_info_date_of_birth.val(renderDate(response.get('contact_info_dob')) || '');
 
                 contact_info_gender.val(response.get('contact_info_gender') || '');
                 $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
@@ -2821,8 +2821,8 @@ fun.views.profile = Backbone.View.extend({
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_lead_type') + "']").attr("selected", "selected");
 
                 contact_info_lead_source.val(response.get('contact_info_lead_source') || 'boberdoo');
-                // $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
-                $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
+                $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
+                // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
 
                 contact_info_partner.val(response.get('contact_info_partner') || '');
                 contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
