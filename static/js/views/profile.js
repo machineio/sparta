@@ -2958,7 +2958,7 @@ fun.views.profile = Backbone.View.extend({
                 // health_income_verification_needed_2015.val(response.get('health_income_verification_needed_2015') || '');
                 // health_citizenship_documents_needed_2015.val(response.get('health_citizenship_documents_needed_2015') || '');
                 health_policy.val(response.get('health_policy') || '');
-                health_contact_code_2015.val(response.get('health_contact_code_2015') || '');
+                // health_contact_code_2015.val(response.get('health_contact_code_2015') || '');
                 health_wants_to_renew_same_plan_for_2016.val(response.get('health_wants_to_renew_same_plan_for_2016') || '');
                 health_quoted_renewal_gross_premium_2016.val(response.get('health_quoted_renewal_gross_premium_2016') || '');
                 health_quoted_renewal_subsidy_2016.val(response.get('health_quoted_renewal_subsidy_2016') || '');
