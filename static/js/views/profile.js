@@ -2780,7 +2780,7 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_cellphone.val(response.get('contact_info_mobile_number') || '');
                 contact_info_email.val(response.get('contact_info_email') || '');
                 contact_info_other_phone.val(response.get('contact_info_other_phone') || '');
-                contact_info_date_of_birth.val(renderDate(response.get('contact_info_dob')) || '');
+                contact_info_date_of_birth.value = new Date(response.get('contact_info_dob'));
 
                 contact_info_gender.val(response.get('contact_info_gender') || '');
                 $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
