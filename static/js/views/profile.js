@@ -2353,6 +2353,10 @@ fun.views.profile = Backbone.View.extend({
             contact_history,
             contact_comment;
 
+        $('#profileContactModal').modal({
+            'show': true
+        });
+
         var contact_info_first_name = this.$("#contact-info-first-name");
         var contact_info_last_name = this.$("#contact-info-last-name");
         var contact_info_phone_number = this.$("#contact-info-phone-number");
@@ -3135,10 +3139,6 @@ fun.views.profile = Backbone.View.extend({
                 fun.utils.showPaymentTab();
                 fun.utils.showPaymentTab();
                 fun.utils.showSendSMSButton();
-
-                $('#profileContactModal').modal({
-                    'show': true
-                });
 
             },
             error: function(error){
