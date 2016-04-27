@@ -34,7 +34,7 @@ fun.utils.showMailingAddressDifferent = function(event){
 
 fun.utils.changeMaritalStatus = function(event){
 
-    if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='Single'){
+    if($('#contact-info-marital-status').val()==='none'||$('#contact-info-marital-status').val()==='Single'||$('#contact-info-marital-status').val()===''){
         $('#contactSpouseInfoTab').removeClass('show');
         $('#contactSpouseInfoTab').addClass('hide');
     } else {
@@ -97,19 +97,6 @@ fun.utils.ancilliaryInsuranceTab = function(event){
 fun.utils.changeNumberChildren = function(event){
     switch($('#contact-info-number-of-children').val()){
 
-        case '0':
-            $('#childrenInfoTab').removeClass('show');
-            $('#childrenInfoTab').addClass('hide');
-            $('#childrenInfoGroup-1').removeClass('show');
-            $('#childrenInfoGroup-1').addClass('hide');
-            $('#childrenInfoGroup-2').removeClass('show');
-            $('#childrenInfoGroup-2').addClass('hide');
-            $('#childrenInfoGroup-3').removeClass('show');
-            $('#childrenInfoGroup-3').addClass('hide');
-            $('#childrenInfoGroup-4').removeClass('show');
-            $('#childrenInfoGroup-4').addClass('hide');
-            break;
-
         case '1':
             $('#childrenInfoTab').removeClass('hide');
             $('#childrenInfoTab').addClass('show');
@@ -161,6 +148,18 @@ fun.utils.changeNumberChildren = function(event){
             $('#childrenInfoGroup-4').removeClass('hide');
             $('#childrenInfoGroup-4').addClass('show');
             break;
+
+        default:
+            $('#childrenInfoTab').removeClass('show');
+            $('#childrenInfoTab').addClass('hide');
+            $('#childrenInfoGroup-1').removeClass('show');
+            $('#childrenInfoGroup-1').addClass('hide');
+            $('#childrenInfoGroup-2').removeClass('show');
+            $('#childrenInfoGroup-2').addClass('hide');
+            $('#childrenInfoGroup-3').removeClass('show');
+            $('#childrenInfoGroup-3').addClass('hide');
+            $('#childrenInfoGroup-4').removeClass('show');
+            $('#childrenInfoGroup-4').addClass('hide');
     }
 };
 

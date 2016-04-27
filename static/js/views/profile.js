@@ -2821,8 +2821,8 @@ fun.views.profile = Backbone.View.extend({
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_lead_type') + "']").attr("selected", "selected");
 
                 contact_info_lead_source.val(response.get('contact_info_lead_source') || 'boberdoo');
-                $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
-                // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
+                // $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
+                $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
 
                 contact_info_partner.val(response.get('contact_info_partner') || '');
                 contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
