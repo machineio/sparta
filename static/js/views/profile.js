@@ -1961,7 +1961,7 @@ fun.views.profile = Backbone.View.extend({
             this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'ancillary_lead_status');
 
             var contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
-            this.getDropdownInfo(contact_info_other_policy_sold,'contact_info_other_policy_sold');
+            this.getDropdownInfo(contact_info_other_policy_sold,'other_policies_sold');
 
             var contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
             this.getDropdownInfo(contact_info_federal_do_not_call,'contact_info_federal_do_not_call');
@@ -1973,7 +1973,7 @@ fun.views.profile = Backbone.View.extend({
             this.getDropdownInfo(contact_info_renew_as_is_email_received,'contact_info_renew_as_is_email_received');
 
             var health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
-            this.getDropdownInfo(health_us_citizen_or_legal_permanent_resident,'health_us_citizen_or_legal_permanent_resident');
+            this.getDropdownInfo(health_us_citizen_or_legal_permanent_resident,'us_citizen_or_legal_permanent_resident');
 
             var spouse_first_name = this.$("#spouse-first-name");
             var spouse_last_name = this.$("#spouse-last-name");
@@ -2419,15 +2419,17 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_ancilliary_insurance_checkbox.val(response.get('ancillary_lead_status') || '');
                 $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('ancillary_lead_status') + "']").attr("selected", "selected");
 
-                contact_info_other_policy_sold.val(response.get('contact_info_other_policy_sold') || '');
-                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('contact_info_other_policy_sold') + "']").attr("selected", "selected");
+                contact_info_other_policy_sold.val(response.get('other_policies_sold') || '');
+                $(contact_info_other_policy_sold.selector + " option[value='" + response.get('other_policies_sold') + "']").attr("selected", "selected");
 
                 contact_info_federal_do_not_call.val(response.get('contact_info_federal_do_not_call') || '');
                 $(contact_info_federal_do_not_call.selector + " option[value='" + response.get('contact_info_federal_do_not_call') + "']").attr("selected", "selected");
 
-                contact_info_renew_as_is_email_received.val(response.get('contact_info_renew_as_email_received') || '');
-                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('contact_info_renew_as_email_received') + "']").attr("selected", "selected");
+                contact_info_renew_as_is_email_received.val(response.get('contact_info_renew_as_is_email_received') || '');
+                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('contact_info_renew_as_is_email_received') + "']").attr("selected", "selected");
 
+                health_us_citizen_or_legal_permanent_resident.val(response.get('us_citizen_or_legal_permanent_resident') || '');
+                $(contact_info_renew_as_is_email_received.selector + " option[value='" + response.get('us_citizen_or_legal_permanent_resident') + "']").attr("selected", "selected");
 
             // SPOUSE INFO
                 spouse_first_name.val(response.get('spouse_first_name') || '');
