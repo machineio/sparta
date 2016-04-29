@@ -2037,10 +2037,10 @@ fun.views.profile = Backbone.View.extend({
             var health_applicant_employers_phone_number = this.$("#health-applicant-employers-phone-number");
 
             var health_marital_status = this.$("#health-marital-status");
-            this.getDropdownInfo(health_marital_status,'health_marital_status');
+            this.getDropdownInfo(health_marital_status,'contact_info_marital_status');
 
             var health_number_of_dependent_children_in_house = this.$("#health-number-of-dependent-children-in-house");
-            this.getDropdownInfo(health_number_of_dependent_children_in_house,'health_number_of_dependent_children_in_house');
+            this.getDropdownInfo(health_number_of_dependent_children_in_house,'number_of_children');
 
             var health_renewal_source_2016 = this.$("#health-renewal-source-2016");
             var health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
@@ -2101,7 +2101,7 @@ fun.views.profile = Backbone.View.extend({
             // var health_citizenship_documents_needed_2015 = this.$("#health-citizenship-documents-needed-2015");
             // this.getDropdownInfo(health_citizenship_documents_needed_2015,'health_citizenship_documents_needed_2015');
 
-            var health_policy = this.$("#health-policy");
+            var health_policy = this.$("#health-policy-2016");
             this.getDropdownInfo(health_policy,'health_policy');
 
             // var health_contact_code_2015 = this.$("#health-contact-code-2015");
@@ -2490,17 +2490,17 @@ fun.views.profile = Backbone.View.extend({
                 health_auto_priority_code.val(response.get('health_auto_priority_code') || '');
                 health_priority_code.val(response.get('health_priority_code') || '');
                 health_lead_source.val(response.get('health_lead_source') || '');
-                health_partner.val(response.get('health_partner') || '');
+                health_partner.val(response.get('contact_info_partner') || '');
                 health_lead_status.val(response.get('health_lead_status') || '');
                 health_writing_agent.val(response.get('health_writing_agent') || '');
                 health_scrubber.val(response.get('health_scrubber') || '');
-                health_total_individual_income.val(response.get('ttl_idv_inc') || '');
-                health_total_household_income.val(response.get('ttl_hse_inc') || '');
-                health_primary_applicants_income_source.val(response.get('health_primary_applicants_income_source') || '');
-                health_primary_applicants_employers_name.val(response.get('health_primary_applicants_employers_name') || '');
-                health_applicant_employers_phone_number.val(response.get('health_applicant_employers_phone_number') || '');
+                health_total_individual_income.val(response.get('health_total_individual_income') || '');
+                health_total_household_income.val(response.get('health_total_household_income') || '');
+                health_primary_applicants_income_source.val(response.get('primary_applicants_income_source') || '');
+                health_primary_applicants_employers_name.val(response.get('primary_applicants_employers_name') || '');
+                health_applicant_employers_phone_number.val(response.get('contact_info_marital_status') || '');
                 health_marital_status.val(response.get('health_marital_status') || '');
-                health_number_of_dependent_children_in_house.val(response.get('health_number_of_dependent_children_in_house') || '');
+                health_number_of_dependent_children_in_house.val(response.get('number_of_children') || '');
                 health_renewal_source_2016.val(response.get('health_renewal_source_2016') || '');
                 health_renewal_agent_2016.val(response.get('health_renewal_agent_2016') || '');
                 health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
@@ -2536,7 +2536,7 @@ fun.views.profile = Backbone.View.extend({
                 // health_children_on_plan_2015.val(response.get('health_children_on_plan_2015') || '');
                 // health_income_verification_needed_2015.val(response.get('health_income_verification_needed_2015') || '');
                 // health_citizenship_documents_needed_2015.val(response.get('health_citizenship_documents_needed_2015') || '');
-                health_policy.val(response.get('health_policy') || '');
+                health_policy.val(response.get('health_policy_2016') || '');
                 // health_contact_code_2015.val(response.get('health_contact_code_2015') || '');
                 health_wants_to_renew_same_plan_for_2016.val(response.get('health_wants_to_renew_same_plan_for_2016') || '');
                 health_quoted_renewal_gross_premium_2016.val(response.get('health_quoted_renewal_gross_premium_2016') || '');
