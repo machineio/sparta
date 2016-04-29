@@ -2156,11 +2156,14 @@ fun.views.profile = Backbone.View.extend({
             "ancillary_bank_account_type": ancillary_bank_account_type.val(),
         };
 
-        console.log('event',event);
+        console.log('event',event,this.contact_uuid);
 
-        contact = new fun.models.Contact(saveData);
-
-        contact.save();
+        if(event.currentTarget.id==='update-contact-btn-create'){
+            contact = new fun.models.Contact(saveData);
+        } else {
+            contact = new fun.models.Contact(saveData);
+            contact.save();
+        }
         $('#profileContactModal').modal('hide');
     },
 
