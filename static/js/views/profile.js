@@ -86,6 +86,7 @@ fun.views.profile = Backbone.View.extend({
             data: $.param(options),
             success: function(response){
                 var lolazo = response.attributes.results.models;
+                console.log('LOLAZO!!',lolazo);
                 _.each(lolazo, function(value){
                     elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
