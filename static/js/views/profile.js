@@ -1930,7 +1930,7 @@ fun.views.profile = Backbone.View.extend({
             var contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
 
             var contact_info_language_preference = this.$("#contact-info-language-preference");
-            this.getDropdownInfo(contact_info_language_preference,'contact_info_language_preference');
+            this.getDropdownInfo(contact_info_language_preference,'language_preference');
 
             var contact_info_writing_agent = this.$("#contact-info-writing-agent");
             this.getDropdownInfo(contact_info_writing_agent,'contact_info_writing_agent');
@@ -1958,7 +1958,7 @@ fun.views.profile = Backbone.View.extend({
             this.getDropdownInfo(contact_info_life_insurance_checkbox,'contact_info_life_insurance_checkbox');
 
             var contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
-            this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'contact_info_ancilliary_insurance_checkbox');
+            this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'ancillary_lead_status');
 
             var contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
             this.getDropdownInfo(contact_info_other_policy_sold,'contact_info_other_policy_sold');
@@ -2386,8 +2386,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_mailing_zipcode.val(response.get('contact_info_mailing_zipcode') || '');
                 contact_info_marketplace_email.val(response.get('contact_info_marketplace_email') || '');
 
-                contact_info_language_preference.val(response.get('contact_info_language_preference') || '');
-                $(contact_info_language_preference.selector + " option[value='" + response.get('contact_info_language_preference') + "']").attr("selected", "selected");
+                contact_info_language_preference.val(response.get('language_preference') || '');
+                $(contact_info_language_preference.selector + " option[value='" + response.get('language_preference') + "']").attr("selected", "selected");
 
                 contact_info_writing_agent.val(response.get('contact_info_writing_agent') || '');
                 $(contact_info_writing_agent.selector + " option[value='" + response.get('contact_info_writing_agent') + "']").attr("selected", "selected");
@@ -2416,8 +2416,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_life_insurance_checkbox.val(response.get('contact_info_life_insurance_status') || '');
                 $(contact_info_life_insurance_checkbox.selector + " option[value='" + response.get('contact_info_life_insurance_status') + "']").attr("selected", "selected");
 
-                contact_info_ancilliary_insurance_checkbox.val(response.get('contact_info_ancilliary_insurance_status') || '');
-                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('contact_info_ancilliary_insurance_status') + "']").attr("selected", "selected");
+                contact_info_ancilliary_insurance_checkbox.val(response.get('ancillary_lead_status') || '');
+                $(contact_info_ancilliary_insurance_checkbox.selector + " option[value='" + response.get('ancillary_lead_status') + "']").attr("selected", "selected");
 
                 contact_info_other_policy_sold.val(response.get('contact_info_other_policy_sold') || '');
                 $(contact_info_other_policy_sold.selector + " option[value='" + response.get('contact_info_other_policy_sold') + "']").attr("selected", "selected");
