@@ -1829,6 +1829,7 @@ fun.views.profile = Backbone.View.extend({
 
 
         var saveData = {
+            "account": contact_account,
             "contact_info_first_name": contact_info_first_name.val(),
             "contact_info_last_name": contact_info_last_name.val(),
             "contact_info_phone_number": contact_info_phone_number.val(),
