@@ -2155,7 +2155,7 @@ fun.views.profile = Backbone.View.extend({
             "ancillary_bank_account_type": ancillary_bank_account_type.val(),
         };
 
-        contact = new fun.models.contact(saveData);
+        contact = new fun.models.Contact(saveData);
 
         contact.save();
         $('#profileContactModal').modal('hide');
