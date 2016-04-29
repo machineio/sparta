@@ -2338,11 +2338,10 @@ fun.views.profile = Backbone.View.extend({
 
         contact = new fun.models.Contact({'uuid':name});
 
-        console.log('CONTACT!!!!',contact.fetch());
-
-
         contact.fetch({
             success: function(response){
+
+                console.log('CONTACT!!!!',response);
 
             // CONTACT INFO
                 contact_uuid = response.get('uuid');
