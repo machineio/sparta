@@ -29,7 +29,7 @@ fun.views.profile = Backbone.View.extend({
         'change #ancilliary-lead-status': 'showPaymentTab',
         'change #marketing-compliant': 'showSendSMSButton',
         'click #update-task-btn-create': 'saveNewContact',
-        'click #update-contact-btn-create': 'saveNewContact(true)',
+        'click #update-contact-btn-create': 'saveNewContact',
     },
 
     /**
@@ -2156,7 +2156,7 @@ fun.views.profile = Backbone.View.extend({
             "ancillary_bank_account_type": ancillary_bank_account_type.val(),
         };
 
-        console.log('event,patch',event,patch);
+        console.log('event',event);
 
         contact = new fun.models.Contact(saveData);
 
