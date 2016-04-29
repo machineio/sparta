@@ -2043,8 +2043,14 @@ fun.views.profile = Backbone.View.extend({
             this.getDropdownInfo(health_number_of_dependent_children_in_house,'number_of_children');
 
             var health_renewal_source_2016 = this.$("#health-renewal-source-2016");
+            this.getDropdownInfo(health_renewal_source_2016,'health_renewal_source_2016');
+
             var health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
+            this.getDropdownInfo(health_renewal_agent_2016,'renewal_submitter_2016');
+
             var health_presold_processor_2016 = this.$("#health-presold-processor-2016");
+            this.getDropdownInfo(health_presold_processor_2016,'presold_processor_2016');
+
             var health_application_number_2016_info = this.$("#health-application-number-2016-info");
             var health_effective_date_2016 = this.$("#health-effective-date-2016");
             var health_total_income_used_on_application = this.$("#health-total-income-used-on-application");
@@ -2052,7 +2058,10 @@ fun.views.profile = Backbone.View.extend({
             var health_final_subsidy_2016 = this.$("#health-final-subsidy-2016");
             var heatlh_plan_2016 = this.$("#heatlh-plan-2016");
             var health_final_premium_after_subsidy_2016 = this.$("#health-final-premium-after-subsidy-2016");
+
             var health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
+            this.getDropdownInfo(health_verification_documents_needed_2016,'health_verification_documents_needed_2016');
+
             var health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
             var health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
 
@@ -2501,19 +2510,30 @@ fun.views.profile = Backbone.View.extend({
                 health_applicant_employers_phone_number.val(response.get('contact_info_marital_status') || '');
                 health_marital_status.val(response.get('health_marital_status') || '');
                 health_number_of_dependent_children_in_house.val(response.get('number_of_children') || '');
+
                 health_renewal_source_2016.val(response.get('health_renewal_source_2016') || '');
-                health_renewal_agent_2016.val(response.get('health_renewal_agent_2016') || '');
-                health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
-                health_application_number_2016_info.val(response.get('health_application_number_2016_info') || '');
-                health_effective_date_2016.val(response.get('health_effective_date_2016') || '');
+                $(health_renewal_source_2016.selector + " option[value='" + response.get('health_renewal_source_2016') + "']").attr("selected", "selected");
+
+                health_renewal_agent_2016.val(response.get('renewal_submitter_2016') || '');
+                $(health_renewal_agent_2016.selector + " option[value='" + response.get('renewal_submitter_2016') + "']").attr("selected", "selected");
+
+                health_presold_processor_2016.val(response.get('presold_processor_2016') || '');
+                $(health_presold_processor_2016.selector + " option[value='" + response.get('presold_processor_2016') + "']").attr("selected", "selected");
+
+                health_application_number_2016_info.val(response.get('health_application_number_2016_selection') || '');
+                health_effective_date_2016.value = response.get('health_effective_date_2016') || '';
                 health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
                 health_total_income_used_on_application.val(response.get('health_total_income_used_on_application') || '');
                 health_final_gross_premium_2016.val(response.get('health_final_gross_premium_2016') || '');
                 health_final_subsidy_2016.val(response.get('health_final_subsidy_2016') || '');
-                heatlh_plan_2016.val(response.get('health_plan_2016') || '');
+                heatlh_plan_2016.val(response.get('health_policy_2016') || '');
                 health_final_premium_after_subsidy_2016.val(response.get('health_final_premium_after_subsidy_2016') || '');
+
                 health_verification_documents_needed_2016.val(response.get('health_verification_documents_needed_2016') || '');
-                health_verification_documents_due_date_2016.val(response.get('health_verification_documents_due_date_2016') || '');
+                $(health_verification_documents_needed_2016.selector + " option[value='" + response.get('health_verification_documents_needed_2016') + "']").attr("selected", "selected");
+
+                health_verification_documents_due_date_2016 = response.get('health_verification_documents_due_date_2016') || '';
+
                 health_application_number_2016_selection.val(response.get('health_application_number_2016_selection') || '');
                 health_adults_applying_for_coverage_2016.val(response.get('health_adults_applying_for_coverage_2016') || '');
                 health_total_household_size_2016.val(response.get('health_total_household_size_2016') || '');
