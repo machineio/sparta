@@ -1833,6 +1833,8 @@ fun.views.profile = Backbone.View.extend({
             health_verification_documents_needed_2016_fields[i] = $(selected).text();
         });
 
+        console.log('health_verification_documents_needed_2016_fields',health_verification_documents_needed_2016_fields);
+
         var saveData = {
             "account": contact_account || "",
             "contact_info_first_name": contact_info_first_name.val() || "",
