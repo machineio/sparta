@@ -1144,6 +1144,12 @@ fun.views.footer = Backbone.View.extend({
         }
     },
 
+    testWithAlex: function(event){
+        struct = {};
+        console.log('que?');
+        fun.utils.sendMessage(struct)
+    },
+
     /*
     * Lead Type function
     */

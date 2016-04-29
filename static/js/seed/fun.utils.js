@@ -18,19 +18,20 @@ var fun = {
 };
 
 fun.utils.sendMessage = function(config) {
+    'use strict';
 
     var defaults, options, container, funMessage, content, title, text, close;
 
     defaults = {
-        type: ''
-        , title: ''
-        , text: ''
-        , lifetime: 6500
-        , sticky: false
-        , position: 'bottom-right'
-        , closeTrigger: true
-        , onOpen: function () {}
-        , onClose: function () {}
+        type: '',
+        title: '',
+        text: '',
+        lifetime: 6500,
+        sticky: false,
+        position: 'bottom-right',
+        closeTrigger: true,
+        onOpen: function () {},
+        onClose: function () {}
     };
 
     options = $.extend(defaults, config);
