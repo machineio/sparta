@@ -1971,7 +1971,7 @@ fun.views.profile = Backbone.View.extend({
             "home_bathrooms": home_bathrooms.val(),
             "home_dog": home_dog.val(),
             "home_pool": home_pool.val(),
-            "home_fence_or_screen_enclosure ": home_fence_or_screen_enclosure.val(),
+            "home_fence_or_screen_enclosure": home_fence_or_screen_enclosure.val(),
             "home_bankrupcy_or_Foreclosure_in_the_past_five_years": home_bankrupcy_or_Foreclosure_in_the_past_five_years.val(),
             "home_centrally_monitored_alarm": home_centrally_monitored_alarm.val(),
             "home_gated_community": home_gated_community.val(),
