@@ -1145,7 +1145,10 @@ fun.views.footer = Backbone.View.extend({
     },
 
     testWithAlex: function(event){
-        struct = {};
+        struct = {
+            title: 'tony',
+            text: 'que dice',
+        };
         console.log('que?');
         fun.utils.sendMessage(struct)
     },
