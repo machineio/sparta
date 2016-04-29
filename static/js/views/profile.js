@@ -2342,7 +2342,7 @@ fun.views.profile = Backbone.View.extend({
         contact.fetch({
             success: function(response){
 
-                console.log('CONTACT!!!!',response.get());
+                console.log('CONTACT!!!!',response.attributes);
 
             // CONTACT INFO
                 contact_uuid = response.get('uuid');
