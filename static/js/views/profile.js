@@ -1945,6 +1945,7 @@ fun.views.profile = Backbone.View.extend({
 
             var contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
             this.getDropdownInfo(contact_info_health_insurance_checkbox,'contact_info_health_insurance_checkbox');
+            console.log('DROPDOWN!!!!',contact_info_health_insurance_checkbox);
 
             var contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
             this.getDropdownInfo(contact_info_home_insurance_checkbox,'contact_info_home_insurance_checkbox');
