@@ -2159,6 +2159,7 @@ fun.views.profile = Backbone.View.extend({
         console.log('event',event,this.contact_uuid);
 
         if(event.currentTarget.id==='update-contact-btn-create'){
+            console.log('UPDATING CONTACT');
             contact_uuid = JSON.parse(localStorage.getItem('current_contact_uuid'));
             contact = new fun.models.Contact(contact_uuid);
             contact.save(saveData,{patch: true});
