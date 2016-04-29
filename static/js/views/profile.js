@@ -2341,7 +2341,7 @@ fun.views.profile = Backbone.View.extend({
         contact.fetch({
             success: function(response){
 
-                console.log('CONTACT!!!!',response);
+                console.log('CONTACT!!!!',response.get().toJSON());
 
             // CONTACT INFO
                 contact_uuid = response.get('uuid');
@@ -2374,7 +2374,7 @@ fun.views.profile = Backbone.View.extend({
 
                 contact_info_city.val(response.get('contact_info_city') || '');
                 contact_info_zip_code.val(response.get('contact_info_zip_code') || '');
-                contact_info_country.val(response.get('contact_info_country') || '');
+                contact_info_country.val(response.get('country') || '');
 
                 contact_info_mailing_address_different.val(response.get('contact_info_mailing_address_different') || '');
                 $(contact_info_mailing_address_different.selector + " option[value='" + response.get('contact_info_mailing_address_different') + "']").attr("selected", "selected");
