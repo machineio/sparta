@@ -29,7 +29,7 @@ fun.views.profile = Backbone.View.extend({
         'change #ancilliary-lead-status': 'showPaymentTab',
         'change #marketing-compliant': 'showSendSMSButton',
         'click #update-task-btn-create': 'saveNewContact',
-        'click #update-contact-btn-create': 'saveNewContact',
+        'click #update-contact-btn-create': 'saveNewContact(true)',
     },
 
     /**
@@ -1365,7 +1365,7 @@ fun.views.profile = Backbone.View.extend({
         console.log('one month event');
     },
 
-    saveNewContact: function(event){
+    saveNewContact: function(event,patch){
         'use strict';
 
         var view = this,
@@ -2155,6 +2155,8 @@ fun.views.profile = Backbone.View.extend({
             "ancillary_bank_name": ancillary_bank_name.val(),
             "ancillary_bank_account_type": ancillary_bank_account_type.val(),
         };
+
+        console.log('event,patch',event,patch);
 
         contact = new fun.models.Contact(saveData);
 
