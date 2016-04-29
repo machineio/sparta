@@ -1372,7 +1372,7 @@ fun.views.profile = Backbone.View.extend({
             name,
             contact,
             contact_uuid,
-            contact_account,
+            contact_account = localStorage.getItem("username"),
             contact_description,
             contact_history,
             contact_comment;
