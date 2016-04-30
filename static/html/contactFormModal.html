@@ -278,24 +278,6 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><%= translate("contact_info_created_date") %></th>
-                                    <td>
-                                        <input type="datetime" id="contact-info-created-date" class="form-control-cm">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><%= translate("contact_info_date_modified") %></th>
-                                    <td>
-                                        <input type="datetime" id="contact-info-date-modified" class="form-control-cm">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><%= translate("contact_info_transfer_timestamp") %></th>
-                                    <td>
-                                        <input type="datetime" id="contact-info-transfer-timestamp" class="form-control-cm">
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th scope="row"><%= translate("lastModifiedBy") %></th>
                                     <td>
                                         <input type="text" id="contact-info-last-modified-by" class="form-control-cm">
@@ -1014,30 +996,6 @@
                                         <option value="">FILL</option>
                                     </select>
                                  </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><%= translate("health_presold_timestamp") %></th>
-                                <td>
-                                    <input type="text" id="health-presold-timestamp" class="form-control-cm">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><%= translate("health_tentative_timestamp") %></th>
-                                <td>
-                                    <input type="text" id="health-tentative-timestamp" class="form-control-cm">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><%= translate("health_enrolled_timestamp") %></th>
-                                <td>
-                                    <input type="text" id="health-enrolled-timestamp" class="form-control-cm">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><%= translate("health_active_timestamp") %></th>
-                                <td>
-                                    <input type="text" id="health-active-timestamp" class="form-control-cm">
-                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><%= translate("health_policy_2016") %></th>
@@ -3059,6 +3017,69 @@
                                         <option value="false">No</option>
                                         <option value="true">Yes</option>
                                     </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h3>Timestamps</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("contact_info_created_date") %></th>
+                                <td>
+                                    <input type="datetime" id="contact-info-created-date" class="form-control-cm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("contact_info_date_modified") %></th>
+                                <td>
+                                    <input type="datetime" id="contact-info-date-modified" class="form-control-cm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("contact_info_transfer_timestamp") %></th>
+                                <td>
+                                    <input type="datetime" id="contact-info-transfer-timestamp" class="form-control-cm">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row"><%= translate("health_presold_timestamp") %></th>
+                                <td>
+                                    <input type="text" id="health-presold-timestamp" class="form-control-cm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("health_tentative_timestamp") %></th>
+                                <td>
+                                    <input type="text" id="health-tentative-timestamp" class="form-control-cm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("health_enrolled_timestamp") %></th>
+                                <td>
+                                    <input type="text" id="health-enrolled-timestamp" class="form-control-cm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><%= translate("health_active_timestamp") %></th>
+                                <td>
+                                    <input type="text" id="health-active-timestamp" class="form-control-cm">
                                 </td>
                             </tr>
                         </tbody>

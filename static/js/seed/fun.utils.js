@@ -268,13 +268,13 @@ fun.utils.showSendSMSButton = function(event){
     }
 };
 fun.utils.showMarketingTab = function(event){
-    if($('#contact-info-marketing-checkbox').val()==="true"){
+    // if($('#contact-info-marketing-checkbox').val()==="true"){
         $('#marketingInfoTab').removeClass('hide');
         $('#marketingInfoTab').addClass('show');
-    } else {
-        $('#marketingInfoTab').removeClass('show');
-        $('#marketingInfoTab').addClass('hide');
-    }
+    // } else {
+        // $('#marketingInfoTab').removeClass('show');
+        // $('#marketingInfoTab').addClass('hide');
+    // }
 };
 
 /*
