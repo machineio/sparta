@@ -502,6 +502,67 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h3>Social Security fields</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("doYouHaveSocialSecurityNumber") %></th>
+                                 <td>
+                                    <select name="" id="spouse-do-you-have-a-social-security-number" class="form-control-cm">
+                                        <option value="none" selected="selected"></option>
+                                        <option value="false">No</option>
+                                        <option value="true">Yes</option>
+                                    </select>
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child1Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-1-social" class="form-control-cm">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child3Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-3-social" class="form-control-cm">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                 <th scope="row"><%= translate("spouseSocial") %></th>
+                                 <td>
+                                      <input type="text" id="spouse-social" class="form-control-cm">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child2Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-2-social" class="form-control-cm">
+                                 </td>
+                            </tr>
+                            <tr>
+                                 <th scope="row"><%= translate("child4Social") %></th>
+                                 <td>
+                                      <input type="text" id="child-4-social" class="form-control-cm">
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div id="contactSpouseInfoTab" class="hide">
             <br>
             <h3>Contact Spouse Info</h3>
@@ -538,16 +599,6 @@
                                           <input type="text" id="spouse-dob" class="form-control-cm">
                                      </td>
                                 </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("doYouHaveSocialSecurityNumber") %></th>
-                                     <td>
-                                        <select name="" id="spouse-do-you-have-a-social-security-number" class="form-control-cm">
-                                            <option value="none" selected="selected"></option>
-                                            <option value="false">No</option>
-                                            <option value="true">Yes</option>
-                                        </select>
-                                     </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -556,12 +607,6 @@
                     <div class="panel panel-default">
                         <table class="table">
                             <tbody>
-                                <tr>
-                                     <th scope="row"><%= translate("spouseSocial") %></th>
-                                     <td>
-                                          <input type="text" id="spouse-social" class="form-control-cm">
-                                     </td>
-                                </tr>
                                 <tr>
                                      <th scope="row"><%= translate("spouseIncomeSource") %></th>
                                      <td>
@@ -621,12 +666,6 @@
                                          </td>
                                     </tr>
                                     <tr>
-                                         <th scope="row"><%= translate("child1Social") %></th>
-                                         <td>
-                                              <input type="text" id="child-1-social" class="form-control-cm">
-                                         </td>
-                                    </tr>
-                                    <tr>
                                         <th scope="row"><%= translate("child_1_income") %></th>
                                         <td>
                                             <input type="text" id="child-1-income" class="form-control-cm">
@@ -656,12 +695,6 @@
                                      <th scope="row"><%= translate("child2Gender") %></th>
                                      <td>
                                           <input type="text" id="child-2-gender" class="form-control-cm">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child2Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-2-social" class="form-control-cm">
                                      </td>
                                 </tr>
                                 <tr>
@@ -697,12 +730,6 @@
                                      </td>
                                 </tr>
                                 <tr>
-                                     <th scope="row"><%= translate("child3Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-3-social" class="form-control-cm">
-                                     </td>
-                                </tr>
-                                <tr>
                                     <th scope="row"><%= translate("child_3_income") %></th>
                                     <td>
                                         <input type="text" id="child-3-income" class="form-control-cm">
@@ -732,12 +759,6 @@
                                      <th scope="row"><%= translate("child4Gender") %></th>
                                      <td>
                                           <input type="text" id="child-4-gender" class="form-control-cm">
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <th scope="row"><%= translate("child4Social") %></th>
-                                     <td>
-                                          <input type="text" id="child-4-social" class="form-control-cm">
                                      </td>
                                 </tr>
                                 <tr>
