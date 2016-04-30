@@ -2718,7 +2718,7 @@ fun.views.profile = Backbone.View.extend({
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day);
-            console.log('TODAY!!!!',today);
+            console.log('TODAY!!!!',today, typeof today);
             return today;
         }
 
