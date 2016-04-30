@@ -3145,6 +3145,8 @@ fun.views.profile = Backbone.View.extend({
             var payment_bank_routuing_number = this.$("#payment-bank-routuing-number");
             var payment_bank_account_number = this.$("#payment-bank-account-number");
 
+            var payment_request_payment_date = this.$("#payment-request-payment-date");
+
             var contact_info_property_address_2 = this.$("#contact-info-property-address-2");
             var contact_info_agent_code = this.$("#contact-info-agent-code");
             var contact_info_created_by = this.$("#contact-info-created-by");
@@ -3585,6 +3587,20 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_request_eff_date.val(response.get('ancilliary_dental_request_eff_date') || '');
                 ancilliary_dental_care_premium.val(response.get('ancilliary_dental_care_premium') || '');
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
+
+                payment_request_payment_date.val(renderDate(response.get('payment_request_payment_date')));
+                payment_binder_payment_option.val(response.get('payment-binder-payment-option'));
+                payment_payment_charge_request.val(response.get('payment-payment-charge-request'));
+                payment_ccredit_card_type.val(response.get('payment-ccredit-card-type'));
+                payment_name_on_cc.val(response.get('payment-name-on-cc'));
+                payment_credit_card_number.val(response.get('payment-credit-card-number'));
+                payment_cc_expiration_date.val(response.get('payment-cc-expiration-date'));
+                payment_cc_cvv.val(response.get('payment-cc-cvv'));
+                payment_bank_account_type.val(response.get('payment-bank-account-type'));
+                payment_bank_name.val(response.get('payment-bank-name'));
+                payment_bank_routuing_number.val(response.get('payment-bank-routuing-number'));
+                payment_bank_account_number.val(response.get('payment-bank-account-number'));
+
 
             // Addittional Data
                 contact_info_property_address_2.val(response.get("contact_info_property_address_2"));
