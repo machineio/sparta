@@ -3367,7 +3367,7 @@ fun.views.profile = Backbone.View.extend({
                 $(health_presold_processor_2016.selector + " option[value='" + response.get('presold_processor_2016') + "']").attr("selected", "selected");
 
                 health_application_number_2016_info.val(response.get('health_application_number_2016_selection') || '');
-                health_effective_date_2016.value = response.get('health_effective_date_2016') || '';
+                health_effective_date_2016.val(renderDate(response.get('health_effective_date_2016')) || '');
                 health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
                 health_total_income_used_on_application.val(response.get('health_total_income_used_on_application') || '');
                 health_final_gross_premium_2016.val(response.get('health_final_gross_premium_2016') || '');
@@ -3378,8 +3378,7 @@ fun.views.profile = Backbone.View.extend({
                 health_verification_documents_needed_2016.val(response.get('health_verification_documents_needed_2016') || '');
                 $(health_verification_documents_needed_2016.selector + " option[value='" + response.get('health_verification_documents_needed_2016') + "']").attr("selected", "selected");
 
-                health_verification_documents_due_date_2016 = response.get('health_verification_documents_due_date_2016') || '';
-
+                health_verification_documents_due_date_2016.val(renderDate(response.get('health_verification_documents_due_date_2016')) || '');
                 health_application_number_2016_selection.val(response.get('health_application_number_2016_selection') || '');
                 health_adults_applying_for_coverage_2016.val(response.get('health_adults_applying_for_coverage_2016') || '');
                 health_total_household_size_2016.val(response.get('health_total_household_size_2016') || '');
@@ -3597,16 +3596,16 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_current_job_and_income_info.val(response.get("contact_info_current_job_and_income_info"));
                 contact_info_spouse.val(response.get("contact_info_spouse"));
                 contact_info_employment_status.val(response.get("employment_status"));
-                contact_info_subsidy_drop_date.val(response.get("contact_info_subsidy_drop_date"));
+                contact_info_subsidy_drop_date.val(renderDate(response.get("contact_info_subsidy_drop_date")));
                 contact_info_can_find_a_temp_id_card.val(response.get("contact_info_can_find_a_temp_id_card"));
                 contact_info_found_in_search_accounts.val(response.get("contact_info_found_in_search_accounts"));
-                contact_info_paid_to_date_2016.val(response.get("contact_info_paid_to_date_2016"));
+                contact_info_paid_to_date_2016.val(renderDate(response.get("contact_info_paid_to_date_2016")));
                 contact_info_corrected_discrepancy.val(response.get("contact_info_corrected_discrepancy"));
                 contact_info_corrected_discrepancy_completed_date.val(response.get("contact_info_corrected_discrepancy_completed_date"));
                 contact_info_updated_premium_2016.val(response.get("contact_info_updated_premium_2016"));
                 contact_info_marketplace_changed_premium.val(response.get("contact_info_marketplace_changed_premium"));
                 contact_info_red_box_error.val(response.get("contact_info_red_box_error"));
-                contact_info_verification_documents_submitted_date.val(response.get("contact_info_verification_documents_submitted_date"));
+                contact_info_verification_documents_submitted_date.val(renderDate(response.get("contact_info_verification_documents_submitted_date")));
                 contact_info_tcpa_compliant.val(response.get("contact_info_tcpa_compliant"));
                 child_1_income.val(response.get("child_1_income"));
                 child_2_income.val(response.get("child_2_income"));
