@@ -2713,6 +2713,7 @@ fun.views.profile = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
+            console.log('RAW DATE',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
