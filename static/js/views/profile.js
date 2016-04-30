@@ -2716,7 +2716,8 @@ fun.views.profile = Backbone.View.extend({
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
-            var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+            var today = now.getFullYear()+"-"+(month)+"-"+(day);
+            console.log('TODAY!!!!',today);
             return today;
         }
 
@@ -3209,8 +3210,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_cellphone.val(response.get('other_phone') || '');
                 contact_info_email.val(response.get('contact_info_email') || '');
                 contact_info_other_phone.val(response.get('other_phone_2') || '');
-                // contact_info_date_of_birth.value = renderDate(response.get('contact_info_dob')) || '';
-                contact_info_date_of_birth.value = response.get('contact_info_dob') || '';
+                contact_info_date_of_birth.value = renderDate(response.get('contact_info_dob')) || '';
+                // contact_info_date_of_birth.value = response.get('contact_info_dob') || '';
 
                 contact_info_gender.val(response.get('contact_info_gender') || '');
                 $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
