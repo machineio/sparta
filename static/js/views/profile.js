@@ -3211,7 +3211,7 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_cellphone.val(response.get('other_phone') || '');
                 contact_info_email.val(response.get('contact_info_email') || '');
                 contact_info_other_phone.val(response.get('other_phone_2') || '');
-                contact_info_date_of_birth.value = renderDate(response.get('contact_info_dob')) || '';
+                contact_info_date_of_birth.value = renderDate(response.get('contact_info_date_of_birth')) || '';
                 // contact_info_date_of_birth.value = response.get('contact_info_dob') || '';
 
                 contact_info_gender.val(response.get('contact_info_gender') || '');
