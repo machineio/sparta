@@ -1925,7 +1925,7 @@ fun.views.profile = Backbone.View.extend({
             "health_final_subsidy_2016": health_final_subsidy_2016.val() || "",
             "heatlh_plan_2016": heatlh_plan_2016.val() || "",
             "health_final_premium_after_subsidy_2016": health_final_premium_after_subsidy_2016.val() || "",
-            "health_verification_documents_needed_2016": health_verification_documents_needed_2016_fields || "",
+            "health_verification_documents_needed_2016": String(health_verification_documents_needed_2016_fields) || "",
             "health_verification_documents_due_date_2016": health_verification_documents_due_date_2016.val() || "",
             "health_application_number_2016_selection": health_application_number_2016_selection.val() || "",
             "health_adults_applying_for_coverage_2016": health_adults_applying_for_coverage_2016.val() || "",
