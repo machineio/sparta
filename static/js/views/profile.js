@@ -3601,7 +3601,7 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_found_in_search_accounts.val(response.get("contact_info_found_in_search_accounts"));
                 contact_info_paid_to_date_2016.val(renderDate(response.get("contact_info_paid_to_date_2016")));
                 contact_info_corrected_discrepancy.val(response.get("contact_info_corrected_discrepancy"));
-                contact_info_corrected_discrepancy_completed_date.val(response.get("contact_info_corrected_discrepancy_completed_date"));
+                contact_info_corrected_discrepancy_completed_date.val(renderDate(response.get("contact_info_corrected_discrepancy_completed_date")));
                 contact_info_updated_premium_2016.val(response.get("contact_info_updated_premium_2016"));
                 contact_info_marketplace_changed_premium.val(response.get("contact_info_marketplace_changed_premium"));
                 contact_info_red_box_error.val(response.get("contact_info_red_box_error"));
