@@ -459,19 +459,11 @@ fun.views.tasks = Backbone.View.extend({
 
         // here on pagination of all the tasks
 
-        // why not just pass parameters, query strings on collection get. like on? events?
-
-
         'use strict';
         event.preventDefault();
 
-
         var view = this,
-            start = moment.utc().startOf('day'),
-            end = moment.utc().startOf('day').add(1, 'day'),
-            startEnd,
             options,
-            task,
             tasksList,
             pageNumber = $(event.target).data('page');
 
@@ -482,19 +474,6 @@ fun.views.tasks = Backbone.View.extend({
         tasksList.fetch({
             data: $.param(options),
         });
-
-        // unix timestamps
-
-        startEnd = {
-            start:start.unix(),
-            end:end.unix(),
-            lapse:'hours',
-            page:pageNumber
-        };
-
-        task = new fun.models.TasksStartEndPage(startEnd);
-
-        task.fetch();
     },
 
     /*
