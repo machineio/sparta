@@ -478,8 +478,8 @@ fun.views.tasks = Backbone.View.extend({
             data: $.param(options),
             success: function(response){
                 console.log('random shit');
-                var results = response.attributes.results;
-                fun.instances.tasks.renderTasksList(results);
+                //var results = response.attributes.results;
+                fun.instances.tasks.renderTasksList(response);
                 console.log('boo');
             },
             error: function(error){
