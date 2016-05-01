@@ -1311,7 +1311,7 @@ fun.Router = Marionette.AppRouter.extend({
             campaignsInbound: new fun.models.CampaignsInbound(),
             campaignsOutbound: new fun.models.CampaignsOutbound(),
             tasks: new fun.models.Tasks(),
-            contacts: new fun.models.Contacts(),
+            contacts: new fun.models.ContactsContainer(),
         };
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
