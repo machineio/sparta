@@ -62,6 +62,8 @@ fun.views.contacts = Backbone.View.extend({
             'account':stuff['account']
         };
 
+        console.log('STRUCT!!!!',struct);
+
         async_callback = {
             success: function(response){
                 sessionStorage.setItem("active_contact", JSON.stringify(response));
