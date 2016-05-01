@@ -1,6 +1,16 @@
 <div class="row">
     <div class="col-md-12">
-        <h3 class="title"><%= translate("allContacts") %></h3>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title"><%= translate("allContacts") %></h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="pull-right"><%= translate("total") %> <p id="all-contacts-count">0</p></h5>
+            </div>
+        </div>
         <table id="contacts-list" class="table">
             <thead>
                 <tr>
@@ -16,14 +26,7 @@
         <div id="no-contacts"></div>
         <div class="text-center">
             <div class="pagination">
-                <ul class="pagination">
-                    <li><a href="javascript:;"><%= translate("previous") %></a></li>
-                    <li class="active"><a href="javascript:;">1</a></li>
-                    <li><a href="javascript:;">2</a></li>
-                    <li><a href="javascript:;">3</a></li>
-                    <li><a href="javascript:;">4</a></li>
-                    <li><a href="javascript:;"><%= translate("next") %></a></li>
-                </ul>
+                <ul id='all-contacts-pagination' class="pagination"></ul>
             </div>
         </div>
     </div>
