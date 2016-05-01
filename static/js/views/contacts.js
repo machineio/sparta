@@ -46,7 +46,6 @@ fun.views.contacts = Backbone.View.extend({
         return _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
     },
 
-<<<<<<< HEAD
     getDropdownInfo: function(elem,string){
         'use strict';
         var list_of_states,
@@ -97,7 +96,7 @@ fun.views.contacts = Backbone.View.extend({
         contactModalTabs = this.$('#profile-contact-modal-tabs');
         contactModalTabs.html(template);
         contactModalTabs.removeClass("hide").addClass("show");
-=======
+    },
     /*
     * Render view
     */
@@ -124,7 +123,6 @@ fun.views.contacts = Backbone.View.extend({
         });
         this.$el.removeClass("hide").addClass("show");
         $('#contact-callback').datetimepicker();
->>>>>>> origin/master
     },
 
 
@@ -208,22 +206,6 @@ fun.views.contacts = Backbone.View.extend({
                 }
             });
         }
-    },
-
-
-    /*
-    * Render Contact Modal Form
-    */
-    renderContactModalForm: function(){
-        'use strict';
-        var contactModalTabs;
-        var template = _.template(
-            fun.utils.getTemplate(fun.conf.templates.contactFormModal)
-        );
-
-        contactModalTabs = this.$('#contact-modal-tabs');
-        contactModalTabs.html(template);
-        contactModalTabs.removeClass("hide").addClass("show");
     },
 
     /*
@@ -1668,7 +1650,11 @@ fun.views.contacts = Backbone.View.extend({
     },
     showMarketingTab: function(event){
         fun.utils.showMarketingTab(event);
+<<<<<<< HEAD
     },
+=======
+    }
+>>>>>>> origin/master
 });
 
 
@@ -3529,6 +3515,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             $('#marketingInfoTab').addClass('hide');
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
 
     saveNewContact: function(event,patch){
@@ -4415,6 +4402,10 @@ fun.views.contacts = Backbone.View.extend({
     },
 
 });
+=======
+    }
+});
+>>>>>>> origin/master
 =======
     }
 });
