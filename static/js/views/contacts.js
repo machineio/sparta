@@ -18,6 +18,7 @@ fun.views.contacts = Backbone.View.extend({
         'click #get-dir-btn': 'getDirectory',
         'click #add-contact-btn': 'addContact',
         'click .contact-popup': 'contactDetails',
+        'click .contact-all-pagination': 'paginationAllContacts',
         'click #close-contact-btn': 'closeContactDetails',
         'click #update-contact-btn': 'updateContactDetails',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
@@ -581,6 +582,31 @@ fun.views.contacts = Backbone.View.extend({
                 $('#lifeInsuranceTab').removeClass('show');
                 break;
         }
+    },
+
+    paginationAllContacts: function(event){
+        // here on pagination of all the contacts
+        'use strict';
+        event.preventDefault();
+
+        var options,
+            contactsList,
+            pageNumber = $(event.target).data('page');
+
+        options = {page:pageNumber};
+
+        contactsList = new fun.models.ContactsContainer();
+        contactsList.fetch({
+            data: $.param(options),
+            success: function(response){
+                //var results = response.attributes.results;
+                fun.instances.contacts.renderContactsList(response);
+
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
     },
 
     /*
