@@ -1675,7 +1675,7 @@ fun.views.contacts = Backbone.View.extend({
                 console.log(error);
             }
         });
-    },/*
+    },
 });
 
 
@@ -1731,7 +1731,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
 
     /*
     * Render contact lists
-    */
+    
     renderContactLists: function(contacts){
         'use strict';
         var template,
