@@ -2080,6 +2080,7 @@ fun.views.footer = Backbone.View.extend({
         struct = {
             title: 'tony',
             text: 'que dice',
+            sticky :true
         };
         console.log('que?');
         fun.utils.sendMessage(struct)
