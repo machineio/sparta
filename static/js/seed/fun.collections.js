@@ -1111,7 +1111,7 @@ fun.models.ContactsContainer = Backbone.Model.extend({
         this.get("results").reset(response.contacts);
 
         // this mightn't be necessary
-        delete response.contacts;
+        //delete response.contacts;
         return response;
     },
 
