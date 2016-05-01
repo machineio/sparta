@@ -312,7 +312,7 @@ fun.Router = Marionette.AppRouter.extend({
 
         resources = {
             user: new fun.models.User({'account':account}),
-            tasks: new fun.models.TasksContainer(), // <!----------------------- HERE IS THE FUCKING TEST WITH THE NEW TYPE OF COLLECTION CONTAINER AND SUPPORT FUCKING PAGINATIONS AND METADATA
+            tasks: new fun.models.TasksContainer(),
             //now: new fun.models.TasksNow(),
             //later: new fun.models.TasksLater(),
             //done: new fun.models.TasksDone(),
@@ -597,7 +597,7 @@ fun.Router = Marionette.AppRouter.extend({
         vonCount = 0;
         
         resources = {
-            contacts: new fun.models.Contacts(),
+            contacts: new fun.models.ContactsContainer(),
             //directories: new fun.models.Directories()
         };
 
