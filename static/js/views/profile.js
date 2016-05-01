@@ -1318,28 +1318,30 @@ fun.views.profile = Backbone.View.extend({
         'use strict';
         var length,
             rows,
+            vonCount,
+            results,
+            allContacts,
             template;
 
-        console.log(contacts);
-        console.log('where are my leads');
+        console.log('lol');
 
-        // Yes the lol is with this.campaigns but lets see just what happen
         if (contacts) {
-            this.profileContacts = contacts;
+            this.contacts = contacts;
         }
         // again with this.shit? what is wrong with you!
         this.contactList = this.$('#profile-contact-list');
 
         // campaigns length
-        length = this.profileContacts.length;
+        length = this.contacts.attributes.results.length;
+        results = this.contacts.attributes.results;
+        vonCount = this.contacts.attributes.count;
 
         if (length > 0) {
             rows = this.contactList.html('');
-            _.each(this.profileContacts.toJSON(), function(value){
+            _.each(results, function(value){
 
                 console.log("its the end of the line");
                 console.log(value);
-
 
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.profileContactItem)
