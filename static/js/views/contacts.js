@@ -1792,8 +1792,6 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             fun.utils.getTemplate(fun.conf.templates.allContacts)
         );
 
-        console.log('mae que putas!');
-
         allContacts = this.$('#all-contacts-tab');
         allContacts.html(template);
 
