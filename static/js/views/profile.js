@@ -2750,28 +2750,22 @@ fun.views.profile = Backbone.View.extend({
             var contact_info_date_of_birth = this.$("#contact-info-date-of-birth");
 
             var contact_info_gender = this.$("#contact-info-gender");
-            this.getDropdownInfo(contact_info_gender,'contact_info_gender');
 
             var contact_info_marital_status = this.$("#contact-info-marital-status");
-            this.getDropdownInfo(contact_info_marital_status,'contact_info_marital_status');
 
             var contact_info_number_of_children = this.$("#contact-info-number-of-children");
-            this.getDropdownInfo(contact_info_number_of_children,'contact_info_number_of_children');
 
             var contact_info_social_security_number = this.$("#contact-info-social-security-number");
             var contact_info_property_address = this.$("#contact-info-property-address");
 
             var contact_info_state = this.$("#contact-info-state");
-            this.getDropdownInfo(contact_info_state,'contact_info_state');
 
             var contact_info_city = this.$("#contact-info-city");
             var contact_info_zip_code = this.$("#contact-info-zip-code");
 
             var contact_info_country = this.$("#contact-info-country");
-            this.getDropdownInfo(contact_info_country,'contact_info_country');
 
             var contact_info_mailing_address_different = this.$("#contact-info-mailing-address-different");
-            this.getDropdownInfo(contact_info_mailing_address_different,'contact_info_mailing_address_different');
 
             var contact_info_mailing_address = this.$("#contact-info-mailing-address");
             var contact_info_mailing_city = this.$("#contact-info-mailing-city");
@@ -2780,62 +2774,44 @@ fun.views.profile = Backbone.View.extend({
             var contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
 
             var contact_info_language_preference = this.$("#contact-info-language-preference");
-            this.getDropdownInfo(contact_info_language_preference,'language_preference');
 
             var contact_info_writing_agent = this.$("#contact-info-writing-agent");
-            this.getDropdownInfo(contact_info_writing_agent,'contact_info_writing_agent');
 
             var contact_info_lead_source = this.$("#contact-info-lead-source");
-            this.getDropdownInfo(contact_info_lead_source,'contact_info_lead_source');
 
             var contact_info_lead_type = this.$("#contact-info-lead-type");
-            this.getDropdownInfo(contact_info_lead_type,'contact_info_lead_type');
 
             var contact_info_partner = this.$("#contact-info-partner");
             var contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
 
             var contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
-            this.getDropdownInfo(contact_info_health_insurance_checkbox,'contact_info_health_insurance_checkbox');
-            console.log('DROPDOWN!!!!',contact_info_health_insurance_checkbox);
 
             var contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
-            this.getDropdownInfo(contact_info_home_insurance_checkbox,'contact_info_home_insurance_checkbox');
 
             var contact_info_auto_insurance_checkbox = this.$("#contact-info-auto-insurance-checkbox");
-            this.getDropdownInfo(contact_info_auto_insurance_checkbox,'contact_info_auto_insurance_checkbox');
 
             var contact_info_life_insurance_checkbox = this.$("#contact-info-life-insurance-checkbox");
-            this.getDropdownInfo(contact_info_life_insurance_checkbox,'contact_info_life_insurance_checkbox');
 
             var contact_info_ancilliary_insurance_checkbox = this.$("#contact-info-ancilliary-insurance-checkbox");
-            this.getDropdownInfo(contact_info_ancilliary_insurance_checkbox,'ancillary_lead_status');
 
             var contact_info_other_policy_sold = this.$("#contact-info-other-policy-sold");
-            this.getDropdownInfo(contact_info_other_policy_sold,'other_policies_sold');
 
             var contact_info_federal_do_not_call = this.$("#contact-info-federal-do-not-call");
-            this.getDropdownInfo(contact_info_federal_do_not_call,'contact_info_federal_do_not_call');
 
             var contact_info_do_you_own_your_home = this.$("#contact-info-do-you-own-your-home");
-            this.getDropdownInfo(contact_info_do_you_own_your_home,'contact_info_do_you_own_your_home');
 
             var contact_info_renew_as_is_email_received = this.$("#contact-info-renew-as-is-email-received");
-            this.getDropdownInfo(contact_info_renew_as_is_email_received,'contact_info_renew_as_is_email_received');
 
             var health_us_citizen_or_legal_permanent_resident = this.$("#health-us-citizen-or-legal-permanent-resident");
-            this.getDropdownInfo(health_us_citizen_or_legal_permanent_resident,'us_citizen_or_legal_permanent_resident');
 
             var spouse_first_name = this.$("#spouse-first-name");
             var spouse_last_name = this.$("#spouse-last-name");
 
             var spouse_gender = this.$("#spouse-gender");
-            this.getDropdownInfo(spouse_gender,'contact_info_gender');
 
             var spouse_dob = this.$("#spouse-dob");
-            this.getDropdownInfo(spouse_dob,'contact_info_gender');
 
             var spouse_do_you_have_a_social_security_number = this.$("#spouse-do-you-have-a-social-security-number");
-            this.getDropdownInfo(spouse_do_you_have_a_social_security_number,'spouse_do_you_have_a_social_security_number');
 
             var spouse_social = this.$("#spouse-social");
             var spouse_income_source = this.$("#spouse-income-source");
@@ -2860,25 +2836,18 @@ fun.views.profile = Backbone.View.extend({
             var contact_info_child_4_social = this.$("#child-4-social");
 
             var health_auto_priority_code = this.$("#health-auto-priority-code");
-            this.getDropdownInfo(health_auto_priority_code,'health_auto_priority_code');
 
             var health_priority_code = this.$("#health-priority-code");
-            this.getDropdownInfo(health_priority_code,'health_priority_code');
 
             var health_lead_source = this.$("#health-lead-source");
-            this.getDropdownInfo(health_lead_source,'health_lead_source');
 
             var health_partner = this.$("#health-partner");
-            this.getDropdownInfo(health_partner,'contact_info_gender');
 
             var health_lead_status = this.$("#health-lead-status");
-            this.getDropdownInfo(health_lead_status,'health_lead_status');
 
             var health_writing_agent = this.$("#health-writing-agent");
-            this.getDropdownInfo(health_writing_agent,'health_writing_agent');
 
             var health_scrubber = this.$("#health-scrubber");
-            this.getDropdownInfo(health_scrubber,'health_scrubber');
 
             var health_total_individual_income = this.$("#health-total-individual-income");
             var health_total_household_income = this.$("#health-total-household-income");
@@ -2887,19 +2856,14 @@ fun.views.profile = Backbone.View.extend({
             var health_applicant_employers_phone_number = this.$("#health-applicant-employers-phone-number");
 
             var health_marital_status = this.$("#health-marital-status");
-            this.getDropdownInfo(health_marital_status,'contact_info_marital_status');
 
             var health_number_of_dependent_children_in_house = this.$("#health-number-of-dependent-children-in-house");
-            this.getDropdownInfo(health_number_of_dependent_children_in_house,'number_of_children');
 
             var health_renewal_source_2016 = this.$("#health-renewal-source-2016");
-            this.getDropdownInfo(health_renewal_source_2016,'health_renewal_source_2016');
 
             var health_renewal_agent_2016 = this.$("#health-renewal-agent-2016");
-            this.getDropdownInfo(health_renewal_agent_2016,'renewal_submitter_2016');
 
             var health_presold_processor_2016 = this.$("#health-presold-processor-2016");
-            this.getDropdownInfo(health_presold_processor_2016,'presold_processor_2016');
 
             var health_application_number_2016_info = this.$("#health-application-number-2016-info");
             var health_effective_date_2016 = this.$("#health-effective-date-2016");
@@ -2910,29 +2874,23 @@ fun.views.profile = Backbone.View.extend({
             var health_final_premium_after_subsidy_2016 = this.$("#health-final-premium-after-subsidy-2016");
 
             var health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
-            this.getDropdownInfo(health_verification_documents_needed_2016,'health_verification_documents_needed_2016');
 
             var health_verification_documents_due_date_2016 = this.$("#health-verification-documents-due-date-2016");
             var health_application_number_2016_selection = this.$("#health-application-number-2016-selection");
 
             var health_adults_applying_for_coverage_2016 = this.$("#health-adults-applying-for-coverage-2016");
-            this.getDropdownInfo(health_adults_applying_for_coverage_2016,'health_adults_applying_for_coverage_2016');
 
             var health_total_household_size_2016 = this.$("#health-total-household-size-2016");
-            this.getDropdownInfo(health_total_household_size_2016,'health_total_household_size_2016');
 
             var health_cloud_gross_premium_2016 = this.$("#health-cloud-gross-premium-2016");
-            this.getDropdownInfo(health_cloud_gross_premium_2016,'health_cloud_gross_premium_2016');
 
             var health_children_applying_for_coverage_2016 = this.$("#health-children-applying-for-coverage-2016");
             var health_cloud_subsidy_2016 = this.$("#health-cloud-subsidy-2016");
             var health_cloud_premium_after_subsidy_2016 = this.$("#health-cloud-premium-after-subsidy-2016");
 
             var health_lead_has_a_marketplace_account = this.$("#health-lead-has-a-marketplace-account");
-            this.getDropdownInfo(health_lead_has_a_marketplace_account,'health_lead_has_a_marketplace_account');
 
             var health_current_coverage = this.$("#health-current-coverage");
-            this.getDropdownInfo(health_current_coverage,'health_current_coverage');
 
             var health_marketplace_app_id_2015 = this.$("#health-marketplace-app-id-2015");
             var health_current_premium = this.$("#health-current-premium");
@@ -2961,13 +2919,12 @@ fun.views.profile = Backbone.View.extend({
             // this.getDropdownInfo(health_citizenship_documents_needed_2015,'health_citizenship_documents_needed_2015');
 
             var health_policy = this.$("#health-policy-2016");
-            this.getDropdownInfo(health_policy,'health_policy');
+
 
             // var health_contact_code_2015 = this.$("#health-contact-code-2015");
             // this.getDropdownInfo(health_contact_code_2015,'health_contact_code_2015');
 
             var health_wants_to_renew_same_plan_for_2016 = this.$("#health-wants-to-renew-same-plan-for-2016");
-            this.getDropdownInfo(health_wants_to_renew_same_plan_for_2016,'health_wants_to_renew_same_plan_for_2016');
 
             var health_quoted_renewal_gross_premium_2016 = this.$("#health-quoted-renewal-gross-premium-2016");
             var health_quoted_renewal_subsidy_2016 = this.$("#health-quoted-renewal-subsidy-2016");

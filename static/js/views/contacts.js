@@ -21,6 +21,7 @@ fun.views.contacts = Backbone.View.extend({
         'click .contact-all-pagination': 'paginationAllContacts',
         'click #close-contact-btn': 'closeContactDetails',
         'click #update-contact-btn': 'updateContactDetails',
+        'click .call-number-popup': 'callPhoneNumber',
         'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
         'change #contact-info-marital-status': 'changeMaritalStatus',
         'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
@@ -40,6 +41,43 @@ fun.views.contacts = Backbone.View.extend({
 
     initialize: function(options){
         fun.containers.contacts = this.$el;
+    },
+
+    callPhoneNumber: function(event){
+        'use strict';
+        event.preventDefault();    
+        var view = this,
+            name_uuid = $(event.target).data('name'),
+            stuff = JSON.parse(localStorage.getItem("profile")),
+            struct,
+            async_callback,
+            contact;
+
+        name_uuid = $(event.target).data('name');
+
+        // this stuff is in the fucking profile and we need to fucking trigger fucking something in the footer you fucking son of a bitch,
+        // so... lets use the fucking messages and complete and fucking shit you bastard.
+
+        struct = {
+            'uuid': name_uuid,
+            'account':stuff['account']
+        };
+
+        console.log('STRUCT!!!!',struct);
+
+        async_callback = {
+            success: function(response){
+                sessionStorage.setItem("active_contact", JSON.stringify(response));
+                fun.messages.trigger("call:contact");
+
+            },
+            error: function(error){
+                console.log(error);
+            }
+        };
+
+        contact = new fun.models.Contact(struct);
+        contact.fetch(async_callback);
     },
 
     template: function() {
@@ -782,7 +820,7 @@ fun.views.contacts = Backbone.View.extend({
             contact_history,
             contact_comment;
 
-        $('#profileContactModal').modal({
+        $('#contactModal').modal({
             'show': true
         });
 
@@ -1701,7 +1739,7 @@ fun.views.contacts = Backbone.View.extend({
                 console.log(error);
             }
         });
-    },/*
+    },
 });
 
 
@@ -1757,7 +1795,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
 
     /*
     * Render contact lists
-    */
+    
     renderContactLists: function(contacts){
         'use strict';
         var template,
