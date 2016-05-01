@@ -81,7 +81,7 @@
 .funMessage-content { padding: 10px 20px 10px 10px; }
 
 .funMessage-close {
-    background: url(../images/message_close.png) no-repeat 50% 50%;
+    background: url(../img/message/close.png) no-repeat 50% 50%;
     width: 11px;
     height: 10px;
 
@@ -98,7 +98,7 @@
 }
 
 .funMessage.success .funMessage-content {
-    background: url(../images/message_success.png) no-repeat 10px 13px; 
+    background: url(../img/message/success.png) no-repeat 10px 13px; 
 }
 
 .funMessage.success .funMessage-content {
@@ -110,7 +110,7 @@
 }
 
 .funMessage.error .funMessage-content { 
-    background: url(../images/message_error.png) no-repeat 10px 13px;
+    background: url(../img/message/error.png) no-repeat 10px 13px;
 }
 
 .funMessage.error .funMessage-content {
@@ -122,7 +122,7 @@
 }
 
 .funMessage.info .funMessage-content {
-    background: url(../images/message_info.png) no-repeat 10px 13px;
+    background: url(../img/message/info.png) no-repeat 10px 13px;
 }
 
 .funMessage.info .funMessage-content {
@@ -132,7 +132,7 @@
 .funMessage.info h4 { color: #316AB7; }
 
 .funMessage.warning .funMessage-content {
-    background: url(../images/message_warning.png) no-repeat 10px 13px;
+    background: url(../img/message/warning.png) no-repeat 10px 13px;
 }
 
 .funMessage.warning .funMessage-content {

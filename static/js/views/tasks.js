@@ -456,27 +456,28 @@ fun.views.tasks = Backbone.View.extend({
     },
 
     paginationAllTasks: function(event){
+        // here on pagination of all the tasks
         'use strict';
         event.preventDefault();
 
-        var view = this,
-            start = moment.utc().startOf('day'),
-            end = moment.utc().startOf('day').add(1, 'day'),
-            startEnd,
-            task,
-            page = $(event.target).data('page');
+        var options,
+            tasksList,
+            pageNumber = $(event.target).data('page');
 
-        // unix timestamps
+        options = {page:pageNumber};
 
-        startEnd = {
-            start:start.unix(),
-            end:end.unix(),
-            lapse:'hours',
-            page:page
-        };
+        tasksList = new fun.models.TasksContainer();
+        tasksList.fetch({
+            data: $.param(options),
+            success: function(response){
+                //var results = response.attributes.results;
+                fun.instances.tasks.renderTasksList(response);
 
-        task = new fun.models.TasksStartEndPage(startEnd);
-        task.fetch();
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
     },
 
     /*

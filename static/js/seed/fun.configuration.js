@@ -164,6 +164,7 @@ fun.conf.urls = {
     tasksDone: '/tasks/done/',
     tasksNow: '/tasks/now/',
     tasksLater: '/tasks/later/',
+    tasksStartEndPage: fun.utils.format('/tasks/start/%s/end/%s/page/%s', fun.conf.startTime, fun.conf.endTime, fun.conf.pageNumber),
     membership: fun.utils.format('/orgs/%s/memberships/%s', fun.conf.context, fun.conf.account),
     memberships: fun.utils.format('/orgs/%s/memberships/', fun.conf.context),
     address: fun.utils.format('/addresses/%s', fun.conf.uuidAddress),
