@@ -40,6 +40,18 @@ fun.views.profile = Backbone.View.extend({
         var view = this;
     },
 
+    renderContactModalForm: function(){
+        'use strict';
+        console.log('render contact form');
+        var contactModalTabs;
+        var template = _.template(
+            fun.utils.getTemplate(fun.conf.templates.contactFormModal)
+        );
+        contactModalTabs = this.$('#hot-contact-modal-tabs');
+        contactModalTabs.html(template);
+        contactModalTabs.removeClass("hide").addClass("show");
+    },
+
     callPhoneNumber: function(event){
         'use strict';
         event.preventDefault();    
