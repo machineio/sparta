@@ -173,6 +173,10 @@ fun.views.contacts = Backbone.View.extend({
         vonCount = this.contacts.attributes.count;
         currentPage = this.contacts.attributes.page;
 
+        console.log(length);
+        console.log(vonCount);
+        console.log('where is my backend');
+
         thisRange = _.range(1, Math.round(vonCount / length));
 
         _.each(thisRange, function(value){
@@ -505,7 +509,7 @@ fun.views.contacts = Backbone.View.extend({
             contact_history,
             contact_comment;
 
-        $('#contactModal').modal({
+        $('#profileContactModal').modal({
             'show': true
         });
 
