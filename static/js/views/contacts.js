@@ -137,7 +137,7 @@ fun.views.contacts = Backbone.View.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.views.contacts.renderContactLists(
+                fun.instances.contacts.renderContactLists(
                     resources.contacts
                 );
 
