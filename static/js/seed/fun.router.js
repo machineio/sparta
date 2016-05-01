@@ -313,9 +313,9 @@ fun.Router = Marionette.AppRouter.extend({
         resources = {
             user: new fun.models.User({'account':account}),
             tasks: new fun.models.TasksContainer(), // <!----------------------- HERE IS THE FUCKING TEST WITH THE NEW TYPE OF COLLECTION CONTAINER AND SUPPORT FUCKING PAGINATIONS AND METADATA
-            now: new fun.models.TasksNow(),
-            later: new fun.models.TasksLater(),
-            done: new fun.models.TasksDone(),
+            //now: new fun.models.TasksNow(),
+            //later: new fun.models.TasksLater(),
+            //done: new fun.models.TasksDone(),
         };
 
         onSuccess = function(){
@@ -330,7 +330,7 @@ fun.Router = Marionette.AppRouter.extend({
                     resources.user
                 );
 
-                fun.instances.tasks.renderNowTasksList(
+                /*fun.instances.tasks.renderNowTasksList(
                     resources.now
                 );
 
@@ -340,7 +340,7 @@ fun.Router = Marionette.AppRouter.extend({
 
                 fun.instances.tasks.renderDoneTasksList(
                     resources.done
-                );
+                );*/
             }
         };
 
