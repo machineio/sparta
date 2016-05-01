@@ -165,6 +165,8 @@ fun.views.contacts = Backbone.View.extend({
             currentPage,
             template;
 
+        console.log(this.contacts);
+
         length = this.contacts.attributes.results.length;
         results = this.contacts.attributes.results;
         vonCount = this.contacts.attributes.count;
