@@ -456,31 +456,23 @@ fun.views.tasks = Backbone.View.extend({
     },
 
     paginationAllTasks: function(event){
-
         // here on pagination of all the tasks
-
         'use strict';
         event.preventDefault();
 
-        var view = this,
-            options,
+        var options,
             tasksList,
             pageNumber = $(event.target).data('page');
 
-
         options = {page:pageNumber};
-
-
-        // this.renderTasksList()
 
         tasksList = new fun.models.TasksContainer();
         tasksList.fetch({
             data: $.param(options),
             success: function(response){
-                console.log('random shit');
                 //var results = response.attributes.results;
                 fun.instances.tasks.renderTasksList(response);
-                console.log('boo');
+
             },
             error: function(error){
                 console.log(error);
