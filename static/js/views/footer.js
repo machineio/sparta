@@ -2077,14 +2077,35 @@ fun.views.footer = Backbone.View.extend({
     },
 
     testWithAlex: function(event){
-        struct = {
-            title: 'tony',
-            text: 'que dice',
-            'type': 'error',
-            sticky :true
-        };
-        console.log('que?');
-        fun.utils.sendMessage(struct)
+        var struct = {
+                title: 'tony',
+                text: 'que dice',
+                'type': 'error',
+                sticky :true
+            },
+            list_of_states,
+            options;
+        // punk ass you fucker!
+        fun.utils.sendMessage(struct);
+        // this stuff is bananas
+        options = {unique:true};
+        options['contact_info_marital_status'] = true;
+        options['contact_info_gender'] = true;
+        // lis of unique stuff
+        list_of_states = new fun.models.ContactsContainer();
+        list_of_states.fetch({
+            data: $.param(options),
+            success: function(response){
+                var lolazo = response.attributes.results.models;
+                _.each(lolazo, function(value){
+                    console.log(value);
+                });
+            },
+            error: function(response){
+                console.log('prueba con alex y tony');
+                console.log(response);
+            },
+        });
     },
 
     /*
