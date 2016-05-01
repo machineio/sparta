@@ -505,7 +505,7 @@ fun.views.contacts = Backbone.View.extend({
             contact_history,
             contact_comment;
 
-        $('#profileContactModal').modal({
+        $('#contactModal').modal({
             'show': true
         });
 
