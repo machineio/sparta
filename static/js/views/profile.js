@@ -3589,17 +3589,17 @@ fun.views.profile = Backbone.View.extend({
                 ancilliary_dental_care_notes.val(response.get('ancilliary_dental_care_notes') || '');
 
                 payment_request_payment_date.val(renderDate(response.get('payment_request_payment_date')));
-                payment_binder_payment_option.val(response.get('payment-binder-payment-option'));
-                payment_payment_charge_request.val(response.get('payment-payment-charge-request'));
-                payment_ccredit_card_type.val(response.get('payment-ccredit-card-type'));
-                payment_name_on_cc.val(response.get('payment-name-on-cc'));
-                payment_credit_card_number.val(response.get('payment-credit-card-number'));
-                payment_cc_expiration_date.val(response.get('payment-cc-expiration-date'));
-                payment_cc_cvv.val(response.get('payment-cc-cvv'));
-                payment_bank_account_type.val(response.get('payment-bank-account-type'));
-                payment_bank_name.val(response.get('payment-bank-name'));
-                payment_bank_routuing_number.val(response.get('payment-bank-routuing-number'));
-                payment_bank_account_number.val(response.get('payment-bank-account-number'));
+                payment_binder_payment_option.val(response.get('payment_binder_payment_option'));
+                payment_payment_charge_request.val(response.get('payment_payment_charge_request'));
+                payment_ccredit_card_type.val(response.get('payment_ccredit_card_type'));
+                payment_name_on_cc.val(response.get('payment_name_on_cc'));
+                payment_credit_card_number.val(response.get('payment_credit_card_number'));
+                payment_cc_expiration_date.val(response.get('payment_cc_expiration_date'));
+                payment_cc_cvv.val(response.get('payment_cc_cvv'));
+                payment_bank_account_type.val(response.get('payment_bank_account_type'));
+                payment_bank_name.val(response.get('payment_bank_name'));
+                payment_bank_routuing_number.val(response.get('payment_bank_routuing_number'));
+                payment_bank_account_number.val(response.get('payment_bank_account_number'));
 
 
             // Addittional Data
