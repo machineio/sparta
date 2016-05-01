@@ -108,8 +108,24 @@ fun.views.contacts = Backbone.View.extend({
         'use strict';
         var length,
             rows,
+            vonCount,
+            results,
+            thisRange,
+            currentPage,
             template;
-        length = this.contacts.length;
+
+        length = this.contacts.attributes.results.length;
+        results = this.contacts.attributes.results;
+        vonCount = this.contacts.attributes.count;
+        currentPage = this.contacts.attributes.page;
+        thisRange = _.range(1, Math.round(vonCount / length));
+
+        _.each(thisRange, function(value){
+            pags.append(fun.utils.format('<li><a class="contact-all-pagination" data-page="%s">%s</a></li>', value, value));
+        });
+
+        this.contactCount.html(vonCount);
+
         if (length > 0){
             rows = this.tbody.html('');
             _.each(this.contacts.toJSON(), function(value){
