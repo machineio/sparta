@@ -144,6 +144,9 @@ fun.views.contacts = Backbone.View.extend({
         allContacts = this.$('#all-contacts-tab');
         allContacts.html(template);
 
+        this.contactCount = this.$('#all-contacts-count');
+        this.allPagination = this.$('#all-contacts-pagination');
+
         this.tbody = this.$('#contacts-list > tbody');
         this.$el.removeClass("hide").addClass("show");
         this.renderContactRows();
