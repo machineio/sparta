@@ -137,6 +137,8 @@ fun.views.contacts = Backbone.View.extend({
             this.contacts = contacts;
         }
 
+        console.log(this.contacts);
+
         template = _.template(
             fun.utils.getTemplate(fun.conf.templates.allContacts)
         );
