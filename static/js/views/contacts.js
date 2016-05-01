@@ -1653,11 +1653,7 @@ fun.views.contacts = Backbone.View.extend({
     },
     showMarketingTab: function(event){
         fun.utils.showMarketingTab(event);
-<<<<<<< HEAD
     },
-=======
-    }
->>>>>>> origin/master
 });
 
 
