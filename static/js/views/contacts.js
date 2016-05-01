@@ -160,7 +160,8 @@ fun.views.contacts = Backbone.View.extend({
     renderContactRows: function(){
         'use strict';
         var length,
-            rows,
+            rows = this.tbody.html(''),
+            pags = this.allPagination.html(''),
             vonCount,
             results,
             thisRange,
