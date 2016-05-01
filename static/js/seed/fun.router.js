@@ -626,9 +626,9 @@ fun.Router = Marionette.AppRouter.extend({
             fun.instances.navbar.renderDropdown();
             fun.instances.subheader.render(contacts);
             fun.instances.subheader.renderHeadNav();
+            
             // render contacts view
             fun.instances.contacts.render();
-
 
             // something new that looks exacly the same.
             //fun.layouts.contacts.render();

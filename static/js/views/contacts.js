@@ -165,12 +165,15 @@ fun.views.contacts = Backbone.View.extend({
             currentPage,
             template;
 
-        console.log(this.contacts);
-
         length = this.contacts.attributes.results.length;
         results = this.contacts.attributes.results;
         vonCount = this.contacts.attributes.count;
         currentPage = this.contacts.attributes.page;
+
+        console.log(length);
+        console.log(vonCount);
+        console.log('where is my backend');
+
         thisRange = _.range(1, Math.round(vonCount / length));
 
         _.each(thisRange, function(value){
