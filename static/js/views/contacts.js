@@ -107,19 +107,6 @@ fun.views.contacts = Backbone.View.extend({
                 console.log(response);
             },
         });
-
-        /*console.log('ELEM',$.param(options));
-        console.log('COLLECTION!!!',list_of_states.toJSON().results);
-        console.log('COLLECTION!!! 2',JSON.stringify(list_of_states.toJSON()));
-
-        console.log('test 3');
-
-        $.each(list_of_states.toJSON().results.models, function() {
-            console.log('RESULTS!!!!',this);
-            elem.append($("<option />").val(this.uuid).text(this.option));
-        });*/
-        // console.log(this.getDropdownInfo(contact_info_gender['0'].id).toJSON().results);
-        // return list_of_states.toJSON().results.models;
     },
 
     /*
@@ -211,10 +198,6 @@ fun.views.contacts = Backbone.View.extend({
         results = this.contacts.attributes.results;
         vonCount = this.contacts.attributes.count;
         currentPage = this.contacts.attributes.page;
-
-        console.log(length);
-        console.log(vonCount);
-        console.log('where is my backend');
 
         thisRange = _.range(1, Math.round(vonCount / length));
 
