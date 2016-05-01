@@ -638,7 +638,7 @@ fun.views.contacts = Backbone.View.extend({
             data: $.param(options),
             success: function(response){
                 //var results = response.attributes.results;
-                fun.instances.contacts.renderContactsList(response);
+                fun.instances.contacts.renderContactLists(response);
 
             },
             error: function(error){
@@ -1795,6 +1795,7 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
 
     /*
     * Render contact lists
+    */
     
     renderContactLists: function(contacts){
         'use strict';
