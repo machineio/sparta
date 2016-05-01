@@ -630,7 +630,7 @@ fun.views.footer = Backbone.View.extend({
             // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
             $(contact_info_writing_agent.selector + " option[value='" + response.contact_info_lead_type + "']").attr("selected", "selected");
 
-            contact_info_lead_source.val(response.contact_info_lead_source || 'boberdoo'
+            contact_info_lead_source.val(response.contact_info_lead_source || 'boberdoo');
             $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
             // $(contact_info_lead_source.selector + " option[value='" + response.lead_source') + "']").attr("selected", "selected");
 
@@ -979,47 +979,47 @@ fun.views.footer = Backbone.View.extend({
 
 
         // Addittional Data
-            contact_info_property_address_2.val(response.get("contact_info_property_address_2"));
-            contact_info_agent_code.val(response.get("contact_info_agent_code"));
-            contact_info_created_by.val(response.get("contact_info_created_by"));
-            contact_info_created_date.val(response.get("contact_info_created_date"));
-            contact_info_date_modified.val(response.get("contact_info_date_modified"));
-            contact_info_transfer_timestamp.val(response.get("contact_info_transfer_timestamp"));
-            contact_info_current_job_and_income_info.val(response.get("contact_info_current_job_and_income_info"));
-            contact_info_spouse.val(response.get("contact_info_spouse"));
-            contact_info_employment_status.val(response.get("employment_status"));
-            contact_info_subsidy_drop_date.val(renderDate(response.get("contact_info_subsidy_drop_date")));
-            contact_info_can_find_a_temp_id_card.val(response.get("contact_info_can_find_a_temp_id_card"));
-            contact_info_found_in_search_accounts.val(response.get("contact_info_found_in_search_accounts"));
-            contact_info_paid_to_date_2016.val(renderDate(response.get("contact_info_paid_to_date_2016")));
-            contact_info_corrected_discrepancy.val(response.get("contact_info_corrected_discrepancy"));
-            contact_info_corrected_discrepancy_completed_date.val(renderDate(response.get("contact_info_corrected_discrepancy_completed_date")));
-            contact_info_updated_premium_2016.val(response.get("contact_info_updated_premium_2016"));
-            contact_info_marketplace_changed_premium.val(response.get("contact_info_marketplace_changed_premium"));
-            contact_info_red_box_error.val(response.get("contact_info_red_box_error"));
-            contact_info_verification_documents_submitted_date.val(renderDate(response.get("contact_info_verification_documents_submitted_date")));
-            contact_info_tcpa_compliant.val(response.get("contact_info_tcpa_compliant"));
-            child_1_income.val(response.get("child_1_income"));
-            child_2_income.val(response.get("child_2_income"));
-            child_3_income.val(response.get("child_3_income"));
-            child_4_income.val(response.get("child_4_income"));
-            health_agent_notes.val(response.get("health_agent_notes"));
-            health_project_individual_income.val(response.get("health_project_individual_income"));
-            health_project_household_income.val(response.get("health_project_household_income"));
-            health_presold_timestamp.val(response.get("health_presold_timestamp"));
-            health_tentative_timestamp.val(response.get("health_tentative_timestamp"));
-            health_enrolled_timestamp.val(response.get("health_enrolled_timestamp"));
-            health_active_timestamp.val(response.get("health_active_timestamp"));
-            health_policy_2016.val(response.get("health_policy_2016"));
-            payment_paid_confirmation_number.val(response.get("payment_paid_confirmation_number"));
-            ancillary_client.val(response.get("ancillary_client"));
-            ancillary_payment_option.val(response.get("ancillary_payment_option"));
-            ancillary_bank_account_number.val(response.get("ancillary_bank_account_number"));
-            ancillary_bank_routing_number.val(response.get("ancillary_bank_routing_number"));
-            ancillary_bank_name.val(response.get("ancillary_bank_name"));
-            ancillary_bank_account_type.val(response.get("ancillary_bank_account_type"));
-            ancillary_bank_routing_number.val(response.get("ancillary_bank_routing_number"));
-            ancillary_bank_account_number.val(response.get("ancillary_bank_account_number"));
+            contact_info_property_address_2.val(response.contact_info_property_address_2);
+            contact_info_agent_code.val(response.contact_info_agent_code);
+            contact_info_created_by.val(response.contact_info_created_by);
+            contact_info_created_date.val(response.contact_info_created_date);
+            contact_info_date_modified.val(response.contact_info_date_modified);
+            contact_info_transfer_timestamp.val(response.contact_info_transfer_timestamp);
+            contact_info_current_job_and_income_info.val(response.contact_info_current_job_and_income_info);
+            contact_info_spouse.val(response.contact_info_spouse);
+            contact_info_employment_status.val(response.employment_status);
+            contact_info_subsidy_drop_date.val(renderDate(response.contact_info_subsidy_drop_date));
+            contact_info_can_find_a_temp_id_card.val(response.contact_info_can_find_a_temp_id_card);
+            contact_info_found_in_search_accounts.val(response.contact_info_found_in_search_accounts);
+            contact_info_paid_to_date_2016.val(renderDate(response.contact_info_paid_to_date_2016));
+            contact_info_corrected_discrepancy.val(response.contact_info_corrected_discrepancy);
+            contact_info_corrected_discrepancy_completed_date.val(renderDate(response.contact_info_corrected_discrepancy_completed_date));
+            contact_info_updated_premium_2016.val(response.contact_info_updated_premium_2016);
+            contact_info_marketplace_changed_premium.val(response.contact_info_marketplace_changed_premium);
+            contact_info_red_box_error.val(response.contact_info_red_box_error);
+            contact_info_verification_documents_submitted_date.val(renderDate(response.contact_info_verification_documents_submitted_date));
+            contact_info_tcpa_compliant.val(response.contact_info_tcpa_compliant);
+            child_1_income.val(response.child_1_income);
+            child_2_income.val(response.child_2_income);
+            child_3_income.val(response.child_3_income);
+            child_4_income.val(response.child_4_income);
+            health_agent_notes.val(response.health_agent_notes);
+            health_project_individual_income.val(response.health_project_individual_income);
+            health_project_household_income.val(response.health_project_household_income);
+            health_presold_timestamp.val(response.health_presold_timestamp);
+            health_tentative_timestamp.val(response.health_tentative_timestamp);
+            health_enrolled_timestamp.val(response.health_enrolled_timestamp);
+            health_active_timestamp.val(response.health_active_timestamp);
+            health_policy_2016.val(response.health_policy_2016);
+            payment_paid_confirmation_number.val(response.payment_paid_confirmation_number);
+            ancillary_client.val(response.ancillary_client);
+            ancillary_payment_option.val(response.ancillary_payment_option);
+            ancillary_bank_account_number.val(response.ancillary_bank_account_number);
+            ancillary_bank_routing_number.val(response.ancillary_bank_routing_number);
+            ancillary_bank_name.val(response.ancillary_bank_name);
+            ancillary_bank_account_type.val(response.ancillary_bank_account_type);
+            ancillary_bank_routing_number.val(response.ancillary_bank_routing_number);
+            ancillary_bank_account_number.val(response.ancillary_bank_account_number);
 
         // this.renderActiveContactInformation();
     },
