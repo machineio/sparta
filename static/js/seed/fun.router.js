@@ -598,19 +598,18 @@ fun.Router = Marionette.AppRouter.extend({
         
         resources = {
             contacts: new fun.models.Contacts(),
-            directories: new fun.models.Directories()
+            //directories: new fun.models.Directories()
         };
 
         onSuccess = function(){
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                console.log('mae?');
-                /*
                 fun.instances.contacts.renderContactLists(
                     resources.contacts
                 );
 
+                /*
                 fun.instances.contacts.renderDirectoryLists(
                     resources.directories
                 );*/
