@@ -630,7 +630,7 @@ fun.views.footer = Backbone.View.extend({
             // $(contact_info_lead_type.selector + " option[value='health']").attr("selected", "selected");
             $(contact_info_writing_agent.selector + " option[value='" + response.contact_info_lead_type + "']").attr("selected", "selected");
 
-            contact_info_lead_source.val(response.contact_info_lead_source || 'boberdoo'
+            contact_info_lead_source.val(response.contact_info_lead_source || 'boberdoo');
             $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
             // $(contact_info_lead_source.selector + " option[value='" + response.lead_source') + "']").attr("selected", "selected");
 
