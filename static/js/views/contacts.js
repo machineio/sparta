@@ -46,6 +46,34 @@ fun.views.contacts = Backbone.View.extend({
         return _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
     },
 
+    /*
+    * Render view
+    */
+    render: function(){
+        'use strict';
+        var template;
+        console.log('render contacts view');
+        if (!this.$el.html()){
+            template = _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
+            this.$el.html(template);
+            // DOM cache stuff on form fields
+            this.contactFirstName = this.$('#contact_first_name');
+            this.contactLastName = this.$('#contact_last_name');
+            this.newPhoneNumber = this.$('#new-phone-number');
+            this.newEmail = this.$('#new-email');
+            // directory fields
+            this.directoryName = this.$('#directory_name');
+            this.directoryDescription = this.$('#directory_description');
+            // CSV input file
+            this.exampleInputFile = this.$('#exampleInputFile');
+        }
+        this.newPhoneNumber.intlTelInput({
+            utilsScript: "static/js/plugins/libphonenumber/utils.js"
+        });
+        this.$el.removeClass("hide").addClass("show");
+        $('#contact-callback').datetimepicker();
+    },
+
 
     /*
     * Render contact lists
@@ -110,7 +138,7 @@ fun.views.contacts = Backbone.View.extend({
             if(++vonCount === _.keys(resources).length){
                 console.log('get resources success!');
 
-                fun.layouts.contacts.renderContactLists(
+                fun.views.contacts.renderContactLists(
                     resources.contacts
                 );
 
@@ -1549,78 +1577,6 @@ fun.views.contacts = Backbone.View.extend({
         fun.utils.showMarketingTab(event);
     }
 });
-
-
-fun.views.contacts = Backbone.View.extend({
-
-    /*
-    * Bind the event functions to the different HTML elements
-    */
-    events: {
-        'change input[type=file]': 'encodeFile',
-        'click #upload-csv-btn': 'uploadCSV',
-        'click #get-dir-btn': 'getDirectory',
-        'click #add-contact-btn': 'addContact',
-        'click .contact-popup': 'contactDetails',
-        'click #close-contact-btn': 'closeContactDetails',
-        'click #update-contact-btn': 'updateContactDetails',
-        'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
-        'change #contact-info-marital-status': 'changeMaritalStatus',
-        'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
-        'change #contact-info-health-insurance-checkbox': 'healthInsuranceTab',
-        'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
-        'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
-        'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
-        'change #contact-info-marketing-checkbox': 'showMarketingTab',
-        'change #contact-info-number-of-children': 'changeNumberChildren',
-        'change #health-lead-status': 'showPaymentTab',
-        'change #home-lead-status': 'showPaymentTab',
-        'change #auto-lead-status': 'showPaymentTab',
-        'change #life-lead-status': 'showPaymentTab',
-        'change #ancilliary-lead-status': 'showPaymentTab',
-        'change #marketing-compliant': 'showSendSMSButton',
-    },
-
-    /*
-    * Class constructor
-    */
-    initialize: function(options){
-        fun.containers.contacts = this.$el;
-    },
-
-    /*
-    * Render view
-    */
-    render: function(){
-        'use strict';
-        var template;
-        console.log('render contacts view');
-        if (!this.$el.html()){
-            template = _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
-            this.$el.html(template);
-            // DOM cache stuff on form fields
-            this.contactFirstName = this.$('#contact_first_name');
-            this.contactLastName = this.$('#contact_last_name');
-            this.newPhoneNumber = this.$('#new-phone-number');
-            this.newEmail = this.$('#new-email');
-            // directory fields
-            this.directoryName = this.$('#directory_name');
-            this.directoryDescription = this.$('#directory_description');
-            // CSV input file
-            this.exampleInputFile = this.$('#exampleInputFile');
-        }
-        this.newPhoneNumber.intlTelInput({
-            utilsScript: "static/js/plugins/libphonenumber/utils.js"
-        });
-        this.$el.removeClass("hide").addClass("show");
-        $('#contact-callback').datetimepicker();
-    },
-
-});
-
-
-
-
 
 
 
@@ -3480,75 +3436,4 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             $('#marketingInfoTab').addClass('hide');
         }
     }
-});
-
-
-<!-- // and now for something completly different that is exactly the same -->
-
-
-fun.views.contacts = Backbone.View.extend({
-
-    /*
-    * Bind the event functions to the different HTML elements
-    */
-    events: {
-        'change input[type=file]': 'encodeFile',
-        'click #upload-csv-btn': 'uploadCSV',
-        'click #get-dir-btn': 'getDirectory',
-        'click #add-contact-btn': 'addContact',
-        'click .contact-popup': 'contactDetails',
-        'click #close-contact-btn': 'closeContactDetails',
-        'click #update-contact-btn': 'updateContactDetails',
-        'change #contact-info-mailing-address-different': 'showMailingAddressDifferent',
-        'change #contact-info-marital-status': 'changeMaritalStatus',
-        'change #contact-info-home-insurance-checkbox': 'homeInsuranceTab',
-        'change #contact-info-health-insurance-checkbox': 'healthInsuranceTab',
-        'change #contact-info-auto-insurance-checkbox': 'autoInsuranceTab',
-        'change #contact-info-life-insurance-checkbox': 'lifeInsuranceTab',
-        'change #contact-info-ancilliary-insurance-checkbox': 'ancilliaryInsuranceTab',
-        'change #contact-info-marketing-checkbox': 'showMarketingTab',
-        'change #contact-info-number-of-children': 'changeNumberChildren',
-        'change #health-lead-status': 'showPaymentTab',
-        'change #home-lead-status': 'showPaymentTab',
-        'change #auto-lead-status': 'showPaymentTab',
-        'change #life-lead-status': 'showPaymentTab',
-        'change #ancilliary-lead-status': 'showPaymentTab',
-        'change #marketing-compliant': 'showSendSMSButton',
-    },
-
-    /*
-    * Class constructor
-    */
-    initialize: function(options){
-        fun.containers.contacts = this.$el;
-    },
-
-    /*
-    * Render view
-    */
-    render: function(){
-        'use strict';
-        var template;
-        console.log('render contacts view');
-        if (!this.$el.html()){
-            template = _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
-            this.$el.html(template);
-            // DOM cache stuff on form fields
-            this.contactFirstName = this.$('#contact_first_name');
-            this.contactLastName = this.$('#contact_last_name');
-            this.newPhoneNumber = this.$('#new-phone-number');
-            this.newEmail = this.$('#new-email');
-            // directory fields
-            this.directoryName = this.$('#directory_name');
-            this.directoryDescription = this.$('#directory_description');
-            // CSV input file
-            this.exampleInputFile = this.$('#exampleInputFile');
-        }
-        this.newPhoneNumber.intlTelInput({
-            utilsScript: "static/js/plugins/libphonenumber/utils.js"
-        });
-        this.$el.removeClass("hide").addClass("show");
-        $('#contact-callback').datetimepicker();
-    },
-
 });
