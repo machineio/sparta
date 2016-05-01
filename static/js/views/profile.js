@@ -1320,6 +1320,9 @@ fun.views.profile = Backbone.View.extend({
             rows,
             template;
 
+        console.log(contacts);
+        console.log('where are my leads');
+
         // Yes the lol is with this.campaigns but lets see just what happen
         if (contacts) {
             this.profileContacts = contacts;
