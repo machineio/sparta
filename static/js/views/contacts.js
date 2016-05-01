@@ -1760,13 +1760,16 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
     renderContactRows: function(){
         'use strict';
         var length,
+            results,
             rows,
             template;
-        length = this.contacts.length;
+        length = this.contacts.attributes.results.length;
+         // campaigns length
+        results = this.contacts.attributes.results;
+        console.log(length);
         if (length > 0){
             rows = this.tbody.html('');
-            console.log('CONTACT!!!!!',JSON.stringify(this.contacts.toJSON()[0]));
-            _.each(this.contacts.toJSON(), function(value){
+            _.each(results, function(value){
                 template = _.template(
                     fun.utils.getTemplate(fun.conf.templates.contactRow)
                 )(value);
