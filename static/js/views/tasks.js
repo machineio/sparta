@@ -489,7 +489,7 @@ fun.views.tasks = Backbone.View.extend({
             start:start.unix(),
             end:end.unix(),
             lapse:'hours',
-            page:page
+            page:pageNumber
         };
 
         task = new fun.models.TasksStartEndPage(startEnd);
