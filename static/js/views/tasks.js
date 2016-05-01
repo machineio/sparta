@@ -470,9 +470,19 @@ fun.views.tasks = Backbone.View.extend({
 
         options = {page:pageNumber};
 
+
+        // this.renderTasksList()
+
         tasksList = new fun.models.TasksContainer();
         tasksList.fetch({
             data: $.param(options),
+            success: function(response){
+                console.log('random shit');
+                console.log(response);
+            },
+            error: function(error){
+                console.log(error);
+            }
         });
     },
 
