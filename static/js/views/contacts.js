@@ -93,7 +93,7 @@ fun.views.contacts = Backbone.View.extend({
             fun.utils.getTemplate(fun.conf.templates.contactFormModal)
         );
 
-        contactModalTabs = this.$('#profile-contact-modal-tabs');
+        contactModalTabs = this.$('#contact-modal-tabs');
         contactModalTabs.html(template);
         contactModalTabs.removeClass("hide").addClass("show");
     },
@@ -473,6 +473,253 @@ fun.views.contacts = Backbone.View.extend({
         }
     },
 
+    /*
+    * Lead Type function
+    */
+    leadTypeChange: function(event){
+        console.log('Contact Type',$('#lead-type').val());
+        switch($('#lead-type').val()){
+            case 'healthinsurance':
+                $('#healthInsuranceTab').removeClass('hide');
+                $('#healthInsuranceTab').addClass('show');
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+                $('#healthInsurance').addClass('show');
+                $('#healthInsurance').removeClass('hide');
+                $('#homeOwnersInsurance').addClass('hide');
+                $('#homeOwnersInsurance').removeClass('show');
+                $('#automobileInsurance').addClass('hide');
+                $('#automobileInsurance').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+                $('#lifeInsuranceTab').removeClass('show');
+                break;
+
+            case 'homeownersInsurance':
+                $('#homeOwnersInsuranceTab').removeClass('hide');
+                $('#homeOwnersInsuranceTab').addClass('show');
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+                $('#homeOwnersInsurance').addClass('show');
+                $('#homeOwnersInsurance').removeClass('hide');
+                $('#healthInsurance').addClass('hide');
+                $('#healthInsurance').removeClass('show');
+                $('#automobileInsurance').addClass('hide');
+                $('#automobileInsurance').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+                $('#lifeInsuranceTab').removeClass('show');
+                break;
+
+            case 'autoInsurance':
+                $('#automobileInsuranceTab').removeClass('hide');
+                $('#automobileInsuranceTab').addClass('show');
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+                $('#automobileInsurance').addClass('show');
+                $('#automobileInsurance').removeClass('hide');
+                $('#homeOwnersInsurance').addClass('hide');
+                $('#homeOwnersInsurance').removeClass('show');
+                $('#healthInsurance').addClass('hide');
+                $('#healthInsurance').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+                $('#lifeInsuranceTab').removeClass('show');
+                break;
+
+            case 'lifeInsurance':
+                $('#lifeInsuranceTab').addClass('show');
+                $('#lifeInsuranceTab').removeClass('hide');
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+                $('#automobileInsurance').addClass('hide');
+                $('#automobileInsurance').removeClass('show');
+                $('#homeOwnersInsurance').addClass('hide');
+                $('#homeOwnersInsurance').removeClass('show');
+                $('#healthInsurance').addClass('hide');
+                $('#healthInsurance').removeClass('show');
+                break;
+
+            case 'indemnity':
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+                $('#automobileInsurance').addClass('hide');
+                $('#automobileInsurance').removeClass('show');
+                $('#homeOwnersInsurance').addClass('hide');
+                $('#homeOwnersInsurance').removeClass('show');
+                $('#healthInsurance').addClass('hide');
+                $('#healthInsurance').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+                $('#lifeInsuranceTab').removeClass('show');
+                break;
+
+            case 'none':
+                $('#automobileInsuranceTab').removeClass('show');
+                $('#automobileInsuranceTab').addClass('hide');
+                $('#healthInsuranceTab').removeClass('show');
+                $('#healthInsuranceTab').addClass('hide');
+                $('#homeOwnersInsuranceTab').removeClass('show');
+                $('#homeOwnersInsuranceTab').addClass('hide');
+                $('#automobileInsurance').addClass('hide');
+                $('#automobileInsurance').removeClass('show');
+                $('#homeOwnersInsurance').addClass('hide');
+                $('#homeOwnersInsurance').removeClass('show');
+                $('#healthInsurance').addClass('hide');
+                $('#healthInsurance').removeClass('show');
+                $('#lifeInsuranceTab').addClass('hide');
+                $('#lifeInsuranceTab').removeClass('show');
+                break;
+        }
+    },
+
+    /*
+    * Close contact details
+    */
+    closeContactDetails: function(){
+        'use strict';
+        event.preventDefault();
+        var view = this;
+        $('#contactModal').modal('hide');
+    },
+
+    /*
+    * Update contact details
+    */
+    updateContactDetails: function(){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+           update,
+           address,
+           firstName,
+           lastName,
+           timezone,
+           zipcode,
+           phoneNumber,
+           tags,
+           country,
+           city,
+           callback,
+           state,
+           status,
+           comment,
+           contactUuid,
+           contactAccount,
+           contactStruct,
+           newRandomStuff,
+           callbacks;
+
+        console.log('update contact details');
+
+        // please cache this stuff for me bb
+        this.uuid = this.$('#contact-uuid');
+        this.account = this.$('#contact-account');
+        this.firstName = this.$('#contact-first-name');
+        this.lastName = this.$('#contact-last-name');
+        this.timezone = this.$('#contact-timezone');
+        this.zipcode = this.$('#contact-zipcode');
+        this.phoneNumber = this.$('#contact-phone-number');
+        this.tags = this.$('#contact-tags');
+        this.country = this.$('#contact-country');
+        this.city = this.$('#contact-city');
+        this.state = this.$('#contact-state');
+        this.status = this.$('#contact-status');
+        this.comment = this.$('#contact-comment');
+        this.callback = this.$('#contact-callback');
+
+        // now give me the stuff
+        contactUuid = this.uuid.text();
+        contactAccount = this.account.text();
+        lastName = this.lastName.val();
+        firstName = this.firstName.val();
+        timezone = this.timezone.val();
+        zipcode = this.zipcode.val();
+        phoneNumber = this.phoneNumber.val();
+        // tags = this.tags.val();
+        country = this.country.val();
+        city = this.city.val();
+        state = this.state.val();
+        status = this.status.val();
+        comment = this.comment.val();
+        callback = this.callback.val();
+
+        // put it in a struct
+        contactStruct = {
+            'uuid': contactUuid,
+            'account': contactAccount,
+            'first_name': firstName,
+            'last_name': lastName,
+            'timezone': timezone,
+            'zip_code': zipcode,
+            'phone_number': phoneNumber,
+            // 'tags': tags,
+            'country': country,
+            'city': city,
+            'state': state,
+            'status': status,
+            'comment': comment,
+            'callback': callback
+        };
+
+        update = new fun.models.Contact({'uuid':contactUuid});
+
+        // and save!
+        update.save(contactStruct, {patch: true});
+        $('#contactModal').modal('hide');
+    },
+
+    showMailingAddressDifferent: function(event){
+        fun.utils.showMailingAddressDifferent(event);
+    },
+
+    changeMaritalStatus: function(event){
+        fun.utils.changeMaritalStatus(event);
+    },
+
+    healthInsuranceTab: function(event){
+        fun.utils.healthInsuranceTab(event);
+    },
+
+    homeInsuranceTab: function(event){
+        fun.utils.homeInsuranceTab(event);
+    },
+
+    autoInsuranceTab: function(event){
+        fun.utils.autoInsuranceTab(event);
+    },
+
+    lifeInsuranceTab: function(event){
+        fun.utils.lifeInsuranceTab(event);
+    },
+
+    ancilliaryInsuranceTab: function(event){
+        fun.utils.ancilliaryInsuranceTab(event);
+    },
+
+    changeNumberChildren: function(event){
+        fun.utils.changeNumberChildren(event);
+    },
+
+    showPaymentTab: function(event){
+        fun.utils.showPaymentTab(event);
+    },
+    showSendSMSButton: function(event){
+        fun.utils.showSendSMSButton(event);
+    },
+    showMarketingTab: function(event){
+        fun.utils.showMarketingTab(event);
+    },
     /*
     * Contact details
     */
@@ -1428,255 +1675,7 @@ fun.views.contacts = Backbone.View.extend({
                 console.log(error);
             }
         });
-    },
-
-    /*
-    * Lead Type function
-    */
-    leadTypeChange: function(event){
-        console.log('Contact Type',$('#lead-type').val());
-        switch($('#lead-type').val()){
-            case 'healthinsurance':
-                $('#healthInsuranceTab').removeClass('hide');
-                $('#healthInsuranceTab').addClass('show');
-                $('#homeOwnersInsuranceTab').removeClass('show');
-                $('#homeOwnersInsuranceTab').addClass('hide');
-                $('#automobileInsuranceTab').removeClass('show');
-                $('#automobileInsuranceTab').addClass('hide');
-                $('#healthInsurance').addClass('show');
-                $('#healthInsurance').removeClass('hide');
-                $('#homeOwnersInsurance').addClass('hide');
-                $('#homeOwnersInsurance').removeClass('show');
-                $('#automobileInsurance').addClass('hide');
-                $('#automobileInsurance').removeClass('show');
-                $('#lifeInsuranceTab').addClass('hide');
-                $('#lifeInsuranceTab').removeClass('show');
-                break;
-
-            case 'homeownersInsurance':
-                $('#homeOwnersInsuranceTab').removeClass('hide');
-                $('#homeOwnersInsuranceTab').addClass('show');
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-                $('#automobileInsuranceTab').removeClass('show');
-                $('#automobileInsuranceTab').addClass('hide');
-                $('#homeOwnersInsurance').addClass('show');
-                $('#homeOwnersInsurance').removeClass('hide');
-                $('#healthInsurance').addClass('hide');
-                $('#healthInsurance').removeClass('show');
-                $('#automobileInsurance').addClass('hide');
-                $('#automobileInsurance').removeClass('show');
-                $('#lifeInsuranceTab').addClass('hide');
-                $('#lifeInsuranceTab').removeClass('show');
-                break;
-
-            case 'autoInsurance':
-                $('#automobileInsuranceTab').removeClass('hide');
-                $('#automobileInsuranceTab').addClass('show');
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-                $('#homeOwnersInsuranceTab').removeClass('show');
-                $('#homeOwnersInsuranceTab').addClass('hide');
-                $('#automobileInsurance').addClass('show');
-                $('#automobileInsurance').removeClass('hide');
-                $('#homeOwnersInsurance').addClass('hide');
-                $('#homeOwnersInsurance').removeClass('show');
-                $('#healthInsurance').addClass('hide');
-                $('#healthInsurance').removeClass('show');
-                $('#lifeInsuranceTab').addClass('hide');
-                $('#lifeInsuranceTab').removeClass('show');
-                break;
-
-            case 'lifeInsurance':
-                $('#lifeInsuranceTab').addClass('show');
-                $('#lifeInsuranceTab').removeClass('hide');
-                $('#automobileInsuranceTab').removeClass('show');
-                $('#automobileInsuranceTab').addClass('hide');
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-                $('#homeOwnersInsuranceTab').removeClass('show');
-                $('#homeOwnersInsuranceTab').addClass('hide');
-                $('#automobileInsurance').addClass('hide');
-                $('#automobileInsurance').removeClass('show');
-                $('#homeOwnersInsurance').addClass('hide');
-                $('#homeOwnersInsurance').removeClass('show');
-                $('#healthInsurance').addClass('hide');
-                $('#healthInsurance').removeClass('show');
-                break;
-
-            case 'indemnity':
-                $('#automobileInsuranceTab').removeClass('show');
-                $('#automobileInsuranceTab').addClass('hide');
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-                $('#homeOwnersInsuranceTab').removeClass('show');
-                $('#homeOwnersInsuranceTab').addClass('hide');
-                $('#automobileInsurance').addClass('hide');
-                $('#automobileInsurance').removeClass('show');
-                $('#homeOwnersInsurance').addClass('hide');
-                $('#homeOwnersInsurance').removeClass('show');
-                $('#healthInsurance').addClass('hide');
-                $('#healthInsurance').removeClass('show');
-                $('#lifeInsuranceTab').addClass('hide');
-                $('#lifeInsuranceTab').removeClass('show');
-                break;
-
-            case 'none':
-                $('#automobileInsuranceTab').removeClass('show');
-                $('#automobileInsuranceTab').addClass('hide');
-                $('#healthInsuranceTab').removeClass('show');
-                $('#healthInsuranceTab').addClass('hide');
-                $('#homeOwnersInsuranceTab').removeClass('show');
-                $('#homeOwnersInsuranceTab').addClass('hide');
-                $('#automobileInsurance').addClass('hide');
-                $('#automobileInsurance').removeClass('show');
-                $('#homeOwnersInsurance').addClass('hide');
-                $('#homeOwnersInsurance').removeClass('show');
-                $('#healthInsurance').addClass('hide');
-                $('#healthInsurance').removeClass('show');
-                $('#lifeInsuranceTab').addClass('hide');
-                $('#lifeInsuranceTab').removeClass('show');
-                break;
-        }
-    },
-
-    /*
-    * Close contact details
-    */
-    closeContactDetails: function(){
-        'use strict';
-        event.preventDefault();
-        var view = this;
-        $('#contactModal').modal('hide');
-    },
-
-    /*
-    * Update contact details
-    */
-    updateContactDetails: function(){
-        'use strict';
-        event.preventDefault();
-        var view = this,
-           update,
-           address,
-           firstName,
-           lastName,
-           timezone,
-           zipcode,
-           phoneNumber,
-           tags,
-           country,
-           city,
-           callback,
-           state,
-           status,
-           comment,
-           contactUuid,
-           contactAccount,
-           contactStruct,
-           newRandomStuff,
-           callbacks;
-
-        console.log('update contact details');
-
-        // please cache this stuff for me bb
-        this.uuid = this.$('#contact-uuid');
-        this.account = this.$('#contact-account');
-        this.firstName = this.$('#contact-first-name');
-        this.lastName = this.$('#contact-last-name');
-        this.timezone = this.$('#contact-timezone');
-        this.zipcode = this.$('#contact-zipcode');
-        this.phoneNumber = this.$('#contact-phone-number');
-        this.tags = this.$('#contact-tags');
-        this.country = this.$('#contact-country');
-        this.city = this.$('#contact-city');
-        this.state = this.$('#contact-state');
-        this.status = this.$('#contact-status');
-        this.comment = this.$('#contact-comment');
-        this.callback = this.$('#contact-callback');
-
-        // now give me the stuff
-        contactUuid = this.uuid.text();
-        contactAccount = this.account.text();
-        lastName = this.lastName.val();
-        firstName = this.firstName.val();
-        timezone = this.timezone.val();
-        zipcode = this.zipcode.val();
-        phoneNumber = this.phoneNumber.val();
-        // tags = this.tags.val();
-        country = this.country.val();
-        city = this.city.val();
-        state = this.state.val();
-        status = this.status.val();
-        comment = this.comment.val();
-        callback = this.callback.val();
-
-        // put it in a struct
-        contactStruct = {
-            'uuid': contactUuid,
-            'account': contactAccount,
-            'first_name': firstName,
-            'last_name': lastName,
-            'timezone': timezone,
-            'zip_code': zipcode,
-            'phone_number': phoneNumber,
-            // 'tags': tags,
-            'country': country,
-            'city': city,
-            'state': state,
-            'status': status,
-            'comment': comment,
-            'callback': callback
-        };
-
-        update = new fun.models.Contact({'uuid':contactUuid});
-
-        // and save!
-        update.save(contactStruct, {patch: true});
-        $('#contactModal').modal('hide');
-    },
-
-    showMailingAddressDifferent: function(event){
-        fun.utils.showMailingAddressDifferent(event);
-    },
-
-    changeMaritalStatus: function(event){
-        fun.utils.changeMaritalStatus(event);
-    },
-
-    healthInsuranceTab: function(event){
-        fun.utils.healthInsuranceTab(event);
-    },
-
-    homeInsuranceTab: function(event){
-        fun.utils.homeInsuranceTab(event);
-    },
-
-    autoInsuranceTab: function(event){
-        fun.utils.autoInsuranceTab(event);
-    },
-
-    lifeInsuranceTab: function(event){
-        fun.utils.lifeInsuranceTab(event);
-    },
-
-    ancilliaryInsuranceTab: function(event){
-        fun.utils.ancilliaryInsuranceTab(event);
-    },
-
-    changeNumberChildren: function(event){
-        fun.utils.changeNumberChildren(event);
-    },
-
-    showPaymentTab: function(event){
-        fun.utils.showPaymentTab(event);
-    },
-    showSendSMSButton: function(event){
-        fun.utils.showSendSMSButton(event);
-    },
-    showMarketingTab: function(event){
-        fun.utils.showMarketingTab(event);
-    },
+    },/*
 });
 
 
