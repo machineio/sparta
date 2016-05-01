@@ -3517,8 +3517,6 @@ fun.layouts.contacts = Marionette.LayoutView.extend({
             $('#marketingInfoTab').removeClass('show');
             $('#marketingInfoTab').addClass('hide');
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
     },
 
     saveNewContact: function(event,patch){
@@ -4405,11 +4403,3 @@ fun.views.contacts = Backbone.View.extend({
     },
 
 });
-=======
-    }
-});
->>>>>>> origin/master
-=======
-    }
-});
->>>>>>> origin/master
