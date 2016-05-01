@@ -88,6 +88,7 @@ fun.views.footer = Backbone.View.extend({
     callActiveContact: function(){
         'use strict';
         var response = JSON.parse(sessionStorage.getItem("active_contact"));
+        console.log('RESPONSE!!!!!!!',response);
 
         var name_uuid,
             stuff = JSON.parse(localStorage.getItem("profile"));
