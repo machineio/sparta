@@ -136,7 +136,7 @@ fun.views.profile = Backbone.View.extend({
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
                     var _id = value.attributes.value.replace(/_/g,'-');
-                    console.log('lolazo!!',_id);
+                    console.log('lolazo!!',typeof _id);
                     console.log('lolazo 2!!',document.getElementById(_id));
                     _.each(value.attributes.options, function(value2){
                         document.getElementById(_id).append($("<option />").val(value2).text(value2));
