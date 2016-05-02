@@ -136,7 +136,10 @@ fun.views.profile = Backbone.View.extend({
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
                     console.log('lolazo!!',value.attributes.value);
-                    console.log('lolazo 2!!',$('"#' + value.attributes.value.replace(/_/g,'-') + '"'));
+                    console.log('lolazo 2!!',document.getElementById(value.attributes.value.replace(/_/g,'-')));
+                    _.each(value.attributes.options, function(value2){
+                        document.getElementById(value.attributes.value.replace(/_/g,'-')).append($("<option />").val(value2).text(value2));
+                    });
                     // elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
             },
