@@ -143,12 +143,26 @@ fun.views.profile = Backbone.View.extend({
                     });
                     // elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
+                // Now that contact info is loaded we run the functions for the show/hide of the tabs
+                    fun.utils.showMailingAddressDifferent();
+                    fun.utils.changeMaritalStatus();
+                    fun.utils.homeInsuranceTab();
+                    fun.utils.healthInsuranceTab();
+                    fun.utils.autoInsuranceTab();
+                    fun.utils.lifeInsuranceTab();
+                    fun.utils.ancilliaryInsuranceTab();
+                    fun.utils.showMarketingTab();
+                    fun.utils.changeNumberChildren();
+                    fun.utils.showPaymentTab();
+                    fun.utils.showPaymentTab();
+                    fun.utils.showSendSMSButton();
             },
             error: function(response){
                 console.log('prueba con alex y tony');
                 console.log(response);
             },
         });
+
 
         /*console.log('ELEM',$.param(options));
         console.log('COLLECTION!!!',list_of_states.toJSON().results);
@@ -2788,6 +2802,8 @@ fun.views.profile = Backbone.View.extend({
             contact_history,
             contact_comment;
 
+        this.getDropdownInfo();
+
         $('#profileContactModal').modal({
             'show': true
         });
@@ -3201,9 +3217,6 @@ fun.views.profile = Backbone.View.extend({
             var ancillary_bank_name = this.$("#ancillary-bank-name");
             var ancillary_bank_account_type = this.$("#ancillary-bank-account-type");
 
-
-            this.getDropdownInfo();
-
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
 
@@ -3340,21 +3353,6 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_child_4_dob.val(response.get('child_4_dob') || '');
                 contact_info_child_4_gender.val(response.get('child_4_gender') || '');
                 contact_info_child_4_social.val(response.get('child_4_social') || '');
-
-
-            // Now that contact info is loaded we run the functions for the show/hide of the tabs
-                fun.utils.showMailingAddressDifferent();
-                fun.utils.changeMaritalStatus();
-                fun.utils.homeInsuranceTab();
-                fun.utils.healthInsuranceTab();
-                fun.utils.autoInsuranceTab();
-                fun.utils.lifeInsuranceTab();
-                fun.utils.ancilliaryInsuranceTab();
-                fun.utils.showMarketingTab();
-                fun.utils.changeNumberChildren();
-                fun.utils.showPaymentTab();
-                fun.utils.showPaymentTab();
-                fun.utils.showSendSMSButton();
 
 
             // HEALTH INFO
