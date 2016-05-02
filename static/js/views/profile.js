@@ -126,17 +126,17 @@ fun.views.profile = Backbone.View.extend({
             health_wants_to_renew_same_plan_for_2016: true,
             unique: true
         };
-        console.log('OBJECT!!!!',obj_);
+        console.log('OBJECT!!!!',$.param(obj_));
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({
             data: $.param(obj_),
             success: function(response){
                 console.log('RESPONSE!!!!',response);
-                var lolazo = response.attributes.results.models;
-                _.each(lolazo, function(value){
-                    elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
-                });
+                // var lolazo = response.attributes.results.models;
+                // _.each(lolazo, function(value){
+                //     elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
+                // });
             },
             error: function(response){
                 console.log('prueba con alex y tony');
