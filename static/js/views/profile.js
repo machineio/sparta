@@ -75,18 +75,63 @@ fun.views.profile = Backbone.View.extend({
         contact.fetch(async_callback);
     },
 
-    getDropdownInfo: function(elem,string){
+    getDropdownInfo: function(){
         'use strict';
         var list_of_states,
-            options;
+            obj_;
 
-        options = {unique:true};
-        options[string] = true;
+        obj_ = {
+            contact_info_gender: true,
+            contact_info_marital_status: true,
+            contact_info_number_of_children: true,
+            contact_info_state: true,
+            contact_info_country: true,
+            contact_info_mailing_address_different: true,
+            contact_info_language_preference: true,
+            contact_info_writing_agent: true,
+            contact_info_lead_source: true,
+            contact_info_lead_type: true,
+            contact_info_health_insurance_checkbox: true,
+            contact_info_home_insurance_checkbox: true,
+            contact_info_auto_insurance_checkbox: true,
+            contact_info_life_insurance_checkbox: true,
+            contact_info_ancilliary_insurance_checkbox: true,
+            contact_info_other_policy_sold: true,
+            contact_info_federal_do_not_call: true,
+            contact_info_do_you_own_your_home: true,
+            contact_info_renew_as_is_email_received: true,
+            health_us_citizen_or_legal_permanent_resident: true,
+            spouse_gender: true,
+            spouse_dob: true,
+            spouse_do_you_have_a_social_security_number: true,
+            health_auto_priority_code: true,
+            health_priority_code: true,
+            health_lead_source: true,
+            health_partner: true,
+            health_lead_status: true,
+            health_writing_agent: true,
+            health_scrubber: true,
+            health_marital_status: true,
+            health_number_of_dependent_children_in_house: true,
+            health_renewal_source_2016: true,
+            health_renewal_agent_2016: true,
+            health_presold_processor_2016: true,
+            health_verification_documents_needed_2016: true,
+            health_adults_applying_for_coverage_2016: true,
+            health_total_household_size_2016: true,
+            health_cloud_gross_premium_2016: true,
+            health_lead_has_a_marketplace_account: true,
+            health_current_coverage: true,
+            health_policy: true,
+            health_wants_to_renew_same_plan_for_2016: true,
+            unique: true
+        };
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({
-            data: $.param(options),
+            data: $.param(obj_),
             success: function(response){
+                console.log('RESPONSE!!!!',response);
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
                     elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
@@ -3150,7 +3195,7 @@ fun.views.profile = Backbone.View.extend({
             var ancillary_bank_account_type = this.$("#ancillary-bank-account-type");
 
 
-
+            this.getDropdownInfo();
 
         // get the name of the element targeted by this event
         name = $(event.target).data('name');
