@@ -135,7 +135,8 @@ fun.views.profile = Backbone.View.extend({
                 console.log('RESPONSE!!!!',response);
                 var lolazo = response.attributes.results.models;
                 _.each(lolazo, function(value){
-                    console.log('lolazo!!',$('"#' + value.value.replace('_','-') + '"'));
+                    console.log('lolazo!!',value);
+                    // console.log('lolazo!!',$('"#' + value.value.replace('_','-') + '"'));
                     // elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
             },
