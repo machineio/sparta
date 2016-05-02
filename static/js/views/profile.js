@@ -126,6 +126,7 @@ fun.views.profile = Backbone.View.extend({
             health_wants_to_renew_same_plan_for_2016: true,
             unique: true
         };
+        console.log('OBJECT!!!!',obj_);
 
         list_of_states = new fun.models.ContactsContainer();
         list_of_states.fetch({
