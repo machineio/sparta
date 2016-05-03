@@ -140,7 +140,7 @@ fun.views.profile = Backbone.View.extend({
                     _.each(value.attributes.options, function(value2){
                         console.log('lolazo!!',value2);
                         $(_id).append($("<option />").val(value2).text(value2));
-                        $(_id).selectedIndex = $(_id)[0].selectedIndex;
+                        $(_id).selectedIndex = $(_id).selectedIndex;
                     });
                     // elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
