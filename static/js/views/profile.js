@@ -39,7 +39,7 @@ fun.views.profile = Backbone.View.extend({
         fun.containers.profile = this.$el;
         var view = this;
         fun.messages.on("leads:updateDropdowns", function(){
-            this.callActiveContact();
+            this.callDropdownValue(s);
         }, this);
     },
 
@@ -3153,7 +3153,6 @@ fun.views.profile = Backbone.View.extend({
 
                 health_application_number_2016_info.val(response.get('health_application_number_2016_selection') || '');
                 health_effective_date_2016.val(renderDate(response.get('health_effective_date_2016')) || '');
-                health_presold_processor_2016.val(response.get('health_presold_processor_2016') || '');
                 health_total_income_used_on_application.val(response.get('health_total_income_used_on_application') || '');
                 health_final_gross_premium_2016.val(response.get('health_final_gross_premium_2016') || '');
                 health_final_subsidy_2016.val(response.get('health_final_subsidy_2016') || '');
