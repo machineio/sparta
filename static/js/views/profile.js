@@ -108,7 +108,6 @@ fun.views.profile = Backbone.View.extend({
         var contact_info_writing_agent = this.$("#contact-info-writing-agent");
         var contact_info_lead_source = this.$("#contact-info-lead-source");
         var contact_info_lead_type = this.$("#contact-info-lead-type");
-        var contact_info_partner = this.$("#contact-info-partner");
         var contact_info_health_insurance_checkbox = this.$("#contact-info-health-insurance-checkbox");
         var contact_info_home_insurance_checkbox = this.$("#contact-info-home-insurance-checkbox");
         var contact_info_auto_insurance_checkbox = this.$("#contact-info-auto-insurance-checkbox");
@@ -160,9 +159,6 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_lead_source.val(response.get('contact_info_lead_source') || 'boberdoo');
                 $(contact_info_lead_source.selector + " option[value='boberdoo']").attr("selected", "selected");
                 // $(contact_info_lead_source.selector + " option[value='" + response.get('lead_source') + "']").attr("selected", "selected");
-
-                contact_info_partner.val(response.get('contact_info_partner') || '');
-                contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
 
                 contact_info_health_insurance_checkbox.val(response.get('contact_info_health_insurance_status') || 'true');
                 // $(contact_info_health_insurance_checkbox.selector + " option[value='true']").attr("selected", "selected");
@@ -2756,6 +2752,7 @@ fun.views.profile = Backbone.View.extend({
             var contact_info_mailing_state = this.$("#contact-info-mailing-state");
             var contact_info_mailing_zipcode = this.$("#contact-info-mailing-zipcode");
             var contact_info_marketplace_email = this.$("#contact-info-marketplace-email");
+            var contact_info_partner = this.$("#contact-info-partner");
             var contact_info_last_modified_by = this.$("#contact-info-last-modified-by");
             var contact_info_do_you_own_your_home = this.$("#contact-info-do-you-own-your-home");
             var spouse_first_name = this.$("#spouse-first-name");
@@ -3084,7 +3081,8 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_other_phone.val(response.get('other_phone_2') || '');
                 contact_info_date_of_birth.val(renderDate(response.get('contact_info_date_of_birth')) || '');
                 // contact_info_date_of_birth.value = response.get('contact_info_dob') || '';
-
+                contact_info_partner.val(response.get('contact_info_partner') || '');
+                contact_info_last_modified_by.val(response.get('contact_info_last_modified_by') || '');
                 contact_info_social_security_number.val(response.get('contact_info_social_security_number') || '');
                 contact_info_property_address.val(response.get('contact_info_property_address'));
 
