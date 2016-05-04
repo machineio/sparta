@@ -39,7 +39,7 @@ fun.views.profile = Backbone.View.extend({
         fun.containers.profile = this.$el;
         var view = this;
         fun.messages.on("leads:updateDropdowns", function(){
-            this.callDropdownValue(s);
+            this.callDropdownValue();
         }, this);
     },
 
