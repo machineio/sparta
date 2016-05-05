@@ -132,7 +132,7 @@ fun.views.profile = Backbone.View.extend({
         contact.fetch({
             success: function(response){
 
-                contact_info_gender.val(response.get('contact_info_gender') || '');
+                contact_info_gender.value = response.get('contact_info_gender') || '';
                 $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
 
                 contact_info_marital_status.value = response.get('contact_info_marital_status') || '';
@@ -219,6 +219,8 @@ fun.views.profile = Backbone.View.extend({
                     fun.utils.showPaymentTab();
                     fun.utils.showPaymentTab();
                     fun.utils.showSendSMSButton();
+
+                console.log('AL DONE HERE!!');
 
             },
             error: function(error){
