@@ -135,6 +135,7 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_gender.value = response.get('contact_info_gender') || '';
                 $("" + contact_info_gender.selector + " option").filter(function() {
                     //may want to use $.trim in here
+                    console.log('RESPONSE!!!',response.get('contact_info_gender'));
                     return $(this).text() == response.get('contact_info_gender');
                 }).prop('selected', true);
                 // $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
