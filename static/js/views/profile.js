@@ -297,10 +297,6 @@ fun.views.profile = Backbone.View.extend({
                     _.each(value.attributes.options, function(value2){
                         $(_id).append($("<option />").val(value2).text(value2));
                         $(_id).selectedIndex = $(_id).selectedIndex;
-                        if(value.attributes.options.indexOf(value2) + 1 == value.attributes.options.length) {
-                             // Callback goes here
-                             console.log('FINISH LOADING DROPDOWNS OPTIONS');
-                        }
                     });
                     // elem.append($("<option />").val(value.toJSON().option).text(value.toJSON().option));
                 });
@@ -2722,12 +2718,12 @@ fun.views.profile = Backbone.View.extend({
         this.renderContactModalForm();
 
         function renderDate(date){
-            console.log('RAW DATE',date);
+            // console.log('RAW DATE',date);
             var now = new Date(date);
             var day = ("0" + now.getDate()).slice(-2);
             var month = ("0" + (now.getMonth() + 1)).slice(-2);
             var today = now.getFullYear()+"-"+(month)+"-"+(day);
-            console.log('TODAY!!!!',today, typeof today);
+            // console.log('TODAY!!!!',today, typeof today);
             return today;
         }
 
