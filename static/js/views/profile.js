@@ -135,13 +135,12 @@ fun.views.profile = Backbone.View.extend({
                 contact_info_gender.value = response.get('contact_info_gender') || '';
                 $("" + contact_info_gender.selector + " option").filter(function() {
                     //may want to use $.trim in here
-                    console.log('RESPONSE!!!',this.value,response.get('contact_info_gender'));
+                    console.log('RESPONSE!!!',contact_info_gender.value,response.get('contact_info_gender'));
                     return $(this).text() == response.get('contact_info_gender');
                 }).prop('selected', true);
                 // $(contact_info_gender.selector + " option[value='" + response.get('contact_info_gender') + "']").attr("selected", "selected");
 
                 contact_info_marital_status.value = response.get('contact_info_marital_status') || '';
-                console.log('MARITAL STATUS',contact_info_marital_status.value,response.get('contact_info_marital_status'));
                 $(contact_info_marital_status.selector + " option[value='" + response.get('contact_info_marital_status') + "']").attr("selected", "selected");
 
                 contact_info_number_of_children.val(response.get('contact_info_number_of_children') || 0);
