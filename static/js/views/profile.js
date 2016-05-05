@@ -125,9 +125,9 @@ fun.views.profile = Backbone.View.extend({
         var health_verification_documents_needed_2016 = this.$("#health-verification-documents-needed-2016");
 
         // get the name of the element targeted by this event
-        name = $(event.target).data('name');
+        contact_uuid = JSON.parse(localStorage.getItem('current_contact_uuid'));
 
-        contact = new fun.models.Contact({'uuid':name});
+        contact = new fun.models.Contact(contact_uuid);
 
         contact.fetch({
             success: function(response){
