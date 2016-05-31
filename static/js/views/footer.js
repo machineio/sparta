@@ -2080,7 +2080,7 @@ fun.views.footer = Backbone.View.extend({
         var struct = {
                 title: 'tony',
                 text: 'que dice',
-                'type': 'error',
+                'type': 'success',
                 sticky :true
             },
             list_of_states,
