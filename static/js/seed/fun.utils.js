@@ -20,7 +20,7 @@ var fun = {
 fun.utils.sendMessage = function(config) {
     'use strict';
 
-    var defaults, options, container, funMessage, content, title, text, close;
+    var defaults, options, container, funMessage, content, title, text, close, answerButton;
 
     defaults = {
         type: '',
