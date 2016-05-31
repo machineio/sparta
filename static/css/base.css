@@ -1,3 +1,14 @@
+.funMessage-content {
+  background-color: #303030;
+  text-shadow: none !important;
+  text-align: center;
+}
+
+.funMessage-content h2 {
+  color: #921d22 !important;
+  text-shadow: none !important;
+}
+
 .row-messages-margin {
   margin-left: 2% !important;
 }

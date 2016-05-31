@@ -78,7 +78,7 @@ fun.utils.sendMessage = function(config) {
     }
 
     if (options.title != '') {
-        title = $('<h4>', {
+        title = $('<h2>', {
             text: options.title
         }).prependTo (content);
     }

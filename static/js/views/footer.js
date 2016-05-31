@@ -2078,8 +2078,8 @@ fun.views.footer = Backbone.View.extend({
 
     testWithAlex: function(event){
         var struct = {
-                title: 'tony',
-                text: 'que dice',
+                title: 'Incoming Lead!',
+                text: '',
                 'type': '',
                 sticky :true
             },
