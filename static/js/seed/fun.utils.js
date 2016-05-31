@@ -20,7 +20,7 @@ var fun = {
 fun.utils.sendMessage = function(config) {
     'use strict';
 
-    var defaults, options, container, funMessage, content, title, text, close, answerButton;
+    var defaults, options, container, funMessage, content, title, text, close, answerButton, buttonsDiv;
 
     defaults = {
         type: '',
@@ -58,7 +58,9 @@ fun.utils.sendMessage = function(config) {
         text: options.text
     }).appendTo (content);
 
-    answerButton = $('<button>',{id:"funMessageAnswerButton",class:"btn btn-default",text:"Answer"}).appendTo(content);
+    buttonsDiv = $('<div>',{class:"row"}).appendTo(content);
+
+    answerButton = $('<button>',{id:"funMessageAnswerButton",class:"btn btn-default",text:"Answer"}).appendTo(buttonsDiv);
 
     if (options.closeTrigger) {
         close = $('<div>', {
