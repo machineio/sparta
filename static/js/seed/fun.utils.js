@@ -35,7 +35,7 @@ fun.utils.sendMessage = function(config) {
     };
 
     options = $.extend(defaults, config);
-    
+
     container = $('.funMessage-container.' + options.position);
 
     console.log(options);
@@ -57,6 +57,8 @@ fun.utils.sendMessage = function(config) {
     text = $('<span>', {
         text: options.text
     }).appendTo (content);
+
+    answerButton = $('<button>',{id:"funMessageAnswerButton",class:"btn btn-default",text:"Answer"}).appendTo(content);
 
     if (options.closeTrigger) {
         close = $('<div>', {

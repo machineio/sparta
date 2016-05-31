@@ -2087,6 +2087,8 @@ fun.views.footer = Backbone.View.extend({
             options;
         // punk ass you fucker!
         fun.utils.sendMessage(struct);
+        
+
         // this stuff is bananas
         options = {unique:true};
         options['contact_info_marital_status'] = true;
