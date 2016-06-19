@@ -106,6 +106,28 @@ fun.utils.sendMessage = function(config) {
 };
 
 
+/**
+ * Function to calculate and get the start and end point of pagination results
+ * @return a js object with the start and end pagination interval
+ */
+fun.utils.getPaginationInterval = function(currentPage, pageCount) {
+    'use strict';
+    var currentPage = Number(currentPage),
+        halfEntries = Math.ceil(fun.conf.pageBig/2),
+        pageCount = pageCount,
+        upperLimit = pageCount - fun.conf.pageBig,
+        interval;
+     
+    interval = {
+        start : currentPage > halfEntries ? Math.max(Math.min(currentPage - halfEntries, upperLimit), 0):0,
+        end   : currentPage > halfEntries ? Math.min(currentPage + halfEntries, pageCount):Math.min(fun.conf.pageBig, pageCount)
+    };
+     
+    return interval;
+};
+
+
+
 /*
 * Contact Form Functions
 */
