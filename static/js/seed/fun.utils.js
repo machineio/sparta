@@ -365,6 +365,7 @@ fun.utils.login = function(account, password, callbacks) {
             var words  = CryptoJS.enc.Latin1.parse(auth);
             var base64 = CryptoJS.enc.Base64.stringify(words);
             xhr.setRequestHeader("Authorization", "Basic " + base64);
+            xhr.setRequestHeader("Access-Control-Allow-Origin","*");
         },
         success: function (data, textStatus, jqXHR){
 
