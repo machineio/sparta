@@ -75,14 +75,14 @@ fun.views.footer = Backbone.View.extend({
         struct = {
             phone_number: activeContact['contact_info_phone_number'],
             account: currentAccount['account'],
-            caller_id: currentAccount['phone_number'],
+            callerid: currentAccount['phone_number'],
             extension: currentAccount['extension']
         };
 
         outbound = new fun.models.Outbound(struct);
         outbound.save();
 
-        console.log('this????0');
+        console.log('this is only a test a fucking call now contact or some random shit test');
     },
 
     callActiveContact: function(){
